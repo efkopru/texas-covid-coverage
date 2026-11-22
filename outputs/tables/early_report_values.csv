@@ -1,0 +1,283 @@
+name,value
+final,M4
+n_stable,213
+n_kept,238
+n_unstable,25
+unstable_pct_adults,1.6%
+threshold,5
+rk_base_b1,0.26
+rk_end_b1,0.20
+rk_base_b2,0.45
+rk_end_b2,0.29
+rk_base_b3,0.57
+rk_end_b3,0.37
+rk_base_b4,0.80
+rk_end_b4,0.59
+rk_base_b5,0.91
+rk_end_b5,0.73
+rk_base_b6,1.00
+rk_end_b6,0.90
+fix_assigned,"664,458"
+fix_other_fall,"662,780"
+feb_high,"268,993"
+feb_low,"160,979"
+feb_high_date,12 Feb 2021
+feb_low_date,27 Feb 2021
+feb_worked_off,"108,014"
+glitch_falls,"81,391"
+glitch_counties,78
+glitch_tarrant,"62,699"
+glitch_tarrant_back,"59,951"
+flux_falls,"47,901"
+flux_counties,173
+late_falls,757
+resid_pct,1.16%
+fix_assigned_round,"664,000"
+fix_new_unassigned,"1,700"
+n_wayback_early,14
+first_daily,29 Dec 2020
+other_pct_b1,7.8%
+alloc_b1,"22,459"
+u_b1,1.04
+other_pct_b2,10.5%
+alloc_b2,"175,482"
+u_b2,1.51
+other_pct_b3,4.8%
+alloc_b3,"131,277"
+u_b3,0.51
+other_pct_b4,6.8%
+alloc_b4,"431,572"
+u_b4,0.80
+other_pct_b5,8.1%
+alloc_b5,"664,458"
+u_b5,1.00
+odds_median,3.8%
+odds_p90,14.1%
+odds_max,32%
+odds_max_county,Cass
+odds_agg,7.6%
+n_neg_R,36
+odds_harris,1%
+odds_tarrant,19%
+odds_denton,25%
+pt_cor_w,0.97
+pt_cor_u,0.46
+pt_n,6
+pt_feb_pred,0.84
+pt_feb_est,1.33 (standard error 0.09)
+cov_all_k1,1.5
+up_all_k1,2.4
+cov_st_k1,1.4
+up_st_k1,2.4
+med_st_k1,1.9
+p10_st_k1,0.9
+p90_st_k1,4.5
+cov_all_k2,8.1
+up_all_k2,6.7
+cov_st_k2,7.9
+up_st_k2,6.5
+med_st_k2,6.5
+p10_st_k2,3.8
+p90_st_k2,12.5
+cov_all_k3,15.3
+up_all_k3,8.1
+cov_st_k3,15.0
+up_st_k3,8.0
+med_st_k3,8.6
+p10_st_k3,4.7
+p90_st_k3,16.4
+cov_all_k4,32.6
+up_all_k4,19.8
+cov_st_k4,31.8
+up_st_k4,19.2
+med_st_k4,15.6
+p10_st_k4,10.8
+p90_st_k4,23.7
+cov_all_k5,41.0
+up_all_k5,26.5
+cov_st_k5,40.0
+up_st_k5,25.6
+med_st_k5,12.8
+p10_st_k5,7.6
+p90_st_k5,23.6
+cov_all_k6,52.5
+up_all_k6,14.6
+cov_st_k6,51.0
+up_st_k6,13.8
+med_st_k6,6.6
+p10_st_k6,3.4
+p90_st_k6,13.2
+gap_b1,2.4
+p10_b1,0.5
+p90_b1,2.8
+med_b1,1.1
+ratio_b1,6.0
+gap_b2,9.9
+p10_b2,4.7
+p90_b2,14.6
+med_b2,8.0
+ratio_b2,3.1
+gap_b3,17.6
+p10_b3,9.9
+p90_b3,27.6
+med_b3,16.2
+ratio_b3,2.8
+gap_b4,19.6
+p10_b4,21.7
+p90_b4,41.3
+med_b4,30.2
+ratio_b4,1.9
+gap_b5,21.0
+p10_b5,25.3
+p90_b5,46.4
+med_b5,35.2
+ratio_b5,1.8
+gap_b6,22.1
+p10_b6,32.2
+p90_b6,54.3
+med_b6,41.2
+ratio_b6,1.7
+gap_share_feb,80%
+gap_share_mar,89%
+gap_end,26.3
+gap_base,22.1
+gap_share_feb_end,67%
+gap_added_later,4.2
+pc_point_1,-0.03
+pc_point_2,0.28
+pc_point_3,0.77
+gap_maxdiff_N,0.7
+gap_maxdiff_A,0.4
+ae_med_max,1.1
+ae_max,8.5
+ae_max_A,1.8
+ae_rank_min,0.97
+ae_uplift_med,2% to 6%
+ae_uplift_max,47%
+hr_H_age_E1,1.04 (0.97 to 1.11)
+hr_H_age_E2,0.89 (0.83 to 0.96)
+hr_H_age_P1,0.87 (0.81 to 0.93)
+hr_H_age_P2,0.84 (0.79 to 0.90)
+hr_H_age_P3,0.83 (0.77 to 0.88)
+hr_H_income_E1,0.98 (0.90 to 1.05)
+hr_H_income_E2,1.11 (1.02 to 1.20)
+hr_H_income_P1,1.02 (0.95 to 1.09)
+hr_H_income_P2,1.05 (0.98 to 1.13)
+hr_H_income_P3,1.11 (1.04 to 1.20)
+hr_H_cases_E1,1.18 (1.11 to 1.27)
+hr_H_cases_E2,1.23 (1.15 to 1.31)
+hr_H_cases_P1,1.12 (1.07 to 1.18)
+hr_H_cases_P2,1.06 (1.00 to 1.12)
+hr_H_cases_P3,1.11 (1.03 to 1.19)
+hr_A_age_E1,1.03 (0.97 to 1.11)
+hr_A_age_E2,0.89 (0.83 to 0.96)
+hr_A_age_P1,0.87 (0.81 to 0.93)
+hr_A_age_P2,0.84 (0.79 to 0.90)
+hr_A_age_P3,0.83 (0.77 to 0.88)
+hr_A_income_E1,0.98 (0.90 to 1.05)
+hr_A_income_E2,1.10 (1.02 to 1.19)
+hr_A_income_P1,1.02 (0.95 to 1.09)
+hr_A_income_P2,1.05 (0.98 to 1.13)
+hr_A_income_P3,1.11 (1.04 to 1.20)
+hr_A_cases_E1,1.17 (1.10 to 1.25)
+hr_A_cases_E2,1.22 (1.15 to 1.31)
+hr_A_cases_P1,1.12 (1.07 to 1.17)
+hr_A_cases_P2,1.05 (1.00 to 1.11)
+hr_A_cases_P3,1.11 (1.03 to 1.19)
+hr_N_age_E1,1.04 (0.97 to 1.11)
+hr_N_age_E2,0.91 (0.84 to 0.98)
+hr_N_age_P1,0.87 (0.81 to 0.93)
+hr_N_age_P2,0.84 (0.79 to 0.90)
+hr_N_age_P3,0.82 (0.77 to 0.88)
+hr_N_income_E1,0.97 (0.90 to 1.05)
+hr_N_income_E2,1.10 (1.02 to 1.20)
+hr_N_income_P1,1.02 (0.95 to 1.09)
+hr_N_income_P2,1.05 (0.98 to 1.13)
+hr_N_income_P3,1.11 (1.04 to 1.20)
+hr_N_cases_E1,1.19 (1.11 to 1.28)
+hr_N_cases_E2,1.25 (1.17 to 1.33)
+hr_N_cases_P1,1.12 (1.07 to 1.18)
+hr_N_cases_P2,1.05 (1.00 to 1.12)
+hr_N_cases_P3,1.11 (1.03 to 1.19)
+hr_HU_age_E1,1.04 (0.98 to 1.11)
+hr_HU_age_E2,0.87 (0.81 to 0.93)
+hr_HU_age_P1,0.87 (0.82 to 0.93)
+hr_HU_age_P2,0.85 (0.80 to 0.90)
+hr_HU_age_P3,0.83 (0.78 to 0.88)
+hr_HU_income_E1,0.98 (0.91 to 1.05)
+hr_HU_income_E2,1.13 (1.04 to 1.21)
+hr_HU_income_P1,1.01 (0.95 to 1.09)
+hr_HU_income_P2,1.04 (0.97 to 1.11)
+hr_HU_income_P3,1.12 (1.04 to 1.20)
+hr_HU_cases_E1,1.17 (1.10 to 1.26)
+hr_HU_cases_E2,1.19 (1.11 to 1.27)
+hr_HU_cases_P1,1.15 (1.09 to 1.21)
+hr_HU_cases_P2,1.06 (1.00 to 1.13)
+hr_HU_cases_P3,1.13 (1.05 to 1.22)
+hr_HE_age_E1,1.00 (0.94 to 1.07)
+hr_HE_age_E2,0.89 (0.83 to 0.96)
+hr_HE_age_P1,0.87 (0.81 to 0.93)
+hr_HE_age_P2,0.84 (0.79 to 0.90)
+hr_HE_age_P3,0.83 (0.77 to 0.88)
+hr_HE_income_E1,0.99 (0.92 to 1.07)
+hr_HE_income_E2,1.11 (1.02 to 1.20)
+hr_HE_income_P1,1.02 (0.95 to 1.09)
+hr_HE_income_P2,1.05 (0.98 to 1.12)
+hr_HE_income_P3,1.11 (1.04 to 1.20)
+hr_HE_cases_E1,1.18 (1.10 to 1.26)
+hr_HE_cases_E2,1.23 (1.15 to 1.31)
+hr_HE_cases_P1,1.12 (1.07 to 1.18)
+hr_HE_cases_P2,1.06 (1.00 to 1.12)
+hr_HE_cases_P3,1.11 (1.03 to 1.19)
+hr_main_age_P1,0.86 (0.80 to 0.92)
+hr_main_age_P2,0.83 (0.77 to 0.89)
+hr_main_age_P3,0.81 (0.76 to 0.87)
+hr_main_income_P1,1.00 (0.93 to 1.08)
+hr_main_income_P2,1.04 (0.96 to 1.12)
+hr_main_income_P3,1.09 (1.01 to 1.17)
+hr_main_cases_P1,1.08 (1.04 to 1.13)
+hr_main_cases_P2,1.04 (1.00 to 1.09)
+hr_main_cases_P3,1.07 (1.00 to 1.14)
+rng_age_E1,1.03 to 1.04
+rng_age_E2,0.89 to 0.91
+rng_income_E1,0.97 to 0.98
+rng_income_E2,1.10 to 1.11
+rng_cases_E1,1.17 to 1.19
+rng_cases_E2,1.22 to 1.25
+later_maxdiff,0.04
+elig_1a,1.5
+elig_1b,13.6
+elig_1a_pct,7%
+elig_1b_pct,60%
+elig_1b_med,67%
+elig_1b_min,48%
+elig_1b_max,83%
+pc_1,-0.03 (-0.05 to 0.00)
+pc_rank_1,-0.06
+pc_2,0.28 (0.26 to 0.30)
+pc_rank_2,0.23
+pc_3,0.77 (0.76 to 0.78)
+pc_rank_3,0.78
+rel_p10_early_restricted,0.64
+rel_p90_early_restricted,1.59
+rel_fold_early_restricted,2.5
+rel_p10_spring_2021,0.56
+rel_p90_spring_2021,1.83
+rel_fold_spring_2021,3.3
+rel_p10_later,0.61
+rel_p90_later,1.82
+rel_fold_later,3.0
+age3_1_early,1.03
+age3_1_spring,1.20
+age3_1_later,1.17
+age3_2_early,0.95
+age3_2_spring,0.91
+age3_2_later,0.95
+age3_3_early,1.05
+age3_3_spring,0.83
+age3_3_later,0.80
+n_ci,"4,133"
+n_ci_early,"1,278"
+fit_seconds,47
+mod_vs_rec_med,0.02
+mod_vs_rec_small,0.16

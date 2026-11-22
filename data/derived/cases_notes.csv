@@ -1,0 +1,9 @@
+type,year,dated_all_rows,dated_counties,dated_incomplete_address,negative_county_days,unknown_date_statewide,unknown_date_counties,pct_no_county,pct_unknown_date
+confirmed,2020,1572916,1563616,9300,0,47583,47168,0.59,2.94
+confirmed,2021,2179377,2170929,8448,0,65501,63285,0.39,2.92
+confirmed,2022,2647031,2574799,72232,0,,,2.73,
+confirmed,2023,164756,160779,3977,0,,,2.41,
+probable,2020,177276,173549,3727,0,5707,5599,2.1,3.12
+probable,2021,624825,623418,1407,0,24633,24428,0.23,3.79
+probable,2022,863768,855843,7925,0,,,0.92,
+probable,2023,134831,133926,905,0,,,0.67,

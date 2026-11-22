@@ -1,0 +1,19 @@
+00:09:55 |   PHR 1 M0: 492 test rows, 19 s 
+00:10:04 |   PHR 11 M0: 144 test rows, 9 s 
+00:10:14 |   PHR 2/3 M0: 588 test rows, 10 s 
+00:10:29 |   PHR 4/5N M0: 420 test rows, 15 s 
+00:10:39 |   PHR 6/5S M0: 192 test rows, 10 s 
+00:10:48 |   PHR 7 M0: 360 test rows, 9 s 
+00:10:56 |   PHR 8 M0: 287 test rows, 8 s 
+00:11:04 |   PHR 9/10 M0: 372 test rows, 8 s 
+00:11:35 |   PHR 1 M1: 492 test rows, 30 s 
+00:12:00 |   PHR 11 M1: 144 test rows, 25 s 
+00:12:26 |   PHR 2/3 M1: 588 test rows, 26 s 
+00:12:57 |   PHR 4/5N M1: 420 test rows, 31 s 
+00:13:35 |   PHR 6/5S M1: 192 test rows, 38 s 
+00:14:05 |   PHR 7 M1: 360 test rows, 30 s 
+00:14:35 |   PHR 8 M1: 287 test rows, 29 s 
+00:15:06 |   PHR 9/10 M1: 372 test rows, 32 s 
+00:16:08 |   PHR 1 M4: 492 test rows, 61 s 
+00:17:07 |   PHR 11 M4: 144 test rows, 59 s 
+NOTE: this run was stopped by hand at 00:17 during a duplicate refit of M4 (already completed by a parallel run, see 07_validate_regions_M4.log). The M0 and M1 results above are complete; nothing was written for M4 by this run.

@@ -1,0 +1,24 @@
+Warning message:
+22:47:33 | Population estimates: Texas 16+ on 1 July 2021 = 23,054,310; total = 29,572,672 
+22:47:35 | ACS: counties without a published median household income: Kenedy 
+                        source directed_pairs detail
+                        <char>          <int> <char>
+1: polygons (queen contiguity)           1448       
+2:       Census adjacency file           1448       
+3:            in polygons only              0       
+4:         in Census file only              0       
+22:47:36 | Neighbours: 724 undirected pairs; neighbours per county min 1, median 6, max 9 
+22:47:36 |   income for Kenedy filled with neighbour median 48963 (neighbours: Brooks, Hidalgo, Kleberg, Willacy) 
+22:47:36 | ACS vs population-estimates share aged 65+: correlation 0.7472; median abs difference 0.96 points; max 58.28 (Loving) 
+Key: <type, year>
+        type  year dated_all_rows dated_counties dated_incomplete_address negative_county_days unknown_date_statewide unknown_date_counties pct_no_county pct_unknown_date
+      <char> <int>          <num>          <num>                    <num>                <int>                  <num>                 <num>         <num>            <num>
+1: confirmed  2020        1572916        1563616                     9300                    0                  47583                 47168          0.59             2.94
+2: confirmed  2021        2179377        2170929                     8448                    0                  65501                 63285          0.39             2.92
+3: confirmed  2022        2647031        2574799                    72232                    0                     NA                    NA          2.73               NA
+4: confirmed  2023         164756         160779                     3977                    0                     NA                    NA          2.41               NA
+5:  probable  2020         177276         173549                     3727                    0                   5707                  5599          2.10             3.12
+6:  probable  2021         624825         623418                     1407                    0                  24633                 24428          0.23             3.79
+7:  probable  2022         863768         855843                     7925                    0                     NA                    NA          0.92               NA
+8:  probable  2023         134831         133926                      905                    0                     NA                    NA          0.67               NA
+22:47:49 | Cases: 2020-03-06 to 2023-05-10; 294894 county-days 

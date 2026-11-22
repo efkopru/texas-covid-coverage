@@ -1,0 +1,194 @@
+fips,county,k,label,cum_start,cum_end,y,pop16,at_risk,cov_start,exclude
+48047,Brooks,1,25 May 2021 - 22 Jun 2021,3135,3387,252,5405,2270,58,county: recorded count exceeds population estimate
+48047,Brooks,2,23 Jun 2021 - 21 Jul 2021,3387,3592,205,5405,2018,62.7,county: recorded count exceeds population estimate
+48047,Brooks,3,22 Jul 2021 - 21 Aug 2021,3592,4009,417,5405,1813,66.5,county: recorded count exceeds population estimate
+48047,Brooks,4,22 Aug 2021 - 23 Sep 2021,4009,4265,256,5405,1396,74.2,county: recorded count exceeds population estimate
+48047,Brooks,5,24 Sep 2021 - 25 Oct 2021,4265,4325,60,5405,1140,78.9,county: recorded count exceeds population estimate
+48047,Brooks,6,26 Oct 2021 - 20 Nov 2021,4325,4412,87,5405,1080,80,county: recorded count exceeds population estimate
+48047,Brooks,7,21 Nov 2021 - 21 Dec 2021,4412,4515,103,5405,993,81.6,county: recorded count exceeds population estimate
+48047,Brooks,8,22 Dec 2021 - 21 Jan 2022,4515,4614,99,5405,890,83.5,county: recorded count exceeds population estimate
+48047,Brooks,9,22 Jan 2022 - 25 Feb 2022,4614,4641,27,5405,791,85.4,county: recorded count exceeds population estimate
+48047,Brooks,10,26 Feb 2022 - 30 May 2022,4641,9902,5261,5405,764,85.9,county: recorded count exceeds population estimate
+48047,Brooks,11,31 May 2022 - 20 Nov 2022,9902,9985,83,5405,-4497,183.2,county: recorded count exceeds population estimate
+48047,Brooks,12,21 Nov 2022 - 09 May 2023,9985,9944,-41,5405,-4580,184.7,county: recorded count exceeds population estimate
+48061,Cameron,1,25 May 2021 - 22 Jun 2021,225473,241524,16051,317378,91905,71,county: recorded count exceeds population estimate
+48061,Cameron,2,23 Jun 2021 - 21 Jul 2021,241524,254847,13323,317378,75854,76.1,county: recorded count exceeds population estimate
+48061,Cameron,3,22 Jul 2021 - 21 Aug 2021,254847,276114,21267,317378,62531,80.3,county: recorded count exceeds population estimate
+48061,Cameron,4,22 Aug 2021 - 23 Sep 2021,276114,290055,13941,317378,41264,87,county: recorded count exceeds population estimate
+48061,Cameron,5,24 Sep 2021 - 25 Oct 2021,290055,297980,7925,317378,27323,91.4,county: recorded count exceeds population estimate
+48061,Cameron,6,26 Oct 2021 - 20 Nov 2021,297980,307559,9579,317378,19398,93.9,county: recorded count exceeds population estimate
+48061,Cameron,7,21 Nov 2021 - 21 Dec 2021,307559,319617,12058,317378,9819,96.9,county: recorded count exceeds population estimate
+48061,Cameron,8,22 Dec 2021 - 21 Jan 2022,319617,332649,13032,317378,-2239,100.7,county: recorded count exceeds population estimate
+48061,Cameron,9,22 Jan 2022 - 25 Feb 2022,332649,343536,10887,317378,-15271,104.8,county: recorded count exceeds population estimate
+48061,Cameron,10,26 Feb 2022 - 30 May 2022,343536,357842,14306,317378,-26158,108.2,county: recorded count exceeds population estimate
+48061,Cameron,11,31 May 2022 - 20 Nov 2022,357842,375536,17694,317378,-40464,112.7,county: recorded count exceeds population estimate
+48061,Cameron,12,21 Nov 2022 - 09 May 2023,375536,401060,25524,317378,-58158,118.3,county: recorded count exceeds population estimate
+48127,Dimmit,1,25 May 2021 - 22 Jun 2021,4699,5410,711,6387,1688,73.6,county: recorded count exceeds population estimate
+48127,Dimmit,2,23 Jun 2021 - 21 Jul 2021,5410,6203,793,6387,977,84.7,county: recorded count exceeds population estimate
+48127,Dimmit,3,22 Jul 2021 - 21 Aug 2021,6203,6924,721,6387,184,97.1,county: recorded count exceeds population estimate
+48127,Dimmit,4,22 Aug 2021 - 23 Sep 2021,6924,7164,240,6387,-537,108.4,county: recorded count exceeds population estimate
+48127,Dimmit,5,24 Sep 2021 - 25 Oct 2021,7164,7456,292,6387,-777,112.2,county: recorded count exceeds population estimate
+48127,Dimmit,6,26 Oct 2021 - 20 Nov 2021,7456,7685,229,6387,-1069,116.7,county: recorded count exceeds population estimate
+48127,Dimmit,7,21 Nov 2021 - 21 Dec 2021,7685,8341,656,6387,-1298,120.3,county: recorded count exceeds population estimate
+48127,Dimmit,8,22 Dec 2021 - 21 Jan 2022,8341,8719,378,6387,-1954,130.6,county: recorded count exceeds population estimate
+48127,Dimmit,9,22 Jan 2022 - 25 Feb 2022,8719,9075,356,6387,-2332,136.5,county: recorded count exceeds population estimate
+48127,Dimmit,10,26 Feb 2022 - 30 May 2022,9075,9334,259,6387,-2688,142.1,county: recorded count exceeds population estimate
+48127,Dimmit,11,31 May 2022 - 20 Nov 2022,9334,9472,138,6387,-2947,146.1,county: recorded count exceeds population estimate
+48127,Dimmit,12,21 Nov 2022 - 09 May 2023,9472,9487,15,6387,-3085,148.3,county: recorded count exceeds population estimate
+48131,Duval,1,25 May 2021 - 22 Jun 2021,5177,5412,235,7850,2673,65.9,county: recorded count exceeds population estimate
+48131,Duval,2,23 Jun 2021 - 21 Jul 2021,5412,5706,294,7850,2438,68.9,county: recorded count exceeds population estimate
+48131,Duval,3,22 Jul 2021 - 21 Aug 2021,5706,6454,748,7850,2144,72.7,county: recorded count exceeds population estimate
+48131,Duval,4,22 Aug 2021 - 23 Sep 2021,6454,6964,510,7850,1396,82.2,county: recorded count exceeds population estimate
+48131,Duval,5,24 Sep 2021 - 25 Oct 2021,6964,7103,139,7850,886,88.7,county: recorded count exceeds population estimate
+48131,Duval,6,26 Oct 2021 - 20 Nov 2021,7103,7236,133,7850,747,90.5,county: recorded count exceeds population estimate
+48131,Duval,7,21 Nov 2021 - 21 Dec 2021,7236,7391,155,7850,614,92.2,county: recorded count exceeds population estimate
+48131,Duval,8,22 Dec 2021 - 21 Jan 2022,7391,7569,178,7850,459,94.2,county: recorded count exceeds population estimate
+48131,Duval,9,22 Jan 2022 - 25 Feb 2022,7569,7665,96,7850,281,96.4,county: recorded count exceeds population estimate
+48131,Duval,10,26 Feb 2022 - 30 May 2022,7665,7765,100,7850,185,97.6,county: recorded count exceeds population estimate
+48131,Duval,11,31 May 2022 - 20 Nov 2022,7765,7896,131,7850,85,98.9,county: recorded count exceeds population estimate
+48131,Duval,12,21 Nov 2022 - 09 May 2023,7896,7958,62,7850,-46,100.6,county: recorded count exceeds population estimate
+48141,El Paso,1,25 May 2021 - 22 Jun 2021,453353,488970,35617,673152,219799,67.3,county: recorded count exceeds population estimate
+48141,El Paso,2,23 Jun 2021 - 21 Jul 2021,488970,515654,26684,673152,184182,72.6,county: recorded count exceeds population estimate
+48141,El Paso,3,22 Jul 2021 - 21 Aug 2021,515654,542135,26481,673152,157498,76.6,county: recorded count exceeds population estimate
+48141,El Paso,4,22 Aug 2021 - 23 Sep 2021,542135,558417,16282,673152,131017,80.5,county: recorded count exceeds population estimate
+48141,El Paso,5,24 Sep 2021 - 25 Oct 2021,558417,571275,12858,673152,114735,83,county: recorded count exceeds population estimate
+48141,El Paso,6,26 Oct 2021 - 20 Nov 2021,571275,588634,17359,673152,101877,84.9,county: recorded count exceeds population estimate
+48141,El Paso,7,21 Nov 2021 - 21 Dec 2021,588634,610706,22072,673152,84518,87.4,county: recorded count exceeds population estimate
+48141,El Paso,8,22 Dec 2021 - 21 Jan 2022,610706,631205,20499,673152,62446,90.7,county: recorded count exceeds population estimate
+48141,El Paso,9,22 Jan 2022 - 25 Feb 2022,631205,659409,28204,673152,41947,93.8,county: recorded count exceeds population estimate
+48141,El Paso,10,26 Feb 2022 - 30 May 2022,659409,689025,29616,673152,13743,98,county: recorded count exceeds population estimate
+48141,El Paso,11,31 May 2022 - 20 Nov 2022,689025,726350,37325,673152,-15873,102.4,county: recorded count exceeds population estimate
+48141,El Paso,12,21 Nov 2022 - 09 May 2023,726350,761830,35480,673152,-53198,107.9,county: recorded count exceeds population estimate
+48163,Frio,1,25 May 2021 - 22 Jun 2021,6488,6905,417,13780,7292,47.1,county: recorded count exceeds population estimate
+48163,Frio,2,23 Jun 2021 - 21 Jul 2021,6905,7351,446,13780,6875,50.1,county: recorded count exceeds population estimate
+48163,Frio,3,22 Jul 2021 - 21 Aug 2021,7351,8854,1503,13780,6429,53.3,county: recorded count exceeds population estimate
+48163,Frio,4,22 Aug 2021 - 23 Sep 2021,8854,10221,1367,13780,4926,64.3,county: recorded count exceeds population estimate
+48163,Frio,5,24 Sep 2021 - 25 Oct 2021,10221,10850,629,13780,3559,74.2,county: recorded count exceeds population estimate
+48163,Frio,6,26 Oct 2021 - 20 Nov 2021,10850,11687,837,13780,2930,78.7,county: recorded count exceeds population estimate
+48163,Frio,7,21 Nov 2021 - 21 Dec 2021,11687,12422,735,13780,2093,84.8,county: recorded count exceeds population estimate
+48163,Frio,8,22 Dec 2021 - 21 Jan 2022,12422,12921,499,13780,1358,90.1,county: recorded count exceeds population estimate
+48163,Frio,9,22 Jan 2022 - 25 Feb 2022,12921,13597,676,13780,859,93.8,county: recorded count exceeds population estimate
+48163,Frio,10,26 Feb 2022 - 30 May 2022,13597,15814,2217,13780,183,98.7,county: recorded count exceeds population estimate
+48163,Frio,11,31 May 2022 - 20 Nov 2022,15814,16701,887,13780,-2034,114.8,county: recorded count exceeds population estimate
+48163,Frio,12,21 Nov 2022 - 09 May 2023,16701,17077,376,13780,-2921,121.2,county: recorded count exceeds population estimate
+48215,Hidalgo,1,25 May 2021 - 22 Jun 2021,436227,472432,36205,644648,208421,67.7,county: recorded count exceeds population estimate
+48215,Hidalgo,2,23 Jun 2021 - 21 Jul 2021,472432,499841,27409,644648,172216,73.3,county: recorded count exceeds population estimate
+48215,Hidalgo,3,22 Jul 2021 - 21 Aug 2021,499841,544562,44721,644648,144807,77.5,county: recorded count exceeds population estimate
+48215,Hidalgo,4,22 Aug 2021 - 23 Sep 2021,544562,575288,30726,644648,100086,84.5,county: recorded count exceeds population estimate
+48215,Hidalgo,5,24 Sep 2021 - 25 Oct 2021,575288,588230,12942,644648,69360,89.2,county: recorded count exceeds population estimate
+48215,Hidalgo,6,26 Oct 2021 - 20 Nov 2021,588230,603571,15341,644648,56418,91.2,county: recorded count exceeds population estimate
+48215,Hidalgo,7,21 Nov 2021 - 21 Dec 2021,603571,633190,29619,644648,41077,93.6,county: recorded count exceeds population estimate
+48215,Hidalgo,8,22 Dec 2021 - 21 Jan 2022,633190,666087,32897,644648,11458,98.2,county: recorded count exceeds population estimate
+48215,Hidalgo,9,22 Jan 2022 - 25 Feb 2022,666087,693630,27543,644648,-21439,103.3,county: recorded count exceeds population estimate
+48215,Hidalgo,10,26 Feb 2022 - 30 May 2022,693630,765153,71523,644648,-48982,107.6,county: recorded count exceeds population estimate
+48215,Hidalgo,11,31 May 2022 - 20 Nov 2022,765153,848600,83447,644648,-120505,118.7,county: recorded count exceeds population estimate
+48215,Hidalgo,12,21 Nov 2022 - 09 May 2023,848600,904132,55532,644648,-203952,131.6,county: recorded count exceeds population estimate
+48229,Hudspeth,1,25 May 2021 - 22 Jun 2021,2507,2629,122,2692,185,93.1,county: recorded count exceeds population estimate
+48229,Hudspeth,2,23 Jun 2021 - 21 Jul 2021,2629,2712,83,2692,63,97.7,county: recorded count exceeds population estimate
+48229,Hudspeth,3,22 Jul 2021 - 21 Aug 2021,2712,2963,251,2692,-20,100.7,county: recorded count exceeds population estimate
+48229,Hudspeth,4,22 Aug 2021 - 23 Sep 2021,2963,3040,77,2692,-271,110.1,county: recorded count exceeds population estimate
+48229,Hudspeth,5,24 Sep 2021 - 25 Oct 2021,3040,3118,78,2692,-348,112.9,county: recorded count exceeds population estimate
+48229,Hudspeth,6,26 Oct 2021 - 20 Nov 2021,3118,3207,89,2692,-426,115.8,county: recorded count exceeds population estimate
+48229,Hudspeth,7,21 Nov 2021 - 21 Dec 2021,3207,3278,71,2692,-515,119.1,county: recorded count exceeds population estimate
+48229,Hudspeth,8,22 Dec 2021 - 21 Jan 2022,3278,3386,108,2692,-586,121.8,county: recorded count exceeds population estimate
+48229,Hudspeth,9,22 Jan 2022 - 25 Feb 2022,3386,3475,89,2692,-694,125.8,county: recorded count exceeds population estimate
+48229,Hudspeth,10,26 Feb 2022 - 30 May 2022,3475,3551,76,2692,-783,129.1,county: recorded count exceeds population estimate
+48229,Hudspeth,11,31 May 2022 - 20 Nov 2022,3551,3650,99,2692,-859,131.9,county: recorded count exceeds population estimate
+48229,Hudspeth,12,21 Nov 2022 - 09 May 2023,3650,3668,18,2692,-958,135.6,county: recorded count exceeds population estimate
+48283,La Salle,12,21 Nov 2022 - 09 May 2023,5151,5234,83,5406,255,95.3,recorded coverage at or above 95% at interval start
+48301,Loving,1,25 May 2021 - 22 Jun 2021,32,34,2,32,0,100,county: recorded count exceeds population estimate
+48301,Loving,2,23 Jun 2021 - 21 Jul 2021,34,34,0,32,-2,106.2,county: recorded count exceeds population estimate
+48301,Loving,3,22 Jul 2021 - 21 Aug 2021,34,36,2,32,-2,106.2,county: recorded count exceeds population estimate
+48301,Loving,4,22 Aug 2021 - 23 Sep 2021,36,40,4,32,-4,112.5,county: recorded count exceeds population estimate
+48301,Loving,5,24 Sep 2021 - 25 Oct 2021,40,41,1,32,-8,125,county: recorded count exceeds population estimate
+48301,Loving,6,26 Oct 2021 - 20 Nov 2021,41,40,-1,32,-9,128.1,county: recorded count exceeds population estimate
+48301,Loving,7,21 Nov 2021 - 21 Dec 2021,40,40,0,32,-8,125,county: recorded count exceeds population estimate
+48301,Loving,8,22 Dec 2021 - 21 Jan 2022,40,41,1,32,-8,125,county: recorded count exceeds population estimate
+48301,Loving,9,22 Jan 2022 - 25 Feb 2022,41,41,0,32,-9,128.1,county: recorded count exceeds population estimate
+48301,Loving,10,26 Feb 2022 - 30 May 2022,41,41,0,32,-9,128.1,county: recorded count exceeds population estimate
+48301,Loving,11,31 May 2022 - 20 Nov 2022,41,43,2,32,-9,128.1,county: recorded count exceeds population estimate
+48301,Loving,12,21 Nov 2022 - 09 May 2023,43,44,1,32,-11,134.4,county: recorded count exceeds population estimate
+48323,Maverick,1,25 May 2021 - 22 Jun 2021,31102,34137,3035,42158,11056,73.8,county: recorded count exceeds population estimate
+48323,Maverick,2,23 Jun 2021 - 21 Jul 2021,34137,36444,2307,42158,8021,81,county: recorded count exceeds population estimate
+48323,Maverick,3,22 Jul 2021 - 21 Aug 2021,36444,42778,6334,42158,5714,86.4,county: recorded count exceeds population estimate
+48323,Maverick,4,22 Aug 2021 - 23 Sep 2021,42778,45487,2709,42158,-620,101.5,county: recorded count exceeds population estimate
+48323,Maverick,5,24 Sep 2021 - 25 Oct 2021,45487,46636,1149,42158,-3329,107.9,county: recorded count exceeds population estimate
+48323,Maverick,6,26 Oct 2021 - 20 Nov 2021,46636,48924,2288,42158,-4478,110.6,county: recorded count exceeds population estimate
+48323,Maverick,7,21 Nov 2021 - 21 Dec 2021,48924,52027,3103,42158,-6766,116,county: recorded count exceeds population estimate
+48323,Maverick,8,22 Dec 2021 - 21 Jan 2022,52027,55087,3060,42158,-9869,123.4,county: recorded count exceeds population estimate
+48323,Maverick,9,22 Jan 2022 - 25 Feb 2022,55087,57873,2786,42158,-12929,130.7,county: recorded count exceeds population estimate
+48323,Maverick,10,26 Feb 2022 - 30 May 2022,57873,64768,6895,42158,-15715,137.3,county: recorded count exceeds population estimate
+48323,Maverick,11,31 May 2022 - 20 Nov 2022,64768,83647,18879,42158,-22610,153.6,county: recorded count exceeds population estimate
+48323,Maverick,12,21 Nov 2022 - 09 May 2023,83647,98565,14918,42158,-41489,198.4,county: recorded count exceeds population estimate
+48377,Presidio,1,25 May 2021 - 22 Jun 2021,4959,5240,281,4754,-205,104.3,county: recorded count exceeds population estimate
+48377,Presidio,2,23 Jun 2021 - 21 Jul 2021,5240,5349,109,4754,-486,110.2,county: recorded count exceeds population estimate
+48377,Presidio,3,22 Jul 2021 - 21 Aug 2021,5349,5592,243,4754,-595,112.5,county: recorded count exceeds population estimate
+48377,Presidio,4,22 Aug 2021 - 23 Sep 2021,5592,5853,261,4754,-838,117.6,county: recorded count exceeds population estimate
+48377,Presidio,5,24 Sep 2021 - 25 Oct 2021,5853,6013,160,4754,-1099,123.1,county: recorded count exceeds population estimate
+48377,Presidio,6,26 Oct 2021 - 20 Nov 2021,6013,6190,177,4754,-1259,126.5,county: recorded count exceeds population estimate
+48377,Presidio,7,21 Nov 2021 - 21 Dec 2021,6190,6354,164,4754,-1436,130.2,county: recorded count exceeds population estimate
+48377,Presidio,8,22 Dec 2021 - 21 Jan 2022,6354,6534,180,4754,-1600,133.7,county: recorded count exceeds population estimate
+48377,Presidio,9,22 Jan 2022 - 25 Feb 2022,6534,6771,237,4754,-1780,137.4,county: recorded count exceeds population estimate
+48377,Presidio,10,26 Feb 2022 - 30 May 2022,6771,6898,127,4754,-2017,142.4,county: recorded count exceeds population estimate
+48377,Presidio,11,31 May 2022 - 20 Nov 2022,6898,6965,67,4754,-2144,145.1,county: recorded count exceeds population estimate
+48377,Presidio,12,21 Nov 2022 - 09 May 2023,6965,7035,70,4754,-2211,146.5,county: recorded count exceeds population estimate
+48389,Reeves,1,25 May 2021 - 22 Jun 2021,5111,5620,509,10182,5071,50.2,county: recorded count exceeds population estimate
+48389,Reeves,2,23 Jun 2021 - 21 Jul 2021,5620,7193,1573,10182,4562,55.2,county: recorded count exceeds population estimate
+48389,Reeves,3,22 Jul 2021 - 21 Aug 2021,7193,8623,1430,10182,2989,70.6,county: recorded count exceeds population estimate
+48389,Reeves,4,22 Aug 2021 - 23 Sep 2021,8623,10139,1516,10182,1559,84.7,county: recorded count exceeds population estimate
+48389,Reeves,5,24 Sep 2021 - 25 Oct 2021,10139,11301,1162,10182,43,99.6,county: recorded count exceeds population estimate
+48389,Reeves,6,26 Oct 2021 - 20 Nov 2021,11301,12548,1247,10182,-1119,111,county: recorded count exceeds population estimate
+48389,Reeves,7,21 Nov 2021 - 21 Dec 2021,12548,14008,1460,10182,-2366,123.2,county: recorded count exceeds population estimate
+48389,Reeves,8,22 Dec 2021 - 21 Jan 2022,14008,14450,442,10182,-3826,137.6,county: recorded count exceeds population estimate
+48389,Reeves,9,22 Jan 2022 - 25 Feb 2022,14450,15371,921,10182,-4268,141.9,county: recorded count exceeds population estimate
+48389,Reeves,10,26 Feb 2022 - 30 May 2022,15371,18749,3378,10182,-5189,151,county: recorded count exceeds population estimate
+48389,Reeves,11,31 May 2022 - 20 Nov 2022,18749,22784,4035,10182,-8567,184.1,county: recorded count exceeds population estimate
+48389,Reeves,12,21 Nov 2022 - 09 May 2023,22784,23333,549,10182,-12602,223.8,county: recorded count exceeds population estimate
+48427,Starr,1,25 May 2021 - 22 Jun 2021,35987,37638,1651,47947,11960,75.1,county: recorded count exceeds population estimate
+48427,Starr,2,23 Jun 2021 - 21 Jul 2021,37638,39110,1472,47947,10309,78.5,county: recorded count exceeds population estimate
+48427,Starr,3,22 Jul 2021 - 21 Aug 2021,39110,42317,3207,47947,8837,81.6,county: recorded count exceeds population estimate
+48427,Starr,4,22 Aug 2021 - 23 Sep 2021,42317,44672,2355,47947,5630,88.3,county: recorded count exceeds population estimate
+48427,Starr,5,24 Sep 2021 - 25 Oct 2021,44672,45479,807,47947,3275,93.2,county: recorded count exceeds population estimate
+48427,Starr,6,26 Oct 2021 - 20 Nov 2021,45479,46671,1192,47947,2468,94.9,county: recorded count exceeds population estimate
+48427,Starr,7,21 Nov 2021 - 21 Dec 2021,46671,49596,2925,47947,1276,97.3,county: recorded count exceeds population estimate
+48427,Starr,8,22 Dec 2021 - 21 Jan 2022,49596,53516,3920,47947,-1649,103.4,county: recorded count exceeds population estimate
+48427,Starr,9,22 Jan 2022 - 25 Feb 2022,53516,56387,2871,47947,-5569,111.6,county: recorded count exceeds population estimate
+48427,Starr,10,26 Feb 2022 - 30 May 2022,56387,60981,4594,47947,-8440,117.6,county: recorded count exceeds population estimate
+48427,Starr,11,31 May 2022 - 20 Nov 2022,60981,62064,1083,47947,-13034,127.2,county: recorded count exceeds population estimate
+48427,Starr,12,21 Nov 2022 - 09 May 2023,62064,62387,323,47947,-14117,129.4,county: recorded count exceeds population estimate
+48465,Val Verde,1,25 May 2021 - 22 Jun 2021,21528,23020,1492,35905,14377,60,county: recorded count exceeds population estimate
+48465,Val Verde,2,23 Jun 2021 - 21 Jul 2021,23020,24435,1415,35905,12885,64.1,county: recorded count exceeds population estimate
+48465,Val Verde,3,22 Jul 2021 - 21 Aug 2021,24435,28993,4558,35905,11470,68.1,county: recorded count exceeds population estimate
+48465,Val Verde,4,22 Aug 2021 - 23 Sep 2021,28993,30642,1649,35905,6912,80.7,county: recorded count exceeds population estimate
+48465,Val Verde,5,24 Sep 2021 - 25 Oct 2021,30642,31706,1064,35905,5263,85.3,county: recorded count exceeds population estimate
+48465,Val Verde,6,26 Oct 2021 - 20 Nov 2021,31706,33060,1354,35905,4199,88.3,county: recorded count exceeds population estimate
+48465,Val Verde,7,21 Nov 2021 - 21 Dec 2021,33060,34555,1495,35905,2845,92.1,county: recorded count exceeds population estimate
+48465,Val Verde,8,22 Dec 2021 - 21 Jan 2022,34555,36150,1595,35905,1350,96.2,county: recorded count exceeds population estimate
+48465,Val Verde,9,22 Jan 2022 - 25 Feb 2022,36150,37841,1691,35905,-245,100.7,county: recorded count exceeds population estimate
+48465,Val Verde,10,26 Feb 2022 - 30 May 2022,37841,39117,1276,35905,-1936,105.4,county: recorded count exceeds population estimate
+48465,Val Verde,11,31 May 2022 - 20 Nov 2022,39117,40393,1276,35905,-3212,108.9,county: recorded count exceeds population estimate
+48465,Val Verde,12,21 Nov 2022 - 09 May 2023,40393,41021,628,35905,-4488,112.5,county: recorded count exceeds population estimate
+48479,Webb,1,25 May 2021 - 22 Jun 2021,156192,169139,12947,194896,38704,80.1,county: recorded count exceeds population estimate
+48479,Webb,2,23 Jun 2021 - 21 Jul 2021,169139,181340,12201,194896,25757,86.8,county: recorded count exceeds population estimate
+48479,Webb,3,22 Jul 2021 - 21 Aug 2021,181340,198687,17347,194896,13556,93,county: recorded count exceeds population estimate
+48479,Webb,4,22 Aug 2021 - 23 Sep 2021,198687,211154,12467,194896,-3791,101.9,county: recorded count exceeds population estimate
+48479,Webb,5,24 Sep 2021 - 25 Oct 2021,211154,219255,8101,194896,-16258,108.3,county: recorded count exceeds population estimate
+48479,Webb,6,26 Oct 2021 - 20 Nov 2021,219255,231844,12589,194896,-24359,112.5,county: recorded count exceeds population estimate
+48479,Webb,7,21 Nov 2021 - 21 Dec 2021,231844,242849,11005,194896,-36948,119,county: recorded count exceeds population estimate
+48479,Webb,8,22 Dec 2021 - 21 Jan 2022,242849,253538,10689,194896,-47953,124.6,county: recorded count exceeds population estimate
+48479,Webb,9,22 Jan 2022 - 25 Feb 2022,253538,271792,18254,194896,-58642,130.1,county: recorded count exceeds population estimate
+48479,Webb,10,26 Feb 2022 - 30 May 2022,271792,307355,35563,194896,-76896,139.5,county: recorded count exceeds population estimate
+48479,Webb,11,31 May 2022 - 20 Nov 2022,307355,345793,38438,194896,-112459,157.7,county: recorded count exceeds population estimate
+48479,Webb,12,21 Nov 2022 - 09 May 2023,345793,368195,22402,194896,-150897,177.4,county: recorded count exceeds population estimate
+48489,Willacy,1,25 May 2021 - 22 Jun 2021,9482,10358,876,16100,6618,58.9,county: recorded count exceeds population estimate
+48489,Willacy,2,23 Jun 2021 - 21 Jul 2021,10358,10986,628,16100,5742,64.3,county: recorded count exceeds population estimate
+48489,Willacy,3,22 Jul 2021 - 21 Aug 2021,10986,11951,965,16100,5114,68.2,county: recorded count exceeds population estimate
+48489,Willacy,4,22 Aug 2021 - 23 Sep 2021,11951,12856,905,16100,4149,74.2,county: recorded count exceeds population estimate
+48489,Willacy,5,24 Sep 2021 - 25 Oct 2021,12856,13296,440,16100,3244,79.9,county: recorded count exceeds population estimate
+48489,Willacy,6,26 Oct 2021 - 20 Nov 2021,13296,13735,439,16100,2804,82.6,county: recorded count exceeds population estimate
+48489,Willacy,7,21 Nov 2021 - 21 Dec 2021,13735,14107,372,16100,2365,85.3,county: recorded count exceeds population estimate
+48489,Willacy,8,22 Dec 2021 - 21 Jan 2022,14107,14700,593,16100,1993,87.6,county: recorded count exceeds population estimate
+48489,Willacy,9,22 Jan 2022 - 25 Feb 2022,14700,14941,241,16100,1400,91.3,county: recorded count exceeds population estimate
+48489,Willacy,10,26 Feb 2022 - 30 May 2022,14941,15369,428,16100,1159,92.8,county: recorded count exceeds population estimate
+48489,Willacy,11,31 May 2022 - 20 Nov 2022,15369,16095,726,16100,731,95.5,county: recorded count exceeds population estimate
+48489,Willacy,12,21 Nov 2022 - 09 May 2023,16095,16780,685,16100,5,100,county: recorded count exceeds population estimate

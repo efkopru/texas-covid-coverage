@@ -1,0 +1,5866 @@
+{
+  "id" : "8xkx-amqh",
+  "name" : "COVID-19 Vaccinations in the United States,County",
+  "assetType" : "dataset",
+  "attribution" : "IISInfo",
+  "averageRating" : 0,
+  "category" : "Vaccinations",
+  "createdAt" : 1621883212,
+  "description" : "Overall US COVID-19 Vaccine administration and vaccine equity data at county level. Data represents all vaccine partners including jurisdictional partner clinics, retail pharmacies, long-term care facilities, dialysis centers, Federal Emergency Management Agency and Health Resources and Services Administration partner sites, and federal entity facilities. ",
+  "diciBackend" : false,
+  "displayType" : "table",
+  "downloadCount" : 242274,
+  "hideFromCatalog" : false,
+  "hideFromDataJson" : false,
+  "licenseId" : "USGOV_WORKS",
+  "locked" : false,
+  "newBackend" : true,
+  "numberOfComments" : 2,
+  "oid" : 39112692,
+  "provenance" : "official",
+  "publicationAppendEnabled" : false,
+  "publicationDate" : 1670554492,
+  "publicationGroup" : 18329577,
+  "publicationStage" : "published",
+  "rowsUpdatedAt" : 1683870371,
+  "tableId" : 18985799,
+  "totalTimesRated" : 0,
+  "viewCount" : 560236,
+  "viewLastModified" : 1790122447,
+  "viewType" : "tabular",
+  "approvals" : [ {
+    "reviewedAt" : 1643066183,
+    "reviewedAutomatically" : true,
+    "state" : "approved",
+    "submissionId" : 5152002,
+    "submissionObject" : "public_audience_request",
+    "submissionOutcome" : "change_audience",
+    "submittedAt" : 1643066183,
+    "targetAudience" : "public",
+    "workflowId" : 2100,
+    "submissionDetails" : {
+      "permissionType" : "READ"
+    },
+    "submissionOutcomeApplication" : {
+      "endedAt" : 1643066183,
+      "failureCount" : 0,
+      "startedAt" : 1643066183,
+      "status" : "success"
+    },
+    "submitter" : {
+      "id" : "3suw-ciyu",
+      "displayName" : "NCIRD"
+    }
+  } ],
+  "clientContext" : {
+    "clientContextVariables" : [ ],
+    "inheritedVariables" : { }
+  },
+  "columns" : [ {
+    "id" : 568832800,
+    "name" : "Date",
+    "dataTypeName" : "calendar_date",
+    "description" : "Date data are reported on CDC COVID Data Tracker",
+    "fieldName" : "date",
+    "position" : 1,
+    "renderTypeName" : "calendar_date",
+    "tableColumnId" : 138084955,
+    "cachedContents" : {
+      "non_null" : "1962781",
+      "largest" : "2023-05-10T00:00:00.000",
+      "null" : "0",
+      "top" : [ {
+        "item" : "2022-04-27T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-04-28T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-04-29T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-04-30T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-01T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-02T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-03T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-04T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-05T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-06T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-07T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-08T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-09T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-10T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-11T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-12T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-13T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-14T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-15T00:00:00.000",
+        "count" : "3284"
+      }, {
+        "item" : "2022-05-16T00:00:00.000",
+        "count" : "3284"
+      } ],
+      "smallest" : "2020-12-13T00:00:00.000",
+      "count" : "1962781",
+      "cardinality" : "598"
+    },
+    "format" : {
+      "view" : "date"
+    }
+  }, {
+    "id" : 568832801,
+    "name" : "FIPS",
+    "dataTypeName" : "text",
+    "description" : "Federal Information Processing Standard State Code",
+    "fieldName" : "fips",
+    "position" : 2,
+    "renderTypeName" : "text",
+    "tableColumnId" : 138084954,
+    "cachedContents" : {
+      "non_null" : "1962781",
+      "largest" : "UNK",
+      "null" : "0",
+      "top" : [ {
+        "item" : "UNK",
+        "count" : "34829"
+      }, {
+        "item" : "01005",
+        "count" : "598"
+      }, {
+        "item" : "13253",
+        "count" : "598"
+      }, {
+        "item" : "01009",
+        "count" : "598"
+      }, {
+        "item" : "01011",
+        "count" : "598"
+      }, {
+        "item" : "01013",
+        "count" : "598"
+      }, {
+        "item" : "08021",
+        "count" : "598"
+      }, {
+        "item" : "01017",
+        "count" : "598"
+      }, {
+        "item" : "01019",
+        "count" : "598"
+      }, {
+        "item" : "01021",
+        "count" : "598"
+      }, {
+        "item" : "01023",
+        "count" : "598"
+      }, {
+        "item" : "01025",
+        "count" : "598"
+      }, {
+        "item" : "01027",
+        "count" : "598"
+      }, {
+        "item" : "01029",
+        "count" : "598"
+      }, {
+        "item" : "05033",
+        "count" : "598"
+      }, {
+        "item" : "01033",
+        "count" : "598"
+      }, {
+        "item" : "01035",
+        "count" : "598"
+      }, {
+        "item" : "01037",
+        "count" : "598"
+      }, {
+        "item" : "01039",
+        "count" : "598"
+      }, {
+        "item" : "01041",
+        "count" : "598"
+      } ],
+      "smallest" : "01001",
+      "count" : "1962781",
+      "cardinality" : "3225"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832802,
+    "name" : "MMWR_week",
+    "dataTypeName" : "number",
+    "description" : "MMWR Week",
+    "fieldName" : "mmwr_week",
+    "position" : 3,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084953,
+    "cachedContents" : {
+      "non_null" : "1962781",
+      "largest" : "53",
+      "null" : "0",
+      "top" : [ {
+        "item" : "1",
+        "count" : "52521"
+      }, {
+        "item" : "19",
+        "count" : "49245"
+      }, {
+        "item" : "18",
+        "count" : "49245"
+      }, {
+        "item" : "17",
+        "count" : "49245"
+      }, {
+        "item" : "16",
+        "count" : "49245"
+      }, {
+        "item" : "15",
+        "count" : "49245"
+      }, {
+        "item" : "14",
+        "count" : "49243"
+      }, {
+        "item" : "8",
+        "count" : "49238"
+      }, {
+        "item" : "9",
+        "count" : "49238"
+      }, {
+        "item" : "10",
+        "count" : "49238"
+      }, {
+        "item" : "11",
+        "count" : "49238"
+      }, {
+        "item" : "7",
+        "count" : "49238"
+      }, {
+        "item" : "6",
+        "count" : "49238"
+      }, {
+        "item" : "4",
+        "count" : "49238"
+      }, {
+        "item" : "5",
+        "count" : "49238"
+      }, {
+        "item" : "2",
+        "count" : "49238"
+      }, {
+        "item" : "12",
+        "count" : "49235"
+      }, {
+        "item" : "13",
+        "count" : "49231"
+      }, {
+        "item" : "52",
+        "count" : "49223"
+      }, {
+        "item" : "51",
+        "count" : "49046"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "53"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832803,
+    "name" : "Recip_County",
+    "dataTypeName" : "text",
+    "description" : "County of residence",
+    "fieldName" : "recip_county",
+    "position" : 4,
+    "renderTypeName" : "text",
+    "tableColumnId" : 138084952,
+    "cachedContents" : {
+      "non_null" : "1962781",
+      "largest" : "Ziebach County",
+      "null" : "0",
+      "top" : [ {
+        "item" : "Unknown County",
+        "count" : "34829"
+      }, {
+        "item" : "Washington County",
+        "count" : "17940"
+      }, {
+        "item" : "Jefferson County",
+        "count" : "14950"
+      }, {
+        "item" : "Franklin County",
+        "count" : "14352"
+      }, {
+        "item" : "Lincoln County",
+        "count" : "13754"
+      }, {
+        "item" : "Jackson County",
+        "count" : "13754"
+      }, {
+        "item" : "Madison County",
+        "count" : "11362"
+      }, {
+        "item" : "Clay County",
+        "count" : "10764"
+      }, {
+        "item" : "Montgomery County",
+        "count" : "10764"
+      }, {
+        "item" : "Union County",
+        "count" : "10166"
+      }, {
+        "item" : "Marion County",
+        "count" : "10166"
+      }, {
+        "item" : "Monroe County",
+        "count" : "10166"
+      }, {
+        "item" : "Wayne County",
+        "count" : "9568"
+      }, {
+        "item" : "Warren County",
+        "count" : "8372"
+      }, {
+        "item" : "Grant County",
+        "count" : "8372"
+      }, {
+        "item" : "Greene County",
+        "count" : "8372"
+      }, {
+        "item" : "Carroll County",
+        "count" : "7774"
+      }, {
+        "item" : "Clark County",
+        "count" : "7176"
+      }, {
+        "item" : "Lake County",
+        "count" : "7176"
+      }, {
+        "item" : "Adams County",
+        "count" : "7176"
+      } ],
+      "smallest" : "Abbeville County",
+      "count" : "1962781",
+      "cardinality" : "1960"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832804,
+    "name" : "Recip_State",
+    "dataTypeName" : "text",
+    "description" : "Recipient State",
+    "fieldName" : "recip_state",
+    "position" : 5,
+    "renderTypeName" : "text",
+    "tableColumnId" : 138084951,
+    "cachedContents" : {
+      "non_null" : "1962700",
+      "largest" : "WY",
+      "null" : "81",
+      "top" : [ {
+        "item" : "TX",
+        "count" : "152177"
+      }, {
+        "item" : "GA",
+        "count" : "95677"
+      }, {
+        "item" : "VA",
+        "count" : "80130"
+      }, {
+        "item" : "KY",
+        "count" : "72356"
+      }, {
+        "item" : "MO",
+        "count" : "69365"
+      }, {
+        "item" : "KS",
+        "count" : "63385"
+      }, {
+        "item" : "IL",
+        "count" : "61592"
+      }, {
+        "item" : "NC",
+        "count" : "60396"
+      }, {
+        "item" : "IA",
+        "count" : "59797"
+      }, {
+        "item" : "TN",
+        "count" : "57405"
+      }, {
+        "item" : "NE",
+        "count" : "56209"
+      }, {
+        "item" : "IN",
+        "count" : "55611"
+      }, {
+        "item" : "OH",
+        "count" : "53219"
+      }, {
+        "item" : "MN",
+        "count" : "52622"
+      }, {
+        "item" : "MI",
+        "count" : "50230"
+      }, {
+        "item" : "MS",
+        "count" : "49631"
+      }, {
+        "item" : "PR",
+        "count" : "47238"
+      }, {
+        "item" : "OK",
+        "count" : "46641"
+      }, {
+        "item" : "AR",
+        "count" : "45445"
+      }, {
+        "item" : "WI",
+        "count" : "43652"
+      } ],
+      "smallest" : "AK",
+      "count" : "1962781",
+      "cardinality" : "60"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832805,
+    "name" : "Completeness_pct",
+    "dataTypeName" : "number",
+    "description" : "Represents the proportion of people with a completed primary series whose Federal Information Processing Standards (FIPS) code is reported and matches a valid county FIPS code in the jurisdiction.  ",
+    "fieldName" : "completeness_pct",
+    "position" : 6,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084942,
+    "cachedContents" : {
+      "non_null" : "1957108",
+      "largest" : "100",
+      "null" : "5673",
+      "top" : [ {
+        "item" : "0",
+        "count" : "206776"
+      }, {
+        "item" : "97.8",
+        "count" : "58164"
+      }, {
+        "item" : "98.6",
+        "count" : "56401"
+      }, {
+        "item" : "97.4",
+        "count" : "48094"
+      }, {
+        "item" : "97.6",
+        "count" : "47202"
+      }, {
+        "item" : "98.7",
+        "count" : "45926"
+      }, {
+        "item" : "97.5",
+        "count" : "37539"
+      }, {
+        "item" : "98.9",
+        "count" : "36644"
+      }, {
+        "item" : "94",
+        "count" : "33915"
+      }, {
+        "item" : "98.3",
+        "count" : "32684"
+      }, {
+        "item" : "97.1",
+        "count" : "32393"
+      }, {
+        "item" : "93.6",
+        "count" : "30363"
+      }, {
+        "item" : "97.3",
+        "count" : "29755"
+      }, {
+        "item" : "97.7",
+        "count" : "28610"
+      }, {
+        "item" : "97.9",
+        "count" : "28428"
+      }, {
+        "item" : "96.8",
+        "count" : "28119"
+      }, {
+        "item" : "96.9",
+        "count" : "26723"
+      }, {
+        "item" : "99.1",
+        "count" : "25769"
+      }, {
+        "item" : "98.1",
+        "count" : "25665"
+      }, {
+        "item" : "91.3",
+        "count" : "25012"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "616"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832806,
+    "name" : "Administered_Dose1_Recip",
+    "dataTypeName" : "number",
+    "description" : "People with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_recip",
+    "position" : 7,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505246,
+    "cachedContents" : {
+      "non_null" : "1904494",
+      "largest" : "8444862",
+      "null" : "58287",
+      "top" : [ {
+        "item" : "0",
+        "count" : "203648"
+      }, {
+        "item" : "527",
+        "count" : "209"
+      }, {
+        "item" : "804",
+        "count" : "206"
+      }, {
+        "item" : "1161",
+        "count" : "201"
+      }, {
+        "item" : "513",
+        "count" : "195"
+      }, {
+        "item" : "1452",
+        "count" : "195"
+      }, {
+        "item" : "240",
+        "count" : "194"
+      }, {
+        "item" : "772",
+        "count" : "192"
+      }, {
+        "item" : "1244",
+        "count" : "189"
+      }, {
+        "item" : "1117",
+        "count" : "185"
+      }, {
+        "item" : "861",
+        "count" : "184"
+      }, {
+        "item" : "620",
+        "count" : "183"
+      }, {
+        "item" : "1189",
+        "count" : "182"
+      }, {
+        "item" : "1113",
+        "count" : "182"
+      }, {
+        "item" : "1150",
+        "count" : "180"
+      }, {
+        "item" : "423",
+        "count" : "179"
+      }, {
+        "item" : "763",
+        "count" : "179"
+      }, {
+        "item" : "1142",
+        "count" : "178"
+      }, {
+        "item" : "994",
+        "count" : "176"
+      }, {
+        "item" : "1326",
+        "count" : "176"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "251698"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832807,
+    "name" : "Administered_Dose1_Pop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of Total Pop with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_pop_pct",
+    "position" : 8,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505248,
+    "cachedContents" : {
+      "non_null" : "1938696",
+      "largest" : "100",
+      "null" : "24085",
+      "top" : [ {
+        "item" : "0",
+        "count" : "272965"
+      }, {
+        "item" : "95",
+        "count" : "18340"
+      }, {
+        "item" : "47.4",
+        "count" : "4065"
+      }, {
+        "item" : "47.5",
+        "count" : "3921"
+      }, {
+        "item" : "47.6",
+        "count" : "3916"
+      }, {
+        "item" : "47.8",
+        "count" : "3877"
+      }, {
+        "item" : "48.6",
+        "count" : "3865"
+      }, {
+        "item" : "46.6",
+        "count" : "3863"
+      }, {
+        "item" : "50.5",
+        "count" : "3863"
+      }, {
+        "item" : "46.3",
+        "count" : "3841"
+      }, {
+        "item" : "46.2",
+        "count" : "3839"
+      }, {
+        "item" : "49",
+        "count" : "3836"
+      }, {
+        "item" : "45.2",
+        "count" : "3829"
+      }, {
+        "item" : "44.9",
+        "count" : "3822"
+      }, {
+        "item" : "47.7",
+        "count" : "3800"
+      }, {
+        "item" : "51.5",
+        "count" : "3796"
+      }, {
+        "item" : "50.8",
+        "count" : "3796"
+      }, {
+        "item" : "54.4",
+        "count" : "3795"
+      }, {
+        "item" : "48.3",
+        "count" : "3794"
+      }, {
+        "item" : "47.2",
+        "count" : "3793"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "1001"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832808,
+    "name" : "Administered_Dose1_Recip_5Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people 5+ with at least one dose based on the jurisdiction where recipient lives",
+    "fieldName" : "administered_dose1_recip_5plus",
+    "position" : 9,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505251,
+    "cachedContents" : {
+      "non_null" : "747170",
+      "largest" : "8372986",
+      "null" : "1215611",
+      "top" : [ {
+        "item" : "0",
+        "count" : "2070"
+      }, {
+        "item" : "1242",
+        "count" : "126"
+      }, {
+        "item" : "1863",
+        "count" : "111"
+      }, {
+        "item" : "251",
+        "count" : "111"
+      }, {
+        "item" : "513",
+        "count" : "110"
+      }, {
+        "item" : "278",
+        "count" : "100"
+      }, {
+        "item" : "2142",
+        "count" : "100"
+      }, {
+        "item" : "527",
+        "count" : "97"
+      }, {
+        "item" : "423",
+        "count" : "96"
+      }, {
+        "item" : "108",
+        "count" : "96"
+      }, {
+        "item" : "3669",
+        "count" : "96"
+      }, {
+        "item" : "1444",
+        "count" : "95"
+      }, {
+        "item" : "1113",
+        "count" : "93"
+      }, {
+        "item" : "240",
+        "count" : "92"
+      }, {
+        "item" : "763",
+        "count" : "92"
+      }, {
+        "item" : "45",
+        "count" : "91"
+      }, {
+        "item" : "1142",
+        "count" : "88"
+      }, {
+        "item" : "1410",
+        "count" : "85"
+      }, {
+        "item" : "368",
+        "count" : "84"
+      }, {
+        "item" : "1304",
+        "count" : "83"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "178897"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832809,
+    "name" : "Administered_Dose1_Recip_5PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of 5+ population with at least one dose based on the jurisdiction where recipient lives",
+    "fieldName" : "administered_dose1_recip_5pluspop_pct",
+    "position" : 10,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505265,
+    "cachedContents" : {
+      "non_null" : "751950",
+      "largest" : "99.9",
+      "null" : "1210831",
+      "top" : [ {
+        "item" : "95",
+        "count" : "31113"
+      }, {
+        "item" : "0",
+        "count" : "20922"
+      }, {
+        "item" : "57.2",
+        "count" : "2259"
+      }, {
+        "item" : "58.1",
+        "count" : "2247"
+      }, {
+        "item" : "59.5",
+        "count" : "2231"
+      }, {
+        "item" : "57.1",
+        "count" : "2206"
+      }, {
+        "item" : "59.7",
+        "count" : "2203"
+      }, {
+        "item" : "57.9",
+        "count" : "2201"
+      }, {
+        "item" : "57.4",
+        "count" : "2185"
+      }, {
+        "item" : "57.5",
+        "count" : "2183"
+      }, {
+        "item" : "59.9",
+        "count" : "2178"
+      }, {
+        "item" : "59.2",
+        "count" : "2177"
+      }, {
+        "item" : "59.6",
+        "count" : "2166"
+      }, {
+        "item" : "57",
+        "count" : "2164"
+      }, {
+        "item" : "56.1",
+        "count" : "2163"
+      }, {
+        "item" : "60.4",
+        "count" : "2159"
+      }, {
+        "item" : "53.9",
+        "count" : "2147"
+      }, {
+        "item" : "60.1",
+        "count" : "2144"
+      }, {
+        "item" : "55",
+        "count" : "2143"
+      }, {
+        "item" : "57.7",
+        "count" : "2133"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "881"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832810,
+    "name" : "Administered_Dose1_Recip_12Plus",
+    "dataTypeName" : "number",
+    "description" : "People 12+ with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_recip_12plus",
+    "position" : 11,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505250,
+    "cachedContents" : {
+      "non_null" : "1845201",
+      "largest" : "7982095",
+      "null" : "117580",
+      "top" : [ {
+        "item" : "0",
+        "count" : "201775"
+      }, {
+        "item" : "1222",
+        "count" : "240"
+      }, {
+        "item" : "798",
+        "count" : "221"
+      }, {
+        "item" : "245",
+        "count" : "196"
+      }, {
+        "item" : "1150",
+        "count" : "190"
+      }, {
+        "item" : "421",
+        "count" : "181"
+      }, {
+        "item" : "1268",
+        "count" : "181"
+      }, {
+        "item" : "1126",
+        "count" : "177"
+      }, {
+        "item" : "1317",
+        "count" : "177"
+      }, {
+        "item" : "1420",
+        "count" : "175"
+      }, {
+        "item" : "1114",
+        "count" : "175"
+      }, {
+        "item" : "876",
+        "count" : "174"
+      }, {
+        "item" : "755",
+        "count" : "173"
+      }, {
+        "item" : "1071",
+        "count" : "173"
+      }, {
+        "item" : "1524",
+        "count" : "172"
+      }, {
+        "item" : "1843",
+        "count" : "172"
+      }, {
+        "item" : "749",
+        "count" : "170"
+      }, {
+        "item" : "648",
+        "count" : "169"
+      }, {
+        "item" : "984",
+        "count" : "169"
+      }, {
+        "item" : "858",
+        "count" : "168"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "247499"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832811,
+    "name" : "Administered_Dose1_Recip_12PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of 12+ Pop with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_recip_12pluspop_pct",
+    "position" : 12,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505244,
+    "cachedContents" : {
+      "non_null" : "1914183",
+      "largest" : "100.0",
+      "null" : "48598",
+      "top" : [ {
+        "item" : "0",
+        "count" : "304225"
+      }, {
+        "item" : "95",
+        "count" : "43975"
+      }, {
+        "item" : "55.4",
+        "count" : "3505"
+      }, {
+        "item" : "57.7",
+        "count" : "3484"
+      }, {
+        "item" : "57.5",
+        "count" : "3456"
+      }, {
+        "item" : "54.5",
+        "count" : "3423"
+      }, {
+        "item" : "58.9",
+        "count" : "3389"
+      }, {
+        "item" : "57.8",
+        "count" : "3379"
+      }, {
+        "item" : "53.8",
+        "count" : "3368"
+      }, {
+        "item" : "55.2",
+        "count" : "3365"
+      }, {
+        "item" : "55.9",
+        "count" : "3344"
+      }, {
+        "item" : "58",
+        "count" : "3344"
+      }, {
+        "item" : "55.0",
+        "count" : "3339"
+      }, {
+        "item" : "58.1",
+        "count" : "3339"
+      }, {
+        "item" : "63.0",
+        "count" : "3338"
+      }, {
+        "item" : "54.2",
+        "count" : "3331"
+      }, {
+        "item" : "54.3",
+        "count" : "3327"
+      }, {
+        "item" : "53.9",
+        "count" : "3326"
+      }, {
+        "item" : "99.9",
+        "count" : "3324"
+      }, {
+        "item" : "61.9",
+        "count" : "3323"
+      } ],
+      "smallest" : "0.0",
+      "count" : "1962781",
+      "cardinality" : "1001"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832812,
+    "name" : "Administered_Dose1_Recip_18Plus",
+    "dataTypeName" : "number",
+    "description" : "People 18+ with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_recip_18plus",
+    "position" : 13,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505243,
+    "cachedContents" : {
+      "non_null" : "1863398",
+      "largest" : "7323682",
+      "null" : "99383",
+      "top" : [ {
+        "item" : "0",
+        "count" : "203648"
+      }, {
+        "item" : "1176",
+        "count" : "217"
+      }, {
+        "item" : "219",
+        "count" : "214"
+      }, {
+        "item" : "1108",
+        "count" : "209"
+      }, {
+        "item" : "780",
+        "count" : "209"
+      }, {
+        "item" : "670",
+        "count" : "202"
+      }, {
+        "item" : "362",
+        "count" : "198"
+      }, {
+        "item" : "1182",
+        "count" : "197"
+      }, {
+        "item" : "820",
+        "count" : "194"
+      }, {
+        "item" : "1440",
+        "count" : "190"
+      }, {
+        "item" : "237",
+        "count" : "187"
+      }, {
+        "item" : "818",
+        "count" : "186"
+      }, {
+        "item" : "292",
+        "count" : "185"
+      }, {
+        "item" : "489",
+        "count" : "181"
+      }, {
+        "item" : "2048",
+        "count" : "179"
+      }, {
+        "item" : "817",
+        "count" : "179"
+      }, {
+        "item" : "268",
+        "count" : "178"
+      }, {
+        "item" : "234",
+        "count" : "178"
+      }, {
+        "item" : "1284",
+        "count" : "177"
+      }, {
+        "item" : "976",
+        "count" : "177"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "241608"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832813,
+    "name" : "Administered_Dose1_Recip_18PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of 18+ Pop with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_recip_18pluspop_pct",
+    "position" : 14,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505239,
+    "cachedContents" : {
+      "non_null" : "1932579",
+      "largest" : "100",
+      "null" : "30202",
+      "top" : [ {
+        "item" : "0",
+        "count" : "306166"
+      }, {
+        "item" : "95",
+        "count" : "48937"
+      }, {
+        "item" : "99.9",
+        "count" : "3592"
+      }, {
+        "item" : "59.4",
+        "count" : "3555"
+      }, {
+        "item" : "59.2",
+        "count" : "3553"
+      }, {
+        "item" : "56.9",
+        "count" : "3545"
+      }, {
+        "item" : "59.5",
+        "count" : "3539"
+      }, {
+        "item" : "59",
+        "count" : "3499"
+      }, {
+        "item" : "56.8",
+        "count" : "3497"
+      }, {
+        "item" : "56.7",
+        "count" : "3494"
+      }, {
+        "item" : "58.7",
+        "count" : "3485"
+      }, {
+        "item" : "67.2",
+        "count" : "3478"
+      }, {
+        "item" : "60.9",
+        "count" : "3478"
+      }, {
+        "item" : "61.3",
+        "count" : "3473"
+      }, {
+        "item" : "57.3",
+        "count" : "3466"
+      }, {
+        "item" : "66.8",
+        "count" : "3456"
+      }, {
+        "item" : "66.7",
+        "count" : "3430"
+      }, {
+        "item" : "66.5",
+        "count" : "3428"
+      }, {
+        "item" : "59.3",
+        "count" : "3424"
+      }, {
+        "item" : "56.4",
+        "count" : "3423"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "1001"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832814,
+    "name" : "Administered_Dose1_Recip_65Plus",
+    "dataTypeName" : "number",
+    "description" : "People 65+ with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_recip_65plus",
+    "position" : 15,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505240,
+    "cachedContents" : {
+      "non_null" : "1863503",
+      "largest" : "1385501",
+      "null" : "99278",
+      "top" : [ {
+        "item" : "0",
+        "count" : "203700"
+      }, {
+        "item" : "183",
+        "count" : "563"
+      }, {
+        "item" : "567",
+        "count" : "546"
+      }, {
+        "item" : "411",
+        "count" : "520"
+      }, {
+        "item" : "133",
+        "count" : "506"
+      }, {
+        "item" : "467",
+        "count" : "476"
+      }, {
+        "item" : "739",
+        "count" : "471"
+      }, {
+        "item" : "293",
+        "count" : "452"
+      }, {
+        "item" : "475",
+        "count" : "440"
+      }, {
+        "item" : "280",
+        "count" : "430"
+      }, {
+        "item" : "385",
+        "count" : "426"
+      }, {
+        "item" : "1014",
+        "count" : "423"
+      }, {
+        "item" : "481",
+        "count" : "422"
+      }, {
+        "item" : "564",
+        "count" : "414"
+      }, {
+        "item" : "648",
+        "count" : "414"
+      }, {
+        "item" : "369",
+        "count" : "412"
+      }, {
+        "item" : "671",
+        "count" : "412"
+      }, {
+        "item" : "142",
+        "count" : "410"
+      }, {
+        "item" : "1749",
+        "count" : "410"
+      }, {
+        "item" : "410",
+        "count" : "410"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "126696"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832815,
+    "name" : "Administered_Dose1_Recip_65PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of 65+ Pop with at least one Dose by State of Residence",
+    "fieldName" : "administered_dose1_recip_65pluspop_pct",
+    "position" : 16,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505242,
+    "cachedContents" : {
+      "non_null" : "1932684",
+      "largest" : "100",
+      "null" : "30097",
+      "top" : [ {
+        "item" : "0",
+        "count" : "306166"
+      }, {
+        "item" : "95",
+        "count" : "229529"
+      }, {
+        "item" : "99.9",
+        "count" : "29748"
+      }, {
+        "item" : "86.3",
+        "count" : "4426"
+      }, {
+        "item" : "86.2",
+        "count" : "4373"
+      }, {
+        "item" : "86.1",
+        "count" : "4283"
+      }, {
+        "item" : "86.9",
+        "count" : "4150"
+      }, {
+        "item" : "89.1",
+        "count" : "4117"
+      }, {
+        "item" : "87.2",
+        "count" : "4066"
+      }, {
+        "item" : "89",
+        "count" : "4036"
+      }, {
+        "item" : "86.7",
+        "count" : "4031"
+      }, {
+        "item" : "85.8",
+        "count" : "4022"
+      }, {
+        "item" : "85.5",
+        "count" : "4014"
+      }, {
+        "item" : "84.5",
+        "count" : "4012"
+      }, {
+        "item" : "86.5",
+        "count" : "4009"
+      }, {
+        "item" : "87.7",
+        "count" : "4008"
+      }, {
+        "item" : "86.4",
+        "count" : "4006"
+      }, {
+        "item" : "85.9",
+        "count" : "3983"
+      }, {
+        "item" : "85.6",
+        "count" : "3976"
+      }, {
+        "item" : "89.5",
+        "count" : "3973"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "1001"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832816,
+    "name" : "Series_Complete_Yes",
+    "dataTypeName" : "number",
+    "description" : "Total number of people who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction and county where vaccine  recipient lives",
+    "fieldName" : "series_complete_yes",
+    "position" : 17,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084949,
+    "cachedContents" : {
+      "non_null" : "1956515",
+      "largest" : "7536300",
+      "null" : "6266",
+      "top" : [ {
+        "item" : "0",
+        "count" : "203956"
+      }, {
+        "item" : "217",
+        "count" : "366"
+      }, {
+        "item" : "83",
+        "count" : "357"
+      }, {
+        "item" : "244",
+        "count" : "351"
+      }, {
+        "item" : "198",
+        "count" : "340"
+      }, {
+        "item" : "91",
+        "count" : "321"
+      }, {
+        "item" : "178",
+        "count" : "319"
+      }, {
+        "item" : "129",
+        "count" : "310"
+      }, {
+        "item" : "122",
+        "count" : "308"
+      }, {
+        "item" : "527",
+        "count" : "306"
+      }, {
+        "item" : "123",
+        "count" : "301"
+      }, {
+        "item" : "78",
+        "count" : "295"
+      }, {
+        "item" : "68",
+        "count" : "294"
+      }, {
+        "item" : "165",
+        "count" : "293"
+      }, {
+        "item" : "199",
+        "count" : "292"
+      }, {
+        "item" : "65",
+        "count" : "288"
+      }, {
+        "item" : "238",
+        "count" : "287"
+      }, {
+        "item" : "196",
+        "count" : "286"
+      }, {
+        "item" : "243",
+        "count" : "281"
+      }, {
+        "item" : "72",
+        "count" : "276"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "231391"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832817,
+    "name" : "Series_Complete_Pop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction and county  where vaccine recipient lives",
+    "fieldName" : "series_complete_pop_pct",
+    "position" : 18,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084950,
+    "cachedContents" : {
+      "non_null" : "1947894",
+      "largest" : "100",
+      "null" : "14887",
+      "top" : [ {
+        "item" : "0",
+        "count" : "232079"
+      }, {
+        "item" : "42.3",
+        "count" : "4462"
+      }, {
+        "item" : "45.7",
+        "count" : "4405"
+      }, {
+        "item" : "42.2",
+        "count" : "4397"
+      }, {
+        "item" : "43.7",
+        "count" : "4394"
+      }, {
+        "item" : "43.6",
+        "count" : "4393"
+      }, {
+        "item" : "46.6",
+        "count" : "4387"
+      }, {
+        "item" : "41.9",
+        "count" : "4385"
+      }, {
+        "item" : "43.5",
+        "count" : "4372"
+      }, {
+        "item" : "41.3",
+        "count" : "4366"
+      }, {
+        "item" : "43.1",
+        "count" : "4352"
+      }, {
+        "item" : "41.4",
+        "count" : "4351"
+      }, {
+        "item" : "41.5",
+        "count" : "4324"
+      }, {
+        "item" : "42.4",
+        "count" : "4313"
+      }, {
+        "item" : "43",
+        "count" : "4310"
+      }, {
+        "item" : "41.7",
+        "count" : "4310"
+      }, {
+        "item" : "41.8",
+        "count" : "4301"
+      }, {
+        "item" : "46.7",
+        "count" : "4294"
+      }, {
+        "item" : "41.2",
+        "count" : "4293"
+      }, {
+        "item" : "42.7",
+        "count" : "4279"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "990"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832818,
+    "name" : "Series_Complete_5Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 5+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction where recipient lives",
+    "fieldName" : "series_complete_5plus",
+    "position" : 19,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505256,
+    "cachedContents" : {
+      "non_null" : "775925",
+      "largest" : "7492070",
+      "null" : "1186856",
+      "top" : [ {
+        "item" : "0",
+        "count" : "2070"
+      }, {
+        "item" : "244",
+        "count" : "185"
+      }, {
+        "item" : "527",
+        "count" : "128"
+      }, {
+        "item" : "83",
+        "count" : "127"
+      }, {
+        "item" : "1303",
+        "count" : "116"
+      }, {
+        "item" : "1661",
+        "count" : "115"
+      }, {
+        "item" : "1877",
+        "count" : "112"
+      }, {
+        "item" : "5358",
+        "count" : "110"
+      }, {
+        "item" : "1028",
+        "count" : "105"
+      }, {
+        "item" : "476",
+        "count" : "105"
+      }, {
+        "item" : "235",
+        "count" : "103"
+      }, {
+        "item" : "920",
+        "count" : "103"
+      }, {
+        "item" : "238",
+        "count" : "102"
+      }, {
+        "item" : "361",
+        "count" : "102"
+      }, {
+        "item" : "178",
+        "count" : "102"
+      }, {
+        "item" : "763",
+        "count" : "102"
+      }, {
+        "item" : "1299",
+        "count" : "101"
+      }, {
+        "item" : "864",
+        "count" : "100"
+      }, {
+        "item" : "4477",
+        "count" : "100"
+      }, {
+        "item" : "1172",
+        "count" : "99"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "166928"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832819,
+    "name" : "Series_Complete_5PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 5+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction where recipient lives",
+    "fieldName" : "series_complete_5pluspop_pct",
+    "position" : 20,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505264,
+    "cachedContents" : {
+      "non_null" : "767304",
+      "largest" : "99.9",
+      "null" : "1195477",
+      "top" : [ {
+        "item" : "0",
+        "count" : "8022"
+      }, {
+        "item" : "95",
+        "count" : "5112"
+      }, {
+        "item" : "49.7",
+        "count" : "2685"
+      }, {
+        "item" : "48.5",
+        "count" : "2636"
+      }, {
+        "item" : "49.6",
+        "count" : "2614"
+      }, {
+        "item" : "48.4",
+        "count" : "2612"
+      }, {
+        "item" : "46.2",
+        "count" : "2568"
+      }, {
+        "item" : "48.3",
+        "count" : "2565"
+      }, {
+        "item" : "49.8",
+        "count" : "2554"
+      }, {
+        "item" : "48.6",
+        "count" : "2553"
+      }, {
+        "item" : "48.7",
+        "count" : "2546"
+      }, {
+        "item" : "49.2",
+        "count" : "2537"
+      }, {
+        "item" : "49.9",
+        "count" : "2532"
+      }, {
+        "item" : "48.2",
+        "count" : "2527"
+      }, {
+        "item" : "49.3",
+        "count" : "2518"
+      }, {
+        "item" : "49.1",
+        "count" : "2499"
+      }, {
+        "item" : "49.4",
+        "count" : "2478"
+      }, {
+        "item" : "52.8",
+        "count" : "2469"
+      }, {
+        "item" : "48.9",
+        "count" : "2452"
+      }, {
+        "item" : "50.9",
+        "count" : "2434"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "884"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832820,
+    "name" : "Series_Complete_5to17",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 5-17 years who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction where recipient lives",
+    "fieldName" : "series_complete_5to17",
+    "position" : 21,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566459,
+    "cachedContents" : {
+      "non_null" : "431193",
+      "largest" : "933909",
+      "null" : "1531588",
+      "top" : [ {
+        "item" : "30",
+        "count" : "746"
+      }, {
+        "item" : "12",
+        "count" : "676"
+      }, {
+        "item" : "246",
+        "count" : "647"
+      }, {
+        "item" : "160",
+        "count" : "595"
+      }, {
+        "item" : "46",
+        "count" : "589"
+      }, {
+        "item" : "91",
+        "count" : "587"
+      }, {
+        "item" : "278",
+        "count" : "578"
+      }, {
+        "item" : "83",
+        "count" : "566"
+      }, {
+        "item" : "177",
+        "count" : "554"
+      }, {
+        "item" : "57",
+        "count" : "552"
+      }, {
+        "item" : "137",
+        "count" : "549"
+      }, {
+        "item" : "165",
+        "count" : "546"
+      }, {
+        "item" : "63",
+        "count" : "539"
+      }, {
+        "item" : "13",
+        "count" : "537"
+      }, {
+        "item" : "86",
+        "count" : "536"
+      }, {
+        "item" : "228",
+        "count" : "530"
+      }, {
+        "item" : "41",
+        "count" : "511"
+      }, {
+        "item" : "26",
+        "count" : "509"
+      }, {
+        "item" : "237",
+        "count" : "506"
+      }, {
+        "item" : "114",
+        "count" : "500"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "42829"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832821,
+    "name" : "Series_Complete_5to17Pop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 5-17 years who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction where recipient lives",
+    "fieldName" : "series_complete_5to17pop_pct",
+    "position" : 22,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566470,
+    "cachedContents" : {
+      "non_null" : "423060",
+      "largest" : "95",
+      "null" : "1539721",
+      "top" : [ {
+        "item" : "16.9",
+        "count" : "1917"
+      }, {
+        "item" : "14.9",
+        "count" : "1875"
+      }, {
+        "item" : "16.8",
+        "count" : "1870"
+      }, {
+        "item" : "16.5",
+        "count" : "1835"
+      }, {
+        "item" : "15",
+        "count" : "1748"
+      }, {
+        "item" : "17.2",
+        "count" : "1743"
+      }, {
+        "item" : "11.9",
+        "count" : "1738"
+      }, {
+        "item" : "18.5",
+        "count" : "1736"
+      }, {
+        "item" : "20.1",
+        "count" : "1725"
+      }, {
+        "item" : "16.3",
+        "count" : "1692"
+      }, {
+        "item" : "14.4",
+        "count" : "1684"
+      }, {
+        "item" : "18.4",
+        "count" : "1684"
+      }, {
+        "item" : "14.7",
+        "count" : "1672"
+      }, {
+        "item" : "15.2",
+        "count" : "1656"
+      }, {
+        "item" : "14.8",
+        "count" : "1655"
+      }, {
+        "item" : "20.3",
+        "count" : "1645"
+      }, {
+        "item" : "13.9",
+        "count" : "1638"
+      }, {
+        "item" : "16.4",
+        "count" : "1637"
+      }, {
+        "item" : "17",
+        "count" : "1635"
+      }, {
+        "item" : "16",
+        "count" : "1632"
+      } ],
+      "smallest" : "1.3",
+      "count" : "1962781",
+      "cardinality" : "926"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832822,
+    "name" : "Series_Complete_12Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 12+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction and county  where vaccine  recipient lives",
+    "fieldName" : "series_complete_12plus",
+    "position" : 23,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084948,
+    "cachedContents" : {
+      "non_null" : "1938158",
+      "largest" : "7155384",
+      "null" : "24623",
+      "top" : [ {
+        "item" : "0",
+        "count" : "202071"
+      }, {
+        "item" : "83",
+        "count" : "356"
+      }, {
+        "item" : "231",
+        "count" : "332"
+      }, {
+        "item" : "215",
+        "count" : "321"
+      }, {
+        "item" : "381",
+        "count" : "314"
+      }, {
+        "item" : "91",
+        "count" : "313"
+      }, {
+        "item" : "119",
+        "count" : "309"
+      }, {
+        "item" : "124",
+        "count" : "302"
+      }, {
+        "item" : "199",
+        "count" : "301"
+      }, {
+        "item" : "221",
+        "count" : "292"
+      }, {
+        "item" : "68",
+        "count" : "292"
+      }, {
+        "item" : "1091",
+        "count" : "288"
+      }, {
+        "item" : "65",
+        "count" : "288"
+      }, {
+        "item" : "77",
+        "count" : "288"
+      }, {
+        "item" : "176",
+        "count" : "288"
+      }, {
+        "item" : "165",
+        "count" : "286"
+      }, {
+        "item" : "197",
+        "count" : "284"
+      }, {
+        "item" : "122",
+        "count" : "284"
+      }, {
+        "item" : "93",
+        "count" : "278"
+      }, {
+        "item" : "718",
+        "count" : "278"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "229187"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832823,
+    "name" : "Series_Complete_12PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 12+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction and county  where  vaccine recipient lives",
+    "fieldName" : "series_complete_12pluspop_pct",
+    "position" : 24,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084947,
+    "cachedContents" : {
+      "non_null" : "1929537",
+      "largest" : "100.0",
+      "null" : "33244",
+      "top" : [ {
+        "item" : "0.0",
+        "count" : "230023"
+      }, {
+        "item" : "95",
+        "count" : "7123"
+      }, {
+        "item" : "49.9",
+        "count" : "3998"
+      }, {
+        "item" : "48.7",
+        "count" : "3994"
+      }, {
+        "item" : "52.9",
+        "count" : "3987"
+      }, {
+        "item" : "48.1",
+        "count" : "3974"
+      }, {
+        "item" : "53.5",
+        "count" : "3969"
+      }, {
+        "item" : "47.9",
+        "count" : "3959"
+      }, {
+        "item" : "53.4",
+        "count" : "3957"
+      }, {
+        "item" : "49.8",
+        "count" : "3955"
+      }, {
+        "item" : "50.8",
+        "count" : "3945"
+      }, {
+        "item" : "53.3",
+        "count" : "3935"
+      }, {
+        "item" : "50.4",
+        "count" : "3915"
+      }, {
+        "item" : "48.2",
+        "count" : "3904"
+      }, {
+        "item" : "51.2",
+        "count" : "3903"
+      }, {
+        "item" : "53.6",
+        "count" : "3899"
+      }, {
+        "item" : "48.6",
+        "count" : "3885"
+      }, {
+        "item" : "50.9",
+        "count" : "3879"
+      }, {
+        "item" : "48",
+        "count" : "3874"
+      }, {
+        "item" : "51",
+        "count" : "3861"
+      } ],
+      "smallest" : "0.0",
+      "count" : "1962781",
+      "cardinality" : "1000"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832824,
+    "name" : "Series_Complete_18Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 18+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction and county  where  vaccine  recipient lives",
+    "fieldName" : "series_complete_18plus",
+    "position" : 25,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084946,
+    "cachedContents" : {
+      "non_null" : "1956515",
+      "largest" : "6558161",
+      "null" : "6266",
+      "top" : [ {
+        "item" : "0",
+        "count" : "203957"
+      }, {
+        "item" : "223",
+        "count" : "342"
+      }, {
+        "item" : "116",
+        "count" : "337"
+      }, {
+        "item" : "213",
+        "count" : "333"
+      }, {
+        "item" : "186",
+        "count" : "323"
+      }, {
+        "item" : "68",
+        "count" : "323"
+      }, {
+        "item" : "71",
+        "count" : "318"
+      }, {
+        "item" : "184",
+        "count" : "315"
+      }, {
+        "item" : "75",
+        "count" : "313"
+      }, {
+        "item" : "191",
+        "count" : "309"
+      }, {
+        "item" : "168",
+        "count" : "309"
+      }, {
+        "item" : "602",
+        "count" : "305"
+      }, {
+        "item" : "118",
+        "count" : "303"
+      }, {
+        "item" : "81",
+        "count" : "299"
+      }, {
+        "item" : "115",
+        "count" : "293"
+      }, {
+        "item" : "216",
+        "count" : "290"
+      }, {
+        "item" : "147",
+        "count" : "290"
+      }, {
+        "item" : "207",
+        "count" : "287"
+      }, {
+        "item" : "241",
+        "count" : "287"
+      }, {
+        "item" : "102",
+        "count" : "282"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "223179"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832825,
+    "name" : "Series_Complete_18PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 18+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction and county  where  vaccine recipient lives",
+    "fieldName" : "series_complete_18pluspop_pct",
+    "position" : 26,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084945,
+    "cachedContents" : {
+      "non_null" : "1947894",
+      "largest" : "100",
+      "null" : "14887",
+      "top" : [ {
+        "item" : "0",
+        "count" : "231890"
+      }, {
+        "item" : "95",
+        "count" : "7345"
+      }, {
+        "item" : "51.4",
+        "count" : "4151"
+      }, {
+        "item" : "51.8",
+        "count" : "4149"
+      }, {
+        "item" : "52.5",
+        "count" : "4089"
+      }, {
+        "item" : "51.9",
+        "count" : "4084"
+      }, {
+        "item" : "54.6",
+        "count" : "4077"
+      }, {
+        "item" : "52",
+        "count" : "4059"
+      }, {
+        "item" : "50.8",
+        "count" : "4048"
+      }, {
+        "item" : "53.1",
+        "count" : "4040"
+      }, {
+        "item" : "51.7",
+        "count" : "4033"
+      }, {
+        "item" : "51.1",
+        "count" : "4029"
+      }, {
+        "item" : "52.3",
+        "count" : "4008"
+      }, {
+        "item" : "54.7",
+        "count" : "4007"
+      }, {
+        "item" : "54.8",
+        "count" : "4002"
+      }, {
+        "item" : "51.3",
+        "count" : "4001"
+      }, {
+        "item" : "53",
+        "count" : "3985"
+      }, {
+        "item" : "52.2",
+        "count" : "3958"
+      }, {
+        "item" : "52.7",
+        "count" : "3946"
+      }, {
+        "item" : "52.1",
+        "count" : "3945"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "1000"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832826,
+    "name" : "Series_Complete_65Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 65+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction where vaccine  recipient lives",
+    "fieldName" : "series_complete_65plus",
+    "position" : 27,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084944,
+    "cachedContents" : {
+      "non_null" : "1956515",
+      "largest" : "1258548",
+      "null" : "6266",
+      "top" : [ {
+        "item" : "0",
+        "count" : "204207"
+      }, {
+        "item" : "10",
+        "count" : "1750"
+      }, {
+        "item" : "12",
+        "count" : "1700"
+      }, {
+        "item" : "11",
+        "count" : "1615"
+      }, {
+        "item" : "13",
+        "count" : "1481"
+      }, {
+        "item" : "15",
+        "count" : "1369"
+      }, {
+        "item" : "14",
+        "count" : "1301"
+      }, {
+        "item" : "16",
+        "count" : "1197"
+      }, {
+        "item" : "18",
+        "count" : "1099"
+      }, {
+        "item" : "17",
+        "count" : "1095"
+      }, {
+        "item" : "38",
+        "count" : "1081"
+      }, {
+        "item" : "19",
+        "count" : "1080"
+      }, {
+        "item" : "20",
+        "count" : "1058"
+      }, {
+        "item" : "21",
+        "count" : "970"
+      }, {
+        "item" : "40",
+        "count" : "967"
+      }, {
+        "item" : "24",
+        "count" : "874"
+      }, {
+        "item" : "23",
+        "count" : "868"
+      }, {
+        "item" : "26",
+        "count" : "859"
+      }, {
+        "item" : "25",
+        "count" : "852"
+      }, {
+        "item" : "29",
+        "count" : "843"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "115334"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832827,
+    "name" : "Series_Complete_65PlusPop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 65+ who have completed a primary series (have second dose of a two-dose vaccine or one dose of a single-dose vaccine) based on the jurisdiction where  vaccine recipient lives",
+    "fieldName" : "series_complete_65pluspop_pct",
+    "position" : 28,
+    "renderTypeName" : "number",
+    "tableColumnId" : 138084943,
+    "cachedContents" : {
+      "non_null" : "1947894",
+      "largest" : "100",
+      "null" : "14887",
+      "top" : [ {
+        "item" : "0",
+        "count" : "232577"
+      }, {
+        "item" : "95",
+        "count" : "62267"
+      }, {
+        "item" : "99.9",
+        "count" : "6443"
+      }, {
+        "item" : "79.7",
+        "count" : "5026"
+      }, {
+        "item" : "0.2",
+        "count" : "5011"
+      }, {
+        "item" : "81.2",
+        "count" : "4690"
+      }, {
+        "item" : "0.3",
+        "count" : "4680"
+      }, {
+        "item" : "81",
+        "count" : "4615"
+      }, {
+        "item" : "80.8",
+        "count" : "4566"
+      }, {
+        "item" : "79.6",
+        "count" : "4505"
+      }, {
+        "item" : "80.2",
+        "count" : "4498"
+      }, {
+        "item" : "81.1",
+        "count" : "4468"
+      }, {
+        "item" : "81.5",
+        "count" : "4467"
+      }, {
+        "item" : "80.6",
+        "count" : "4461"
+      }, {
+        "item" : "82.5",
+        "count" : "4449"
+      }, {
+        "item" : "79.2",
+        "count" : "4413"
+      }, {
+        "item" : "82.3",
+        "count" : "4407"
+      }, {
+        "item" : "79.8",
+        "count" : "4406"
+      }, {
+        "item" : "75.3",
+        "count" : "4384"
+      }, {
+        "item" : "81.4",
+        "count" : "4381"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "1001"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832828,
+    "name" : "Booster_Doses",
+    "dataTypeName" : "number",
+    "description" : "Total number of people who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses",
+    "position" : 29,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505260,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "4443868",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "0",
+        "count" : "2007"
+      }, {
+        "item" : "324",
+        "count" : "203"
+      }, {
+        "item" : "360",
+        "count" : "184"
+      }, {
+        "item" : "83",
+        "count" : "183"
+      }, {
+        "item" : "466",
+        "count" : "178"
+      }, {
+        "item" : "446",
+        "count" : "174"
+      }, {
+        "item" : "351",
+        "count" : "174"
+      }, {
+        "item" : "561",
+        "count" : "172"
+      }, {
+        "item" : "141",
+        "count" : "169"
+      }, {
+        "item" : "461",
+        "count" : "168"
+      }, {
+        "item" : "463",
+        "count" : "164"
+      }, {
+        "item" : "299",
+        "count" : "163"
+      }, {
+        "item" : "70",
+        "count" : "162"
+      }, {
+        "item" : "536",
+        "count" : "161"
+      }, {
+        "item" : "449",
+        "count" : "161"
+      }, {
+        "item" : "438",
+        "count" : "161"
+      }, {
+        "item" : "228",
+        "count" : "158"
+      }, {
+        "item" : "1662",
+        "count" : "157"
+      }, {
+        "item" : "585",
+        "count" : "157"
+      }, {
+        "item" : "129",
+        "count" : "157"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "114272"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832829,
+    "name" : "Booster_Doses_Vax_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of  people who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_vax_pct",
+    "position" : 30,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505254,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "95",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "42.4",
+        "count" : "3166"
+      }, {
+        "item" : "40.1",
+        "count" : "2999"
+      }, {
+        "item" : "42.9",
+        "count" : "2989"
+      }, {
+        "item" : "41.7",
+        "count" : "2988"
+      }, {
+        "item" : "43.3",
+        "count" : "2987"
+      }, {
+        "item" : "43.5",
+        "count" : "2966"
+      }, {
+        "item" : "41.8",
+        "count" : "2952"
+      }, {
+        "item" : "42.6",
+        "count" : "2944"
+      }, {
+        "item" : "42.1",
+        "count" : "2942"
+      }, {
+        "item" : "41.6",
+        "count" : "2922"
+      }, {
+        "item" : "42",
+        "count" : "2917"
+      }, {
+        "item" : "41.2",
+        "count" : "2916"
+      }, {
+        "item" : "40.6",
+        "count" : "2912"
+      }, {
+        "item" : "38.8",
+        "count" : "2909"
+      }, {
+        "item" : "40.7",
+        "count" : "2901"
+      }, {
+        "item" : "40.8",
+        "count" : "2899"
+      }, {
+        "item" : "41.3",
+        "count" : "2888"
+      }, {
+        "item" : "40.2",
+        "count" : "2886"
+      }, {
+        "item" : "43.8",
+        "count" : "2877"
+      }, {
+        "item" : "41",
+        "count" : "2877"
+      } ],
+      "smallest" : "0.0",
+      "count" : "1962781",
+      "cardinality" : "862"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832830,
+    "name" : "Booster_Doses_5Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of  people ages 5+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_5plus",
+    "position" : 31,
+    "renderTypeName" : "number",
+    "tableColumnId" : 142992248,
+    "cachedContents" : {
+      "non_null" : "146975",
+      "largest" : "4438685",
+      "null" : "1815806",
+      "top" : [ {
+        "item" : "152",
+        "count" : "57"
+      }, {
+        "item" : "50",
+        "count" : "51"
+      }, {
+        "item" : "12",
+        "count" : "49"
+      }, {
+        "item" : "115",
+        "count" : "48"
+      }, {
+        "item" : "87",
+        "count" : "48"
+      }, {
+        "item" : "508",
+        "count" : "48"
+      }, {
+        "item" : "637",
+        "count" : "47"
+      }, {
+        "item" : "13",
+        "count" : "46"
+      }, {
+        "item" : "302",
+        "count" : "45"
+      }, {
+        "item" : "615",
+        "count" : "43"
+      }, {
+        "item" : "811",
+        "count" : "43"
+      }, {
+        "item" : "884",
+        "count" : "42"
+      }, {
+        "item" : "448",
+        "count" : "42"
+      }, {
+        "item" : "135",
+        "count" : "41"
+      }, {
+        "item" : "29",
+        "count" : "41"
+      }, {
+        "item" : "78",
+        "count" : "41"
+      }, {
+        "item" : "8",
+        "count" : "40"
+      }, {
+        "item" : "1893",
+        "count" : "40"
+      }, {
+        "item" : "14",
+        "count" : "39"
+      }, {
+        "item" : "102",
+        "count" : "39"
+      } ],
+      "smallest" : "8",
+      "count" : "1962781",
+      "cardinality" : "48247"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832831,
+    "name" : "Booster_Doses_5Plus_Vax_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 5+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_5plus_vax_pct",
+    "position" : 32,
+    "renderTypeName" : "number",
+    "tableColumnId" : 142992249,
+    "cachedContents" : {
+      "non_null" : "146975",
+      "largest" : "95",
+      "null" : "1815806",
+      "top" : [ {
+        "item" : "40.9",
+        "count" : "651"
+      }, {
+        "item" : "41.3",
+        "count" : "624"
+      }, {
+        "item" : "49.3",
+        "count" : "620"
+      }, {
+        "item" : "45.8",
+        "count" : "620"
+      }, {
+        "item" : "40.7",
+        "count" : "610"
+      }, {
+        "item" : "49.4",
+        "count" : "609"
+      }, {
+        "item" : "49.7",
+        "count" : "605"
+      }, {
+        "item" : "43.4",
+        "count" : "599"
+      }, {
+        "item" : "47.2",
+        "count" : "599"
+      }, {
+        "item" : "45.1",
+        "count" : "598"
+      }, {
+        "item" : "43",
+        "count" : "598"
+      }, {
+        "item" : "41",
+        "count" : "596"
+      }, {
+        "item" : "46.4",
+        "count" : "595"
+      }, {
+        "item" : "43.5",
+        "count" : "593"
+      }, {
+        "item" : "47",
+        "count" : "588"
+      }, {
+        "item" : "40.6",
+        "count" : "584"
+      }, {
+        "item" : "45.5",
+        "count" : "582"
+      }, {
+        "item" : "53.2",
+        "count" : "581"
+      }, {
+        "item" : "41.1",
+        "count" : "580"
+      }, {
+        "item" : "49.2",
+        "count" : "578"
+      } ],
+      "smallest" : "0.2",
+      "count" : "1962781",
+      "cardinality" : "799"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832832,
+    "name" : "Booster_Doses_12Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of  people ages 12+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_12plus",
+    "position" : 33,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140962203,
+    "cachedContents" : {
+      "non_null" : "614385",
+      "largest" : "4349025",
+      "null" : "1348396",
+      "top" : [ {
+        "item" : "0",
+        "count" : "915"
+      }, {
+        "item" : "70",
+        "count" : "215"
+      }, {
+        "item" : "324",
+        "count" : "173"
+      }, {
+        "item" : "360",
+        "count" : "163"
+      }, {
+        "item" : "461",
+        "count" : "161"
+      }, {
+        "item" : "446",
+        "count" : "159"
+      }, {
+        "item" : "83",
+        "count" : "156"
+      }, {
+        "item" : "8",
+        "count" : "150"
+      }, {
+        "item" : "438",
+        "count" : "149"
+      }, {
+        "item" : "351",
+        "count" : "149"
+      }, {
+        "item" : "299",
+        "count" : "147"
+      }, {
+        "item" : "394",
+        "count" : "147"
+      }, {
+        "item" : "561",
+        "count" : "143"
+      }, {
+        "item" : "228",
+        "count" : "140"
+      }, {
+        "item" : "466",
+        "count" : "139"
+      }, {
+        "item" : "67",
+        "count" : "137"
+      }, {
+        "item" : "160",
+        "count" : "136"
+      }, {
+        "item" : "134",
+        "count" : "132"
+      }, {
+        "item" : "184",
+        "count" : "130"
+      }, {
+        "item" : "141",
+        "count" : "130"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "103868"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832833,
+    "name" : "Booster_Doses_12Plus_Vax_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 12+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_12plus_vax_pct",
+    "position" : 34,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140962200,
+    "cachedContents" : {
+      "non_null" : "614385",
+      "largest" : "95",
+      "null" : "1348396",
+      "top" : [ {
+        "item" : "42.9",
+        "count" : "2576"
+      }, {
+        "item" : "43.2",
+        "count" : "2506"
+      }, {
+        "item" : "43.5",
+        "count" : "2484"
+      }, {
+        "item" : "43",
+        "count" : "2477"
+      }, {
+        "item" : "43.6",
+        "count" : "2452"
+      }, {
+        "item" : "42.8",
+        "count" : "2446"
+      }, {
+        "item" : "43.1",
+        "count" : "2440"
+      }, {
+        "item" : "43.9",
+        "count" : "2440"
+      }, {
+        "item" : "42.6",
+        "count" : "2420"
+      }, {
+        "item" : "43.3",
+        "count" : "2406"
+      }, {
+        "item" : "44",
+        "count" : "2402"
+      }, {
+        "item" : "44.1",
+        "count" : "2399"
+      }, {
+        "item" : "44.7",
+        "count" : "2395"
+      }, {
+        "item" : "44.6",
+        "count" : "2389"
+      }, {
+        "item" : "41.1",
+        "count" : "2373"
+      }, {
+        "item" : "44.3",
+        "count" : "2372"
+      }, {
+        "item" : "43.8",
+        "count" : "2362"
+      }, {
+        "item" : "44.5",
+        "count" : "2343"
+      }, {
+        "item" : "41.7",
+        "count" : "2333"
+      }, {
+        "item" : "40.5",
+        "count" : "2327"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "858"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832834,
+    "name" : "Booster_Doses_18Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of  people ages 18+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_18plus",
+    "position" : 35,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505266,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "4122666",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "0",
+        "count" : "2007"
+      }, {
+        "item" : "141",
+        "count" : "191"
+      }, {
+        "item" : "187",
+        "count" : "191"
+      }, {
+        "item" : "446",
+        "count" : "185"
+      }, {
+        "item" : "359",
+        "count" : "184"
+      }, {
+        "item" : "274",
+        "count" : "183"
+      }, {
+        "item" : "351",
+        "count" : "180"
+      }, {
+        "item" : "625",
+        "count" : "171"
+      }, {
+        "item" : "70",
+        "count" : "167"
+      }, {
+        "item" : "626",
+        "count" : "162"
+      }, {
+        "item" : "1714",
+        "count" : "162"
+      }, {
+        "item" : "455",
+        "count" : "162"
+      }, {
+        "item" : "453",
+        "count" : "160"
+      }, {
+        "item" : "451",
+        "count" : "160"
+      }, {
+        "item" : "323",
+        "count" : "159"
+      }, {
+        "item" : "295",
+        "count" : "157"
+      }, {
+        "item" : "672",
+        "count" : "155"
+      }, {
+        "item" : "227",
+        "count" : "155"
+      }, {
+        "item" : "658",
+        "count" : "154"
+      }, {
+        "item" : "1644",
+        "count" : "154"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "112285"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832835,
+    "name" : "Booster_Doses_18Plus_Vax_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 18+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_18plus_vax_pct",
+    "position" : 36,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505263,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "95.0",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "45.1",
+        "count" : "2907"
+      }, {
+        "item" : "43.6",
+        "count" : "2869"
+      }, {
+        "item" : "45",
+        "count" : "2859"
+      }, {
+        "item" : "45.2",
+        "count" : "2857"
+      }, {
+        "item" : "44.7",
+        "count" : "2852"
+      }, {
+        "item" : "44.6",
+        "count" : "2832"
+      }, {
+        "item" : "42",
+        "count" : "2827"
+      }, {
+        "item" : "45.7",
+        "count" : "2818"
+      }, {
+        "item" : "42.2",
+        "count" : "2813"
+      }, {
+        "item" : "46",
+        "count" : "2807"
+      }, {
+        "item" : "45.3",
+        "count" : "2803"
+      }, {
+        "item" : "42.3",
+        "count" : "2796"
+      }, {
+        "item" : "42.1",
+        "count" : "2790"
+      }, {
+        "item" : "44",
+        "count" : "2790"
+      }, {
+        "item" : "42.4",
+        "count" : "2786"
+      }, {
+        "item" : "44.9",
+        "count" : "2782"
+      }, {
+        "item" : "46.2",
+        "count" : "2774"
+      }, {
+        "item" : "43.9",
+        "count" : "2766"
+      }, {
+        "item" : "43.5",
+        "count" : "2766"
+      }, {
+        "item" : "45.8",
+        "count" : "2766"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "909"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832836,
+    "name" : "Booster_Doses_50Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 50+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_50plus",
+    "position" : 37,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505267,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "2184994",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "0",
+        "count" : "2007"
+      }, {
+        "item" : "115",
+        "count" : "247"
+      }, {
+        "item" : "34",
+        "count" : "236"
+      }, {
+        "item" : "307",
+        "count" : "234"
+      }, {
+        "item" : "514",
+        "count" : "228"
+      }, {
+        "item" : "7",
+        "count" : "225"
+      }, {
+        "item" : "296",
+        "count" : "218"
+      }, {
+        "item" : "152",
+        "count" : "218"
+      }, {
+        "item" : "388",
+        "count" : "217"
+      }, {
+        "item" : "490",
+        "count" : "210"
+      }, {
+        "item" : "291",
+        "count" : "208"
+      }, {
+        "item" : "553",
+        "count" : "207"
+      }, {
+        "item" : "524",
+        "count" : "207"
+      }, {
+        "item" : "376",
+        "count" : "205"
+      }, {
+        "item" : "197",
+        "count" : "200"
+      }, {
+        "item" : "60",
+        "count" : "194"
+      }, {
+        "item" : "371",
+        "count" : "193"
+      }, {
+        "item" : "501",
+        "count" : "191"
+      }, {
+        "item" : "708",
+        "count" : "190"
+      }, {
+        "item" : "5",
+        "count" : "190"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "92677"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832837,
+    "name" : "Booster_Doses_50Plus_Vax_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 50+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_50plus_vax_pct",
+    "position" : 38,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505262,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "95",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "56.8",
+        "count" : "2987"
+      }, {
+        "item" : "56.1",
+        "count" : "2899"
+      }, {
+        "item" : "56.7",
+        "count" : "2852"
+      }, {
+        "item" : "55.8",
+        "count" : "2849"
+      }, {
+        "item" : "53.9",
+        "count" : "2821"
+      }, {
+        "item" : "55.2",
+        "count" : "2818"
+      }, {
+        "item" : "55.7",
+        "count" : "2811"
+      }, {
+        "item" : "54.8",
+        "count" : "2808"
+      }, {
+        "item" : "57.7",
+        "count" : "2803"
+      }, {
+        "item" : "56.5",
+        "count" : "2789"
+      }, {
+        "item" : "56.4",
+        "count" : "2783"
+      }, {
+        "item" : "56.9",
+        "count" : "2776"
+      }, {
+        "item" : "54.6",
+        "count" : "2758"
+      }, {
+        "item" : "56.2",
+        "count" : "2755"
+      }, {
+        "item" : "54",
+        "count" : "2751"
+      }, {
+        "item" : "54.9",
+        "count" : "2745"
+      }, {
+        "item" : "55.6",
+        "count" : "2734"
+      }, {
+        "item" : "53.7",
+        "count" : "2732"
+      }, {
+        "item" : "54.1",
+        "count" : "2720"
+      }, {
+        "item" : "56",
+        "count" : "2716"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "951"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832838,
+    "name" : "Booster_Doses_65Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 65+ who completed a primary series and have received a booster (or additional) dose.",
+    "fieldName" : "booster_doses_65plus",
+    "position" : 39,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505259,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "1055375",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "0",
+        "count" : "2083"
+      }, {
+        "item" : "3",
+        "count" : "550"
+      }, {
+        "item" : "74",
+        "count" : "442"
+      }, {
+        "item" : "81",
+        "count" : "398"
+      }, {
+        "item" : "317",
+        "count" : "376"
+      }, {
+        "item" : "22",
+        "count" : "351"
+      }, {
+        "item" : "144",
+        "count" : "346"
+      }, {
+        "item" : "99",
+        "count" : "337"
+      }, {
+        "item" : "82",
+        "count" : "336"
+      }, {
+        "item" : "347",
+        "count" : "321"
+      }, {
+        "item" : "221",
+        "count" : "318"
+      }, {
+        "item" : "333",
+        "count" : "317"
+      }, {
+        "item" : "349",
+        "count" : "311"
+      }, {
+        "item" : "338",
+        "count" : "309"
+      }, {
+        "item" : "581",
+        "count" : "307"
+      }, {
+        "item" : "330",
+        "count" : "306"
+      }, {
+        "item" : "137",
+        "count" : "299"
+      }, {
+        "item" : "210",
+        "count" : "299"
+      }, {
+        "item" : "608",
+        "count" : "293"
+      }, {
+        "item" : "198",
+        "count" : "288"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "69460"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832839,
+    "name" : "Booster_Doses_65Plus_Vax_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 65+ who completed a primary series and have received a booster (or additional) dose. ",
+    "fieldName" : "booster_doses_65plus_vax_pct",
+    "position" : 40,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505261,
+    "cachedContents" : {
+      "non_null" : "755167",
+      "largest" : "95",
+      "null" : "1207614",
+      "top" : [ {
+        "item" : "95",
+        "count" : "12115"
+      }, {
+        "item" : "64.1",
+        "count" : "2924"
+      }, {
+        "item" : "65.3",
+        "count" : "2889"
+      }, {
+        "item" : "68.8",
+        "count" : "2872"
+      }, {
+        "item" : "63.7",
+        "count" : "2863"
+      }, {
+        "item" : "63.5",
+        "count" : "2835"
+      }, {
+        "item" : "63.6",
+        "count" : "2828"
+      }, {
+        "item" : "65.6",
+        "count" : "2825"
+      }, {
+        "item" : "65.2",
+        "count" : "2822"
+      }, {
+        "item" : "66.2",
+        "count" : "2817"
+      }, {
+        "item" : "64",
+        "count" : "2804"
+      }, {
+        "item" : "65",
+        "count" : "2803"
+      }, {
+        "item" : "63.3",
+        "count" : "2791"
+      }, {
+        "item" : "64.7",
+        "count" : "2784"
+      }, {
+        "item" : "67.6",
+        "count" : "2782"
+      }, {
+        "item" : "66.6",
+        "count" : "2778"
+      }, {
+        "item" : "66.7",
+        "count" : "2770"
+      }, {
+        "item" : "64.4",
+        "count" : "2768"
+      }, {
+        "item" : "65.7",
+        "count" : "2766"
+      }, {
+        "item" : "64.3",
+        "count" : "2763"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "951"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832840,
+    "name" : "Second_Booster_50Plus",
+    "dataTypeName" : "text",
+    "description" : "Total number of people ages 50+ who have received a second booster dose.",
+    "fieldName" : "second_booster_50plus",
+    "position" : 41,
+    "renderTypeName" : "text",
+    "tableColumnId" : 143512737,
+    "cachedContents" : {
+      "non_null" : "137174",
+      "largest" : "9999",
+      "null" : "1825607",
+      "top" : [ {
+        "item" : "4",
+        "count" : "101"
+      }, {
+        "item" : "34",
+        "count" : "95"
+      }, {
+        "item" : "81",
+        "count" : "94"
+      }, {
+        "item" : "237",
+        "count" : "87"
+      }, {
+        "item" : "173",
+        "count" : "86"
+      }, {
+        "item" : "112",
+        "count" : "85"
+      }, {
+        "item" : "130",
+        "count" : "85"
+      }, {
+        "item" : "187",
+        "count" : "83"
+      }, {
+        "item" : "2",
+        "count" : "83"
+      }, {
+        "item" : "315",
+        "count" : "82"
+      }, {
+        "item" : "122",
+        "count" : "80"
+      }, {
+        "item" : "156",
+        "count" : "80"
+      }, {
+        "item" : "50",
+        "count" : "79"
+      }, {
+        "item" : "625",
+        "count" : "78"
+      }, {
+        "item" : "254",
+        "count" : "78"
+      }, {
+        "item" : "162",
+        "count" : "77"
+      }, {
+        "item" : "690",
+        "count" : "77"
+      }, {
+        "item" : "146",
+        "count" : "77"
+      }, {
+        "item" : "148",
+        "count" : "76"
+      }, {
+        "item" : "70",
+        "count" : "76"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "27120"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832841,
+    "name" : "Second_Booster_50Plus_Vax_Pct",
+    "dataTypeName" : "text",
+    "description" : "Percentage of people ages 50+ with a first booster dose who received a second booster dose.",
+    "fieldName" : "second_booster_50plus_vax_pct",
+    "position" : 42,
+    "renderTypeName" : "text",
+    "tableColumnId" : 143512736,
+    "cachedContents" : {
+      "non_null" : "137174",
+      "largest" : "9.9",
+      "null" : "1825607",
+      "top" : [ {
+        "item" : "45.1",
+        "count" : "472"
+      }, {
+        "item" : "42.9",
+        "count" : "472"
+      }, {
+        "item" : "33.3",
+        "count" : "459"
+      }, {
+        "item" : "35.5",
+        "count" : "456"
+      }, {
+        "item" : "47.3",
+        "count" : "450"
+      }, {
+        "item" : "44.9",
+        "count" : "443"
+      }, {
+        "item" : "43.9",
+        "count" : "443"
+      }, {
+        "item" : "39.6",
+        "count" : "442"
+      }, {
+        "item" : "45.4",
+        "count" : "437"
+      }, {
+        "item" : "45.3",
+        "count" : "437"
+      }, {
+        "item" : "44.3",
+        "count" : "435"
+      }, {
+        "item" : "45.2",
+        "count" : "434"
+      }, {
+        "item" : "40.4",
+        "count" : "433"
+      }, {
+        "item" : "46.9",
+        "count" : "430"
+      }, {
+        "item" : "42.7",
+        "count" : "428"
+      }, {
+        "item" : "41.6",
+        "count" : "427"
+      }, {
+        "item" : "44.4",
+        "count" : "427"
+      }, {
+        "item" : "38.1",
+        "count" : "426"
+      }, {
+        "item" : "43",
+        "count" : "425"
+      }, {
+        "item" : "44.7",
+        "count" : "424"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "834"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832842,
+    "name" : "Second_Booster_65Plus",
+    "dataTypeName" : "text",
+    "description" : "Total number of people ages 65+ who have received a second booster dose.",
+    "fieldName" : "second_booster_65plus",
+    "position" : 43,
+    "renderTypeName" : "text",
+    "tableColumnId" : 143512735,
+    "cachedContents" : {
+      "non_null" : "137174",
+      "largest" : "9999",
+      "null" : "1825607",
+      "top" : [ {
+        "item" : "63",
+        "count" : "139"
+      }, {
+        "item" : "1",
+        "count" : "134"
+      }, {
+        "item" : "0",
+        "count" : "123"
+      }, {
+        "item" : "98",
+        "count" : "122"
+      }, {
+        "item" : "196",
+        "count" : "121"
+      }, {
+        "item" : "113",
+        "count" : "118"
+      }, {
+        "item" : "239",
+        "count" : "113"
+      }, {
+        "item" : "69",
+        "count" : "112"
+      }, {
+        "item" : "110",
+        "count" : "111"
+      }, {
+        "item" : "72",
+        "count" : "110"
+      }, {
+        "item" : "373",
+        "count" : "109"
+      }, {
+        "item" : "39",
+        "count" : "108"
+      }, {
+        "item" : "47",
+        "count" : "106"
+      }, {
+        "item" : "121",
+        "count" : "106"
+      }, {
+        "item" : "385",
+        "count" : "106"
+      }, {
+        "item" : "112",
+        "count" : "105"
+      }, {
+        "item" : "410",
+        "count" : "105"
+      }, {
+        "item" : "223",
+        "count" : "102"
+      }, {
+        "item" : "75",
+        "count" : "101"
+      }, {
+        "item" : "199",
+        "count" : "101"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "22716"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832843,
+    "name" : "Second_Booster_65Plus_Vax_Pct",
+    "dataTypeName" : "text",
+    "description" : "Percentage of people ages 65+ with a first booster dose who received a second booster dose.",
+    "fieldName" : "second_booster_65plus_vax_pct",
+    "position" : 44,
+    "renderTypeName" : "text",
+    "tableColumnId" : 143512734,
+    "cachedContents" : {
+      "non_null" : "137174",
+      "largest" : "9.9",
+      "null" : "1825607",
+      "top" : [ {
+        "item" : "50",
+        "count" : "445"
+      }, {
+        "item" : "52.1",
+        "count" : "433"
+      }, {
+        "item" : "48.7",
+        "count" : "415"
+      }, {
+        "item" : "48.5",
+        "count" : "412"
+      }, {
+        "item" : "51.1",
+        "count" : "410"
+      }, {
+        "item" : "52.5",
+        "count" : "406"
+      }, {
+        "item" : "48.4",
+        "count" : "405"
+      }, {
+        "item" : "53.4",
+        "count" : "404"
+      }, {
+        "item" : "44.2",
+        "count" : "401"
+      }, {
+        "item" : "49.3",
+        "count" : "401"
+      }, {
+        "item" : "51.6",
+        "count" : "396"
+      }, {
+        "item" : "51.9",
+        "count" : "395"
+      }, {
+        "item" : "52.2",
+        "count" : "393"
+      }, {
+        "item" : "48.1",
+        "count" : "391"
+      }, {
+        "item" : "51.2",
+        "count" : "387"
+      }, {
+        "item" : "44.4",
+        "count" : "387"
+      }, {
+        "item" : "47.7",
+        "count" : "387"
+      }, {
+        "item" : "45.3",
+        "count" : "387"
+      }, {
+        "item" : "44.9",
+        "count" : "386"
+      }, {
+        "item" : "47.5",
+        "count" : "385"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "893"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832844,
+    "name" : "SVI_CTGY",
+    "dataTypeName" : "text",
+    "description" : "SVI",
+    "fieldName" : "svi_ctgy",
+    "position" : 45,
+    "renderTypeName" : "text",
+    "tableColumnId" : 138752442,
+    "cachedContents" : {
+      "non_null" : "1924983",
+      "largest" : "D",
+      "null" : "37798",
+      "top" : [ {
+        "item" : "A",
+        "count" : "481967"
+      }, {
+        "item" : "D",
+        "count" : "481411"
+      }, {
+        "item" : "B",
+        "count" : "480813"
+      }, {
+        "item" : "C",
+        "count" : "480792"
+      } ],
+      "smallest" : "A",
+      "count" : "1962781",
+      "cardinality" : "4"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832845,
+    "name" : "Series_Complete_Pop_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of Population Fully Vaccinated/SVI",
+    "fieldName" : "series_complete_pop_pct_svi",
+    "position" : 46,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505245,
+    "cachedContents" : {
+      "non_null" : "1715536",
+      "largest" : "16",
+      "null" : "247245",
+      "top" : [ {
+        "item" : "13",
+        "count" : "188051"
+      }, {
+        "item" : "9",
+        "count" : "172671"
+      }, {
+        "item" : "5",
+        "count" : "158780"
+      }, {
+        "item" : "1",
+        "count" : "144947"
+      }, {
+        "item" : "6",
+        "count" : "107675"
+      }, {
+        "item" : "10",
+        "count" : "107622"
+      }, {
+        "item" : "2",
+        "count" : "104910"
+      }, {
+        "item" : "14",
+        "count" : "102809"
+      }, {
+        "item" : "4",
+        "count" : "101197"
+      }, {
+        "item" : "3",
+        "count" : "89048"
+      }, {
+        "item" : "7",
+        "count" : "85660"
+      }, {
+        "item" : "8",
+        "count" : "82564"
+      }, {
+        "item" : "11",
+        "count" : "81103"
+      }, {
+        "item" : "15",
+        "count" : "73024"
+      }, {
+        "item" : "12",
+        "count" : "62260"
+      }, {
+        "item" : "16",
+        "count" : "53215"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832846,
+    "name" : "Series_Complete_5PlusPop_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 5+ Pop Fully Vaccinated/SVI",
+    "fieldName" : "series_complete_5pluspop_pct_svi",
+    "position" : 47,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505255,
+    "cachedContents" : {
+      "non_null" : "758827",
+      "largest" : "16",
+      "null" : "1203954",
+      "top" : [ {
+        "item" : "4",
+        "count" : "64989"
+      }, {
+        "item" : "8",
+        "count" : "54763"
+      }, {
+        "item" : "6",
+        "count" : "54207"
+      }, {
+        "item" : "10",
+        "count" : "53169"
+      }, {
+        "item" : "14",
+        "count" : "52334"
+      }, {
+        "item" : "13",
+        "count" : "50873"
+      }, {
+        "item" : "2",
+        "count" : "50678"
+      }, {
+        "item" : "9",
+        "count" : "47227"
+      }, {
+        "item" : "12",
+        "count" : "45760"
+      }, {
+        "item" : "16",
+        "count" : "44878"
+      }, {
+        "item" : "11",
+        "count" : "42998"
+      }, {
+        "item" : "7",
+        "count" : "42576"
+      }, {
+        "item" : "15",
+        "count" : "42413"
+      }, {
+        "item" : "3",
+        "count" : "41071"
+      }, {
+        "item" : "5",
+        "count" : "37777"
+      }, {
+        "item" : "1",
+        "count" : "33114"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832847,
+    "name" : "Series_Complete_5to17Pop_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 5-17 Pop Fully Vaccinated/SVI",
+    "fieldName" : "series_complete_5to17pop_pct_svi",
+    "position" : 48,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566458,
+    "cachedContents" : {
+      "non_null" : "422817",
+      "largest" : "16",
+      "null" : "1539964",
+      "top" : [ {
+        "item" : "13",
+        "count" : "79112"
+      }, {
+        "item" : "9",
+        "count" : "78226"
+      }, {
+        "item" : "5",
+        "count" : "70042"
+      }, {
+        "item" : "1",
+        "count" : "63992"
+      }, {
+        "item" : "2",
+        "count" : "17061"
+      }, {
+        "item" : "6",
+        "count" : "16588"
+      }, {
+        "item" : "4",
+        "count" : "14233"
+      }, {
+        "item" : "10",
+        "count" : "13031"
+      }, {
+        "item" : "14",
+        "count" : "12441"
+      }, {
+        "item" : "8",
+        "count" : "11480"
+      }, {
+        "item" : "3",
+        "count" : "10444"
+      }, {
+        "item" : "16",
+        "count" : "9944"
+      }, {
+        "item" : "12",
+        "count" : "8104"
+      }, {
+        "item" : "7",
+        "count" : "7379"
+      }, {
+        "item" : "11",
+        "count" : "6130"
+      }, {
+        "item" : "15",
+        "count" : "4610"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832848,
+    "name" : "Series_Complete_12PlusPop_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 12+ Pop Fully Vaccinated/SVI",
+    "fieldName" : "series_complete_12pluspop_pct_svi",
+    "position" : 49,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505241,
+    "cachedContents" : {
+      "non_null" : "1700176",
+      "largest" : "16",
+      "null" : "262605",
+      "top" : [ {
+        "item" : "4",
+        "count" : "155061"
+      }, {
+        "item" : "13",
+        "count" : "138284"
+      }, {
+        "item" : "8",
+        "count" : "133584"
+      }, {
+        "item" : "9",
+        "count" : "125652"
+      }, {
+        "item" : "5",
+        "count" : "117754"
+      }, {
+        "item" : "12",
+        "count" : "109902"
+      }, {
+        "item" : "1",
+        "count" : "109498"
+      }, {
+        "item" : "16",
+        "count" : "101170"
+      }, {
+        "item" : "14",
+        "count" : "96104"
+      }, {
+        "item" : "10",
+        "count" : "95581"
+      }, {
+        "item" : "6",
+        "count" : "91293"
+      }, {
+        "item" : "3",
+        "count" : "90820"
+      }, {
+        "item" : "7",
+        "count" : "88262"
+      }, {
+        "item" : "11",
+        "count" : "86700"
+      }, {
+        "item" : "2",
+        "count" : "80630"
+      }, {
+        "item" : "15",
+        "count" : "79881"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832849,
+    "name" : "Series_Complete_18PlusPop_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 18+ Pop Fully Vaccinated/SVI",
+    "fieldName" : "series_complete_18pluspop_pct_svi",
+    "position" : 50,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505249,
+    "cachedContents" : {
+      "non_null" : "1715536",
+      "largest" : "16",
+      "null" : "247245",
+      "top" : [ {
+        "item" : "4",
+        "count" : "177186"
+      }, {
+        "item" : "8",
+        "count" : "154026"
+      }, {
+        "item" : "12",
+        "count" : "130357"
+      }, {
+        "item" : "13",
+        "count" : "121375"
+      }, {
+        "item" : "16",
+        "count" : "118109"
+      }, {
+        "item" : "9",
+        "count" : "110755"
+      }, {
+        "item" : "5",
+        "count" : "104708"
+      }, {
+        "item" : "1",
+        "count" : "97978"
+      }, {
+        "item" : "14",
+        "count" : "93671"
+      }, {
+        "item" : "10",
+        "count" : "92804"
+      }, {
+        "item" : "7",
+        "count" : "92655"
+      }, {
+        "item" : "3",
+        "count" : "92134"
+      }, {
+        "item" : "11",
+        "count" : "89740"
+      }, {
+        "item" : "15",
+        "count" : "83944"
+      }, {
+        "item" : "6",
+        "count" : "83290"
+      }, {
+        "item" : "2",
+        "count" : "72804"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832850,
+    "name" : "Series_Complete_65PlusPop_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 65+ Pop Fully Vaccinated/SVI",
+    "fieldName" : "series_complete_65pluspop_pct_svi",
+    "position" : 51,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505247,
+    "cachedContents" : {
+      "non_null" : "1715536",
+      "largest" : "16",
+      "null" : "247245",
+      "top" : [ {
+        "item" : "4",
+        "count" : "249676"
+      }, {
+        "item" : "8",
+        "count" : "229272"
+      }, {
+        "item" : "12",
+        "count" : "195393"
+      }, {
+        "item" : "16",
+        "count" : "164550"
+      }, {
+        "item" : "15",
+        "count" : "147365"
+      }, {
+        "item" : "11",
+        "count" : "134393"
+      }, {
+        "item" : "7",
+        "count" : "113015"
+      }, {
+        "item" : "3",
+        "count" : "96474"
+      }, {
+        "item" : "13",
+        "count" : "59425"
+      }, {
+        "item" : "1",
+        "count" : "55324"
+      }, {
+        "item" : "5",
+        "count" : "53563"
+      }, {
+        "item" : "9",
+        "count" : "52011"
+      }, {
+        "item" : "14",
+        "count" : "45759"
+      }, {
+        "item" : "10",
+        "count" : "41859"
+      }, {
+        "item" : "6",
+        "count" : "38829"
+      }, {
+        "item" : "2",
+        "count" : "38628"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832851,
+    "name" : "Metro_status",
+    "dataTypeName" : "text",
+    "description" : "Metro/Non-metro",
+    "fieldName" : "metro_status",
+    "position" : 52,
+    "renderTypeName" : "text",
+    "tableColumnId" : 139573896,
+    "cachedContents" : {
+      "non_null" : "1924962",
+      "largest" : "Non-metro",
+      "null" : "37819",
+      "top" : [ {
+        "item" : "Non-metro",
+        "count" : "1186432"
+      }, {
+        "item" : "Metro",
+        "count" : "738530"
+      } ],
+      "smallest" : "Metro",
+      "count" : "1962781",
+      "cardinality" : "2"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832852,
+    "name" : "Series_Complete_Pop_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of Population Fully Vaccinated/MetroNon-Metro",
+    "fieldName" : "series_complete_pop_pct_ur_equity",
+    "position" : 53,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505268,
+    "cachedContents" : {
+      "non_null" : "1714697",
+      "largest" : "8",
+      "null" : "248084",
+      "top" : [ {
+        "item" : "5",
+        "count" : "441568"
+      }, {
+        "item" : "6",
+        "count" : "279463"
+      }, {
+        "item" : "1",
+        "count" : "224727"
+      }, {
+        "item" : "7",
+        "count" : "194905"
+      }, {
+        "item" : "4",
+        "count" : "167216"
+      }, {
+        "item" : "2",
+        "count" : "145289"
+      }, {
+        "item" : "3",
+        "count" : "132855"
+      }, {
+        "item" : "8",
+        "count" : "128674"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832853,
+    "name" : "Series_Complete_5PlusPop_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 5+ Pop Fully Vaccinated/MetroNon-Metro",
+    "fieldName" : "series_complete_5pluspop_pct_ur_equity",
+    "position" : 54,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505257,
+    "cachedContents" : {
+      "non_null" : "758806",
+      "largest" : "8",
+      "null" : "1203975",
+      "top" : [ {
+        "item" : "6",
+        "count" : "138088"
+      }, {
+        "item" : "5",
+        "count" : "127903"
+      }, {
+        "item" : "4",
+        "count" : "108422"
+      }, {
+        "item" : "8",
+        "count" : "102079"
+      }, {
+        "item" : "7",
+        "count" : "98623"
+      }, {
+        "item" : "2",
+        "count" : "72300"
+      }, {
+        "item" : "3",
+        "count" : "70303"
+      }, {
+        "item" : "1",
+        "count" : "41088"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832854,
+    "name" : "Series_Complete_5to17Pop_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 5-17 Pop Fully Vaccinated/MetroNon-Metro",
+    "fieldName" : "series_complete_5to17pop_pct_ur_equity",
+    "position" : 55,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566462,
+    "cachedContents" : {
+      "non_null" : "422796",
+      "largest" : "8",
+      "null" : "1539985",
+      "top" : [ {
+        "item" : "5",
+        "count" : "212734"
+      }, {
+        "item" : "1",
+        "count" : "78638"
+      }, {
+        "item" : "2",
+        "count" : "32753"
+      }, {
+        "item" : "4",
+        "count" : "31391"
+      }, {
+        "item" : "6",
+        "count" : "26236"
+      }, {
+        "item" : "3",
+        "count" : "19710"
+      }, {
+        "item" : "8",
+        "count" : "12481"
+      }, {
+        "item" : "7",
+        "count" : "8853"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832855,
+    "name" : "Series_Complete_12PlusPop_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 12+ Pop Fully Vaccinated/MetroNon-Metro",
+    "fieldName" : "series_complete_12pluspop_pct_ur_equity",
+    "position" : 56,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505252,
+    "cachedContents" : {
+      "non_null" : "1699452",
+      "largest" : "8",
+      "null" : "263329",
+      "top" : [ {
+        "item" : "5",
+        "count" : "315787"
+      }, {
+        "item" : "6",
+        "count" : "252120"
+      }, {
+        "item" : "4",
+        "count" : "251400"
+      }, {
+        "item" : "8",
+        "count" : "248785"
+      }, {
+        "item" : "7",
+        "count" : "216741"
+      }, {
+        "item" : "1",
+        "count" : "173413"
+      }, {
+        "item" : "3",
+        "count" : "129537"
+      }, {
+        "item" : "2",
+        "count" : "111669"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832856,
+    "name" : "Series_Complete_18PlusPop_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 18+ Pop Fully Vaccinated/MetroNon-Metro",
+    "fieldName" : "series_complete_18pluspop_pct_ur_equity",
+    "position" : 57,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505258,
+    "cachedContents" : {
+      "non_null" : "1714886",
+      "largest" : "8",
+      "null" : "247895",
+      "top" : [ {
+        "item" : "8",
+        "count" : "302869"
+      }, {
+        "item" : "4",
+        "count" : "277027"
+      }, {
+        "item" : "5",
+        "count" : "274130"
+      }, {
+        "item" : "6",
+        "count" : "241443"
+      }, {
+        "item" : "7",
+        "count" : "226208"
+      }, {
+        "item" : "1",
+        "count" : "159664"
+      }, {
+        "item" : "3",
+        "count" : "132398"
+      }, {
+        "item" : "2",
+        "count" : "101147"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832857,
+    "name" : "Series_Complete_65PlusPop_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 65+ Pop Fully Vaccinated/MetroNon-Metro",
+    "fieldName" : "series_complete_65pluspop_pct_ur_equity",
+    "position" : 58,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140505253,
+    "cachedContents" : {
+      "non_null" : "1714201",
+      "largest" : "8",
+      "null" : "248580",
+      "top" : [ {
+        "item" : "8",
+        "count" : "455961"
+      }, {
+        "item" : "4",
+        "count" : "385894"
+      }, {
+        "item" : "7",
+        "count" : "348552"
+      }, {
+        "item" : "3",
+        "count" : "142726"
+      }, {
+        "item" : "5",
+        "count" : "127192"
+      }, {
+        "item" : "6",
+        "count" : "112969"
+      }, {
+        "item" : "1",
+        "count" : "90893"
+      }, {
+        "item" : "2",
+        "count" : "50014"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832858,
+    "name" : "Booster_Doses_Vax_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of Pop Fully Vaccinated with Booster Dose/SVI",
+    "fieldName" : "booster_doses_vax_pct_svi",
+    "position" : 59,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566467,
+    "cachedContents" : {
+      "non_null" : "422817",
+      "largest" : "16",
+      "null" : "1539964",
+      "top" : [ {
+        "item" : "4",
+        "count" : "64590"
+      }, {
+        "item" : "14",
+        "count" : "48442"
+      }, {
+        "item" : "11",
+        "count" : "47805"
+      }, {
+        "item" : "8",
+        "count" : "42678"
+      }, {
+        "item" : "7",
+        "count" : "42008"
+      }, {
+        "item" : "15",
+        "count" : "37974"
+      }, {
+        "item" : "3",
+        "count" : "30830"
+      }, {
+        "item" : "12",
+        "count" : "26148"
+      }, {
+        "item" : "10",
+        "count" : "25567"
+      }, {
+        "item" : "6",
+        "count" : "14096"
+      }, {
+        "item" : "16",
+        "count" : "10428"
+      }, {
+        "item" : "13",
+        "count" : "9263"
+      }, {
+        "item" : "2",
+        "count" : "6736"
+      }, {
+        "item" : "5",
+        "count" : "6707"
+      }, {
+        "item" : "9",
+        "count" : "5971"
+      }, {
+        "item" : "1",
+        "count" : "3574"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832859,
+    "name" : "Booster_Doses_12PlusVax_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 12+ Pop Fully Vaccinated with Booster Dose/SVI",
+    "fieldName" : "booster_doses_12plusvax_pct_svi",
+    "position" : 60,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566469,
+    "cachedContents" : {
+      "non_null" : "422817",
+      "largest" : "16",
+      "null" : "1539964",
+      "top" : [ {
+        "item" : "4",
+        "count" : "69507"
+      }, {
+        "item" : "8",
+        "count" : "47154"
+      }, {
+        "item" : "11",
+        "count" : "47022"
+      }, {
+        "item" : "14",
+        "count" : "44083"
+      }, {
+        "item" : "15",
+        "count" : "41097"
+      }, {
+        "item" : "7",
+        "count" : "39452"
+      }, {
+        "item" : "12",
+        "count" : "29590"
+      }, {
+        "item" : "3",
+        "count" : "26557"
+      }, {
+        "item" : "10",
+        "count" : "23230"
+      }, {
+        "item" : "16",
+        "count" : "12607"
+      }, {
+        "item" : "6",
+        "count" : "12404"
+      }, {
+        "item" : "13",
+        "count" : "8320"
+      }, {
+        "item" : "5",
+        "count" : "6479"
+      }, {
+        "item" : "2",
+        "count" : "6214"
+      }, {
+        "item" : "9",
+        "count" : "5649"
+      }, {
+        "item" : "1",
+        "count" : "3452"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832860,
+    "name" : "Booster_Doses_18PlusVax_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 18+ Pop Fully Vaccinated with Booster Dose/SVI",
+    "fieldName" : "booster_doses_18plusvax_pct_svi",
+    "position" : 61,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566461,
+    "cachedContents" : {
+      "non_null" : "422817",
+      "largest" : "16",
+      "null" : "1539964",
+      "top" : [ {
+        "item" : "4",
+        "count" : "75726"
+      }, {
+        "item" : "8",
+        "count" : "53587"
+      }, {
+        "item" : "15",
+        "count" : "48953"
+      }, {
+        "item" : "11",
+        "count" : "47188"
+      }, {
+        "item" : "7",
+        "count" : "36273"
+      }, {
+        "item" : "12",
+        "count" : "35965"
+      }, {
+        "item" : "14",
+        "count" : "34320"
+      }, {
+        "item" : "3",
+        "count" : "21730"
+      }, {
+        "item" : "10",
+        "count" : "17359"
+      }, {
+        "item" : "16",
+        "count" : "16187"
+      }, {
+        "item" : "6",
+        "count" : "9512"
+      }, {
+        "item" : "13",
+        "count" : "6647"
+      }, {
+        "item" : "5",
+        "count" : "6117"
+      }, {
+        "item" : "2",
+        "count" : "5010"
+      }, {
+        "item" : "9",
+        "count" : "4979"
+      }, {
+        "item" : "1",
+        "count" : "3264"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832861,
+    "name" : "Booster_Doses_65PlusVax_Pct_SVI",
+    "dataTypeName" : "number",
+    "description" : "Percent of 65+ Pop Fully Vaccinated with Booster Dose/SVI",
+    "fieldName" : "booster_doses_65plusvax_pct_svi",
+    "position" : 62,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566465,
+    "cachedContents" : {
+      "non_null" : "422817",
+      "largest" : "16",
+      "null" : "1539964",
+      "top" : [ {
+        "item" : "7",
+        "count" : "59329"
+      }, {
+        "item" : "3",
+        "count" : "57512"
+      }, {
+        "item" : "14",
+        "count" : "55152"
+      }, {
+        "item" : "11",
+        "count" : "51526"
+      }, {
+        "item" : "10",
+        "count" : "41076"
+      }, {
+        "item" : "15",
+        "count" : "37977"
+      }, {
+        "item" : "4",
+        "count" : "25712"
+      }, {
+        "item" : "6",
+        "count" : "24582"
+      }, {
+        "item" : "2",
+        "count" : "16603"
+      }, {
+        "item" : "8",
+        "count" : "12630"
+      }, {
+        "item" : "13",
+        "count" : "10951"
+      }, {
+        "item" : "5",
+        "count" : "8948"
+      }, {
+        "item" : "9",
+        "count" : "7144"
+      }, {
+        "item" : "1",
+        "count" : "5903"
+      }, {
+        "item" : "12",
+        "count" : "5745"
+      }, {
+        "item" : "16",
+        "count" : "2027"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "16"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832862,
+    "name" : "Booster_Doses_Vax_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of Population Fully Vaccinated with Booster Dose/MetroNon-Metro",
+    "fieldName" : "booster_doses_vax_pct_ur_equity",
+    "position" : 63,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566460,
+    "cachedContents" : {
+      "non_null" : "422796",
+      "largest" : "8",
+      "null" : "1539985",
+      "top" : [ {
+        "item" : "7",
+        "count" : "100438"
+      }, {
+        "item" : "8",
+        "count" : "87987"
+      }, {
+        "item" : "6",
+        "count" : "58977"
+      }, {
+        "item" : "3",
+        "count" : "58090"
+      }, {
+        "item" : "4",
+        "count" : "55925"
+      }, {
+        "item" : "2",
+        "count" : "35864"
+      }, {
+        "item" : "5",
+        "count" : "12902"
+      }, {
+        "item" : "1",
+        "count" : "12613"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832863,
+    "name" : "Booster_Doses_12PlusVax_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 12+ Pop Fully Vaccinated with Booster Dose/MetroNon-Metro",
+    "fieldName" : "booster_doses_12plusvax_pct_ur_equity",
+    "position" : 64,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566468,
+    "cachedContents" : {
+      "non_null" : "422796",
+      "largest" : "8",
+      "null" : "1539985",
+      "top" : [ {
+        "item" : "7",
+        "count" : "98433"
+      }, {
+        "item" : "8",
+        "count" : "96119"
+      }, {
+        "item" : "4",
+        "count" : "62817"
+      }, {
+        "item" : "3",
+        "count" : "55596"
+      }, {
+        "item" : "6",
+        "count" : "53808"
+      }, {
+        "item" : "2",
+        "count" : "32123"
+      }, {
+        "item" : "1",
+        "count" : "11956"
+      }, {
+        "item" : "5",
+        "count" : "11944"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832864,
+    "name" : "Booster_Doses_18PlusVax_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 18+ Pop Fully Vaccinated with Booster Dose/MetroNon-Metro",
+    "fieldName" : "booster_doses_18plusvax_pct_ur_equity",
+    "position" : 65,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566464,
+    "cachedContents" : {
+      "non_null" : "422796",
+      "largest" : "8",
+      "null" : "1539985",
+      "top" : [ {
+        "item" : "8",
+        "count" : "110205"
+      }, {
+        "item" : "7",
+        "count" : "97927"
+      }, {
+        "item" : "4",
+        "count" : "71324"
+      }, {
+        "item" : "3",
+        "count" : "56132"
+      }, {
+        "item" : "6",
+        "count" : "42099"
+      }, {
+        "item" : "2",
+        "count" : "24102"
+      }, {
+        "item" : "1",
+        "count" : "10934"
+      }, {
+        "item" : "5",
+        "count" : "10073"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832865,
+    "name" : "Booster_Doses_65PlusVax_Pct_UR_Equity",
+    "dataTypeName" : "number",
+    "description" : "Percent of 65+ Pop Fully Vaccinated with Booster Dose/MetroNon-Metro",
+    "fieldName" : "booster_doses_65plusvax_pct_ur_equity",
+    "position" : 66,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566466,
+    "cachedContents" : {
+      "non_null" : "422611",
+      "largest" : "8",
+      "null" : "1540170",
+      "top" : [ {
+        "item" : "7",
+        "count" : "126614"
+      }, {
+        "item" : "6",
+        "count" : "89816"
+      }, {
+        "item" : "3",
+        "count" : "79724"
+      }, {
+        "item" : "2",
+        "count" : "47597"
+      }, {
+        "item" : "8",
+        "count" : "26137"
+      }, {
+        "item" : "4",
+        "count" : "19962"
+      }, {
+        "item" : "5",
+        "count" : "17661"
+      }, {
+        "item" : "1",
+        "count" : "15100"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "8"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832866,
+    "name" : "Census2019",
+    "dataTypeName" : "number",
+    "description" : "2019 Census Population ",
+    "fieldName" : "census2019",
+    "position" : 67,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140962201,
+    "cachedContents" : {
+      "non_null" : "1926158",
+      "largest" : "10039107",
+      "null" : "36623",
+      "top" : [ {
+        "item" : "14651",
+        "count" : "1794"
+      }, {
+        "item" : "2530",
+        "count" : "1794"
+      }, {
+        "item" : "5982",
+        "count" : "1196"
+      }, {
+        "item" : "2356",
+        "count" : "1196"
+      }, {
+        "item" : "2299",
+        "count" : "1196"
+      }, {
+        "item" : "14029",
+        "count" : "1196"
+      }, {
+        "item" : "36649",
+        "count" : "1196"
+      }, {
+        "item" : "8210",
+        "count" : "1196"
+      }, {
+        "item" : "23382",
+        "count" : "1196"
+      }, {
+        "item" : "10803",
+        "count" : "1196"
+      }, {
+        "item" : "13753",
+        "count" : "1196"
+      }, {
+        "item" : "12095",
+        "count" : "1196"
+      }, {
+        "item" : "24019",
+        "count" : "1196"
+      }, {
+        "item" : "8179",
+        "count" : "1196"
+      }, {
+        "item" : "3583",
+        "count" : "1196"
+      }, {
+        "item" : "12196",
+        "count" : "1196"
+      }, {
+        "item" : "8600",
+        "count" : "1196"
+      }, {
+        "item" : "7287",
+        "count" : "1196"
+      }, {
+        "item" : "16695",
+        "count" : "1196"
+      }, {
+        "item" : "10641",
+        "count" : "1196"
+      } ],
+      "smallest" : "86",
+      "count" : "1962781",
+      "cardinality" : "3166"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832867,
+    "name" : "Census2019_5PlusPop",
+    "dataTypeName" : "number",
+    "description" : "2019 Census Population for  ≥5 years of age ",
+    "fieldName" : "census2019_5pluspop",
+    "position" : 68,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140962206,
+    "cachedContents" : {
+      "non_null" : "766576",
+      "largest" : "9459251",
+      "null" : "1196205",
+      "top" : [ {
+        "item" : "15423",
+        "count" : "714"
+      }, {
+        "item" : "5288",
+        "count" : "714"
+      }, {
+        "item" : "11440",
+        "count" : "476"
+      }, {
+        "item" : "3302",
+        "count" : "476"
+      }, {
+        "item" : "2371",
+        "count" : "476"
+      }, {
+        "item" : "153472",
+        "count" : "476"
+      }, {
+        "item" : "38469",
+        "count" : "476"
+      }, {
+        "item" : "18539",
+        "count" : "476"
+      }, {
+        "item" : "3796",
+        "count" : "476"
+      }, {
+        "item" : "8233",
+        "count" : "476"
+      }, {
+        "item" : "12888",
+        "count" : "476"
+      }, {
+        "item" : "5237",
+        "count" : "476"
+      }, {
+        "item" : "11241",
+        "count" : "476"
+      }, {
+        "item" : "18881",
+        "count" : "476"
+      }, {
+        "item" : "2042",
+        "count" : "476"
+      }, {
+        "item" : "5383",
+        "count" : "476"
+      }, {
+        "item" : "9915",
+        "count" : "476"
+      }, {
+        "item" : "3810",
+        "count" : "476"
+      }, {
+        "item" : "10110",
+        "count" : "476"
+      }, {
+        "item" : "3662",
+        "count" : "476"
+      } ],
+      "smallest" : "86",
+      "count" : "1962781",
+      "cardinality" : "3231"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832868,
+    "name" : "Census2019_5to17Pop",
+    "dataTypeName" : "number",
+    "description" : "2019 Census Population for  5-17 years of age ",
+    "fieldName" : "census2019_5to17pop",
+    "position" : 69,
+    "renderTypeName" : "number",
+    "tableColumnId" : 141566463,
+    "cachedContents" : {
+      "non_null" : "425172",
+      "largest" : "1564694",
+      "null" : "1537609",
+      "top" : [ {
+        "item" : "4355",
+        "count" : "528"
+      }, {
+        "item" : "3165",
+        "count" : "528"
+      }, {
+        "item" : "2234",
+        "count" : "528"
+      }, {
+        "item" : "2464",
+        "count" : "528"
+      }, {
+        "item" : "2345",
+        "count" : "528"
+      }, {
+        "item" : "2064",
+        "count" : "528"
+      }, {
+        "item" : "421",
+        "count" : "528"
+      }, {
+        "item" : "3311",
+        "count" : "528"
+      }, {
+        "item" : "1399",
+        "count" : "528"
+      }, {
+        "item" : "845",
+        "count" : "528"
+      }, {
+        "item" : "1960",
+        "count" : "396"
+      }, {
+        "item" : "2016",
+        "count" : "396"
+      }, {
+        "item" : "416",
+        "count" : "396"
+      }, {
+        "item" : "717",
+        "count" : "396"
+      }, {
+        "item" : "2027",
+        "count" : "396"
+      }, {
+        "item" : "2165",
+        "count" : "396"
+      }, {
+        "item" : "1058",
+        "count" : "396"
+      }, {
+        "item" : "6024",
+        "count" : "396"
+      }, {
+        "item" : "1567",
+        "count" : "396"
+      }, {
+        "item" : "3315",
+        "count" : "396"
+      } ],
+      "smallest" : "0",
+      "count" : "1962781",
+      "cardinality" : "2874"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832869,
+    "name" : "Census2019_12PlusPop",
+    "dataTypeName" : "number",
+    "description" : "2019 Census Population for  ≥12 years of age",
+    "fieldName" : "census2019_12pluspop",
+    "position" : 70,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140962205,
+    "cachedContents" : {
+      "non_null" : "1925776",
+      "largest" : "8619513",
+      "null" : "37005",
+      "top" : [ {
+        "item" : "8746",
+        "count" : "2392"
+      }, {
+        "item" : "27593",
+        "count" : "1196"
+      }, {
+        "item" : "19685",
+        "count" : "1196"
+      }, {
+        "item" : "16210",
+        "count" : "1196"
+      }, {
+        "item" : "10404",
+        "count" : "1196"
+      }, {
+        "item" : "646",
+        "count" : "1196"
+      }, {
+        "item" : "44588",
+        "count" : "1196"
+      }, {
+        "item" : "7555",
+        "count" : "1196"
+      }, {
+        "item" : "5663",
+        "count" : "1196"
+      }, {
+        "item" : "2022",
+        "count" : "1196"
+      }, {
+        "item" : "35102",
+        "count" : "1196"
+      }, {
+        "item" : "4276",
+        "count" : "1196"
+      }, {
+        "item" : "24194",
+        "count" : "1196"
+      }, {
+        "item" : "15521",
+        "count" : "1196"
+      }, {
+        "item" : "12628",
+        "count" : "1196"
+      }, {
+        "item" : "3828",
+        "count" : "1196"
+      }, {
+        "item" : "31600",
+        "count" : "1196"
+      }, {
+        "item" : "7113",
+        "count" : "1196"
+      }, {
+        "item" : "18986",
+        "count" : "1196"
+      }, {
+        "item" : "6111",
+        "count" : "1196"
+      } ],
+      "smallest" : "86",
+      "count" : "1962781",
+      "cardinality" : "3139"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832870,
+    "name" : "Census2019_18PlusPop",
+    "dataTypeName" : "number",
+    "description" : "2019 Census Population for  ≥18 years of age ",
+    "fieldName" : "census2019_18pluspop",
+    "position" : 71,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140962204,
+    "cachedContents" : {
+      "non_null" : "1926158",
+      "largest" : "7894557",
+      "null" : "36623",
+      "top" : [ {
+        "item" : "1809",
+        "count" : "1794"
+      }, {
+        "item" : "19996",
+        "count" : "1794"
+      }, {
+        "item" : "4196",
+        "count" : "1794"
+      }, {
+        "item" : "13759",
+        "count" : "1412"
+      }, {
+        "item" : "659",
+        "count" : "1196"
+      }, {
+        "item" : "5444",
+        "count" : "1196"
+      }, {
+        "item" : "58196",
+        "count" : "1196"
+      }, {
+        "item" : "44243",
+        "count" : "1196"
+      }, {
+        "item" : "4579",
+        "count" : "1196"
+      }, {
+        "item" : "4831",
+        "count" : "1196"
+      }, {
+        "item" : "27651",
+        "count" : "1196"
+      }, {
+        "item" : "6283",
+        "count" : "1196"
+      }, {
+        "item" : "14782",
+        "count" : "1196"
+      }, {
+        "item" : "4639",
+        "count" : "1196"
+      }, {
+        "item" : "6343",
+        "count" : "1196"
+      }, {
+        "item" : "5333",
+        "count" : "1196"
+      }, {
+        "item" : "2734",
+        "count" : "1196"
+      }, {
+        "item" : "9803",
+        "count" : "1196"
+      }, {
+        "item" : "18657",
+        "count" : "1196"
+      }, {
+        "item" : "11549",
+        "count" : "1196"
+      } ],
+      "smallest" : "86",
+      "count" : "1962781",
+      "cardinality" : "3224"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832871,
+    "name" : "Census2019_65PlusPop",
+    "dataTypeName" : "number",
+    "description" : "2019 Census Population for  ≥65 years of age ",
+    "fieldName" : "census2019_65pluspop",
+    "position" : 72,
+    "renderTypeName" : "number",
+    "tableColumnId" : 140962202,
+    "cachedContents" : {
+      "non_null" : "679631",
+      "largest" : "1413753",
+      "null" : "1283150",
+      "top" : [ {
+        "item" : "3867",
+        "count" : "844"
+      }, {
+        "item" : "4861",
+        "count" : "844"
+      }, {
+        "item" : "1216",
+        "count" : "844"
+      }, {
+        "item" : "2070",
+        "count" : "844"
+      }, {
+        "item" : "1238",
+        "count" : "633"
+      }, {
+        "item" : "1183",
+        "count" : "633"
+      }, {
+        "item" : "2078",
+        "count" : "633"
+      }, {
+        "item" : "8288",
+        "count" : "633"
+      }, {
+        "item" : "4024",
+        "count" : "633"
+      }, {
+        "item" : "3545",
+        "count" : "633"
+      }, {
+        "item" : "2227",
+        "count" : "633"
+      }, {
+        "item" : "361",
+        "count" : "633"
+      }, {
+        "item" : "2426",
+        "count" : "633"
+      }, {
+        "item" : "1053",
+        "count" : "633"
+      }, {
+        "item" : "5134",
+        "count" : "633"
+      }, {
+        "item" : "368",
+        "count" : "633"
+      }, {
+        "item" : "258",
+        "count" : "633"
+      }, {
+        "item" : "451",
+        "count" : "633"
+      }, {
+        "item" : "1677",
+        "count" : "633"
+      }, {
+        "item" : "3239",
+        "count" : "633"
+      } ],
+      "smallest" : "23",
+      "count" : "1962781",
+      "cardinality" : "2907"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832881,
+    "name" : "Bivalent_Booster_5Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 5+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_5plus",
+    "position" : 73,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893623,
+    "cachedContents" : {
+      "non_null" : "84918",
+      "largest" : "1986568",
+      "null" : "1877863",
+      "top" : [ {
+        "item" : "33",
+        "count" : "79"
+      }, {
+        "item" : "32",
+        "count" : "56"
+      }, {
+        "item" : "258",
+        "count" : "51"
+      }, {
+        "item" : "3",
+        "count" : "51"
+      }, {
+        "item" : "240",
+        "count" : "49"
+      }, {
+        "item" : "246",
+        "count" : "48"
+      }, {
+        "item" : "170",
+        "count" : "48"
+      }, {
+        "item" : "264",
+        "count" : "46"
+      }, {
+        "item" : "476",
+        "count" : "46"
+      }, {
+        "item" : "443",
+        "count" : "46"
+      }, {
+        "item" : "110",
+        "count" : "46"
+      }, {
+        "item" : "228",
+        "count" : "45"
+      }, {
+        "item" : "262",
+        "count" : "45"
+      }, {
+        "item" : "542",
+        "count" : "45"
+      }, {
+        "item" : "35",
+        "count" : "44"
+      }, {
+        "item" : "680",
+        "count" : "44"
+      }, {
+        "item" : "62",
+        "count" : "43"
+      }, {
+        "item" : "169",
+        "count" : "43"
+      }, {
+        "item" : "265",
+        "count" : "43"
+      }, {
+        "item" : "247",
+        "count" : "42"
+      } ],
+      "smallest" : "2",
+      "count" : "1962781",
+      "cardinality" : "24326"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832886,
+    "name" : "Bivalent_Booster_5Plus_Pop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 5+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_5plus_pop_pct",
+    "position" : 74,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893628,
+    "cachedContents" : {
+      "non_null" : "83330",
+      "largest" : "47.1",
+      "null" : "1879451",
+      "top" : [ {
+        "item" : "8.3",
+        "count" : "786"
+      }, {
+        "item" : "8",
+        "count" : "770"
+      }, {
+        "item" : "8.7",
+        "count" : "742"
+      }, {
+        "item" : "8.5",
+        "count" : "741"
+      }, {
+        "item" : "7.9",
+        "count" : "734"
+      }, {
+        "item" : "8.8",
+        "count" : "729"
+      }, {
+        "item" : "8.2",
+        "count" : "720"
+      }, {
+        "item" : "7.8",
+        "count" : "718"
+      }, {
+        "item" : "7.3",
+        "count" : "715"
+      }, {
+        "item" : "7.5",
+        "count" : "706"
+      }, {
+        "item" : "7.6",
+        "count" : "704"
+      }, {
+        "item" : "8.4",
+        "count" : "702"
+      }, {
+        "item" : "6.7",
+        "count" : "702"
+      }, {
+        "item" : "8.6",
+        "count" : "694"
+      }, {
+        "item" : "8.1",
+        "count" : "693"
+      }, {
+        "item" : "6.9",
+        "count" : "693"
+      }, {
+        "item" : "9.1",
+        "count" : "690"
+      }, {
+        "item" : "5.9",
+        "count" : "688"
+      }, {
+        "item" : "5.7",
+        "count" : "687"
+      }, {
+        "item" : "7.7",
+        "count" : "671"
+      } ],
+      "smallest" : "0.1",
+      "count" : "1962781",
+      "cardinality" : "452"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832883,
+    "name" : "Bivalent_Booster_12Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 12+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_12plus",
+    "position" : 75,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893625,
+    "cachedContents" : {
+      "non_null" : "84918",
+      "largest" : "1934582",
+      "null" : "1877863",
+      "top" : [ {
+        "item" : "33",
+        "count" : "88"
+      }, {
+        "item" : "253",
+        "count" : "54"
+      }, {
+        "item" : "32",
+        "count" : "53"
+      }, {
+        "item" : "3",
+        "count" : "51"
+      }, {
+        "item" : "237",
+        "count" : "49"
+      }, {
+        "item" : "169",
+        "count" : "47"
+      }, {
+        "item" : "244",
+        "count" : "47"
+      }, {
+        "item" : "398",
+        "count" : "45"
+      }, {
+        "item" : "555",
+        "count" : "45"
+      }, {
+        "item" : "196",
+        "count" : "44"
+      }, {
+        "item" : "632",
+        "count" : "44"
+      }, {
+        "item" : "593",
+        "count" : "43"
+      }, {
+        "item" : "256",
+        "count" : "42"
+      }, {
+        "item" : "412",
+        "count" : "41"
+      }, {
+        "item" : "1024",
+        "count" : "41"
+      }, {
+        "item" : "681",
+        "count" : "41"
+      }, {
+        "item" : "532",
+        "count" : "41"
+      }, {
+        "item" : "174",
+        "count" : "41"
+      }, {
+        "item" : "747",
+        "count" : "40"
+      }, {
+        "item" : "357",
+        "count" : "40"
+      } ],
+      "smallest" : "2",
+      "count" : "1962781",
+      "cardinality" : "24166"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832884,
+    "name" : "Bivalent_Booster_12Plus_Pop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 12+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_12plus_pop_pct",
+    "position" : 76,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893626,
+    "cachedContents" : {
+      "non_null" : "83330",
+      "largest" : "51.5",
+      "null" : "1879451",
+      "top" : [ {
+        "item" : "8.7",
+        "count" : "708"
+      }, {
+        "item" : "8.8",
+        "count" : "703"
+      }, {
+        "item" : "9",
+        "count" : "680"
+      }, {
+        "item" : "8.6",
+        "count" : "680"
+      }, {
+        "item" : "9.6",
+        "count" : "680"
+      }, {
+        "item" : "8.9",
+        "count" : "673"
+      }, {
+        "item" : "9.4",
+        "count" : "663"
+      }, {
+        "item" : "9.2",
+        "count" : "662"
+      }, {
+        "item" : "6.4",
+        "count" : "657"
+      }, {
+        "item" : "9.3",
+        "count" : "657"
+      }, {
+        "item" : "9.5",
+        "count" : "649"
+      }, {
+        "item" : "8.5",
+        "count" : "647"
+      }, {
+        "item" : "8.1",
+        "count" : "647"
+      }, {
+        "item" : "8.3",
+        "count" : "646"
+      }, {
+        "item" : "7.4",
+        "count" : "646"
+      }, {
+        "item" : "9.7",
+        "count" : "640"
+      }, {
+        "item" : "9.1",
+        "count" : "638"
+      }, {
+        "item" : "6.3",
+        "count" : "637"
+      }, {
+        "item" : "8.2",
+        "count" : "635"
+      }, {
+        "item" : "8",
+        "count" : "632"
+      } ],
+      "smallest" : "0.1",
+      "count" : "1962781",
+      "cardinality" : "473"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832885,
+    "name" : "Bivalent_Booster_18Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 18+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_18plus",
+    "position" : 77,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893627,
+    "cachedContents" : {
+      "non_null" : "84918",
+      "largest" : "1857923",
+      "null" : "1877863",
+      "top" : [ {
+        "item" : "3",
+        "count" : "51"
+      }, {
+        "item" : "31",
+        "count" : "50"
+      }, {
+        "item" : "540",
+        "count" : "46"
+      }, {
+        "item" : "143",
+        "count" : "46"
+      }, {
+        "item" : "33",
+        "count" : "45"
+      }, {
+        "item" : "357",
+        "count" : "45"
+      }, {
+        "item" : "37",
+        "count" : "44"
+      }, {
+        "item" : "102",
+        "count" : "44"
+      }, {
+        "item" : "253",
+        "count" : "44"
+      }, {
+        "item" : "75",
+        "count" : "43"
+      }, {
+        "item" : "164",
+        "count" : "43"
+      }, {
+        "item" : "203",
+        "count" : "43"
+      }, {
+        "item" : "248",
+        "count" : "42"
+      }, {
+        "item" : "162",
+        "count" : "42"
+      }, {
+        "item" : "611",
+        "count" : "42"
+      }, {
+        "item" : "192",
+        "count" : "42"
+      }, {
+        "item" : "629",
+        "count" : "41"
+      }, {
+        "item" : "431",
+        "count" : "41"
+      }, {
+        "item" : "255",
+        "count" : "41"
+      }, {
+        "item" : "234",
+        "count" : "41"
+      } ],
+      "smallest" : "2",
+      "count" : "1962781",
+      "cardinality" : "23876"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832887,
+    "name" : "Bivalent_Booster_18Plus_Pop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 18+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_18plus_pop_pct",
+    "position" : 78,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893629,
+    "cachedContents" : {
+      "non_null" : "83330",
+      "largest" : "53.2",
+      "null" : "1879451",
+      "top" : [ {
+        "item" : "9.3",
+        "count" : "643"
+      }, {
+        "item" : "9.4",
+        "count" : "638"
+      }, {
+        "item" : "10.6",
+        "count" : "635"
+      }, {
+        "item" : "9.7",
+        "count" : "633"
+      }, {
+        "item" : "9.5",
+        "count" : "632"
+      }, {
+        "item" : "10.3",
+        "count" : "620"
+      }, {
+        "item" : "9.8",
+        "count" : "620"
+      }, {
+        "item" : "7.9",
+        "count" : "619"
+      }, {
+        "item" : "9.6",
+        "count" : "617"
+      }, {
+        "item" : "6.8",
+        "count" : "617"
+      }, {
+        "item" : "9.9",
+        "count" : "613"
+      }, {
+        "item" : "9.2",
+        "count" : "607"
+      }, {
+        "item" : "8.9",
+        "count" : "604"
+      }, {
+        "item" : "6.9",
+        "count" : "601"
+      }, {
+        "item" : "9",
+        "count" : "600"
+      }, {
+        "item" : "8.6",
+        "count" : "598"
+      }, {
+        "item" : "8.5",
+        "count" : "597"
+      }, {
+        "item" : "8.8",
+        "count" : "595"
+      }, {
+        "item" : "10.8",
+        "count" : "595"
+      }, {
+        "item" : "10.4",
+        "count" : "594"
+      } ],
+      "smallest" : "0.1",
+      "count" : "1962781",
+      "cardinality" : "487"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832882,
+    "name" : "Bivalent_Booster_65Plus",
+    "dataTypeName" : "number",
+    "description" : "Total number of people ages 65+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_65plus",
+    "position" : 79,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893624,
+    "cachedContents" : {
+      "non_null" : "84918",
+      "largest" : "647762",
+      "null" : "1877863",
+      "top" : [ {
+        "item" : "138",
+        "count" : "82"
+      }, {
+        "item" : "137",
+        "count" : "78"
+      }, {
+        "item" : "376",
+        "count" : "75"
+      }, {
+        "item" : "24",
+        "count" : "75"
+      }, {
+        "item" : "26",
+        "count" : "73"
+      }, {
+        "item" : "103",
+        "count" : "67"
+      }, {
+        "item" : "166",
+        "count" : "67"
+      }, {
+        "item" : "169",
+        "count" : "66"
+      }, {
+        "item" : "120",
+        "count" : "66"
+      }, {
+        "item" : "95",
+        "count" : "65"
+      }, {
+        "item" : "116",
+        "count" : "65"
+      }, {
+        "item" : "173",
+        "count" : "65"
+      }, {
+        "item" : "84",
+        "count" : "64"
+      }, {
+        "item" : "156",
+        "count" : "64"
+      }, {
+        "item" : "140",
+        "count" : "63"
+      }, {
+        "item" : "131",
+        "count" : "63"
+      }, {
+        "item" : "57",
+        "count" : "62"
+      }, {
+        "item" : "427",
+        "count" : "62"
+      }, {
+        "item" : "61",
+        "count" : "62"
+      }, {
+        "item" : "344",
+        "count" : "62"
+      } ],
+      "smallest" : "1",
+      "count" : "1962781",
+      "cardinality" : "18207"
+    },
+    "format" : { }
+  }, {
+    "id" : 568832880,
+    "name" : "Bivalent_Booster_65Plus_Pop_Pct",
+    "dataTypeName" : "number",
+    "description" : "Percent of people ages 65+ with an updated (bivalent) booster dose",
+    "fieldName" : "bivalent_booster_65plus_pop_pct",
+    "position" : 80,
+    "renderTypeName" : "number",
+    "tableColumnId" : 144893622,
+    "cachedContents" : {
+      "non_null" : "83330",
+      "largest" : "86.8",
+      "null" : "1879451",
+      "top" : [ {
+        "item" : "23.5",
+        "count" : "302"
+      }, {
+        "item" : "19.9",
+        "count" : "295"
+      }, {
+        "item" : "23.4",
+        "count" : "295"
+      }, {
+        "item" : "27",
+        "count" : "294"
+      }, {
+        "item" : "23.1",
+        "count" : "292"
+      }, {
+        "item" : "19.8",
+        "count" : "291"
+      }, {
+        "item" : "21.2",
+        "count" : "288"
+      }, {
+        "item" : "22",
+        "count" : "286"
+      }, {
+        "item" : "23.8",
+        "count" : "285"
+      }, {
+        "item" : "23.9",
+        "count" : "283"
+      }, {
+        "item" : "23.2",
+        "count" : "283"
+      }, {
+        "item" : "22.9",
+        "count" : "283"
+      }, {
+        "item" : "20.6",
+        "count" : "282"
+      }, {
+        "item" : "28.1",
+        "count" : "282"
+      }, {
+        "item" : "20.9",
+        "count" : "281"
+      }, {
+        "item" : "24",
+        "count" : "281"
+      }, {
+        "item" : "20.8",
+        "count" : "279"
+      }, {
+        "item" : "23.7",
+        "count" : "278"
+      }, {
+        "item" : "23",
+        "count" : "276"
+      }, {
+        "item" : "18.9",
+        "count" : "274"
+      } ],
+      "smallest" : "0.1",
+      "count" : "1962781",
+      "cardinality" : "833"
+    },
+    "format" : { }
+  } ],
+  "grants" : [ {
+    "inherited" : false,
+    "type" : "viewer",
+    "flags" : [ "public" ]
+  } ],
+  "license" : {
+    "name" : "Public Domain U.S. Government",
+    "termsLink" : "https://www.usa.gov/government-works"
+  },
+  "metadata" : {
+    "attachments" : [ {
+      "filename" : "DataDictionary_v37_05052023.xlsx",
+      "assetId" : "71dadbea-58c4-4dfe-9f32-741dd259fbf1",
+      "name" : "DataDictionary_v37_05052023.xlsx"
+    } ],
+    "custom_fields" : {
+      "Data Quality" : {
+        "Geospatial Resolution" : "State",
+        "Analytical Methods Reference" : "ETL"
+      },
+      "Common Core" : {
+        "Contact Email" : "iisinfo@cdc.gov",
+        "References" : "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/distributing/about-vaccine-data.html",
+        "Contact Name" : "NCIRD",
+        "Update Frequency" : "R/P1D",
+        "Temporal Applicability" : "2020-12-13/2023-05-12",
+        "License" : "Public Domain U.S. Government",
+        "Program Code" : "009:020",
+        "Geographic Coverage" : "US",
+        "Publisher" : "CDC",
+        "Bureau Code" : "009:20",
+        "Public Access Level" : "Public"
+      },
+      "Common Core 3" : {
+        "Contact Email" : "iisinfo@cdc.gov",
+        "Geographic Name" : "US",
+        "Contact Name" : "NCIRD",
+        "Update Frequency" : "R/P1D",
+        "Temporal Applicability" : "2020-12-13/2023-05-12",
+        "Program Code" : "009:020",
+        "Restriction Status" : "Public",
+        "Publisher" : "CDC",
+        "Bureau Code" : "009:20",
+        "Public Access Level" : "Public"
+      }
+    },
+    "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+  },
+  "owner" : {
+    "id" : "3suw-ciyu",
+    "displayName" : "NCIRD",
+    "screenName" : "NCIRD",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "query" : { },
+  "rights" : [ "read" ],
+  "tableAuthor" : {
+    "id" : "3suw-ciyu",
+    "displayName" : "NCIRD",
+    "screenName" : "NCIRD",
+    "type" : "interactive",
+    "flags" : [ "acceptedEula", "mayBeStoriesCoOwner" ]
+  },
+  "tags" : [ "covid-19", "coronavirus", "izdl", "immunization", "administration", "vaccination", "age" ],
+  "flags" : [ "default", "ownerMayBeContacted", "restorable", "restorePossibleForType" ]
+}

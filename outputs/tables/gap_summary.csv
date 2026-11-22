@@ -1,0 +1,16 @@
+measure,value
+Counties,238
+"Gap between 90th and 10th percentile county, baseline (points)",21.7255511318362
+"Gap, end (points)",26.2373938222601
+"Standard deviation across counties, baseline (points)",8.41582603682527
+"Standard deviation, end (points)",10.8150667513423
+"Population-weighted standard deviation, baseline",8.62680316113195
+"Population-weighted standard deviation, end",11.2841393976242
+Slope of change on baseline coverage (points per point),0.175417525815861
+"Slope, 95% confidence interval low",0.108801385801713
+"Slope, high",0.242033665830008
+Correlation of baseline coverage with change,0.319940429395206
+Rank correlation of baseline with end coverage,0.904319802175412
+Bottom-fifth counties at baseline still in bottom fifth at end (%),70.8333333333334
+"Unvaccinated share ratio, 10th vs 90th percentile county, baseline",1.47182509366815
+"Unvaccinated share ratio, end",2.16973612108446

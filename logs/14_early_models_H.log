@@ -1,0 +1,31 @@
+00:56:38 | Variant H: Main allocation (H) 
+00:56:38 |   rows in the likelihood: 4133 (early 1278, later 2855); counties: 238 
+00:57:25 |   fitted in 47 s 
+Key: <predictor>
+   predictor    E1    E2    P1    P2    P3
+      <char> <num> <num> <num> <num> <num>
+1:     z_age 1.035 0.893 0.869 0.844 0.825
+2:   z_cases 1.184 1.227 1.120 1.055 1.109
+3:  z_income 0.976 1.106 1.018 1.048 1.114
+00:58:48 | Variants available: H 
+Key: <variant, predictor>
+   variant predictor               E1               E2               P1               P2               P3
+    <char>    <char>           <char>           <char>           <char>           <char>           <char>
+1:       H     z_age 1.04 (0.97-1.11) 0.89 (0.83-0.96) 0.87 (0.81-0.93) 0.84 (0.79-0.90) 0.83 (0.77-0.88)
+2:       H   z_cases 1.18 (1.11-1.27) 1.23 (1.15-1.31) 1.12 (1.07-1.18) 1.06 (1.00-1.12) 1.11 (1.03-1.19)
+3:       H  z_income 0.98 (0.90-1.05) 1.11 (1.02-1.20) 1.02 (0.95-1.09) 1.05 (0.98-1.13) 1.11 (1.04-1.20)
+4:    main     z_age             <NA>             <NA> 0.86 (0.80-0.92) 0.83 (0.77-0.89) 0.81 (0.76-0.87)
+5:    main   z_cases             <NA>             <NA> 1.08 (1.04-1.13) 1.04 (1.00-1.09) 1.07 (1.00-1.14)
+6:    main  z_income             <NA>             <NA> 1.00 (0.93-1.08) 1.04 (0.96-1.12) 1.09 (1.01-1.17)
+
+Correlation of county relative uptake between periods (log scale):
+                                                      pair correlation          lo           hi rank_correlation counties
+                                                    <char>       <num>       <num>        <num>            <num>    <int>
+1:      14 Dec 2020 - 31 Mar 2021 with 1 Apr - 24 May 2021 -0.02723941 -0.04793109 -0.004889033      -0.05778224      213
+2: 14 Dec 2020 - 31 Mar 2021 with 25 May 2021 - 9 May 2023  0.28216808  0.26309723  0.300874220       0.22732658      213
+3:       1 Apr - 24 May 2021 with 25 May 2021 - 9 May 2023  0.76912363  0.75729226  0.779946719       0.77759965      213
+00:58:53 | Relative uptake, early_restricted: 10th to 90th percentile county 0.64 to 1.59 (2.5-fold) 
+00:58:53 | Relative uptake, spring_2021: 10th to 90th percentile county 0.56 to 1.83 (3.3-fold) 
+00:58:53 | Relative uptake, later: 10th to 90th percentile county 0.61 to 1.82 (3.0-fold) 
+00:58:53 | Done: H 
+exit=0

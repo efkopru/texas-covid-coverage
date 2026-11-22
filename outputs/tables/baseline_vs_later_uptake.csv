@@ -1,0 +1,4 @@
+quantity,median,lo,hi
+correlation of baseline coverage with modelled relative uptake (interval: uncertainty in modelled county rates only),0.731511088236193,0.719608697263409,0.742664614453251
+hazard ratio per 10 points higher baseline coverage (interval: uncertainty in modelled county rates only),1.48551398985483,1.47326511046943,1.49836449779886
+"hazard ratio per 10 points higher baseline coverage, least squares across counties (95% confidence interval from scatter between counties)",1.48532438145072,1.41733518333655,1.55657500361937

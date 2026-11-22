@@ -1,0 +1,608 @@
+name,value
+final,M4
+spatial,M1
+pool_k1,8.4
+med_k1,3.9
+p10_k1,2.2
+p90_k1,7.7
+pool_k2,6.0
+med_k2,3.2
+p10_k2,1.9
+p90_k2,5.8
+pool_k3,12.6
+med_k3,8.6
+p10_k3,5.5
+p90_k3,13.4
+pool_k4,9.7
+med_k4,7.5
+p10_k4,5.0
+p90_k4,11.7
+pool_k5,5.3
+med_k5,3.2
+p10_k5,2.0
+p90_k5,5.3
+pool_k6,5.3
+med_k6,3.2
+p10_k6,1.9
+p90_k6,5.7
+pool_k7,5.1
+med_k7,2.8
+p10_k7,1.6
+p90_k7,5.7
+pool_k8,5.4
+med_k8,2.7
+p10_k8,1.5
+p90_k8,5.3
+pool_k9,2.7
+med_k9,1.4
+p10_k9,0.7
+p90_k9,2.9
+pool_k10,1.3
+med_k10,0.6
+p10_k10,0.3
+p90_k10,1.6
+pool_k11,1.0
+med_k11,0.4
+p10_k11,0.2
+p90_k11,1.0
+pool_k12,0.5
+med_k12,0.2
+p10_k12,0.1
+p90_k12,0.5
+rel_p10,0.61
+rel_p90,1.80
+rel_ratio,3.0
+rel_min_county,Newton
+rel_min,0.30 (0.27 to 0.32)
+rel_max_county,La Salle
+rel_max,4.72 (4.29 to 5.21)
+n_kept,238
+n_low,113
+n_high,93
+n_mid,32
+rel_big,"Harris 3.1, Dallas 2.5, Tarrant 1.7, Bexar 3.7, Travis 3.1, Collin 2.2"
+chg_med,0.03
+chg_max,3.7
+phi_m1,0.70 (0.49 to 0.87)
+phi_m1_pct,70%
+phi_final,0.93 (0.78 to 0.99)
+sd_county_m0,0.40 (0.36 to 0.44)
+sd_county_m1,0.37 (0.33 to 0.42)
+sd_county_final,0.35 (0.28 to 0.42)
+sd_dev_m1,0.33 (0.32 to 0.34)
+sd_dev_final,0.17 (0.15 to 0.19)
+sd_time_final,0.79 (0.58 to 1.16)
+sd_path_final,0.43 (0.39 to 0.47)
+ou_halflife,5.8 months (95% CrI 4.4 to 7.7)
+county_fold_m1,4.2
+hr_age,0.83 (0.78 to 0.88)
+hr_age_5,0.86 (0.82 to 0.90)
+hr_inc,1.05 (0.98 to 1.13)
+hr_inc_10,1.02 (0.99 to 1.05)
+hr_case,1.06 (1.03 to 1.09)
+hr_case_dbl,1.03 (1.02 to 1.05)
+or_age,1.03 (0.99 to 1.08)
+or_inc,1.05 (1.01 to 1.10)
+or_case,1.07 (1.02 to 1.13)
+sd_age_pts,6.2
+sd_inc_pct,27%
+sd_case_fold,4.0
+base_cor,0.73 (0.72 to 0.74)
+base_hr10,1.49 (1.47 to 1.50)
+base_cor_pt,0.73
+base_hr10_pt,1.49
+base_hr10_ols,1.42 to 1.56
+base_phi,0.82 (0.59 to 0.95)
+base_sd,0.34 (0.30 to 0.39)
+hr_age_M0,0.87 (0.82 to 0.92)
+hr_income_M0,1.04 (0.98 to 1.10)
+hr_cases_M0,1.09 (1.06 to 1.13)
+hr_age_M1,0.85 (0.81 to 0.89)
+hr_income_M1,1.02 (0.96 to 1.07)
+hr_cases_M1,1.09 (1.06 to 1.12)
+hr_age_M2,0.85 (0.81 to 0.89)
+hr_income_M2,1.02 (0.96 to 1.07)
+hr_cases_M2,1.09 (1.07 to 1.12)
+hr_age_M3,0.85 (0.81 to 0.89)
+hr_income_M3,1.01 (0.96 to 1.07)
+hr_cases_M3,1.07 (1.04 to 1.10)
+hr_age_M4,0.83 (0.78 to 0.88)
+hr_income_M4,1.05 (0.98 to 1.13)
+hr_cases_M4,1.06 (1.03 to 1.09)
+hr_age_P1,0.86 (0.80 to 0.92)
+hr_income_P1,1.00 (0.93 to 1.08)
+hr_cases_P1,1.08 (1.04 to 1.13)
+hr_age_P2,0.83 (0.77 to 0.89)
+hr_income_P2,1.04 (0.96 to 1.12)
+hr_cases_P2,1.04 (1.00 to 1.09)
+hr_age_P3,0.81 (0.76 to 0.87)
+hr_income_P3,1.09 (1.01 to 1.17)
+hr_cases_P3,1.07 (1.00 to 1.14)
+label_P1,25 May 2021 to 23 Sep 2021
+label_P2,24 Sep 2021 to 25 Feb 2022
+label_P3,26 Feb 2022 to 09 May 2023
+crps_A_M0,0.89
+cov_A_M0,93%
+cov1_A_M0,93.0%
+end_A_M0,4.6
+cor_A_M0,0.29
+width_A_M0,7.5
+crps_A_M1,0.77
+cov_A_M1,93%
+cov1_A_M1,93.4%
+end_A_M1,3.6
+cor_A_M1,0.56
+width_A_M1,6.4
+crps_A_M2,0.77
+cov_A_M2,94%
+cov1_A_M2,93.6%
+end_A_M2,3.6
+cor_A_M2,0.56
+width_A_M2,6.3
+crps_A_M3,not run
+cov_A_M3,not run
+cov1_A_M3,not run
+end_A_M3,not run
+cor_A_M3,not run
+width_A_M3,not run
+crps_A_M4,0.83
+cov_A_M4,96%
+cov1_A_M4,95.7%
+end_A_M4,4.0
+cor_A_M4,0.55
+width_A_M4,8.1
+crps_B_M0,0.92
+cov_B_M0,92%
+cov1_B_M0,92.5%
+end_B_M0,4.8
+cor_B_M0,0.31
+width_B_M0,7.6
+crps_B_M1,0.80
+cov_B_M1,93%
+cov1_B_M1,93.0%
+end_B_M1,3.9
+cor_B_M1,0.37
+width_B_M1,6.5
+crps_B_M2,0.81
+cov_B_M2,93%
+cov1_B_M2,93.0%
+end_B_M2,3.9
+cor_B_M2,0.37
+width_B_M2,6.4
+crps_B_M3,not run
+cov_B_M3,not run
+cov1_B_M3,not run
+end_B_M3,not run
+cor_B_M3,not run
+width_B_M3,not run
+crps_B_M4,0.85
+cov_B_M4,96%
+cov1_B_M4,95.6%
+end_B_M4,4.1
+cor_B_M4,0.37
+width_B_M4,8.1
+crps_C_M0,0.42
+cov_C_M0,87%
+cov1_C_M0,87.4%
+end_C_M0,1.2
+cor_C_M0,0.69
+width_C_M0,2.8
+crps_C_M1,0.42
+cov_C_M1,88%
+cov1_C_M1,87.5%
+end_C_M1,1.2
+cor_C_M1,0.69
+width_C_M1,2.8
+crps_C_M2,0.42
+cov_C_M2,90%
+cov1_C_M2,89.6%
+end_C_M2,1.2
+cor_C_M2,0.67
+width_C_M2,2.6
+crps_C_M3,0.42
+cov_C_M3,91%
+cov1_C_M3,91.5%
+end_C_M3,1.3
+cor_C_M3,0.67
+width_C_M3,2.7
+crps_C_M4,0.41
+cov_C_M4,91%
+cov1_C_M4,90.6%
+end_C_M4,1.2
+cor_C_M4,0.69
+width_C_M4,2.8
+crps_D_M0,1.12
+cov_D_M0,94%
+cov1_D_M0,93.7%
+end_D_M0,not run
+cor_D_M0,0.72
+width_D_M0,10.7
+crps_D_M1,1.06
+cov_D_M1,94%
+cov1_D_M1,93.8%
+end_D_M1,not run
+cor_D_M1,0.72
+width_D_M1,10.4
+crps_D_M2,1.05
+cov_D_M2,94%
+cov1_D_M2,94.4%
+end_D_M2,not run
+cor_D_M2,0.73
+width_D_M2,10.6
+crps_D_M3,1.06
+cov_D_M3,94%
+cov1_D_M3,93.9%
+end_D_M3,not run
+cor_D_M3,0.73
+width_D_M3,10.6
+crps_D_M4,1.03
+cov_D_M4,95%
+cov1_D_M4,95.0%
+end_D_M4,not run
+cor_D_M4,0.74
+width_D_M4,10.6
+crps_A_final,0.83
+cov_A_final,96%
+end_A_final,4.0
+cor_A_final,0.55
+width_A_final,8.1
+crps_B_final,0.85
+cov_B_final,96%
+end_B_final,4.1
+cor_B_final,0.37
+width_B_final,8.1
+crps_C_final,0.41
+cov_C_final,91%
+end_C_final,1.2
+cor_C_final,0.69
+width_C_final,2.8
+crps_D_final,1.03
+cov_D_final,95%
+end_D_final,not run
+cor_D_final,0.74
+width_D_final,10.6
+worse_A_M4,8%
+worse_A_M2,0%
+worse_B_M4,5%
+impr_A_M1,14%
+impr_B_M1,13%
+impr_C_final,2%
+impr_D_final,2%
+impr_A_final,7%
+impr_C_M2,-1%
+impr_C_M3,-1%
+impr_C_M4,2%
+endin_A_final,99%
+endin_C_final,88%
+endin_A_M0,97%
+ls_A_M0,-6.15
+endin_A_M1,97%
+ls_A_M1,-6.00
+endin_A_M2,97%
+ls_A_M2,-5.97
+endin_A_M3,not run
+ls_A_M3,not run
+endin_A_M4,99%
+ls_A_M4,-6.03
+endin_B_M0,95%
+ls_B_M0,-6.20
+endin_B_M1,96%
+ls_B_M1,-6.07
+endin_B_M2,97%
+ls_B_M2,-6.05
+endin_B_M3,not run
+ls_B_M3,not run
+endin_B_M4,99%
+ls_B_M4,-6.09
+endin_C_M0,80%
+ls_C_M0,-5.79
+endin_C_M1,79%
+ls_C_M1,-5.78
+endin_C_M2,84%
+ls_C_M2,-5.66
+endin_C_M3,89%
+ls_C_M3,-5.61
+endin_C_M4,88%
+ls_C_M4,-5.65
+ls_D_M0,-6.17
+ls_D_M1,-6.15
+ls_D_M2,-6.14
+ls_D_M3,-6.17
+ls_D_M4,-6.13
+crps_C1_M0,0.72
+cov_C1_M0,95%
+crps_C23_M0,0.44
+cov_C23_M0,88%
+crps_C4_M0,0.31
+cov_C4_M0,85%
+crps_C1_M1,0.73
+cov_C1_M1,94%
+crps_C23_M1,0.44
+cov_C23_M1,88%
+crps_C4_M1,0.30
+cov_C4_M1,85%
+crps_C1_M2,0.72
+cov_C1_M2,94%
+crps_C23_M2,0.44
+cov_C23_M2,90%
+crps_C4_M2,0.31
+cov_C4_M2,88%
+crps_C1_M3,0.68
+cov_C1_M3,94%
+crps_C23_M3,0.44
+cov_C23_M3,92%
+crps_C4_M3,0.32
+cov_C4_M3,90%
+crps_C1_M4,0.67
+cov_C1_M4,94%
+crps_C23_M4,0.44
+cov_C23_M4,91%
+crps_C4_M4,0.31
+cov_C4_M4,89%
+impr_C1_final,8%
+bias_D_final,0.94
+rob_med_M0,0.5%
+rob_p95_M0,4.3%
+rob_max_M0,11%
+rob_maxcounty_M0,"Borden County, 493 adults"
+rob_med_M1,0.5%
+rob_p95_M1,4.1%
+rob_max_M1,11%
+rob_maxcounty_M1,"King County, 198 adults"
+rob_med_M2,0.2%
+rob_p95_M2,1.7%
+rob_max_M2,10%
+rob_maxcounty_M2,"King County, 198 adults"
+rob_med_M3,0.2%
+rob_p95_M3,2.0%
+rob_max_M3,9%
+rob_maxcounty_M3,"King County, 198 adults"
+waic_spread,35
+waic_level,"25,700"
+waic_worst,M4
+pwaic,"1,600"
+n_usable,"2,855"
+cpo_fail_M0,0
+lcpo_M0,-5.971
+secs_M0,4
+cpo_fail_M1,0
+lcpo_M1,-5.956
+secs_M1,30
+cpo_fail_M2,10
+lcpo_M2,-5.844
+secs_M2,35
+cpo_fail_M3,44
+lcpo_M3,-5.853
+secs_M3,583
+cpo_fail_M4,1
+lcpo_M4,-5.787
+secs_M4,65
+d_crps_A_M0_M1,-0.121 (-0.177 to -0.071)
+d_ls_A_M0_M1,0.148 (0.094 to 0.203)
+d_end_A_M0_M1,-0.94 (-1.36 to -0.53)
+d_crps_A_M0_M2,-0.120 (-0.176 to -0.069)
+d_ls_A_M0_M2,0.180 (0.121 to 0.236)
+d_end_A_M0_M2,-0.94 (-1.37 to -0.52)
+d_crps_A_M0_M4,-0.059 (-0.130 to 0.004)
+d_ls_A_M0_M4,0.124 (0.066 to 0.185)
+d_end_A_M0_M4,-0.57 (-1.08 to -0.06)
+d_crps_A_M1_M2,0.001 (-0.002 to 0.005)
+d_ls_A_M1_M2,0.031 (0.020 to 0.042)
+d_end_A_M1_M2,0.00 (-0.04 to 0.04)
+d_crps_A_M1_M4,0.062 (0.041 to 0.083)
+d_ls_A_M1_M4,-0.024 (-0.048 to 0.000)
+d_end_A_M1_M4,0.37 (0.19 to 0.53)
+d_crps_A_M2_M4,0.060 (0.040 to 0.081)
+d_ls_A_M2_M4,-0.056 (-0.078 to -0.034)
+d_end_A_M2_M4,0.37 (0.20 to 0.53)
+d_crps_B_M0_M1,-0.117 (-0.170 to -0.070)
+d_ls_B_M0_M1,0.124 (0.069 to 0.179)
+d_end_B_M0_M1,-0.96 (-1.43 to -0.50)
+d_crps_B_M0_M2,-0.114 (-0.168 to -0.066)
+d_ls_B_M0_M2,0.147 (0.088 to 0.206)
+d_end_B_M0_M2,-0.94 (-1.42 to -0.47)
+d_crps_B_M0_M4,-0.076 (-0.135 to -0.023)
+d_ls_B_M0_M4,0.112 (0.054 to 0.174)
+d_end_B_M0_M4,-0.75 (-1.27 to -0.25)
+d_crps_B_M1_M2,0.003 (0.000 to 0.007)
+d_ls_B_M1_M2,0.024 (0.013 to 0.034)
+d_end_B_M1_M2,0.02 (-0.02 to 0.06)
+d_crps_B_M1_M4,0.042 (0.027 to 0.056)
+d_ls_B_M1_M4,-0.011 (-0.034 to 0.013)
+d_end_B_M1_M4,0.21 (0.08 to 0.33)
+d_crps_B_M2_M4,0.038 (0.023 to 0.053)
+d_ls_B_M2_M4,-0.035 (-0.057 to -0.012)
+d_end_B_M2_M4,0.19 (0.07 to 0.31)
+d_crps_C_M0_M1,-0.001 (-0.007 to 0.005)
+d_ls_C_M0_M1,0.011 (-0.003 to 0.025)
+d_end_C_M0_M1,-0.01 (-0.04 to 0.03)
+d_crps_C_M0_M2,0.001 (-0.008 to 0.009)
+d_ls_C_M0_M2,0.137 (0.080 to 0.200)
+d_end_C_M0_M2,0.01 (-0.04 to 0.06)
+d_crps_C_M0_M3,0.003 (-0.009 to 0.015)
+d_ls_C_M0_M3,0.183 (0.104 to 0.268)
+d_end_C_M0_M3,0.05 (-0.02 to 0.12)
+d_crps_C_M0_M4,-0.008 (-0.019 to 0.002)
+d_ls_C_M0_M4,0.146 (0.090 to 0.208)
+d_end_C_M0_M4,-0.02 (-0.08 to 0.03)
+d_crps_C_M1_M2,0.002 (-0.003 to 0.007)
+d_ls_C_M1_M2,0.126 (0.075 to 0.182)
+d_end_C_M1_M2,0.02 (-0.01 to 0.05)
+d_crps_C_M1_M3,0.004 (-0.005 to 0.013)
+d_ls_C_M1_M3,0.172 (0.100 to 0.250)
+d_end_C_M1_M3,0.06 (0.01 to 0.11)
+d_crps_C_M1_M4,-0.007 (-0.014 to 0.000)
+d_ls_C_M1_M4,0.135 (0.085 to 0.190)
+d_end_C_M1_M4,-0.02 (-0.05 to 0.02)
+d_crps_C_M2_M3,0.002 (-0.003 to 0.008)
+d_ls_C_M2_M3,0.046 (0.019 to 0.076)
+d_end_C_M2_M3,0.04 (0.01 to 0.07)
+d_crps_C_M2_M4,-0.009 (-0.016 to -0.002)
+d_ls_C_M2_M4,0.008 (-0.013 to 0.032)
+d_end_C_M2_M4,-0.04 (-0.06 to -0.01)
+d_crps_C_M3_M4,-0.011 (-0.017 to -0.006)
+d_ls_C_M3_M4,-0.037 (-0.064 to -0.012)
+d_end_C_M3_M4,-0.08 (-0.10 to -0.05)
+d_crps_C1_M0_M1,0.006 (-0.008 to 0.020)
+d_ls_C1_M0_M1,0.005 (-0.006 to 0.016)
+d_crps_C1_M0_M2,-0.004 (-0.021 to 0.011)
+d_ls_C1_M0_M2,0.030 (0.007 to 0.053)
+d_crps_C1_M0_M3,-0.042 (-0.066 to -0.020)
+d_ls_C1_M0_M3,0.072 (0.036 to 0.113)
+d_crps_C1_M0_M4,-0.050 (-0.075 to -0.027)
+d_ls_C1_M0_M4,0.081 (0.046 to 0.119)
+d_crps_C1_M1_M2,-0.010 (-0.017 to -0.004)
+d_ls_C1_M1_M2,0.025 (0.002 to 0.048)
+d_crps_C1_M1_M3,-0.048 (-0.066 to -0.030)
+d_ls_C1_M1_M3,0.067 (0.029 to 0.108)
+d_crps_C1_M1_M4,-0.056 (-0.077 to -0.035)
+d_ls_C1_M1_M4,0.076 (0.038 to 0.115)
+d_crps_C1_M2_M3,-0.038 (-0.055 to -0.021)
+d_ls_C1_M2_M3,0.042 (0.012 to 0.075)
+d_crps_C1_M2_M4,-0.046 (-0.068 to -0.025)
+d_ls_C1_M2_M4,0.051 (0.018 to 0.087)
+d_crps_C1_M3_M4,-0.008 (-0.017 to 0.000)
+d_ls_C1_M3_M4,0.008 (-0.003 to 0.019)
+d_crps_C23_M0_M1,0.002 (-0.005 to 0.009)
+d_ls_C23_M0_M1,0.001 (-0.012 to 0.013)
+d_crps_C23_M0_M2,0.001 (-0.009 to 0.011)
+d_ls_C23_M0_M2,0.130 (0.078 to 0.188)
+d_crps_C23_M0_M3,0.007 (-0.009 to 0.022)
+d_ls_C23_M0_M3,0.178 (0.110 to 0.246)
+d_crps_C23_M0_M4,0.001 (-0.014 to 0.014)
+d_ls_C23_M0_M4,0.124 (0.077 to 0.172)
+d_crps_C23_M1_M2,-0.001 (-0.006 to 0.004)
+d_ls_C23_M1_M2,0.129 (0.080 to 0.183)
+d_crps_C23_M1_M3,0.005 (-0.006 to 0.015)
+d_ls_C23_M1_M3,0.177 (0.111 to 0.244)
+d_crps_C23_M1_M4,-0.001 (-0.012 to 0.009)
+d_ls_C23_M1_M4,0.123 (0.079 to 0.168)
+d_crps_C23_M2_M3,0.006 (-0.001 to 0.013)
+d_ls_C23_M2_M3,0.048 (0.021 to 0.075)
+d_crps_C23_M2_M4,0.000 (-0.008 to 0.008)
+d_ls_C23_M2_M4,-0.006 (-0.032 to 0.023)
+d_crps_C23_M3_M4,-0.006 (-0.012 to -0.001)
+d_ls_C23_M3_M4,-0.054 (-0.079 to -0.030)
+d_crps_C4_M0_M1,-0.006 (-0.011 to 0.000)
+d_ls_C4_M0_M1,0.020 (0.001 to 0.039)
+d_crps_C4_M0_M2,0.003 (-0.006 to 0.011)
+d_ls_C4_M0_M2,0.178 (0.100 to 0.262)
+d_crps_C4_M0_M3,0.016 (0.002 to 0.029)
+d_ls_C4_M0_M3,0.224 (0.117 to 0.343)
+d_crps_C4_M0_M4,0.000 (-0.009 to 0.009)
+d_ls_C4_M0_M4,0.182 (0.106 to 0.269)
+d_crps_C4_M1_M2,0.008 (0.003 to 0.014)
+d_ls_C4_M1_M2,0.158 (0.091 to 0.231)
+d_crps_C4_M1_M3,0.021 (0.011 to 0.032)
+d_ls_C4_M1_M3,0.204 (0.104 to 0.314)
+d_crps_C4_M1_M4,0.006 (0.000 to 0.011)
+d_ls_C4_M1_M4,0.162 (0.095 to 0.239)
+d_crps_C4_M2_M3,0.013 (0.008 to 0.019)
+d_ls_C4_M2_M3,0.045 (0.010 to 0.087)
+d_crps_C4_M2_M4,-0.003 (-0.007 to 0.002)
+d_ls_C4_M2_M4,0.004 (-0.024 to 0.034)
+d_crps_C4_M3_M4,-0.016 (-0.023 to -0.009)
+d_ls_C4_M3_M4,-0.042 (-0.078 to -0.007)
+d_crps_D_M0_M1,-0.063 (-0.144 to -0.006)
+d_ls_D_M0_M1,0.022 (0.006 to 0.039)
+d_crps_D_M0_M2,-0.073 (-0.189 to 0.011)
+d_ls_D_M0_M2,0.036 (0.007 to 0.074)
+d_crps_D_M0_M3,-0.058 (-0.176 to 0.031)
+d_ls_D_M0_M3,0.008 (-0.014 to 0.032)
+d_crps_D_M0_M4,-0.088 (-0.218 to 0.003)
+d_ls_D_M0_M4,0.045 (0.016 to 0.083)
+d_crps_D_M1_M2,-0.010 (-0.070 to 0.033)
+d_ls_D_M1_M2,0.014 (-0.011 to 0.045)
+d_crps_D_M1_M3,0.005 (-0.041 to 0.045)
+d_ls_D_M1_M3,-0.014 (-0.029 to 0.001)
+d_crps_D_M1_M4,-0.025 (-0.076 to 0.017)
+d_ls_D_M1_M4,0.023 (0.002 to 0.050)
+d_crps_D_M2_M3,0.015 (-0.018 to 0.049)
+d_ls_D_M2_M3,-0.028 (-0.065 to 0.003)
+d_crps_D_M2_M4,-0.016 (-0.057 to 0.017)
+d_ls_D_M2_M4,0.009 (-0.013 to 0.028)
+d_crps_D_M3_M4,-0.031 (-0.046 to -0.017)
+d_ls_D_M3_M4,0.036 (0.016 to 0.067)
+sm_small,0.16
+sm_mid,0.02
+sm_large,0.002
+sm_small_rel,8%
+sm_mid_rel,0.8%
+n_local,238
+n_distinct,136
+n_distinct_low,68
+n_distinct_high,68
+moran,0.48
+ho_n,237
+ho_mae,3.6
+ho_median,3.0
+ho_over5,63
+ho_over10,6
+ho_worst,"Live Oak (predicted 68%, recorded 47%)"
+ho_in95,97%
+sens_age,0.77 to 0.88
+sens_inc,1.00 to 1.10
+sens_case,1.03 to 1.08
+sens_n,12
+sens_phi,0.78 to 0.96
+s_S0_age,0.83 (0.78 to 0.88)
+s_S0_inc,1.05 (0.98 to 1.13)
+s_S0_case,1.06 (1.03 to 1.09)
+s_S0_n,238
+s_S1_age,0.81 (0.76 to 0.86)
+s_S1_inc,1.04 (0.97 to 1.11)
+s_S1_case,1.05 (1.02 to 1.09)
+s_S1_n,238
+s_S2_age,0.84 (0.79 to 0.89)
+s_S2_inc,1.05 (0.98 to 1.13)
+s_S2_case,1.03 (1.00 to 1.06)
+s_S2_n,238
+s_S3_age,0.77 (0.72 to 0.82)
+s_S3_inc,1.10 (1.02 to 1.18)
+s_S3_case,1.06 (1.03 to 1.09)
+s_S3_n,242
+s_S4_age,0.78 (0.73 to 0.84)
+s_S4_inc,1.01 (0.94 to 1.09)
+s_S4_case,1.06 (1.03 to 1.09)
+s_S4_n,252
+s_S5_age,0.83 (0.78 to 0.88)
+s_S5_inc,1.05 (0.98 to 1.13)
+s_S5_case,1.05 (1.02 to 1.08)
+s_S5_n,238
+s_S6_age,0.82 (0.77 to 0.88)
+s_S6_inc,1.05 (0.98 to 1.13)
+s_S6_case,1.06 (1.03 to 1.09)
+s_S6_n,238
+s_S7_age,0.84 (0.80 to 0.89)
+s_S7_inc,1.05 (0.98 to 1.12)
+s_S7_case,1.06 (1.03 to 1.09)
+s_S7_n,238
+s_S8_age,0.88 (0.85 to 0.92)
+s_S8_inc,1.03 (0.98 to 1.07)
+s_S8_case,1.07 (1.04 to 1.10)
+s_S8_n,238
+s_S9_age,0.84 (0.79 to 0.89)
+s_S9_inc,1.08 (1.00 to 1.16)
+s_S9_case,1.05 (1.02 to 1.08)
+s_S9_n,215
+s_S10_age,0.84 (0.80 to 0.88)
+s_S10_inc,1.00 (0.95 to 1.05)
+s_S10_case,1.08 (1.05 to 1.11)
+s_S10_n,238
+s_S11_age,0.83 (0.77 to 0.88)
+s_S11_inc,1.05 (0.97 to 1.12)
+s_S11_case,1.06 (1.03 to 1.10)
+s_S11_n,228
+s_S12_age,0.83 (0.78 to 0.88)
+s_S12_inc,1.05 (0.98 to 1.13)
+s_S12_case,1.06 (1.03 to 1.09)
+s_S12_n,238
+cdc_n,237
+cdc_cor,0.65
+cdc_rank,0.93
+cdc_medabs,1.7
+cdc_over5,26
+cdc_over10,11
+cdc0_cor,0.97
+cdc0_medabs,1.4
+cdc0_over5,11

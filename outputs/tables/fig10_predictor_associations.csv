@@ -1,0 +1,10 @@
+predictor,contrast,ratio,lo,hi,prob_ratio_above_1,model,outcome,measure
+Share of adults aged 65+,per 1 SD (6.2 points),0.829878784232656,0.779521320362602,0.883384163140021,0,M4,"Uptake hazard among adults not yet vaccinated, 25 May 2021 - 9 May 2023",hazard ratio
+Share of adults aged 65+,per 5 points,0.859507095345929,0.81691543989078,0.904231932574511,0,M4,"Uptake hazard among adults not yet vaccinated, 25 May 2021 - 9 May 2023",hazard ratio
+Median household income,per 1 SD (27% higher),1.05018823749789,0.979865180138779,1.12556028151733,0.932,M4,"Uptake hazard among adults not yet vaccinated, 25 May 2021 - 9 May 2023",hazard ratio
+Median household income,per 10% higher,1.01991945626894,0.991840907691214,1.04879365899077,0.932,M4,"Uptake hazard among adults not yet vaccinated, 25 May 2021 - 9 May 2023",hazard ratio
+Cases in previous 30 days,per 1 SD (4.0-fold),1.06325269550384,1.03344495937941,1.09392537320663,1,M4,"Uptake hazard among adults not yet vaccinated, 25 May 2021 - 9 May 2023",hazard ratio
+Cases in previous 30 days,per doubling,1.03132401697178,1.016681487362,1.0461799306697,1,M4,"Uptake hazard among adults not yet vaccinated, 25 May 2021 - 9 May 2023",hazard ratio
+Share of adults aged 65+,per 1 SD,1.03169585643171,0.988537943987535,1.07676547369479,,B1,Coverage reached by 24 May 2021,odds ratio
+Median household income,per 1 SD,1.05423842896707,1.00673852673723,1.10396382856777,,B1,Coverage reached by 24 May 2021,odds ratio
+Cumulative cases before 14 Dec 2020,per 1 SD,1.0736246214349,1.02266225611157,1.12714893973923,,B1,Coverage reached by 24 May 2021,odds ratio

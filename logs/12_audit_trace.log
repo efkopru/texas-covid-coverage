@@ -1,0 +1,71 @@
+Warning message:
+package 'readxl' was built under R version 4.6.2 
+
+Harris County (FIPS 48201)
+  population 16+, 1 July 2021 : 3,660,544   (cc-est2025-syasex-48.csv, YEAR = 3, AGE >= 16)
+  dshs_vax_20210525231618.xlsx, sheet 'By County, Age', rows 572-576 (16-49, 50-64, 65-79, 80+, Unknown): 2,035,601 adults with a first dose
+      source https://web.archive.org/web/20210525231618id_/https://www.dshs.state.tx.us/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls
+      sha256 8cfb02129d50a201caf6c4d0390129b355dab5a8050cbe18aef6d0c40f613b9b
+  dshs_vax_20230526012719.xlsx, sheet 'By County, Age', rows 771-775 (16-49, 50-64, 65-79, 80+, Unknown): 3,184,178 adults with a first dose
+      source https://web.archive.org/web/20230526012719id_/https://www.dshs.texas.gov/sites/default/files/LIDS-Immunize-COVID19/COVID%20Dashboard/County%20Dashboard/COVID-19%20Vaccine%20Data%20by%20County_20230510.xlsx
+      sha256 870d6b251a667bed0b3591aa214891e367f8b15edcc7714e18f5310967e1dae0
+  recomputed: coverage 55.6092% -> 86.9865%, change 31.3772 points
+  reported  : coverage 55.6092% -> 86.9865%, change 31.3772 points   MATCH
+
+Lubbock County (FIPS 48303)
+  population 16+, 1 July 2021 : 249,571   (cc-est2025-syasex-48.csv, YEAR = 3, AGE >= 16)
+  dshs_vax_20210525231618.xlsx, sheet 'By County, Age', rows 862-866 (16-49, 50-64, 65-79, 80+, Unknown): 112,307 adults with a first dose
+      source https://web.archive.org/web/20210525231618id_/https://www.dshs.state.tx.us/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls
+      sha256 8cfb02129d50a201caf6c4d0390129b355dab5a8050cbe18aef6d0c40f613b9b
+  dshs_vax_20230526012719.xlsx, sheet 'By County, Age', rows 1158-1162 (16-49, 50-64, 65-79, 80+, Unknown): 161,742 adults with a first dose
+      source https://web.archive.org/web/20230526012719id_/https://www.dshs.texas.gov/sites/default/files/LIDS-Immunize-COVID19/COVID%20Dashboard/County%20Dashboard/COVID-19%20Vaccine%20Data%20by%20County_20230510.xlsx
+      sha256 870d6b251a667bed0b3591aa214891e367f8b15edcc7714e18f5310967e1dae0
+  recomputed: coverage 45.0000% -> 64.8080%, change 19.8080 points
+  reported  : coverage 45.0000% -> 64.8080%, change 19.8080 points   MATCH
+
+Gaines County (FIPS 48165)
+  population 16+, 1 July 2021 : 15,021   (cc-est2025-syasex-48.csv, YEAR = 3, AGE >= 16)
+  dshs_vax_20210525231618.xlsx, sheet 'By County, Age', rows 471-475 (16-49, 50-64, 65-79, 80+, Unknown): 3,188 adults with a first dose
+      source https://web.archive.org/web/20210525231618id_/https://www.dshs.state.tx.us/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls
+      sha256 8cfb02129d50a201caf6c4d0390129b355dab5a8050cbe18aef6d0c40f613b9b
+  dshs_vax_20230526012719.xlsx, sheet 'By County, Age', rows 633-637 (16-49, 50-64, 65-79, 80+, Unknown): 5,125 adults with a first dose
+      source https://web.archive.org/web/20230526012719id_/https://www.dshs.texas.gov/sites/default/files/LIDS-Immunize-COVID19/COVID%20Dashboard/County%20Dashboard/COVID-19%20Vaccine%20Data%20by%20County_20230510.xlsx
+      sha256 870d6b251a667bed0b3591aa214891e367f8b15edcc7714e18f5310967e1dae0
+  recomputed: coverage 21.2236% -> 34.1189%, change 12.8953 points
+  reported  : coverage 21.2236% -> 34.1189%, change 12.8953 points   MATCH
+
+King County (FIPS 48269)
+  population 16+, 1 July 2021 : 198   (cc-est2025-syasex-48.csv, YEAR = 3, AGE >= 16)
+  dshs_vax_20210525231618.xlsx, sheet 'By County, Age', rows 766-769 (16-49, 50-64, 65-79, 80+): 37 adults with a first dose
+      source https://web.archive.org/web/20210525231618id_/https://www.dshs.state.tx.us/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls
+      sha256 8cfb02129d50a201caf6c4d0390129b355dab5a8050cbe18aef6d0c40f613b9b
+  dshs_vax_20230526012719.xlsx, sheet 'By County, Age', rows 1032-1035 (16-49, 50-64, 65-79, 80+): 59 adults with a first dose
+      source https://web.archive.org/web/20230526012719id_/https://www.dshs.texas.gov/sites/default/files/LIDS-Immunize-COVID19/COVID%20Dashboard/County%20Dashboard/COVID-19%20Vaccine%20Data%20by%20County_20230510.xlsx
+      sha256 870d6b251a667bed0b3591aa214891e367f8b15edcc7714e18f5310967e1dae0
+  recomputed: coverage 18.6869% -> 29.7980%, change 11.1111 points
+  reported  : coverage 18.6869% -> 29.7980%, change 11.1111 points   MATCH
+
+Bexar County (FIPS 48029)
+  population 16+, 1 July 2021 : 1,587,099   (cc-est2025-syasex-48.csv, YEAR = 3, AGE >= 16)
+  dshs_vax_20210525231618.xlsx, sheet 'By County, Age', rows 84-88 (16-49, 50-64, 65-79, 80+, Unknown): 863,836 adults with a first dose
+      source https://web.archive.org/web/20210525231618id_/https://www.dshs.state.tx.us/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls
+      sha256 8cfb02129d50a201caf6c4d0390129b355dab5a8050cbe18aef6d0c40f613b9b
+  dshs_vax_20230526012719.xlsx, sheet 'By County, Age', rows 112-116 (16-49, 50-64, 65-79, 80+, Unknown): 1,413,936 adults with a first dose
+      source https://web.archive.org/web/20230526012719id_/https://www.dshs.texas.gov/sites/default/files/LIDS-Immunize-COVID19/COVID%20Dashboard/County%20Dashboard/COVID-19%20Vaccine%20Data%20by%20County_20230510.xlsx
+      sha256 870d6b251a667bed0b3591aa214891e367f8b15edcc7714e18f5310967e1dae0
+  recomputed: coverage 54.4286% -> 89.0893%, change 34.6607 points
+  reported  : coverage 54.4286% -> 89.0893%, change 34.6607 points   MATCH
+
+Early-rollout extension, edition of 2021-03-01 (records through 2021-02-28)
+  2021-04-14.csv  sha256 33dec8d069ddc991914a7cf6bd60b50f96ef6d4adc161d4d671bfd1a69891109
+  2021-04-15.csv  sha256 7fcee8c17ca5b278288a730f97c9859f797cabaf586d847bbe42954c71beb215
+  2021-04-22.csv  sha256 9b7fe018089b3f00fa3313f190453a9c140e973af00c57e3152e6292e05dfed8
+  2021-03-01.csv  sha256 1359fe64a2981fc34b63a9ba322023ec2fd4e70561abda246fcaca7e5f5806fd
+  state total 3,574,983, sum of counties 3,402,128, no county 172,855; share still unassigned after the correction 1.1630%; allocated 131,277
+  Tarrant (CSV row 223): published 221,217, share received in April 18.65%, allocated 21057.2, reconstructed 242,274; reported 242,274   MATCH
+  Harris (CSV row 104): published 502,250, share received in April 1.05%, allocated 2690.5, reconstructed 504,941; reported 504,941   MATCH
+  Denton (CSV row 64): published 103,497, share received in April 24.58%, allocated 12983.9, reconstructed 116,481; reported 116,481   MATCH
+  Lubbock (CSV row 155): published 60,185, share received in April 0.39%, allocated 119.7, reconstructed 60,305; reported 60,305   MATCH
+
+All traced numbers match: TRUE
+Raw files present: 365 of 365; checksums unchanged: 365 of 365

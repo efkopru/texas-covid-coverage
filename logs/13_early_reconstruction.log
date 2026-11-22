@@ -1,0 +1,178 @@
+01:10:16 | Boundary editions before the baseline and where their county counts come from: 
+Key: <as_of>
+        as_of source           file
+       <Date> <char>         <char>
+1: 2021-01-01 github 2021-01-01.csv
+2: 2021-01-31 github 2021-01-31.csv
+3: 2021-03-01 github 2021-03-01.csv
+4: 2021-04-01 github 2021-04-01.csv
+5: 2021-04-14 github 2021-04-14.csv
+01:10:16 | 15 April 2021: county counts rose by 807,099; state total by 144,319; 'Other' fell by 662,780; records assigned to counties (sum of R): 664,458 
+01:10:16 | Share of the state total still unassigned after the correction: 1.163%; counties with negative R: 36 (sum -1679) 
+01:10:16 | Counties with unsettled early records (falls after the correction, or records at a boundary later removed, above 5% of the count): 26, of which 25 among the 238 modelled counties (1.61% of their adults) 
+01:10:16 |   by falls after the correction: 19; by a boundary count later reduced: 20; by both: 13 
+        county pop16 excl_county count_apr15 assigned_apr15 falls_after_fix fall_days falls_pct boundary_removed_pct worst_boundary
+        <char> <int>      <lgcl>       <num>          <num>           <int>     <int>     <num>                <num>         <char>
+ 1:    Cochran  1868       FALSE        2831            297            2744        18      96.9                 71.8     2021-04-15
+ 2:     Cottle  1123       FALSE         422             43               3         2       0.7                 92.4     2021-01-01
+ 3:       King   198       FALSE          68             -2              44        13      64.7                 48.6     2021-04-14
+ 4:   Hamilton  6704       FALSE        2953            133              48         7       1.6                 38.8     2021-01-31
+ 5: Schleicher  1923       FALSE         832             59               2         2       0.2                 31.9     2021-01-31
+ 6:     Baylor  2732       FALSE        1444             44             446        13      30.9                 20.5     2021-04-15
+ 7:    Bastrop 79876       FALSE       28928           6925            8465        10      29.3                  0.0           <NA>
+ 8:  Glasscock   883       FALSE         556             -7             144        14      25.9                 17.6     2021-04-14
+ 9:     Borden   493       FALSE         176             -2              45        15      25.6                 18.0     2021-04-14
+10:     Loving    32        TRUE          32              0               8         6      25.0                 21.1     2021-01-31
+11:     Austin 24277       FALSE       12275            752            2891        17      23.6                 16.7     2021-04-15
+12:      Foard   910       FALSE         451              8              74        17      16.4                 14.1     2021-03-01
+13:    Houston 18167       FALSE        5582            303             884         8      15.8                  0.0           <NA>
+14:   Rockwall 89176       FALSE       32967           -595            5193         6      15.8                  0.0           <NA>
+15:    Terrell   609       FALSE         369              2              58        14      15.7                  7.3     2021-04-15
+16:    Hopkins 29251       FALSE        8530            724               0         0       0.0                 12.6     2021-01-31
+17:     Scurry 13095       FALSE        4393            495               0         0       0.0                  9.7     2021-01-31
+18:    Edwards  1152       FALSE         557              6              49         7       8.8                  5.0     2021-04-15
+19:      Irion  1231       FALSE         462              3              39         9       8.4                  1.1     2021-04-15
+20:     Donley  2771       FALSE         987            133              28        10       2.8                  8.4     2021-04-01
+21:    Briscoe  1121       FALSE         486             -2              39        11       8.0                  5.7     2021-04-14
+22:     DeWitt 15957       FALSE        5544            418             411         4       7.4                  6.3     2021-04-15
+23:    Calhoun 15753       FALSE        7591           1059             524        11       6.9                  5.5     2021-03-01
+24:     Crosby  3944       FALSE        1814             63              98         5       5.4                  0.0           <NA>
+25:    Bandera 18206       FALSE        7108            327             382         6       5.4                  0.0           <NA>
+26:    Runnels  7870       FALSE        3039            100              21         4       0.7                  5.2     2021-01-31
+        county pop16 excl_county count_apr15 assigned_apr15 falls_after_fix fall_days falls_pct boundary_removed_pct worst_boundary
+        <char> <int>      <lgcl>       <num>          <num>           <int>     <int>     <num>                <num>         <char>
+
+Allocation at each boundary edition:
+        as_of data_through state_total county_sum unassigned unassigned_pct_of_state assumed_never_assigned allocated allocated_pct_of_county_sum total_if_county_shares_were_constant scaling_u
+       <Date>       <Date>       <num>      <num>      <num>                   <num>                  <num>     <num>                       <num>                                <num>     <num>
+1: 2021-01-01   2020-12-31      340415     313997      26418                    7.76                3959.11  22458.89                        7.15                             21628.82      1.04
+2: 2021-01-31   2021-01-30     1883862    1686470     197392                   10.48               21909.77 175482.23                       10.41                            116519.19      1.51
+3: 2021-03-01   2021-02-28     3574983    3402128     172855                    4.84               41577.91 131277.09                        3.86                            257168.82      0.51
+4: 2021-04-01   2021-03-31     7595073    7075168     519905                    6.85               88332.52 431572.48                        6.10                            539891.94      0.80
+5: 2021-04-14   2021-04-13     9563133    8787453     775680                    8.11              111221.54 664458.46                        7.56                            666137.30      1.00
+   largest_county_uplift_pct_H largest_county_uplift_pct_A counties_uplift_over_10pct_H
+                         <num>                       <num>                        <num>
+1:                       32.72                       45.44                           52
+2:                       47.46                       84.87                           74
+3:                       16.08                       24.24                            3
+4:                       25.19                       23.18                           30
+5:                       31.43                       31.43                           50
+
+Growth of published county counts regressed on the share received in April, by window:
+         from         to counties unassigned_from unassigned_to unassigned_pct_from unassigned_pct_to predicted_slope slope_weighted se_weighted slope_unweighted se_unweighted
+       <Date>     <Date>    <num>           <num>         <num>               <num>             <num>           <num>          <num>       <num>            <num>         <num>
+1: 2021-01-14 2021-01-28      213           74830        172799               8.416            10.243          -0.331         -0.399       0.150           -1.146         0.455
+2: 2021-01-28 2021-02-12      213          172799        268993              10.243             9.627           0.131          0.208       0.171           -0.779         0.318
+3: 2021-02-12 2021-02-27      213          268993        160979               9.627             4.727           0.837          1.326       0.087            1.139         0.153
+4: 2021-02-27 2021-03-14      213          160979        357697               4.727             6.659          -0.280         -0.036       0.096            0.672         0.188
+5: 2021-03-14 2021-03-30      213          357697        470433               6.659             6.460           0.034          0.064       0.069            0.748         0.103
+6: 2021-03-30 2021-04-14      213          470433        775680               6.460             8.111          -0.256         -0.098       0.064            0.414         0.088
+01:10:17 | Correlation between predicted and estimated slopes over the 6 windows: 0.97 (weighted), 0.46 (unweighted) 
+
+Boundary editions against the day before:
+        as_of previous_edition next_edition counties_below_previous persons counties_below_previous_by_2pct               largest below_previous_and_next_recovers
+       <Date>           <Date>       <Date>                   <int>   <num>                           <int>                <char>                            <int>
+1: 2021-01-01       2020-12-31   2021-01-02                       0       0                               0       Borden 0 (NaN%)                                0
+2: 2021-01-31       2021-01-30   2021-02-02                       8    -103                               1  Runnels -92 (-10.2%)                                0
+3: 2021-03-01       2021-02-28   2021-03-02                      22    -144                               1 Jim Wells -61 (-0.7%)                                0
+4: 2021-04-01       2021-03-31   2021-04-02                      25   -2956                               9 Edwards -865 (-65.1%)                                0
+5: 2021-04-14       2021-04-13   2021-04-15                      14    -217                               0   Burnet -140 (-1.1%)                                0
+
+County totals against 16+ counts of the age sheet:
+Key: <as_of>
+        as_of counties county_total adults_16plus_age_sheet counties_that_differ
+       <Date>    <int>        <int>                   <int>                <int>
+1: 2021-03-02      254      3513195                 3513195                    0
+2: 2021-03-04      254      3705059                 3705059                    0
+3: 2021-03-10      254      4385842                 4385842                    0
+4: 2021-03-26      254      6398229                 6398229                    0
+5: 2021-03-30      254      6811989                 6811989                    0
+6: 2021-04-05      254      7567379                 7567379                    0
+7: 2021-04-20      254     10082647                10082647                    0
+8: 2021-04-23      254     10344021                10344021                    0
+
+Episodes:
+                                                  item      value
+                                                <char>     <char>
+ 1:     Unassigned records, highest in February (date) 2021-02-12
+ 2:            Unassigned records, highest in February     268993
+ 3: Unassigned records, lowest in late February (date) 2021-02-27
+ 4:        Unassigned records, lowest in late February     160979
+ 5:            24 March: sum of falls in county counts     -81391
+ 6:                     24 March: counties with a fall         78
+ 7:                 24 March: change in Tarrant County     -62699
+ 8:                 25 March: change in Tarrant County      59951
+ 9:             15 April: records assigned to counties     664458
+10:               15 April: fall in the unassigned row     662780
+11:   16 April - 11 May: sum of falls in county counts     -47901
+12:          16 April - 11 May: counties with any fall        173
+13:     12 May - 25 May: sum of falls in county counts       -757
+
+Eligibility timeline:
+         from                                                     eligible dshs_population_estimate   pct
+       <Date>                                                       <char>                    <num> <num>
+1: 2020-12-14 Phase 1A: front-line health-care workers and residents of lo                  1513576   6.8
+2: 2020-12-29 Phase 1B added: people aged 65+ and people aged 16+ with a c                 13550779  60.4
+3: 2021-03-03                            School and child-care staff added                   850859   3.8
+4: 2021-03-15                            Phase 1C added: people aged 50-64                       NA    NA
+5: 2021-03-29                                            Everyone aged 16+                 22421178 100.0
+6: 2021-05-12 Adolescents aged 12-15 added (not part of this study's adult                       NA    NA
+01:10:17 | Share of adults in Phase 1A or 1B by DSHS's estimates, across counties: median 67%, range 48% to 83% 
+01:10:17 | Extended panel: 254 counties x 18 intervals; early rows usable in the model: 1278 of 1524 (213 counties) 
+                                                   exclude  rows counties
+                                                    <char> <int>    <int>
+1: early records unsettled: records later moved or removed   150       25
+2:      county: recorded count exceeds population estimate    96       16
+01:10:17 | Early rows where the reconstructed count fell and new first doses were set to zero: 0 
+
+By early interval, allocation H:
+        k                     label variant                                           group  days counties new_first_doses cov_start cov_end uptake30_pooled uptake30_median_county median_case_rate_prev30
+    <num>                    <char>  <char>                                          <char> <num>    <num>           <num>     <num>   <num>           <num>                  <num>                   <num>
+ 1:     1 14 Dec 2020 - 31 Dec 2020       H                                all 254 counties    18      254          336450      0.00    1.46            2.42                   1.96                 1605.62
+ 2:     2 01 Jan 2021 - 30 Jan 2021       H                                all 254 counties    30      254         1525501      1.46    8.08            6.71                   6.74                 1982.42
+ 3:     3 31 Jan 2021 - 28 Feb 2021       H                                all 254 counties    29      254         1671454      8.08   15.33            8.15                   8.54                 1626.23
+ 4:     4 01 Mar 2021 - 31 Mar 2021       H                                all 254 counties    31      254         3973337     15.33   32.56           19.77                  16.19                  728.42
+ 5:     5 01 Apr 2021 - 13 Apr 2021       H                                all 254 counties    13      254         1945177     32.56   41.00           26.54                  13.19                  237.51
+ 6:     6 14 Apr 2021 - 24 May 2021       H                                all 254 counties    41      254         2646413     41.00   52.48           14.64                   6.65                  187.51
+ 7:     1 14 Dec 2020 - 31 Dec 2020       H 213 modelled counties with stable early records    18      213          293511      0.00    1.42            2.35                   1.84                 1593.25
+ 8:     2 01 Jan 2021 - 30 Jan 2021       H 213 modelled counties with stable early records    30      213         1332202      1.42    7.86            6.53                   6.52                 1980.40
+ 9:     3 31 Jan 2021 - 28 Feb 2021       H 213 modelled counties with stable early records    29      213         1468752      7.86   14.96            7.96                   8.57                 1601.99
+10:     4 01 Mar 2021 - 31 Mar 2021       H 213 modelled counties with stable early records    31      213         3478222     14.96   31.76           19.19                  15.47                  716.20
+11:     5 01 Apr 2021 - 13 Apr 2021       H 213 modelled counties with stable early records    13      213         1695524     31.76   39.96           25.56                  12.80                  231.21
+12:     6 14 Apr 2021 - 24 May 2021       H 213 modelled counties with stable early records    41      213         2276791     39.96   50.96           13.77                   6.66                  185.23
+
+Spread of reconstructed coverage across the 213 modelled counties with stable early records:
+Key: <data_through>
+   data_through     A     H     N
+         <Date> <num> <num> <num>
+1:   2020-12-31  2.22  2.37  2.26
+2:   2021-01-30  9.51  9.87  9.92
+3:   2021-02-28 17.63 17.65 17.82
+4:   2021-03-31 19.77 19.61 20.35
+5:   2021-04-13 21.03 21.03 20.55
+6:   2021-05-24 22.09 22.09 22.09
+        as_of data_through variant counties   p10   p25 median   p75   p90 gap_p90_p10    sd pooled ratio_p90_p10
+       <Date>       <Date>  <char>    <num> <num> <num>  <num> <num> <num>       <num> <num>  <num>         <num>
+1: 2021-01-01   2020-12-31       H      213  0.47  0.68   1.11  1.84  2.84        2.37  1.06   1.42          6.03
+2: 2021-01-31   2021-01-30       H      213  4.74  5.55   7.95 10.65 14.61        9.87  4.44   7.86          3.08
+3: 2021-03-01   2021-02-28       H      213  9.91 12.34  16.20 20.62 27.55       17.65  6.83  14.96          2.78
+4: 2021-04-01   2021-03-31       H      213 21.70 26.20  30.21 36.54 41.31       19.61  7.99  31.76          1.90
+5: 2021-04-14   2021-04-13       H      213 25.34 30.29  35.20 40.96 46.36       21.03  8.27  39.96          1.83
+6: 2021-05-25   2021-05-24       H      213 32.21 36.05  41.18 47.26 54.29       22.09  8.50  50.96          1.69
+
+Effect of the allocation on county coverage:
+        as_of data_through counties median_uplift_pct_H p90_uplift_pct_H max_uplift_pct_H median_abs_diff_points_H_vs_N max_abs_diff_points_H_vs_N median_abs_diff_points_H_vs_A max_abs_diff_points_H_vs_A rank_cor_H_vs_N
+       <Date>       <Date>    <num>               <num>            <num>            <num>                         <num>                      <num>                         <num>                      <num>           <num>
+1: 2021-01-01   2020-12-31      213               3.970           14.629           32.719                         0.041                      0.478                         0.014                      0.261           0.996
+2: 2021-01-31   2021-01-30      213               5.758           21.218           47.455                         0.394                      3.340                         0.081                      1.750           0.986
+3: 2021-03-01   2021-02-28      213               1.952            7.192           16.085                         0.283                      2.023                         0.045                      0.834           0.997
+4: 2021-04-01   2021-03-31      213               3.056           11.262           25.188                         0.786                      5.689                         0.054                      0.780           0.986
+5: 2021-04-14   2021-04-13      213               3.814           14.053           31.431                         1.131                      8.521                         0.000                      0.000           0.974
+   rank_cor_H_vs_A
+             <num>
+1:           0.999
+2:           0.998
+3:           1.000
+4:           1.000
+5:           1.000
+01:10:17 | Done. 

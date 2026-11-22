@@ -1,0 +1,16 @@
+# Installed R packages: R/00_setup.R recreates them
+r-lib/
+
+# Posterior draws, 340 MB: steps 6 and 14 recreate them (fixed seed)
+outputs/models/samples_*.rds
+
+# Two national Census ACS files that are larger than GitHub accepts or close to it (191 MB and 88 MB).
+# R/01_download_sources.R fetches them; their checksums are in data/raw/MANIFEST.csv
+data/raw/census_acs/acsdt5y2023-b01001.dat
+data/raw/census_acs/Geos20235YR.txt
+
+# Local tool settings and R session files
+.claude/
+.Rhistory
+.RData
+.Rproj.user/

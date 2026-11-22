@@ -1,0 +1,7 @@
+from,eligible,source,dshs_population_estimate,note,pct_of_dshs_16plus
+2020-12-14,Phase 1A: front-line health-care workers and residents of long-term-care facilities,DSHS news release of 14 Dec 2020 (first doses delivered that day),1513576,health-care workers plus long-term-care residents,6.75065333320132
+2020-12-29,Phase 1B added: people aged 65+ and people aged 16+ with a chronic medical condition,"DSHS news release of 21 Dec 2020 (definition); release of 10 Mar 2021 says Phase 1B began later in December; start date of 29 Dec from press reports, not from a DSHS file",13550779,"cumulative: adds 65+ and 16-64 with a medical condition; groups overlap, so an upper bound",60.4374087748646
+2021-03-03,School and child-care staff added,DSHS news release of 3 Mar 2021,850859,this group alone; overlaps with the groups above,3.79488981355039
+2021-03-15,Phase 1C added: people aged 50-64,DSHS news release of 10 Mar 2021,,no county estimate printed by DSHS,
+2021-03-29,Everyone aged 16+,DSHS news release of 23 Mar 2021,22421178,DSHS 16+ population (2019-based),100
+2021-05-12,Adolescents aged 12-15 added (not part of this study's adult counts),DSHS news release of 12 May 2021,,"",

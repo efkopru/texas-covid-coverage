@@ -1,0 +1,6 @@
+as_of,previous_edition,next_edition,counties_below_previous,persons,counties_below_previous_by_2pct,largest,below_previous_and_next_recovers
+2021-01-01,2020-12-31,2021-01-02,0,0,0,Borden 0 (NaN%),0
+2021-01-31,2021-01-30,2021-02-02,8,-103,1,Runnels -92 (-10.2%),0
+2021-03-01,2021-02-28,2021-03-02,22,-144,1,Jim Wells -61 (-0.7%),0
+2021-04-01,2021-03-31,2021-04-02,25,-2956,9,Edwards -865 (-65.1%),0
+2021-04-14,2021-04-13,2021-04-15,14,-217,0,Burnet -140 (-1.1%),0

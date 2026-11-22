@@ -1,0 +1,23 @@
+Warning message:
+package 'patchwork' was built under R version 4.6.2 
+
+Correlations between periods from the counts themselves, by allocation:
+   variant                                allocation counties early_with_spring early_with_later spring_with_later
+    <char>                                    <char>    <int>             <num>            <num>             <num>
+1:       H Published count x share received in April      167        0.12961390        0.4270214         0.7425146
+2:       A                        Fixed April shares      167        0.14433742        0.4341039         0.7476777
+3:       N                             No allocation      167        0.08758863        0.3880648         0.7258989
+01:11:32 | Figures 
+01:11:33 |   wrote outputs/figures/fig12_unassigned_and_correction.png 
+01:11:35 |   wrote outputs/figures/fig13_reconstructed_coverage_maps.png 
+01:11:36 |   wrote outputs/figures/fig14_extended_uptake_and_spread.png 
+01:11:37 |   wrote outputs/figures/fig15_associations_by_period.png 
+01:11:37 |   wrote outputs/figures/fig16_early_versus_later_uptake.png 
+Key: <age_third>
+                          age_third counties median_rel_early median_rel_spring median_rel_later median_share_65
+                             <fctr>    <int>            <num>             <num>            <num>           <num>
+1:       Youngest third of counties       71         1.027673         1.2033284        1.1653422        18.19302
+2:                     Middle third       71         0.948095         0.9126449        0.9542790        23.73689
+3: Oldest third (by share aged 65+)       71         1.045755         0.8255402        0.7993849        30.26482
+01:11:39 | Wrote docs/03_early_rollout.md (485 lines, 282 values, 16 tables) 
+01:11:39 | Done. 

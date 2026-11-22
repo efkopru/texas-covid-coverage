@@ -1,0 +1,58 @@
+23:30:53 |   origin03 half A M4: 1070 test rows, 98 s 
+23:32:22 |   origin03 half B M4: 1071 test rows, 89 s 
+23:33:51 |   origin06 half A M4: 713 test rows, 89 s 
+23:36:23 |   origin06 half B M4: 714 test rows, 152 s 
+23:38:00 |   origin09 half A M4: 356 test rows, 97 s 
+23:40:12 |   origin09 half B M4: 357 test rows, 131 s 
+23:41:19 |   origin03 half A M1: 1070 test rows, 67 s 
+23:42:39 |   origin03 half B M1: 1071 test rows, 79 s 
+23:44:04 |   origin06 half A M1: 713 test rows, 85 s 
+23:45:33 |   origin06 half B M1: 714 test rows, 89 s 
+23:46:33 |   origin09 half A M1: 356 test rows, 60 s 
+23:47:31 |   origin09 half B M1: 357 test rows, 58 s 
+23:48:01 |   origin03 half A M0: 1070 test rows, 30 s 
+23:48:28 |   origin03 half B M0: 1071 test rows, 28 s 
+23:48:52 |   origin06 half A M0: 713 test rows, 24 s 
+23:49:11 |   origin06 half B M0: 714 test rows, 18 s 
+23:49:28 |   origin09 half A M0: 356 test rows, 17 s 
+23:49:50 |   origin09 half B M0: 357 test rows, 22 s 
+23:51:05 |   origin03 half A M2: 1070 test rows, 75 s 
+23:52:14 |   origin03 half B M2: 1071 test rows, 68 s 
+23:53:25 |   origin06 half A M2: 713 test rows, 71 s 
+23:54:25 |   origin06 half B M2: 714 test rows, 60 s 
+23:55:36 |   origin09 half A M2: 356 test rows, 70 s 
+23:56:57 |   origin09 half B M2: 357 test rows, 80 s 
+
+A. Held-out counties
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  2855      238         -6.152           -5.935           0        0.888  1.173  -0.319      0.930      0.582           7.464                    0.542                   0.292          237
+2:     M1  2855      238         -6.003           -5.815           0        0.768  1.034  -0.198      0.934      0.580           6.398                    0.471                   0.557          237
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               4.586                          3.682             0.966
+2:               3.650                          3.039             0.966
+
+C. Later intervals of half the counties
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  4281      238         -5.793           -5.384           0        0.420  0.559  -0.147      0.874      0.511           2.807                    0.491                   0.687          711
+2:     M1  4281      238         -5.782           -5.376           0        0.419  0.565  -0.141      0.875      0.498           2.771                    0.485                   0.694          711
+3:     M2  4281      238         -5.655           -5.340           0        0.421  0.572  -0.148      0.896      0.508           2.599                    0.499                   0.665          711
+4:     M4  4281      238         -5.647           -5.352           0        0.412  0.558  -0.142      0.906      0.531           2.837                    0.486                   0.692          711
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               1.227                          0.823             0.796
+2:               1.220                          0.797             0.789
+3:               1.240                          0.831             0.844
+4:               1.204                          0.805             0.880
+Key: <origin>
+   origin    M0    M1    M2    M4
+    <num> <num> <num> <num> <num>
+1:      3 1.864 1.872 1.880 1.838
+2:      6 1.134 1.106 1.175 1.104
+3:      9 0.683 0.680 0.664 0.671
+23:56:59 | Done: later 
+exit=0

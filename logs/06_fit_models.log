@@ -1,0 +1,114 @@
+23:29:15 | Panel rows: 3048; usable: 2855; counties in likelihood: 238; intervals: 12 
+23:29:15 | Fitting M0 non-spatial county effects 
+    model                         label     waic   p_waic      dic    p_dic mean_log_cpo cpo_failures      mlik  seconds
+   <char>                        <char>    <num>    <num>    <num>    <num>        <num>        <int>     <num>    <num>
+1:     M0 M0 non-spatial county effects 25737.08 1590.679 26077.53 2534.889    -5.970627            0 -16796.23 4.129226
+    model        term        mean         sd        q025      median       q975
+   <char>      <char>       <num>      <num>       <num>       <num>      <num>
+1:     M0 (Intercept) -3.87839166 0.02712863 -3.93165903 -3.87838362 -3.8251701
+2:     M0       z_age -0.14476153 0.02902243 -0.20173756 -0.14475628 -0.0878154
+3:     M0    z_income  0.03740405 0.03088738 -0.02323275  0.03740940  0.0980104
+4:     M0     z_cases  0.08975699 0.01493015  0.06048318  0.08975516  0.1190412
+    model parameter      mean      q025    median      q975
+   <char>    <char>     <num>     <num>     <num>     <num>
+1:     M0 SD of tid 0.8148790 0.5677447 0.7979590 1.1537325
+2:     M0 SD of oid 0.3314817 0.3204512 0.3314169 0.3428050
+3:     M0 SD of cid 0.4013934 0.3642655 0.4007866 0.4416457
+23:30:27 | Fitting M1 BYM2 county effects 
+    model                  label     waic p_waic      dic    p_dic mean_log_cpo cpo_failures      mlik seconds
+   <char>                 <char>    <num>  <num>    <num>    <num>        <num>        <int>     <num>   <num>
+1:     M1 M1 BYM2 county effects 25732.48 1587.7 26076.39 2533.359    -5.956063            0 -16600.13 30.1309
+    model        term        mean         sd        q025      median        q975
+   <char>      <char>       <num>      <num>       <num>       <num>       <num>
+1:     M1 (Intercept) -3.84447128 0.01650197 -3.87715594 -3.84439227 -3.81223405
+2:     M1       z_age -0.16170011 0.02497024 -0.21069843 -0.16170317 -0.11268487
+3:     M1    z_income  0.01660237 0.02760928 -0.03762427  0.01661652  0.07074898
+4:     M1     z_cases  0.08550224 0.01487330  0.05633616  0.08550176  0.11467110
+    model   parameter      mean      q025    median      q975
+   <char>      <char>     <num>     <num>     <num>     <num>
+1:     M1   SD of tid 0.8133948 0.5630948 0.7980561 1.1479509
+2:     M1   SD of oid 0.3314454 0.3204161 0.3313833 0.3427546
+3:     M1   SD of cid 0.3701142 0.3254762 0.3687647 0.4216275
+4:     M1 Phi for cid 0.6975043 0.4859492 0.7032159 0.8723071
+23:32:05 | Fitting M2 BYM2 + county linear trends 
+    model                          label     waic   p_waic      dic    p_dic mean_log_cpo cpo_failures      mlik  seconds
+   <char>                         <char>    <num>    <num>    <num>    <num>        <num>        <int>     <num>    <num>
+1:     M2 M2 BYM2 + county linear trends 25721.63 1593.427 26022.66 2498.001    -5.843862           10 -16427.25 35.36408
+    model        term        mean         sd        q025      median        q975
+   <char>      <char>       <num>      <num>       <num>       <num>       <num>
+1:     M2 (Intercept) -3.84612442 0.01673473 -3.87929841 -3.84603610 -3.81344627
+2:     M2       z_age -0.16102768 0.02541816 -0.21090286 -0.16103141 -0.11113195
+3:     M2    z_income  0.01590876 0.02811420 -0.03931538  0.01592546  0.07103874
+4:     M2     z_cases  0.09039603 0.01389198  0.06315695  0.09039465  0.11764297
+    model   parameter      mean      q025    median      q975
+   <char>      <char>     <num>     <num>     <num>     <num>
+1:     M2   SD of tid 0.8148844 0.5657086 0.7996343 1.1477489
+2:     M2   SD of oid 0.2842197 0.2741380 0.2841640 0.2945551
+3:     M2   SD of cid 0.3803687 0.3352538 0.3790673 0.4321225
+4:     M2 Phi for cid 0.6876163 0.4802240 0.6924215 0.8630859
+5:     M2  SD of cid2 0.3728843 0.3301500 0.3721852 0.4193624
+23:33:51 | Fitting M3 BYM2 + county random-walk trajectories 
+    model                                     label     waic  p_waic      dic    p_dic mean_log_cpo cpo_failures      mlik  seconds
+   <char>                                    <char>    <num>   <num>    <num>    <num>        <num>        <int>     <num>    <num>
+1:     M3 M3 BYM2 + county random-walk trajectories 25724.44 1613.85 25940.47 2464.759    -5.852906           44 -17679.08 582.9808
+    model        term        mean         sd        q025      median        q975
+   <char>      <char>       <num>      <num>       <num>       <num>       <num>
+1:     M3 (Intercept) -3.84927504 0.01682153 -3.88262505 -3.84918551 -3.81642801
+2:     M3       z_age -0.16401574 0.02566537 -0.21438225 -0.16401748 -0.11364009
+3:     M3    z_income  0.01420755 0.02839711 -0.04157500  0.01422532  0.06989023
+4:     M3     z_cases  0.06487673 0.01428727  0.03686264  0.06487528  0.09289905
+    model   parameter      mean      q025    median      q975
+   <char>      <char>     <num>     <num>     <num>     <num>
+1:     M3   SD of tid 0.8130514 0.5683630 0.7957894 1.1509588
+2:     M3   SD of oid 0.1910256 0.1761550 0.1908778 0.2066685
+3:     M3   SD of cid 0.3897127 0.3437155 0.3885552 0.4416733
+4:     M3 Phi for cid 0.6711934 0.4592869 0.6771887 0.8467835
+5:     M3  SD of tid2 0.3034435 0.2784815 0.3030831 0.3302446
+23:45:57 | Fitting M4 BYM2 + county mean-reverting trajectories 
+    model                                        label     waic   p_waic      dic    p_dic mean_log_cpo cpo_failures      mlik  seconds
+   <char>                                       <char>    <num>    <num>    <num>    <num>        <num>        <int>     <num>    <num>
+1:     M4 M4 BYM2 + county mean-reverting trajectories 25756.55 1616.173 25969.93 2462.545     -5.78716            1 -16367.74 65.06155
+    model        term        mean         sd        q025      median        q975
+   <char>      <char>       <num>      <num>       <num>       <num>       <num>
+1:     M4 (Intercept) -3.84522211 0.02418778 -3.89286755 -3.84516792 -3.79788475
+2:     M4       z_age -0.18649116 0.03186594 -0.24907524 -0.18647563 -0.12399511
+3:     M4    z_income  0.04896974 0.03531582 -0.02034029  0.04896942  0.11828094
+4:     M4     z_cases  0.06133341 0.01450107  0.03289784  0.06133279  0.08977249
+    model    parameter      mean       q025    median      q975
+   <char>       <char>     <num>      <num>     <num>     <num>
+1:     M4    SD of tid 0.8131166 0.57690872 0.7925414 1.1583860
+2:     M4    SD of oid 0.1733707 0.15400098 0.1731061 0.1941827
+3:     M4    SD of cid 0.3497886 0.28473626 0.3486071 0.4218079
+4:     M4  Phi for cid 0.9206340 0.77539771 0.9343563 0.9929340
+5:     M4   SD of tid2 0.4297330 0.39239056 0.4290332 0.4706061
+6:     M4 Phi for tid2 0.1206515 0.08970469 0.1195063 0.1579673
+23:49:00 | Model summaries available for: M0, M1, M2, M3, M4 
+23:49:00 | Fitting baseline model B0 
+    model     waic   p_waic      dic    p_dic mean_log_cpo cpo_failures      mlik  seconds
+   <char>    <num>    <num>    <num>    <num>        <num>        <int>     <num>    <num>
+1:     B0 2794.858 120.9679 2863.144 236.1365    -6.844525            0 -2059.585 2.252594
+    model        term        mean         sd         q025      median        q975
+   <char>      <char>       <num>      <num>        <num>       <num>       <num>
+1:     B0 (Intercept) -0.31968377 0.02252234 -0.363890048 -0.31968292 -0.27548235
+2:     B0       z_age  0.01837522 0.02509595 -0.030885427  0.01837729  0.06762405
+3:     B0    z_income  0.05425188 0.02710294  0.001030882  0.05426142  0.10741864
+4:     B0 z_cases_pre  0.07527128 0.02413920  0.027887109  0.07527372  0.12264155
+    model parameter      mean      q025    median      q975
+   <char>    <char>     <num>     <num>     <num>     <num>
+1:     B0 SD of cid 0.3433611 0.3135577 0.3427301 0.3765623
+23:49:03 | Fitting baseline model B1 
+    model     waic   p_waic      dic    p_dic mean_log_cpo cpo_failures      mlik seconds
+   <char>    <num>    <num>    <num>    <num>        <num>        <int>     <num>   <num>
+1:     B1 2799.173 122.1315 2864.456 234.5691    -6.819778            0 -1861.094 28.3493
+    model        term        mean         sd         q025      median        q975
+   <char>      <char>       <num>      <num>        <num>       <num>       <num>
+1:     B1 (Intercept) -0.27978231 0.01167455 -0.303272301 -0.27962204 -0.25716850
+2:     B1       z_age  0.03120721 0.02178150 -0.011528252  0.03120391  0.07396162
+3:     B1    z_income  0.05281679 0.02348882  0.006715924  0.05281864  0.09890718
+4:     B1 z_cases_pre  0.07104300 0.02478577  0.022409282  0.07104042  0.11969138
+    model   parameter      mean      q025    median      q975
+   <char>      <char>     <num>     <num>     <num>     <num>
+1:     B1   SD of cid 0.3381910 0.2964108 0.3366053 0.3879628
+2:     B1 Phi for cid 0.8073902 0.5881096 0.8207656 0.9486089
+23:49:54 | Done. 
+exit=0

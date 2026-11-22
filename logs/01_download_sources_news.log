@@ -1,0 +1,29 @@
+00:44:33 | CDC county vaccination file (Texas rows) 
+00:44:33 | DSHS vaccine workbooks (Wayback Machine captures) 
+00:44:33 |   46 distinct workbook captures, 20201221 to 20240407 
+00:44:33 | DSHS 'By County' daily snapshots (GitHub archive, pinned commit) 
+00:44:33 |   275 county snapshots, 2020-12-29 to 2021-10-06 
+00:44:33 | DSHS case workbooks and data notes 
+00:44:33 | Census population estimates (Vintage 2025) 
+00:44:34 | ACS 2019-2023 five-year tables 
+00:44:34 | Census county boundaries and adjacency file 
+00:44:34 | Harris County Public Health data hub tables 
+00:44:34 | DSHS news releases on vaccine eligibility (Wayback Machine captures) 
+00:44:35 |   downloaded data/raw/dshs_news/dshs_release_20201214.html (40,631 bytes) 
+00:44:37 |   downloaded data/raw/dshs_news/dshs_release_20201221.html (35,713 bytes) 
+00:44:39 |   downloaded data/raw/dshs_news/dshs_release_20201228.html (34,609 bytes) 
+00:44:41 |   downloaded data/raw/dshs_news/dshs_release_20210303.html (33,646 bytes) 
+00:44:43 |   downloaded data/raw/dshs_news/dshs_release_20210310.html (35,248 bytes) 
+00:44:47 |   downloaded data/raw/dshs_news/dshs_release_20210323.html (35,652 bytes) 
+00:44:53 |   downloaded data/raw/dshs_news/dshs_release_20210512.html (35,556 bytes) 
+00:44:58 | Manifest: 365 files, 430.3 MB; all present: TRUE; all checksums match: TRUE 
+         source_id files     MB
+1   cdc_county_vax     2  47.75
+2       census_acs     6 342.09
+3       census_geo     2  12.96
+4       census_pep     4   8.87
+5 county_hd_harris     8   0.11
+6       dshs_cases     9   2.10
+7        dshs_news     7   0.26
+8  dshs_vax_github   278   5.57
+9 dshs_vax_wayback    49  10.60

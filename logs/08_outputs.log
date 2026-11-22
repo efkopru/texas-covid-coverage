@@ -1,0 +1,88 @@
+Warning message:
+package 'patchwork' was built under R version 4.6.2 
+00:29:01 | Outputs for model M4 
+    model compared_with counties correlation_log_scale median_abs_diff_pct p95_abs_diff_pct max_abs_diff_pct max_diff_county max_diff_county_adults median_abs_diff_pct_over_5000_adults
+   <char>        <char>    <int>                 <num>               <num>            <num>            <num>          <char>                  <int>                                <num>
+1:     M0            M4      238             0.9992820           0.4559716         4.255056        11.167332          Borden                    493                            0.4033029
+2:     M1            M4      238             0.9993456           0.4624282         4.074334        10.663752            King                    198                            0.4245979
+3:     M2            M4      238             0.9997627           0.1727922         1.685915        10.072473            King                    198                            0.1466732
+4:     M3            M4      238             0.9997556           0.1879433         2.047727         8.807765            King                    198                            0.1582373
+   max_abs_diff_pct_over_5000_adults
+                               <num>
+1:                          9.095501
+2:                          8.723720
+3:                          1.314510
+4:                          4.137791
+00:29:56 | County table written: 254 counties, 238 with modelled quantities 
+                                                               measure       value
+                                                                <char>       <num>
+ 1:                                                           Counties 238.0000000
+ 2:     Gap between 90th and 10th percentile county, baseline (points)  21.7255511
+ 3:                                                  Gap, end (points)  26.2373938
+ 4:              Standard deviation across counties, baseline (points)   8.4158260
+ 5:                                   Standard deviation, end (points)  10.8150668
+ 6:                   Population-weighted standard deviation, baseline   8.6268032
+ 7:                        Population-weighted standard deviation, end  11.2841394
+ 8:            Slope of change on baseline coverage (points per point)   0.1754175
+ 9:                                 Slope, 95% confidence interval low   0.1088014
+10:                                                        Slope, high   0.2420337
+11:                       Correlation of baseline coverage with change   0.3199404
+12:                     Rank correlation of baseline with end coverage   0.9043198
+13: Bottom-fifth counties at baseline still in bottom fifth at end (%)  70.8333333
+14: Unvaccinated share ratio, 10th vs 90th percentile county, baseline   1.4718251
+15:                                      Unvaccinated share ratio, end   2.1697361
+00:29:57 | Correlation of baseline coverage with modelled relative uptake: 0.73 (95% CrI 0.72 to 0.74); hazard ratio per 10 points of baseline coverage: 1.49 (1.47 to 1.50) 
+                          outcome                           predictor              contrast ratio    lo    hi
+                           <char>                              <char>                <char> <num> <num> <num>
+1: Uptake hazard among adults not            Share of adults aged 65+ per 1 SD (6.2 points) 0.830 0.780 0.883
+2: Uptake hazard among adults not            Share of adults aged 65+          per 5 points 0.860 0.817 0.904
+3: Uptake hazard among adults not             Median household income per 1 SD (27% higher) 1.050 0.980 1.126
+4: Uptake hazard among adults not             Median household income        per 10% higher 1.020 0.992 1.049
+5: Uptake hazard among adults not           Cases in previous 30 days   per 1 SD (4.0-fold) 1.063 1.033 1.094
+6: Uptake hazard among adults not           Cases in previous 30 days          per doubling 1.031 1.017 1.046
+7: Coverage reached by 24 May 202            Share of adults aged 65+              per 1 SD 1.032 0.989 1.077
+8: Coverage reached by 24 May 202             Median household income              per 1 SD 1.054 1.007 1.104
+9: Coverage reached by 24 May 202 Cumulative cases before 14 Dec 2020              per 1 SD 1.074 1.023 1.127
+                      size county_intervals counties median_abs_diff_pp p95_abs_diff_pp median_abs_rel_diff_pct recorded_inside_95_interval_pct median_interval_width_pp cor_recorded_modelled
+                    <fctr>            <int>    <int>              <num>           <num>                   <num>                           <num>                    <num>                 <num>
+1: Fewer than 5,000 adults              720       60        0.158636723      1.14847907              7.83121384                        87.50000                1.4281281             0.9845715
+2:         5,000 to 50,000             1523      127        0.018420486      0.15665200              0.81570879                        98.42416                0.6658907             0.9996261
+3:        More than 50,000              612       51        0.001798398      0.01125526              0.06226207                       100.00000                0.2594202             0.9999980
+   cor_recorded_structural
+                     <num>
+1:               0.9515161
+2:               0.9849598
+3:               0.9917220
+00:29:57 | Counties whose effect differs from the mean of their neighbours with 95% posterior probability: 136 of 238 (68 lower, 68 higher) 
+Warning messages:
+1: In sn2listw(df, style = style, zero.policy = zero.policy, from_mat2listw = TRUE) :
+  neighbour object has 2 sub-graphs
+2: In mat2listw(W[kept_i, kept_i], style = "W", zero.policy = TRUE) :
+  neighbour object has 2 sub-graphs
+00:30:00 | Moran's I of the county effects from the non-spatial model (kept counties): 0.475, p = 2.3e-33 
+        as_of counties correlation rank_correlation median_diff_points median_abs_diff_points counties_diff_over_5_points counties_diff_over_10_points
+       <Date>    <int>       <num>            <num>              <num>                  <num>                       <int>                        <int>
+1: 2021-10-26      238   0.9700424        0.9633111          0.9185497               1.424096                          11                            2
+2: 2022-05-31      238   0.6525570        0.8976224          2.7566005               2.811964                          59                           18
+3: 2023-05-10      237   0.6519310        0.9260465          1.2274845               1.713789                          26                           11
+Index: <month>
+     month first_doses  days cumulative at_risk_start coverage_end_pct uptake30_pct reported_then reported_then_pct
+    <char>       <int> <int>      <int>         <int>            <num>        <num>         <num>             <num>
+1: 2020-12      514176    18     514176      23054310         2.230281     3.689433        340415          1.476579
+2: 2021-01     1827899    31    2342075      22540134        10.158946     7.858496            NA                NA
+3: 2021-02     1703270    28    4045345      20712235        17.547023     8.784326       3574983         15.506788
+4: 2021-03     4360448    31    8405793      19008965        36.460831    22.288433       7595073         32.944265
+5: 2021-04     3194801    30   11600594      14648517        50.318548    21.809723      11094715         48.124255
+00:30:00 | Figures 
+00:30:01 |   wrote outputs/figures/fig01_unassigned_records.png 
+00:30:02 |   wrote outputs/figures/fig02_recorded_coverage_maps.png 
+00:30:03 |   wrote outputs/figures/fig03_coverage_change_map.png 
+00:30:04 |   wrote outputs/figures/fig06_uptake_curves.png 
+00:30:06 |   wrote outputs/figures/fig07_county_examples.png 
+00:30:09 |   wrote outputs/figures/fig08_relative_uptake_maps.png 
+00:30:11 |   wrote outputs/figures/fig09_relative_uptake_extremes.png 
+00:30:12 |   wrote outputs/figures/fig10_predictor_associations.png 
+00:30:18 |   wrote outputs/figures/fig04_gaps_between_counties.png 
+00:30:19 |   wrote outputs/figures/fig05_validation.png 
+00:30:22 |   wrote outputs/figures/fig11_smoothing_checks.png 
+00:30:22 | Done. 

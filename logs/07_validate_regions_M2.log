@@ -1,0 +1,135 @@
+00:17:13 |   PHR 1 M2: 492 test rows, 39 s 
+00:17:46 |   PHR 11 M2: 144 test rows, 32 s 
+00:18:21 |   PHR 2/3 M2: 588 test rows, 35 s 
+00:19:03 |   PHR 4/5N M2: 420 test rows, 41 s 
+00:19:44 |   PHR 6/5S M2: 192 test rows, 42 s 
+00:20:23 |   PHR 7 M2: 360 test rows, 38 s 
+00:20:59 |   PHR 8 M2: 287 test rows, 36 s 
+00:21:33 |   PHR 9/10 M2: 372 test rows, 34 s 
+
+A. Held-out counties
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  2855      238         -6.152           -5.935           0        0.888  1.173  -0.319      0.930      0.582           7.464                    0.542                   0.292          237
+2:     M1  2855      238         -6.003           -5.815           0        0.768  1.034  -0.198      0.934      0.580           6.398                    0.471                   0.557          237
+3:     M2  2855      238         -5.972           -5.783           0        0.769  1.035  -0.183      0.936      0.580           6.317                    0.470                   0.558          237
+4:     M4  2855      238         -6.028           -5.898           0        0.829  1.101  -0.126      0.957      0.627           8.087                    0.478                   0.549          237
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               4.586                          3.682             0.966
+2:               3.650                          3.039             0.966
+3:               3.648                          2.958             0.970
+4:               4.017                          3.125             0.987
+
+B. Held-out regions
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  2855      238         -6.198           -5.968           0        0.921  1.214  -0.297      0.925      0.567           7.553                    0.491                   0.314          237
+2:     M1  2855      238         -6.074           -5.870           0        0.803  1.075  -0.406      0.930      0.571           6.490                    0.479                   0.373          237
+3:     M2  2855      238         -6.051           -5.859           0        0.807  1.080  -0.414      0.930      0.568           6.412                    0.480                   0.370          237
+4:     M4  2855      238         -6.086           -5.936           0        0.845  1.105  -0.335      0.956      0.626           8.097                    0.482                   0.370          237
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               4.840                          4.043             0.949
+2:               3.879                          3.085             0.962
+3:               3.899                          3.036             0.966
+4:               4.087                          3.223             0.992
+
+C. Later intervals of half the counties
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  4281      238         -5.793           -5.384           0        0.420  0.559  -0.147      0.874      0.511           2.807                    0.491                   0.687          711
+2:     M1  4281      238         -5.782           -5.376           0        0.419  0.565  -0.141      0.875      0.498           2.771                    0.485                   0.694          711
+3:     M2  4281      238         -5.655           -5.340           0        0.421  0.572  -0.148      0.896      0.508           2.599                    0.499                   0.665          711
+4:     M3  4281      238         -5.609           -5.365           0        0.423  0.577  -0.153      0.915      0.526           2.700                    0.501                   0.665          711
+5:     M4  4281      238         -5.647           -5.352           0        0.412  0.558  -0.142      0.906      0.531           2.837                    0.486                   0.692          711
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               1.227                          0.823             0.796
+2:               1.220                          0.797             0.789
+3:               1.240                          0.831             0.844
+4:               1.281                          0.843             0.890
+5:               1.204                          0.805             0.880
+Key: <origin>
+   origin    M0    M1    M2    M3    M4
+    <num> <num> <num> <num> <num> <num>
+1:      3 1.864 1.872 1.880 1.961 1.838
+2:      6 1.134 1.106 1.175 1.204 1.104
+3:      9 0.683 0.680 0.664 0.676 0.671
+
+D. Next interval of every county
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>
+1:     M0  2141      238         -6.174           -6.045           0        1.121  1.514   1.061      0.937      0.505          10.701                    0.430                   0.724
+2:     M1  2141      238         -6.152           -6.013           0        1.058  1.407   0.950      0.938      0.518          10.410                    0.430                   0.724
+3:     M2  2141      238         -6.138           -6.005           0        1.048  1.399   0.956      0.944      0.512          10.596                    0.423                   0.725
+4:     M4  2141      238         -6.129           -5.998           0        1.033  1.368   0.940      0.950      0.537          10.592                    0.421                   0.737
+
+Paired differences (second model minus first); negative CRPS difference = second model better
+    experiment           subset  first second clusters diff_crps_pp diff_crps_lo diff_crps_hi diff_log_score diff_log_score_lo diff_log_score_hi
+        <char>           <char> <char> <char>    <num>        <num>        <num>        <num>          <num>             <num>             <num>
+ 1:          A              all     M0     M1      238       -0.121       -0.177       -0.071          0.148             0.094             0.203
+ 2:          A              all     M0     M2      238       -0.120       -0.176       -0.069          0.180             0.121             0.236
+ 3:          A              all     M0     M4      238       -0.059       -0.130        0.004          0.124             0.066             0.185
+ 4:          A              all     M1     M2      238        0.001       -0.002        0.005          0.031             0.020             0.042
+ 5:          A              all     M1     M4      238        0.062        0.041        0.083         -0.024            -0.048             0.000
+ 6:          A              all     M2     M4      238        0.060        0.040        0.081         -0.056            -0.078            -0.034
+ 7:          B              all     M0     M1      238       -0.117       -0.170       -0.070          0.124             0.069             0.179
+ 8:          B              all     M0     M2      238       -0.114       -0.168       -0.066          0.147             0.088             0.206
+ 9:          B              all     M0     M4      238       -0.076       -0.135       -0.023          0.112             0.054             0.174
+10:          B              all     M1     M2      238        0.003        0.000        0.007          0.024             0.013             0.034
+11:          B              all     M1     M4      238        0.042        0.027        0.056         -0.011            -0.034             0.013
+12:          B              all     M2     M4      238        0.038        0.023        0.053         -0.035            -0.057            -0.012
+13:          C              all     M0     M1      238       -0.001       -0.007        0.005          0.011            -0.003             0.025
+14:          C              all     M0     M2      238        0.001       -0.008        0.009          0.137             0.080             0.200
+15:          C              all     M0     M3      238        0.003       -0.009        0.015          0.183             0.104             0.268
+16:          C              all     M0     M4      238       -0.008       -0.019        0.002          0.146             0.090             0.208
+17:          C              all     M1     M2      238        0.002       -0.003        0.007          0.126             0.075             0.182
+18:          C              all     M1     M3      238        0.004       -0.005        0.013          0.172             0.100             0.250
+19:          C              all     M1     M4      238       -0.007       -0.014        0.000          0.135             0.085             0.190
+20:          C              all     M2     M3      238        0.002       -0.003        0.008          0.046             0.019             0.076
+21:          C              all     M2     M4      238       -0.009       -0.016       -0.002          0.008            -0.013             0.032
+22:          C              all     M3     M4      238       -0.011       -0.017       -0.006         -0.037            -0.064            -0.012
+23:          C 1 interval ahead     M0     M1      238        0.006       -0.008        0.020          0.005            -0.006             0.016
+24:          C 1 interval ahead     M0     M2      238       -0.004       -0.021        0.011          0.030             0.007             0.053
+25:          C 1 interval ahead     M0     M3      238       -0.042       -0.066       -0.020          0.072             0.036             0.113
+26:          C 1 interval ahead     M0     M4      238       -0.050       -0.075       -0.027          0.081             0.046             0.119
+27:          C 1 interval ahead     M1     M2      238       -0.010       -0.017       -0.004          0.025             0.002             0.048
+28:          C 1 interval ahead     M1     M3      238       -0.048       -0.066       -0.030          0.067             0.029             0.108
+29:          C 1 interval ahead     M1     M4      238       -0.056       -0.077       -0.035          0.076             0.038             0.115
+30:          C 1 interval ahead     M2     M3      238       -0.038       -0.055       -0.021          0.042             0.012             0.075
+31:          C 1 interval ahead     M2     M4      238       -0.046       -0.068       -0.025          0.051             0.018             0.087
+32:          C 1 interval ahead     M3     M4      238       -0.008       -0.017        0.000          0.008            -0.003             0.019
+33:          C        2-3 ahead     M0     M1      238        0.002       -0.005        0.009          0.001            -0.012             0.013
+34:          C        2-3 ahead     M0     M2      238        0.001       -0.009        0.011          0.130             0.078             0.188
+35:          C        2-3 ahead     M0     M3      238        0.007       -0.009        0.022          0.178             0.110             0.246
+36:          C        2-3 ahead     M0     M4      238        0.001       -0.014        0.014          0.124             0.077             0.172
+37:          C        2-3 ahead     M1     M2      238       -0.001       -0.006        0.004          0.129             0.080             0.183
+38:          C        2-3 ahead     M1     M3      238        0.005       -0.006        0.015          0.177             0.111             0.244
+39:          C        2-3 ahead     M1     M4      238       -0.001       -0.012        0.009          0.123             0.079             0.168
+40:          C        2-3 ahead     M2     M3      238        0.006       -0.001        0.013          0.048             0.021             0.075
+41:          C        2-3 ahead     M2     M4      238        0.000       -0.008        0.008         -0.006            -0.032             0.023
+42:          C        2-3 ahead     M3     M4      238       -0.006       -0.012       -0.001         -0.054            -0.079            -0.030
+43:          C  4 or more ahead     M0     M1      238       -0.006       -0.011        0.000          0.020             0.001             0.039
+44:          C  4 or more ahead     M0     M2      238        0.003       -0.006        0.011          0.178             0.100             0.262
+45:          C  4 or more ahead     M0     M3      238        0.016        0.002        0.029          0.224             0.117             0.343
+46:          C  4 or more ahead     M0     M4      238        0.000       -0.009        0.009          0.182             0.106             0.269
+47:          C  4 or more ahead     M1     M2      238        0.008        0.003        0.014          0.158             0.091             0.231
+48:          C  4 or more ahead     M1     M3      238        0.021        0.011        0.032          0.204             0.104             0.314
+49:          C  4 or more ahead     M1     M4      238        0.006        0.000        0.011          0.162             0.095             0.239
+50:          C  4 or more ahead     M2     M3      238        0.013        0.008        0.019          0.045             0.010             0.087
+51:          C  4 or more ahead     M2     M4      238       -0.003       -0.007        0.002          0.004            -0.024             0.034
+52:          C  4 or more ahead     M3     M4      238       -0.016       -0.023       -0.009         -0.042            -0.078            -0.007
+53:          D              all     M0     M1        9       -0.063       -0.144       -0.006          0.022             0.006             0.039
+54:          D              all     M0     M2        9       -0.073       -0.189        0.011          0.036             0.007             0.074
+55:          D              all     M0     M4        9       -0.088       -0.218        0.003          0.045             0.016             0.083
+56:          D              all     M1     M2        9       -0.010       -0.070        0.033          0.014            -0.011             0.045
+57:          D              all     M1     M4        9       -0.025       -0.076        0.017          0.023             0.002             0.050
+58:          D              all     M2     M4        9       -0.016       -0.057        0.017          0.009            -0.013             0.028
+    experiment           subset  first second clusters diff_crps_pp diff_crps_lo diff_crps_hi diff_log_score diff_log_score_lo diff_log_score_hi
+        <char>           <char> <char> <char>    <num>        <num>        <num>        <num>          <num>             <num>             <num>
+00:21:38 | Done: regions 
+exit=0

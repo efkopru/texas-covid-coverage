@@ -1,0 +1,30 @@
+23:36:51 |   origin03 M3: 238 test rows, 456 s 
+23:44:32 |   origin04 M3: 238 test rows, 461 s 
+23:49:50 |   origin05 M3: 238 test rows, 317 s 
+23:57:10 |   origin06 M3: 238 test rows, 440 s 
+00:02:58 |   origin07 M3: 238 test rows, 347 s 
+00:08:45 |   origin08 M3: 238 test rows, 347 s 
+00:13:41 |   origin09 M3: 238 test rows, 296 s 
+00:20:12 |   origin10 M3: 238 test rows, 391 s 
+00:25:18 |   origin11 M3: 237 test rows, 306 s 
+
+A. Held-out counties
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  2855      238         -6.152           -5.935           0        0.888  1.173  -0.319      0.930      0.582           7.464                    0.542                   0.292          237
+2:     M1  2855      238         -6.003           -5.815           0        0.768  1.034  -0.198      0.934      0.580           6.398                    0.471                   0.557          237
+3:     M2  2855      238         -5.972           -5.783           0        0.769  1.035  -0.183      0.936      0.580           6.317                    0.470                   0.558          237
+4:     M4  2855      238         -6.028           -5.898           0        0.829  1.101  -0.126      0.957      0.627           8.087                    0.478                   0.549          237
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               4.586                          3.682             0.966
+2:               3.650                          3.039             0.966
+3:               3.648                          2.958             0.970
+4:               4.017                          3.125             0.987
+Error: unexpected symbol in:
+"  fwrite(summarise
+  fwrite"
+Execution halted
+exit=1
+NOTE: the 'unexpected symbol' error above is not an analysis failure. R/07_validate.R was edited (summary section only) while this run was in progress, and R reads a script as it goes. All experiment results had already been written to outputs/tables/validation_*_rows_*.csv; the summary tables were rebuilt afterwards with the complete script (see 07_validate_summary.log).

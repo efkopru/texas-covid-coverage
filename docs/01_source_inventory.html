@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Texas vaccination study: source inventory</title><style>
+:root { --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --rule:#e1e0d9; --accent:#1c5cab; --wash:#f3f2ee; }
+@media (prefers-color-scheme: dark) { :root { --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --muted:#898781; --rule:#383835; --accent:#86b6ef; --wash:#232321; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--surface); color:var(--ink); font:16px/1.6 system-ui,-apple-system,'Segoe UI',sans-serif; }
+main { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 1rem; }
+h2 { font-size: 1.35rem; margin: 2.6rem 0 0.6rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.08rem; margin: 1.8rem 0 0.4rem; }
+p, li { max-width: 46rem; }
+a { color: var(--accent); }
+code { font: 0.86em ui-monospace, Consolas, monospace; background: var(--wash); padding: 0.08em 0.3em; border-radius: 3px; overflow-wrap: anywhere; }
+pre { background: var(--wash); padding: 0.9rem 1rem; border-radius: 6px; overflow-x: auto; }
+pre code { background: none; padding: 0; }
+img { max-width: 100%; height: auto; display: block; margin: 1.2rem 0 0.3rem; border: 1px solid var(--rule); border-radius: 6px; background:#fcfcfb; }
+.tablewrap { overflow-x: auto; margin: 1rem 0 1.4rem; }
+table { border-collapse: collapse; font-size: 0.88rem; font-variant-numeric: tabular-nums; min-width: 60%; }
+th, td { padding: 0.38rem 0.7rem; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+th { color: var(--ink2); font-weight: 600; border-bottom: 2px solid var(--rule); }
+td[align=right], th[align=right] { text-align: right; }
+thead:not(:has(th:not(:empty))) { display: none; }   /* a header row with no text in it */
+blockquote { margin: 1rem 0; padding: 0.2rem 1rem; border-left: 3px solid var(--rule); color: var(--ink2); }
+/* on paper: always the light colours, full-width text, and no figure or table row split across pages */
+@page { size: Letter; margin: 19mm 19mm 20mm; }
+@media print {
+  :root { --surface:#ffffff; --ink:#0b0b0b; --ink2:#3a3936; --muted:#6f6d67; --rule:#cfcdc4; --accent:#1c5cab; --wash:#f3f2ee; }
+  body { font-size: 10.5pt; line-height: 1.45; }
+  main { max-width: none; padding: 0; }
+  h1 { font-size: 19pt; } h2 { font-size: 13.5pt; margin-top: 1.5rem; padding-top: 0.8rem; } h3 { font-size: 11.5pt; }
+  h1, h2, h3 { break-after: avoid; }
+  p, li { max-width: none; orphans: 3; widows: 3; }
+  img { max-height: 150mm; width: auto; margin-left: auto; margin-right: auto; break-inside: avoid; }
+  p:has(> img) { break-after: avoid; margin-bottom: 0; }
+  .tablewrap { overflow: visible; break-inside: avoid; } table { width: 100%; font-size: 9pt; } tr { break-inside: avoid; }
+  p:has(+ .tablewrap) { break-after: avoid; }
+}
+</style></head><body><main>
+<h1>Source inventory, study period and outcome definition</h1>
+<p>Bayesian spatiotemporal small-area analysis of COVID-19 vaccination coverage across Texas counties.</p>
+<p>Statements about the data were checked against downloaded files. A few statements rest on other material and say
+so where they occur: a news report (how county is assigned), press reports (the day Phase 1B vaccination began) and
+search-engine text of two local health departments' reports. Each raw file is listed in
+<a href="../data/raw/MANIFEST.csv">data/raw/MANIFEST.csv</a> with its URL, retrieval time, size and SHA-256.
+The checks are in <a href="../R/03_verify_vaccination.R">R/03_verify_vaccination.R</a>; their full output is
+<a href="../logs/03_verify_vaccination.log">logs/03_verify_vaccination.log</a> and the tables named <code>verify_*.csv</code> in
+<a href="../outputs/tables">outputs/tables</a>. Sources were retrieved on 20 November 2026; the DSHS news releases (source I)
+on 21 November 2026.</p>
+<h2>1. What the verification found</h2>
+<ol>
+<li><strong>The proposed outcome (first dose, adults 18+, by county and month) cannot be built for the main rollout.</strong>
+CDC's county file is the only source with an 18+ count, and it has no Texas county data before
+22 October 2021: all 254 county rows are zero for every report date from 13 December 2020 to 21 October 2021.</li>
+<li><strong>Texas DSHS's own county workbook is the only record of the rollout, and it survives only in archives.</strong>
+DSHS overwrote one workbook each day and has removed it from its site (the old address now returns &quot;not found&quot;).
+Forty-six editions (19 December 2020 to 10 May 2023) are in the Internet Archive. Forty of them carry a usable
+county-by-age sheet whose youngest adult band is 16-49, so the adult group the records support is <strong>16+</strong>, not 18+.</li>
+<li><strong>County counts before 15 April 2021 are incomplete, by a different amount in each county.</strong> Until then
+5-11% of vaccinated people sat in an &quot;Other&quot; row (county unknown). In the edition of 15 April 2021 that row fell
+by 662,780 people in one day and county counts jumped by a matching amount. The jump was 1% of the previous
+count in Harris County, 19% in Tarrant and 25% in Denton. Month-by-month county uptake for January to April 2021
+can therefore not be recovered from these files without assumptions about where the unassigned people lived.
+The main analysis makes none. A separate extension, <a href="03_early_rollout.html">03_early_rollout.md</a>, states one,
+tests it and reports how much depends on it.</li>
+<li><strong>CDC and DSHS county counts are not interchangeable.</strong> On the same dates CDC's Texas county total is 1.7% to 3.3%
+above DSHS's, the gap changes over time, and it is very uneven: +36% in Bell County (Fort Hood), +16% in Wichita,
++8% in El Paso and Bexar, and lower than DSHS in others. CDC also removed 297,634 people from Texas counties in a
+single revision on 3 August 2022.</li>
+<li><strong>In 16 counties the recorded number of vaccinated adults exceeds the adult population</strong>, in several by a wide
+margin and increasingly so in 2022-2023 (Maverick 234%, Reeves 229%, Webb 189%, Brooks 184% by May 2023).
+Fourteen are in South Texas or along the Rio Grande; two are in the far-west oil field. Their records cannot be
+read as coverage of residents.</li>
+<li><strong>The archived copies are faithful.</strong> A third-party archive of daily CSV copies matches the original workbooks
+cell for cell on all 21 dates where both exist (5,334 county counts), and a table still served by Harris County
+Public Health reproduces the final workbook's Harris County count exactly (3,588,122).</li>
+</ol>
+<h2>2. Decisions that follow</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Proposed</th>
+<th>Used</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Age group</td>
+<td>18+</td>
+<td><strong>16+</strong></td>
+<td>DSHS county-by-age bands are 12-15, 16-49, 50-64, 65-79, 80+. An 18+ county count exists only in the CDC file from 22 Oct 2021, and that file does not agree with DSHS. Residents aged 16-17 are 3.7% of Texans aged 16+.</td>
+</tr>
+<tr>
+<td>Dose definition</td>
+<td>first dose</td>
+<td><strong>unchanged</strong>: people with at least one recorded dose</td>
+<td>Field &quot;People Vaccinated with at least One Dose&quot;. A single-dose Janssen recipient counts once.</td>
+</tr>
+<tr>
+<td>Time unit</td>
+<td>calendar months</td>
+<td><strong>intervals between surviving DSHS editions</strong>, 26-35 days long to February 2022, then 94, 174 and 170 days; uptake is reported <strong>per 30 days</strong></td>
+<td>Editions with county-by-age counts exist only on the dates the Internet Archive happened to capture. The model uses a complementary log-log link with the interval length as an offset, so every estimate is on a common per-30-day scale.</td>
+</tr>
+<tr>
+<td>Study period, modelled uptake</td>
+<td>not fixed</td>
+<td><strong>25 May 2021 to 9 May 2023</strong> (12 intervals)</td>
+<td>24 May 2021 is the first date after which county counts stop being re-assigned between counties (no county's adult count falls in any of the next seven editions).</td>
+</tr>
+<tr>
+<td>Study period, recorded coverage</td>
+<td>not fixed</td>
+<td><strong>baseline 24 May 2021, then every edition to 9 May 2023</strong>; the rollout before the baseline enters as coverage reached by 24 May 2021</td>
+<td>See finding 3.</td>
+</tr>
+<tr>
+<td>First five months, by county</td>
+<td>not fixed</td>
+<td><strong>kept out of the main analysis; reconstructed separately</strong> in six intervals from 14 Dec 2020 to 24 May 2021 (<a href="03_early_rollout.html">03_early_rollout.md</a>)</td>
+<td>The reconstruction needs an assumption about the recipients who had no county (finding 3). Its results are reported apart so that the main results do not rest on it.</td>
+</tr>
+<tr>
+<td>Counties</td>
+<td>254</td>
+<td><strong>238 in the models</strong>; all 254 in maps, the other 16 flagged</td>
+<td>See finding 5.</td>
+</tr>
+<tr>
+<td>Denominator</td>
+<td>Census estimates</td>
+<td><strong>Census Bureau Vintage 2025 estimate of residents aged 16+ on 1 July 2021</strong>, held fixed</td>
+<td>Matches the age group, is based on the 2020 Census, and sits in the middle of the rollout. DSHS and CDC used 2019 estimates (2.7% lower statewide).</td>
+</tr>
+<tr>
+<td>Role of the CDC file</td>
+<td>primary candidate</td>
+<td><strong>cross-check only</strong></td>
+<td>Findings 1 and 4.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Interval grid (an edition dated <em>D</em> holds records through 11:59 pm on <em>D</em> - 1):</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>k</th>
+<th>Records from</th>
+<th>to</th>
+<th>Days</th>
+<th>New first doses, 16+ (all counties)</th>
+<th>Recorded 16+ coverage at end (all counties)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baseline</td>
+<td></td>
+<td>24 May 2021</td>
+<td></td>
+<td></td>
+<td>52.5%</td>
+</tr>
+<tr>
+<td>1</td>
+<td>25 May 2021</td>
+<td>22 Jun 2021</td>
+<td>29</td>
+<td>949,237</td>
+<td>56.6%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>23 Jun 2021</td>
+<td>21 Jul 2021</td>
+<td>29</td>
+<td>642,359</td>
+<td>59.4%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22 Jul 2021</td>
+<td>21 Aug 2021</td>
+<td>31</td>
+<td>1,288,098</td>
+<td>65.0%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>22 Aug 2021</td>
+<td>23 Sep 2021</td>
+<td>33</td>
+<td>912,048</td>
+<td>68.9%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>24 Sep 2021</td>
+<td>25 Oct 2021</td>
+<td>32</td>
+<td>436,759</td>
+<td>70.8%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>26 Oct 2021</td>
+<td>20 Nov 2021</td>
+<td>26</td>
+<td>363,638</td>
+<td>72.4%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>21 Nov 2021</td>
+<td>21 Dec 2021</td>
+<td>31</td>
+<td>418,625</td>
+<td>74.2%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>22 Dec 2021</td>
+<td>21 Jan 2022</td>
+<td>31</td>
+<td>417,417</td>
+<td>76.0%</td>
+</tr>
+<tr>
+<td>9</td>
+<td>22 Jan 2022</td>
+<td>25 Feb 2022</td>
+<td>35</td>
+<td>270,529</td>
+<td>77.2%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>26 Feb 2022</td>
+<td>30 May 2022</td>
+<td>94</td>
+<td>400,641</td>
+<td>78.9%</td>
+</tr>
+<tr>
+<td>11</td>
+<td>31 May 2022</td>
+<td>20 Nov 2022</td>
+<td>174</td>
+<td>490,828</td>
+<td>81.1%</td>
+</tr>
+<tr>
+<td>12</td>
+<td>21 Nov 2022</td>
+<td>9 May 2023</td>
+<td>170</td>
+<td>284,085</td>
+<td>82.3%</td>
+</tr>
+</tbody>
+</table></div>
+<p>No edition was captured between 26 February and 31 May 2022, which forces interval 10. Intervals 11 and 12 pool
+editions on purpose: by mid-2022 the net change in most small counties was smaller than routine record corrections
+(in the last four editions 35 to 48 counties show a net fall in their adult count). Two sensitivity grids are built
+alongside the main one: one adds 23 April to 24 May 2021, one keeps every near-monthly edition after May 2022.</p>
+<h2>3. Source inventory</h2>
+<h3>A. Texas DSHS, &quot;COVID-19 Vaccine Data by County&quot; workbook (primary source)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Publisher</td>
+<td>Texas Department of State Health Services, from the Texas Immunization Registry (ImmTrac2)</td>
+</tr>
+<tr>
+<td>Original addresses</td>
+<td><code>https://www.dshs.texas.gov/immunize/covid19/COVID-19-Vaccine-Data-by-County.xls</code> (also under <code>dshs.state.tx.us</code>); from late 2022 <code>https://www.dshs.texas.gov/sites/default/files/LIDS-Immunize-COVID19/COVID%20Dashboard/...</code> with dated file names. All now removed from the DSHS site.</td>
+</tr>
+<tr>
+<td>Where obtained</td>
+<td>Internet Archive Wayback Machine, unmodified captures (<code>https://web.archive.org/web/&lt;timestamp&gt;id_/&lt;address&gt;</code>). Capture index saved as <code>data/raw/dshs_vax_wayback/cdx_*.txt</code>; files in <code>data/raw/dshs_vax_wayback/workbooks/</code>.</td>
+</tr>
+<tr>
+<td>Editions</td>
+<td>46 distinct editions, &quot;as of&quot; 19 Dec 2020 to 10 May 2023 (<a href="../outputs/tables/verify_01_dshs_workbook_index.csv">verify_01</a>). The &quot;This worksheet is current as of&quot; cell equals the workbook's own last-modified date in every edition that has both.</td>
+</tr>
+<tr>
+<td>Geography</td>
+<td>County of residence of the recipient, 254 counties, plus a state row and an &quot;Other&quot; row (&quot;recipient's county of residence is unknown or address is out-of-state&quot;).</td>
+</tr>
+<tr>
+<td>Sheets and variables used</td>
+<td><strong>By County</strong>: <code>County Name</code>, <code>People Vaccinated with at least One Dose</code>, <code>People Fully Vaccinated</code>, <code>Vaccine Doses Administered</code>, <code>Population, 16+</code>, <code>Population, 65+</code>, <code>Population 12+</code>. <strong>By County, Age</strong> (from 2 Mar 2021): <code>County Name</code>, <code>Age Group</code>/<code>Agegrp</code>, <code>People Vaccinated with at least One Dose</code>. <strong>By Vaccination Date</strong> (statewide, from 25 May 2021): <code>Vaccination Date</code>, <code>People Vaccinated with at least One Dose</code>. <strong>About the Data</strong>: definitions and as-of date.</td>
+</tr>
+<tr>
+<td>Definitions (workbook text)</td>
+<td>One dose: &quot;the number of people who have received at least one dose of COVID-19 vaccine&quot;. Counts are &quot;aggregated by the recipient's county of residence&quot;. Records are &quot;as of 11:59 pm the previous night&quot;; providers have 24 hours to report.</td>
+</tr>
+<tr>
+<td>Denominators printed in the file</td>
+<td>Changed three times: Texas Demographic Center 2019 estimates (to mid-January 2021, 16+ = 22,448,443), TDC 2021 projections (29 Jan 2021, 23,418,623), Census Bureau 2019 estimates (from 13 Feb 2021, 22,421,178; 12+ = 24,068,624).</td>
+</tr>
+<tr>
+<td>Age bands</td>
+<td>16-49, 50-64, 65-79, 80+, Unknown from the first age sheet; 12-15 first appears in the 25 May 2021 edition, 5-11 on 12 Nov 2021, 6 months-4 years on 11 Jul 2022 (<a href="../outputs/tables/verify_11_age_bands_first_seen.csv">verify_11</a>). Age appears to be age at vaccination: the 12-15 band keeps growing instead of emptying as people age. The workbook notes do not say.</td>
+</tr>
+<tr>
+<td>Suppression</td>
+<td>None. Counts as small as 41 (Loving County) are printed.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Problems found in this source:</p>
+<ul>
+<li><strong>Late county assignment.</strong> See finding 3 and section 4.4.</li>
+<li><strong>One faulty daily edition</strong> (12 March 2021: the &quot;at least one dose&quot; and &quot;fully vaccinated&quot; columns are
+interchanged, so the one-dose total appears to fall by 2.15 million and return the next day) and one at the end
+of the daily archive (6 October 2021: 271,000 people moved from counties to &quot;Other&quot;, not present in the next
+original edition). Neither is used.</li>
+<li><strong>One corrupted age sheet</strong> (7 May 2021 edition: race rows pasted into the age sheet; its sums disagree with the
+county totals in 46 counties). Not used.</li>
+<li><strong>Excel damaged two age labels.</strong> From November 2021 &quot;5-11&quot; and &quot;12-15&quot; are stored as dates (11 May, 15 December).
+The parser restores them.</li>
+<li><strong>&quot;Other&quot; keeps growing</strong> after the April 2021 fix, from 1.2% of the state total to 3.0% by 2023, so county sums
+understate statewide first doses by that margin.</li>
+<li><strong>Reporting lag.</strong> By vaccination date, the first edition after a month ended already held 86% to 99% of that
+month's eventual first doses, typically 94-98% (<a href="../outputs/tables/verify_06b_backlog_completeness.csv">verify_06b</a>).
+Counts by report date therefore shift a few percent of each period's doses into the next one.</li>
+<li><strong>Non-residents.</strong> See finding 5 and section 4.1.</li>
+</ul>
+<h3>B. Daily CSV copies of the workbook's &quot;By County&quot; sheet (verification and revision history)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source</td>
+<td><code>github.com/rdmurphy/tx-covid-vaccine-data</code>, folder <code>distribution/snapshots/</code>, MIT licence, pinned to commit <code>375efdd971a511cc826e05d5d8f6fd86191a2ada</code></td>
+</tr>
+<tr>
+<td>Content</td>
+<td>275 daily files, 29 Dec 2020 to 6 Oct 2021; file name = date DSHS last modified the workbook</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>The &quot;By County&quot; sheet as CSV: all-ages counts only, no age detail. From January 2021 the sheet also prints DSHS's estimates of the population in each priority group by county (<code>Population, Phase 1A Healthcare Workers</code>, <code>Population, Phase 1A Long-term Care Residents</code>, <code>Population, 16-64 Any Medical Condition</code>, <code>Population, Education and Child Care Personnel</code>).</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Third-party copy. Identical to the original workbook on all 21 overlapping dates, for one-dose, fully-vaccinated and doses-administered counts in all 254 counties (<a href="../outputs/tables/verify_02_github_vs_wayback.csv">verify_02</a>).</td>
+</tr>
+<tr>
+<td>Use</td>
+<td>Day-by-day history of revisions (sections 4.4, 4.5). <strong>Not used for any modelled quantity of the main analysis.</strong> The extension to early 2021 (<a href="03_early_rollout.html">03_early_rollout.md</a>) takes its county counts before the baseline, and the priority-group populations, from these copies.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>C. CDC, &quot;COVID-19 Vaccinations in the United States, County&quot; (cross-check only)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Link</td>
+<td><a href="https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh">https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh</a> (dataset <code>8xkx-amqh</code>; rows last updated 12 May 2023)</td>
+</tr>
+<tr>
+<td>File</td>
+<td>All columns for <code>Recip_State = 'TX'</code>: 152,177 rows, 598 report dates</td>
+</tr>
+<tr>
+<td>Geography</td>
+<td>County of residence (<code>FIPS</code>, <code>Recip_County</code>), plus an &quot;Unknown County&quot; row</td>
+</tr>
+<tr>
+<td>Dates</td>
+<td>Report dates 13 Dec 2020 to 10 May 2023. <strong>Texas county rows are zero until 21 Oct 2021</strong>; counts start 22 Oct 2021; daily to 16 Jun 2022, weekly after.</td>
+</tr>
+<tr>
+<td>Variables inspected</td>
+<td><code>Administered_Dose1_Recip</code> and <code>_5Plus</code>, <code>_12Plus</code>, <code>_18Plus</code>, <code>_65Plus</code> (people with at least one dose), the matching <code>..._Pop_Pct</code> fields, <code>Series_Complete_*</code>, <code>Completeness_pct</code> (98.9-99.1 for Texas), <code>Census2019*</code> denominators</td>
+</tr>
+<tr>
+<td>Precision</td>
+<td>Percentages have one decimal and are capped: at 99.9 until 8 Dec 2021, at 95.0 from 9 Dec 2021. Counts are not capped, so percentages need not be used. On the last date 13 counties have an 18+ count above their 18+ population (Maverick 239%).</td>
+</tr>
+<tr>
+<td>Missing values</td>
+<td>Loving County is zero until 2022. On 15 Dec 2021, 205 Texas counties are zero for one day.</td>
+</tr>
+<tr>
+<td>Revisions</td>
+<td>7.7-8.6% of county report-to-report changes are negative. Statewide county sum fell by 297,634 on 3 Aug 2022.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Comparison with DSHS on the same dates (<a href="../outputs/tables/verify_04b_dshs_vs_cdc_by_date.csv">verify_04b</a>,
+<a href="../outputs/tables/verify_04c_dshs_vs_cdc_county.csv">verify_04c</a>): CDC's Texas county total is 1.65% above DSHS on
+26 Oct 2021, 3.26% above on 5 Jun 2022 and 1.9% above after the August 2022 revision. On 26 Oct 2021 the county gap
+for ages 12+ ranges from -4.9% (5th percentile) to +6.9% (95th), with Bell +35.9%, Live Oak +24.0%, Wichita +15.7%,
+Polk +13.3%, Tom Green +10.6%, El Paso +8.2% and Bexar +8.0%; 56 counties differ by more than 2 points of their
+population. CDC's 18+ total is 98.6-100.0% of DSHS's 16+ total, although it should be about 3% lower if the two
+systems counted the same people. Several of the counties with the largest positive gaps host large military
+installations (Bell, Wichita, El Paso, Bexar, Tom Green), which is the pattern that doses given by federal agencies
+and added by CDC would produce. The files do not state the cause.</p>
+<h3>D. County health departments</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Department</th>
+<th>What was inspected</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Harris County Public Health, COVID-19 Data Hub (<code>services.arcgis.com/su8ic9KbA7PYVxPS</code>, tables <code>Download_DSHS_COVID_Vaccination_Summary</code>, <code>..._for_Ages_12_and_Up</code>, <code>Download_COVID_Vaccination_Progress_Overall</code>, <code>..._By_Age_Groups</code>)</td>
+<td>Table definitions and all rows, saved in <code>data/raw/county_hd_harris/</code></td>
+<td>A single row of DSHS totals for Harris County (3,588,122 people with a first dose, identical to the last DSHS workbook) and weekly series of <strong>cumulative percentages rounded to two decimals</strong>, for fully vaccinated people, in 10-year age bands (10-19 spans the 18-year boundary). No counts over time. One county.</td>
+</tr>
+<tr>
+<td>San Antonio Metropolitan Health District, weekly &quot;COVID-19 Vaccination Report&quot; PDFs (<code>covid19.sanantonio.gov/files/assets/public/health/vaccination-reports/</code>)</td>
+<td>One report (21 Feb 2022) was retrieved but its text could not be extracted with the tools available here</td>
+<td>Not verified at source. A search-engine index of these reports gives their source as the DSHS registry (ImmTrac2) and says VA and DOD doses are excluded. One county. The city's open-data portal also lists a ZIP-code vaccination dataset.</td>
+</tr>
+<tr>
+<td>Tarrant County Public Health</td>
+<td>Search results and one news report</td>
+<td>Weekly PDF &quot;recovery reports&quot; and a dashboard built on a file supplied by the state. NBC 5 DFW (21 July 2021) reported the county showing 33% of residents with one dose against the state's 56%, and quoted DSHS explaining that records missing a county are assigned by address matching that starts from ZIP codes, many of which cross county lines in metropolitan areas.</td>
+</tr>
+<tr>
+<td>Dallas County Health and Human Services</td>
+<td>Search results only</td>
+<td>PDF data summaries quoting percentages of residents with one dose. No machine-readable series found.</td>
+</tr>
+<tr>
+<td>Austin Public Health dashboard page</td>
+<td>Page no longer exists</td>
+<td>Not inspected.</td>
+</tr>
+<tr>
+<td>Williamson County and Cities Health District</td>
+<td>Dashboard page</td>
+<td>Refers readers to the DSHS dashboard.</td>
+</tr>
+</tbody>
+</table></div>
+<p>No county health department file found can support a statewide county series. Those that could be read or traced
+repeat DSHS registry numbers, usually as percentages, for a single county. The Harris County table is useful as
+confirmation that the archived workbook is the state's final record. This was a targeted look at the largest
+counties, not an exhaustive search of all local health departments.</p>
+<h3>E. U.S. Census Bureau population estimates, Vintage 2025 (denominators, age composition)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Files</td>
+<td><code>cc-est2025-syasex-48.csv</code> (single year of age), <code>cc-est2025-agesex-48.csv</code>, layouts <code>CC-EST2025-SYASEX.pdf</code>, <code>CC-EST2025-AGESEX.pdf</code>, from <a href="https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/asrh/">https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/asrh/</a> (released June 2026)</td>
+</tr>
+<tr>
+<td>Geography, dates</td>
+<td>County; <code>YEAR</code> 1 = 1 April 2020 base, 2-7 = 1 July 2020 to 2025</td>
+</tr>
+<tr>
+<td>Variables used</td>
+<td><code>STATE</code>, <code>COUNTY</code>, <code>YEAR</code>, <code>AGE</code> (0-85+), <code>TOT_POP</code>; summed to residents aged 16+, 65+ and all ages on 1 July 2021</td>
+</tr>
+<tr>
+<td>Limitations</td>
+<td>Estimates, not counts. Texas 16+ on 1 July 2021 = 23,054,310, against 22,421,178 in the 2019 estimates DSHS used. Residents are counted where they usually live; people who are in a county temporarily are not in its estimate.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>F. American Community Survey 2019-2023 five-year estimates (median household income)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Files</td>
+<td>Table-based summary file, <code>acsdt5y2023-b19013.dat</code>, <code>-b01001.dat</code>, <code>-b01002.dat</code>, from <a href="https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/">https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/</a></td>
+</tr>
+<tr>
+<td>Variables</td>
+<td><code>B19013_E001</code>/<code>_M001</code> median household income and margin of error (2023 dollars); <code>B01001</code> sex by age (65+ share, sensitivity only); <code>B01002_E001</code> median age</td>
+</tr>
+<tr>
+<td>Geography, dates</td>
+<td>County (<code>GEO_ID</code> <code>0500000US48xxx</code>); pooled sample of 2019-2023, treated as one multi-year characteristic</td>
+</tr>
+<tr>
+<td>Limitations</td>
+<td>Sample-based. Kenedy County's median income is not published (filled with the median of its four neighbours and flagged). ACS age shares are unreliable in very small counties (Loving County's 65+ share differs from the population estimate by 58 points), so the age predictor is taken from source E; the two agree closely elsewhere (correlation 0.96 for counties with 2,000 or more adults). The Census API now requires a key, so the public summary files are used instead.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>G. Texas DSHS reported COVID-19 cases by county</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Link</td>
+<td><a href="https://www.dshs.texas.gov/covid-19-coronavirus-disease-2019/texas-covid-19-data">https://www.dshs.texas.gov/covid-19-coronavirus-disease-2019/texas-covid-19-data</a> (files last modified 10 May 2023)</td>
+</tr>
+<tr>
+<td>Files</td>
+<td><code>Texas COVID-19 New Confirmed Cases by County.xlsx</code>, <code>Texas COVID-19 New Probable Cases by County.xlsx</code>, data-definition and case-note documents</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>Daily new confirmed cases (positive molecular test) and new probable cases (positive antigen test, or symptoms plus exposure) by county, 6 Mar 2020 to 10 May 2023</td>
+</tr>
+<tr>
+<td>Limitations</td>
+<td>2020 and 2021 are DSHS's final de-duplicated counts; 2022-2023 are provisional daily reports, so the series changes character at 1 January 2022. In the final years 2.9-3.8% of cases have no date and cannot be placed in a period. Cases with no county (&quot;Incomplete Address&quot;) are 0.2-2.7% of the total. Home tests are not included, so reported cases increasingly understate infections in 2022-2023.</td>
+</tr>
+<tr>
+<td>Use</td>
+<td>Confirmed plus probable cases in the 30 days before each interval starts, per 100,000 residents.</td>
+</tr>
+</tbody>
+</table></div>
+<h3>H. Census Bureau county boundaries and adjacency</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Files</td>
+<td><code>cb_2021_us_county_500k.zip</code> (<a href="https://www2.census.gov/geo/tiger/GENZ2021/shp/">https://www2.census.gov/geo/tiger/GENZ2021/shp/</a>), <code>county_adjacency2023.txt</code> (<a href="https://www2.census.gov/geo/docs/reference/county_adjacency/">https://www2.census.gov/geo/docs/reference/county_adjacency/</a>)</td>
+</tr>
+<tr>
+<td>Use</td>
+<td>254 Texas county polygons; neighbours for the spatial model</td>
+</tr>
+<tr>
+<td>Check</td>
+<td>Shared-boundary neighbours computed from the polygons equal the Census adjacency file exactly: 724 neighbouring pairs, 1 to 9 neighbours per county, one connected map (<a href="../outputs/tables/verify_10_adjacency.csv">verify_10</a>).</td>
+</tr>
+</tbody>
+</table></div>
+<h3>I. Texas DSHS news releases on vaccine eligibility (timeline only)</h3>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original addresses</td>
+<td><code>https://dshs.texas.gov/news/releases/2020/20201214.aspx</code>, <code>.../20201221.aspx</code>, <code>.../20201228.aspx</code>, <code>.../2021/20210303.aspx</code>, <code>.../20210310.aspx</code>, <code>.../20210323.aspx</code>, <code>.../20210512.aspx</code>. The DSHS site now refuses automated requests for these pages.</td>
+</tr>
+<tr>
+<td>Where obtained</td>
+<td>Internet Archive Wayback Machine captures made on the day of each release or the day after, saved unmodified in <code>data/raw/dshs_news/</code> (capture timestamps in the manifest)</td>
+</tr>
+<tr>
+<td>Content used</td>
+<td>Who became eligible and from when: first doses delivered 14 Dec 2020 (Phase 1A: front-line health-care workers and long-term-care residents); Phase 1B defined 21 Dec 2020 (people 65+ and people 16+ with a chronic medical condition); school and child-care staff from 3 Mar 2021; people 50-64 from 15 Mar 2021; all adults from 29 Mar 2021; adolescents 12-15 from 12 May 2021</td>
+</tr>
+<tr>
+<td>Limitations</td>
+<td>The release of 21 Dec 2020 defines Phase 1B but gives no start date; the release of 10 Mar 2021 says it began &quot;later that month&quot;. The date of 29 Dec 2020 used in the extension comes from press reports. No number in the analysis comes from these pages.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>4. Checks requested in the study brief</h2>
+<h3>4.1 County of residence</h3>
+<p>DSHS and CDC both state that counts are by the recipient's county of residence. Three findings limit that:</p>
+<ul>
+<li>People with no usable address are in &quot;Other&quot;: 1.2% of first-dose recipients after the April 2021 fix, 3.0% by 2023.</li>
+<li>County is assigned by address matching. DSHS told NBC 5 DFW in July 2021 that the first step uses ZIP codes and
+that ZIP codes crossing county lines had put some people in the wrong county. The records give no way to measure
+this; it would mostly move people between adjacent counties in metropolitan areas.</li>
+<li>In 16 counties recorded adult first doses exceed the adult population estimate at some edition
+(<a href="../data/derived/county_flags.csv">county_flags.csv</a>): Maverick, Reeves, Webb, Brooks, Dimmit, Presidio, Hidalgo,
+Loving, Hudspeth, Starr, Cameron, Frio, Val Verde, El Paso, Willacy and Duval. They hold 8.8% of Texans aged 16+
+but account for 10-14% of adult first doses recorded statewide in mid-2021, 35% in January-February 2022 and 55%
+between November 2022 and May 2023. The files do not say who these recipients were; the geography points to
+people who were not usual residents. Those counties are kept out of the uptake models and shown separately.
+Neighbouring counties below 100% (La Salle 97%, Jim Hogg 93%, Zavala 92%) may be affected to a smaller degree
+and are kept.</li>
+</ul>
+<h3>4.2 Age eligibility</h3>
+<p>All Texans aged 16+ became eligible on 29 March 2021 (DSHS news release of 23 March 2021, source I), so eligibility
+did not change for the 16+ group at any point in the modelled period of the main analysis. The records agree: no
+one under 16 appears before the 25 May 2021 edition and no one under 12 before 12 November 2021.</p>
+<p>Before 29 March 2021 eligibility was restricted in phases (source I): health-care workers and long-term-care
+residents from 14 December 2020, people aged 65+ and people with a chronic medical condition from late December,
+school and child-care staff from 3 March, people aged 50-64 from 15 March. By DSHS's own county estimates the
+first two phases covered at most 60% of adults statewide. This matters only for the extension to early 2021,
+which sets it out in its section 4.</p>
+<h3>4.3 Missing or suppressed values</h3>
+<p>DSHS: none; every county has a count in every edition. CDC: see source C. ACS: one county (source F).</p>
+<h3>4.4 Retrospective revisions</h3>
+<ul>
+<li>15 April 2021 edition: 662,780 people left the &quot;Other&quot; row and county counts rose by 807,099 in one day, against
+about 135,000 on the days either side (<a href="../outputs/tables/verify_13a_unassigned_daily.csv">verify_13a</a>,
+<a href="../outputs/tables/verify_13b_reassignment_by_county.csv">verify_13b</a>). The jump beyond a county's usual daily change,
+as a share of its previous count: median 4.3%, 5th-95th percentile -0.2% to 16.9%, above 10% in 60 counties.</li>
+<li>24 March 2021: Tarrant County's count fell by 62,699 in a day and rose by 59,951 the next day; in all, county
+counts fell by 81,391 in 78 counties in that edition. A one-day fault, not a correction.</li>
+<li>12 to 27 February 2021: the &quot;Other&quot; row fell from 268,993 to 160,979 while reporting continued, so at least
+108,000 earlier records were given a county in those two weeks.</li>
+<li>Corrections continued in smaller numbers after 15 April: 17 counties had a lower adult count on 23 April than
+on 20 April, and 12 had a lower count on 25 May than on 23 April (Cochran fell from 2,192 to 834). The daily
+copies show that these movements ended around 10 May: falls in county counts sum to 47,901 persons between
+16 April and 11 May and to 757 in the two weeks after
+(<a href="../outputs/tables/early_events.csv">early_events.csv</a>).</li>
+<li>From 25 May 2021 to 24 September 2021 no county's adult count fell between editions. Later falls are small (2 to
+239 persons per edition statewide) and concentrated in counties with fewer than 5,000 adults
+(<a href="../outputs/tables/verify_14_count_falls_by_edition.csv">verify_14</a>).</li>
+</ul>
+<h3>4.5 Reporting backlogs</h3>
+<p>See source A (reporting lag) and <a href="../outputs/tables/verify_06_first_dose_by_vaxdate_across_editions.csv">verify_06</a>.
+First doses given in January 2021 numbered 1,754,542 in the 25 May 2021 edition and 1,827,899 in the final edition,
+a 4% later addition. Counts in this study are by report date.</p>
+<h3>4.6 Rounded or capped percentages</h3>
+<p>The sources used for modelling give counts, so no percentage is used. Where percentages are all that exist (CDC's
+capped fields, Harris County's two-decimal series) they were documented and set aside.</p>
+<h2>5. Outcome definitions</h2>
+<ul>
+<li><strong>Recorded coverage</strong> (observed, not modelled): residents aged 16+ recorded with at least one dose by the edition's
+data-through date, divided by the Census estimate of residents aged 16+ on 1 July 2021. People of unknown age
+(never more than 0.07% of the total) are counted with adults.</li>
+<li><strong>Uptake in an interval</strong> (modelled): adults newly recorded with a first dose during the interval, divided by adults
+not yet recorded as vaccinated at its start. Reported per 30 days.</li>
+<li>A county-interval enters the model only if the county never exceeds 100% recorded coverage and recorded coverage at
+the start of the interval is below 95%. Where a county's count fell between editions, new first doses are set to
+zero and the row is flagged (40 of 2,855 rows, 257 persons in total).</li>
+</ul>
+<p>Both quantities describe vaccine receipt as recorded in the state registry. They say nothing about willingness or
+acceptance, which would need survey data.</p>
+<h2>6. Predictors</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Predictor</th>
+<th>Definition</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Age composition</td>
+<td>Residents aged 65+ as a share of residents aged 16+, 1 July 2021</td>
+<td>E</td>
+</tr>
+<tr>
+<td>Household income</td>
+<td>Median household income, 2019-2023, natural log</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Recent disease burden</td>
+<td>Confirmed plus probable cases reported in the 30 days before the interval starts, per 100,000 residents, log(rate + 10)</td>
+<td>G</td>
+</tr>
+</tbody>
+</table></div>
+<p>All three are standardised to mean 0 and standard deviation 1 across counties (or county-intervals); the constants
+are in <a href="../data/derived/covariate_scaling.csv">data/derived/covariate_scaling.csv</a>.</p>
+
+</main></body></html>
+

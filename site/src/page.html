@@ -1,0 +1,834 @@
+<title>Texas COVID-19 Vaccination Coverage</title>
+<style>
+/* Layout: one column of sections under a sticky section bar. The county map is the widest element;
+   on wide screens the selected county's panel sits beside it, on narrow screens below it. */
+:root {
+  --bg: #f9f9f7; --surface: #fcfcfb; --wash: #f0efeb; --ink: #0b0b0b; --ink2: #52514e; --muted: #6f6d67; --rule: #e1e0d9; --axis: #c3c2b7;
+  --accent: #1c5cab; --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --flag: #c3c2b7; --band: rgba(42, 120, 214, .17); --sel: #0b0b0b;
+  --q1: #cde2fb; --q2: #b7d3f6; --q3: #9ec5f4; --q4: #6da7ec; --q5: #3987e5; --q6: #2a78d6; --q7: #1c5cab; --q8: #104281; --q9: #0d366b;
+  --d1: #791717; --d2: #be3736; --d3: #ef857b; --d4: #e6e5df; --d5: #9ec5f4; --d6: #3987e5; --d7: #184f95;
+  /* system fonts only: the page loads nothing from the network */
+  --font: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --display: "Bahnschrift", "Segoe UI Semibold", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0d0d0d; --surface: #1a1a19; --wash: #242422; --ink: #f0efec; --ink2: #c3c2b7; --muted: #9a9891; --rule: #2c2c2a; --axis: #46453f;
+    --accent: #86b6ef; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --flag: #4a4a46; --band: rgba(57, 135, 229, .24); --sel: #f0efec;
+    --q1: #0d366b; --q2: #104281; --q3: #1c5cab; --q4: #2a78d6; --q5: #3987e5; --q6: #6da7ec; --q7: #9ec5f4; --q8: #b7d3f6; --q9: #cde2fb;
+    --d1: #f8c4c1; --d2: #ee8784; --d3: #a95955; --d4: #383835; --d5: #466ba6; --d6: #77a4ec; --d7: #cce1fa;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d0d0d; --surface: #1a1a19; --wash: #242422; --ink: #f0efec; --ink2: #c3c2b7; --muted: #9a9891; --rule: #2c2c2a; --axis: #46453f;
+  --accent: #86b6ef; --s1: #3987e5; --s2: #d95926; --s3: #199e70; --flag: #4a4a46; --band: rgba(57, 135, 229, .24); --sel: #f0efec;
+  --q1: #0d366b; --q2: #104281; --q3: #1c5cab; --q4: #2a78d6; --q5: #3987e5; --q6: #6da7ec; --q7: #9ec5f4; --q8: #b7d3f6; --q9: #cde2fb;
+  --d1: #f8c4c1; --d2: #ee8784; --d3: #a95955; --d4: #383835; --d5: #466ba6; --d6: #77a4ec; --d7: #cce1fa;
+}
+:root[data-theme="light"] { color-scheme: light; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+section { scroll-margin-top: 64px; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--font); margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--surface); border-bottom: 1px solid var(--rule); }
+.bar .wrap { display: flex; gap: 6px 18px; align-items: center; flex-wrap: wrap; padding-block: 8px; }
+.bar b { font: 600 15px var(--display); letter-spacing: .01em; margin-right: 6px; white-space: nowrap; }
+.bar nav { display: flex; gap: 6px 18px; flex-wrap: wrap; flex: 1; min-width: 0; }
+.bar a { color: var(--ink2); text-decoration: none; font-size: 13px; padding: 2px 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+.bar a:hover { color: var(--ink); border-bottom-color: var(--axis); }
+.themesw { display: inline-flex; border: 1px solid var(--axis); border-radius: 7px; overflow: hidden; margin-left: auto; }
+.themesw button { border: 0; border-radius: 0; padding: 3px 10px; font-size: 12.5px; background: transparent; color: var(--ink2); }
+.themesw button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+@media (max-width: 760px) { .bar .wrap { gap: 6px 10px; } .bar b { font-size: 14px; margin-right: 0; } .themesw button { padding: 3px 8px; font-size: 12px; }
+  .bar nav { order: 3; flex-basis: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } section { scroll-margin-top: 88px; } }
+
+section { padding-block: 30px 6px; }
+section + section { border-top: 1px solid var(--rule); margin-top: 26px; }
+h1 { font: 600 clamp(1.7rem, 4.2vw, 2.5rem)/1.1 var(--display); margin: 0 0 10px; text-wrap: balance; max-width: 24ch; }
+h2 { font: 600 1.45rem/1.2 var(--display); margin: 0 0 8px; text-wrap: balance; max-width: 34ch; }
+h3 { font: 600 1.15rem/1.2 var(--display); margin: 0; }
+p, li { max-width: 68ch; }
+p { margin: 0 0 10px; }
+ul { margin: 0 0 10px; padding-left: 20px; }
+li { margin-bottom: 5px; }
+.kicker { font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.lede { font-size: 1.07rem; color: var(--ink2); }
+.small { font-size: 13px; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+.terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 22px; margin: 18px 0 6px; }
+.terms div { border-top: 2px solid var(--ink); padding-top: 7px; font-size: 13.5px; color: var(--ink2); }
+.terms b { display: block; color: var(--ink); font: 600 14px var(--display); letter-spacing: .03em; text-transform: uppercase; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px 26px; margin: 22px 0 8px; }
+.tile .big { font: 600 1.9rem/1.1 var(--display); }
+.tile .big span { color: var(--muted); font-weight: 500; }
+.tile .lab { font-size: 13px; color: var(--ink2); }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: end; margin: 14px 0 12px; }
+.controls label { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--muted); min-width: 0; }
+.controls label.pick { flex: 0 1 370px; } .controls label.pick select { width: 100%; }
+select, input[type="search"], input[type="text"], button { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 9px; max-width: 100%; }
+button { cursor: pointer; }
+button:hover { border-color: var(--ink2); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.timebox { flex: 1 1 260px; min-width: 0; }
+.timebox label { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.timebox .row { display: flex; gap: 10px; align-items: center; margin-top: 3px; }
+input[type="range"] { flex: 1; min-width: 0; accent-color: var(--s1); }
+.chip { display: inline-block; font-size: 11.5px; letter-spacing: .05em; text-transform: uppercase; border: 1px solid var(--axis); border-radius: 99px; padding: 1px 8px; color: var(--ink2); white-space: nowrap; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; margin: 5px 0; font-size: 12.5px; color: var(--ink2); }
+.chips button { font-size: 12.5px; padding: 2px 9px; border-radius: 99px; }
+.chips .lab { color: var(--muted); margin-right: 2px; }
+
+.explorer { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 860px) { .explorer { grid-template-columns: minmax(0, 1fr); } }
+.mapcard, .panel, figure.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px; margin: 0; min-width: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 5px 12px; font-size: 12.5px; color: var(--ink2); margin: 2px 0 8px; }
+.legend .ttl { flex-basis: 100%; color: var(--ink); font-weight: 500; font-size: 13.5px; }
+.legend span.it { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.sw { width: 22px; height: 11px; border-radius: 2px; display: inline-block; border: 1px solid rgba(127, 127, 127, .25); }
+.key { width: 16px; height: 0; border-top: 3px solid var(--ink2); display: inline-block; border-radius: 2px; }
+.key.k1 { border-color: var(--s1); } .key.k2 { border-color: var(--ink2); } .key.k3 { border-top-width: 9px; border-color: var(--band); } .key.k4 { border-color: var(--s2); }
+.key.dot { width: 8px; height: 8px; border: 0; border-radius: 50%; background: var(--ink); }
+.mapwrap { position: relative; }
+.zoomer { position: absolute; top: 2px; right: 2px; display: flex; flex-direction: column; gap: 4px; }
+.zoomer button { width: 30px; height: 30px; padding: 0; font-size: 16px; line-height: 1; }
+/* on a touch screen: one finger scrolls the page past the whole-state map, two fingers pinch it (handled in the script,
+   so the browser's own pinch zoom is switched off here); once zoomed in, one finger moves the map */
+#txmap { width: 100%; height: auto; display: block; touch-action: pan-x pan-y; border-radius: 6px; }
+#txmap.zoomed { touch-action: none; cursor: grab; }
+#txmap:focus { outline: none; }
+#txmap:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.c { stroke: var(--surface); stroke-width: .7; cursor: pointer; }
+.c, .hov, .sel, .cmp { vector-effect: non-scaling-stroke; }
+.c.na { fill: var(--flag); }
+.q1 { fill: var(--q1); background: var(--q1); } .q2 { fill: var(--q2); background: var(--q2); } .q3 { fill: var(--q3); background: var(--q3); }
+.q4 { fill: var(--q4); background: var(--q4); } .q5 { fill: var(--q5); background: var(--q5); } .q6 { fill: var(--q6); background: var(--q6); }
+.q7 { fill: var(--q7); background: var(--q7); } .q8 { fill: var(--q8); background: var(--q8); } .q9 { fill: var(--q9); background: var(--q9); }
+.d1 { fill: var(--d1); background: var(--d1); } .d2 { fill: var(--d2); background: var(--d2); } .d3 { fill: var(--d3); background: var(--d3); }
+.d4 { fill: var(--d4); background: var(--d4); } .d5 { fill: var(--d5); background: var(--d5); } .d6 { fill: var(--d6); background: var(--d6); }
+.d7 { fill: var(--d7); background: var(--d7); } .na { background: var(--flag); }
+.hov, .sel, .cmp { fill: none; pointer-events: none; stroke-linejoin: round; }
+.hov { stroke: var(--ink2); stroke-width: 1.6; } .sel { stroke: var(--sel); stroke-width: 2.8; } .cmp { stroke: var(--s2); stroke-width: 2.8; }
+.city { pointer-events: none; }
+.city circle { fill: var(--ink); stroke: var(--surface); }
+.city text { fill: var(--ink); font-family: var(--font); font-weight: 600; paint-order: stroke; stroke: var(--surface); stroke-linejoin: round; }
+.maptools { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 8px 0 0; font-size: 13px; color: var(--ink2); }
+.maptools label { display: inline-flex; align-items: center; gap: 6px; }
+.maptools button { font-size: 13px; padding: 4px 9px; }
+#linkbox { flex: 1 1 100%; font-size: 12.5px; }
+.note { font-size: 13px; color: var(--ink2); margin: 8px 0 0; }
+.tk { stroke: none; }
+.mkr { fill: var(--sel); } .mkr.c2 { fill: var(--s2); }
+.ranktxt { font-size: 13px; color: var(--ink2); margin: 2px 0 0; }
+
+.panel h3 { margin-bottom: 4px; }
+.cmprow { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: end; margin: 8px 0 2px; }
+.cmprow label { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--muted); min-width: 0; flex: 1 1 150px; }
+.flagnote { font-size: 13px; color: var(--ink2); background: var(--wash); border-radius: 6px; padding: 7px 9px; margin: 6px 0; }
+.facts { display: grid; grid-template-columns: 1fr auto; gap: 3px 14px; margin: 10px 0 12px; font-size: 13.5px; }
+.facts.two { grid-template-columns: 1fr auto auto; }
+.facts dt { color: var(--ink2); } .facts dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; font-weight: 500; }
+.facts .hd { color: var(--ink2); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.facts .hd .key { vertical-align: middle; }
+.ctitle { font-size: 13.5px; font-weight: 500; margin: 12px 0 2px; }
+.chart svg { display: block; max-width: 100%; touch-action: pan-y pinch-zoom; }
+.grid { stroke: var(--rule); stroke-width: 1; } .ax { stroke: var(--axis); stroke-width: 1; }
+.tick { fill: var(--muted); font: 11.5px var(--font); font-variant-numeric: tabular-nums; }
+.lbl { fill: var(--ink2); font: 12px var(--font); }
+.recon { fill: var(--wash); } .band { fill: var(--band); stroke: none; }
+.ln { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.ln.med { stroke: var(--ink2); stroke-width: 1.6; } .ln.cty { stroke: var(--s1); } .ln.flg { stroke: var(--muted); } .ln.c2 { stroke: var(--s2); }
+.pt { fill: var(--s1); stroke: var(--surface); stroke-width: 2; } .pt.flg { fill: var(--muted); } .pt.c2 { fill: var(--s2); }
+.seg { stroke-width: 3; stroke-linecap: round; } .seg.a { stroke: var(--s1); } .seg.b { stroke: var(--ink2); } .seg.c2 { stroke: var(--s2); }
+.dot { fill: var(--ink); stroke: var(--surface); stroke-width: 2; }
+.mk { fill: var(--s1); stroke: var(--surface); stroke-width: 2; } .mk.v2 { fill: var(--s2); } .mk.v3 { fill: var(--s3); }
+.ci { stroke: var(--s1); stroke-width: 2.4; stroke-linecap: round; } .ci.v2 { stroke: var(--s2); } .ci.v3 { stroke: var(--s3); }
+.one { stroke: var(--axis); stroke-width: 1.4; }
+.cross { stroke: var(--ink2); stroke-width: 1; stroke-dasharray: 3 3; pointer-events: none; }
+.hit { fill: transparent; }
+.hitcol:hover, .hitcol.on { fill: var(--band); }
+.sc { fill: var(--s1); fill-opacity: .5; stroke: var(--surface); stroke-width: 1; }
+.scsel { fill: none; stroke: var(--sel); stroke-width: 2.5; } .sccmp { fill: none; stroke: var(--s2); stroke-width: 2.5; }
+.axt { font-size: 12px; color: var(--ink2); margin: 0 0 2px; } .axt.r { text-align: right; margin: 2px 0 0; }
+.ring { fill: none; stroke: var(--ink); stroke-width: 1.6; pointer-events: none; }
+.sclab { fill: var(--ink); font: 600 12px var(--font); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; stroke-linejoin: round; }
+.multi { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px 20px; }
+.multi h4 { font: 600 14px var(--display); margin: 0 0 2px; }
+figure.card figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; }
+figure.card { margin: 14px 0; }
+.seg3 { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+
+details { margin-top: 10px; font-size: 13px; }
+summary { cursor: pointer; color: var(--accent); width: max-content; max-width: 100%; }
+.tw { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 4px 10px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--ink2); font-weight: 600; }
+th.sort { cursor: pointer; } th.sort:hover { color: var(--ink); }
+tr.pick { cursor: pointer; } tr.pick:hover td { background: var(--wash); }
+dl.gloss { display: grid; grid-template-columns: 150px 1fr; gap: 6px 16px; margin: 8px 0; max-width: 660px; font-size: 13.5px; }
+dl.gloss dt { font-weight: 600; } dl.gloss dd { margin: 0; color: var(--ink2); }
+@media (max-width: 520px) { dl.gloss { grid-template-columns: 1fr; gap: 0 0; } dl.gloss dd { margin-bottom: 8px; } }
+
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--axis); border-radius: 8px; padding: 8px 10px; font-size: 13px; max-width: min(300px, 80vw); box-shadow: 0 4px 16px rgba(0, 0, 0, .16); }
+#tip .th { font-weight: 600; margin-bottom: 3px; }
+#tip .tr { display: flex; gap: 7px; align-items: center; }
+#tip .tr .v { font-weight: 600; font-variant-numeric: tabular-nums; } #tip .tr .k { color: var(--ink2); }
+#tip .tn { color: var(--ink2); margin-top: 3px; }
+#nodata { background: var(--wash); border-radius: 8px; padding: 12px 14px; margin: 14px 0; }
+footer { border-top: 1px solid var(--rule); margin-top: 34px; padding-block: 18px 40px; color: var(--muted); font-size: 13px; }
+code { font: 12.5px ui-monospace, Consolas, monospace; background: var(--wash); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+@media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) { color-scheme: light;
+    --bg: #fff; --surface: #fff; --wash: #f0efeb; --ink: #0b0b0b; --ink2: #52514e; --muted: #6f6d67; --rule: #e1e0d9; --axis: #c3c2b7; --accent: #1c5cab;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --flag: #c3c2b7; --band: rgba(42, 120, 214, .17); --sel: #0b0b0b;
+    --q1: #cde2fb; --q2: #b7d3f6; --q3: #9ec5f4; --q4: #6da7ec; --q5: #3987e5; --q6: #2a78d6; --q7: #1c5cab; --q8: #104281; --q9: #0d366b;
+    --d1: #791717; --d2: #be3736; --d3: #ef857b; --d4: #e6e5df; --d5: #9ec5f4; --d6: #3987e5; --d7: #184f95; }
+  .bar, .controls, .zoomer, .maptools, .chips, .cmprow, #tip, details, .seg3 { display: none !important; }
+  section, figure.card, .mapcard, .panel { break-inside: avoid; }
+  .explorer { grid-template-columns: 1fr; }
+}
+</style>
+<script>try { var th0 = localStorage.getItem('txvax-theme'); if (th0 === 'light' || th0 === 'dark') document.documentElement.setAttribute('data-theme', th0); } catch (e) {}</script>
+
+<header class="bar"><div class="wrap">
+  <b>Texas vaccination coverage</b>
+  <nav aria-label="Sections"><a href="#map">County map</a><a href="#gaps">Gaps</a><a href="#uptake">Uptake</a><a href="#associations">Associations</a>
+    <a href="#early">First five months</a><a href="#checks">Model checks</a><a href="#method">Method</a></nav>
+  <div class="themesw" role="group" aria-label="Colour theme"><button type="button" data-th="auto" aria-pressed="true">Auto</button><button type="button" data-th="light" aria-pressed="false">Light</button><button type="button" data-th="dark" aria-pressed="false">Dark</button></div>
+</div></header>
+
+<main class="wrap">
+<section id="overview">
+  <p class="kicker">Bayesian spatiotemporal small-area analysis &middot; Texas DSHS records, December 2020 to May 2023</p>
+  <h1>COVID-19 vaccination coverage across Texas counties</h1>
+  <p class="lede">How first-dose coverage of residents aged 16 and over changed in each county, where the gaps between counties
+  opened and widened, and how uptake varied with age composition, household income and recent cases. Every number
+  describes vaccine receipt as recorded in the state registry, not willingness.</p>
+  <div id="nodata" hidden>This page's data block is missing, so the map and charts below are empty. Rebuild the page with
+  <code>Rscript --vanilla R/16_build_site.R</code>.</div>
+  <div class="tiles">
+    <div class="tile"><div class="big num"><span data-bind="state_base"></span> <span>&rarr;</span> <span data-bind="state_end" style="color:inherit"></span></div>
+      <div class="lab">Recorded statewide coverage, 24 May 2021 to 9 May 2023</div></div>
+    <div class="tile"><div class="big num"><span data-bind="med_base"></span> <span>&rarr;</span> <span data-bind="med_end" style="color:inherit"></span></div>
+      <div class="lab">Median county among the 238 modelled</div></div>
+    <div class="tile"><div class="big num"><span data-bind="gap_base"></span> <span>&rarr;</span> <span data-bind="gap_end" style="color:inherit"></span></div>
+      <div class="lab">Points between the 90th- and 10th-percentile county</div></div>
+    <div class="tile"><div class="big num">{{v:rel_ratio}}&times;</div>
+      <div class="lab">Modelled uptake rate, 90th- against 10th-percentile county</div></div>
+  </div>
+  <div class="terms">
+    <div><b>Recorded</b>A count from the Texas DSHS registry over a Census population estimate. A complete count, so it carries no sampling interval.</div>
+    <div><b>Reconstructed</b>Before 24 May 2021: the published count plus the county's allocated share of recipients who had no county on record. Rests on a stated assumption.</div>
+    <div><b>Modelled</b>A posterior summary from the Bayesian model, with a 95% credible interval. Used for uptake rates, not for coverage itself.</div>
+  </div>
+</section>
+
+<section id="map">
+  <h2>County map</h2>
+  <p>Choose what to map, move through time, and select a county to see its record. Hover or tap a county for its value;
+  hold Shift and click a second county to compare the two. Zoom with the buttons, a double-click, Ctrl and the mouse wheel,
+  or two fingers on a touch screen; then drag to move. The charts further down show their values the same way: hover, or
+  tap and slide sideways.</p>
+  <div class="chips" id="presets"><span class="lab">Start from a view:</span></div>
+  <div class="controls">
+    <label class="pick">Show <select id="measure"></select></label>
+    <div class="timebox" id="timebox"><label for="date">Records through <span id="datelab" class="num" style="color:var(--ink);font-weight:600"></span> <span id="datekind" class="chip"></span></label>
+      <div class="row"><button id="play" type="button" aria-pressed="false">Play</button><input type="range" id="date" min="0" max="17" step="1" value="17"></div></div>
+    <label>Find a county <input type="search" id="find" list="clist" placeholder="Type a name" autocomplete="off"></label>
+    <datalist id="clist"></datalist>
+  </div>
+  <div class="explorer">
+    <div class="mapcard">
+      <div class="legend" id="legend"></div>
+      <div class="mapwrap">
+        <svg id="txmap" role="img" tabindex="0" aria-label="Map of Texas counties coloured by the selected measure. Arrow keys step through time; plus and minus zoom."></svg>
+        <div class="zoomer"><button type="button" id="zin" aria-label="Zoom in" title="Zoom in">+</button><button type="button" id="zout" aria-label="Zoom out" title="Zoom out">&minus;</button><button type="button" id="zreset" aria-label="Show the whole state" title="Show the whole state">&#8962;</button></div>
+      </div>
+      <div class="maptools">
+        <label><input type="checkbox" id="labels" checked> City names</label>
+        <button type="button" id="copylink">Copy link to this view</button>
+        <button type="button" id="csv">Download county data (CSV)</button>
+        <button type="button" id="resetview">Reset</button>
+        <input type="text" id="linkbox" readonly hidden aria-label="Link to this view">
+      </div>
+      <p class="note" id="mnote"></p>
+      <div class="ctitle">All counties on this measure</div>
+      <div class="chart" id="ch-dist"></div>
+      <p class="ranktxt" id="ranktxt"></p>
+      <div class="chips" id="tops"></div>
+      <details id="ctab"><summary>Show all counties as a table</summary>
+        <div class="tw"><table id="ctable"></table></div></details>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+</section>
+
+<section id="gaps">
+  <h2>The gaps between counties widened, and most of the gap opened early</h2>
+  <figure class="card"><div class="legend"><span class="it"><i class="key k2"></i>Median county</span><span class="it"><i class="key k3"></i>10th to 90th percentile county</span>
+    <span class="it"><i class="sw" style="background:var(--wash)"></i>Reconstructed (before 24 May 2021)</span></div>
+    <div class="chart" id="ch-gap"></div>
+    <figcaption>First-dose coverage of residents aged 16+ across the {{v:x_n_stable}} modelled counties with usable early records.</figcaption>
+    <details><summary>Show as table</summary><div class="tw"><table id="tb-gap"></table></div></details></figure>
+  <ul>
+    <li>Across those counties the distance between the 90th- and 10th-percentile county was {{v:x_gap_b2}} points at the end of January 2021,
+      {{v:x_gap_b3}} at the end of February and {{v:x_gap_b6}} on 24 May 2021. It ended the study at {{v:x_gap_end}} points.</li>
+    <li>The size of the gap was set early, but not yet which counties were on which side of it: county coverage at the end of February 2021
+      has a rank correlation of {{v:x_rk_end_b3}} with coverage in May 2023, against {{v:x_rk_end_b6}} for coverage on 24 May 2021.</li>
+    <li>After May 2021 the gap kept widening because uptake among adults still unvaccinated was itself higher where coverage was already
+      higher: {{v:base_hr10_pt}} times higher per 10 points of starting coverage (95% confidence interval {{v:base_hr10_ols}}).</li>
+  </ul>
+</section>
+
+<section id="uptake">
+  <h2>Uptake among adults not yet vaccinated</h2>
+  <figure class="card"><div class="legend"><span class="it"><i class="key k2"></i>All counties pooled</span><span class="it"><i class="key k1"></i>Median county (modelled)</span>
+    <span class="it"><i class="key k3"></i>10th to 90th percentile county</span></div>
+    <div class="chart" id="ch-up"></div>
+    <figcaption>Share of adults not yet vaccinated who received a first dose, per 30 days. Each bar spans one interval between DSHS editions.
+      Until 29 March 2021 not every adult was eligible.</figcaption>
+    <details><summary>Show as table</summary><div class="tw"><table id="tb-up"></table></div></details></figure>
+  <ul>
+    <li>Reporting peaked in the first two weeks of April 2021, just after eligibility opened to all adults: {{v:x_up_all_k5}}% of
+      still-unvaccinated adults per 30 days statewide.</li>
+    <li>After the baseline the rate fell to {{v:pool_k2}}% in early summer 2021, rose to {{v:pool_k3}}% during the Delta wave, and was at
+      or below 1% from June 2022.</li>
+    <li>The median county ran well below the pooled rate throughout, because the most populous counties vaccinated faster.</li>
+  </ul>
+</section>
+
+<section id="associations">
+  <h2>Age composition, income and recent cases</h2>
+  <p>Hazard ratios per standard deviation of each county characteristic, by period. A ratio above 1 means higher uptake among
+  adults not yet vaccinated in counties with more of that characteristic.</p>
+  <div class="controls"><div><div class="small" id="varlab">Records without a county (affects the first two periods only)</div>
+    <div class="seg3" role="group" aria-labelledby="varlab">
+      <button type="button" data-var="H" aria-pressed="true">Main allocation</button><button type="button" data-var="A" aria-pressed="false">Fixed April shares</button>
+      <button type="button" data-var="N" aria-pressed="false">No allocation</button></div></div></div>
+  <figure class="card"><div class="multi" id="ch-assoc"></div>
+    <figcaption>Posterior median and 95% credible interval. One standard deviation is {{v:sd_age_pts}} points of the share of adults aged 65+,
+      a {{v:sd_inc_pct}} difference in median household income, and a {{v:sd_case_fold}}-fold difference in cases reported in the previous 30 days.</figcaption>
+    <details><summary>Show as table</summary><div class="tw"><table id="tb-assoc"></table></div></details></figure>
+  <ul>
+    <li><b>Age.</b> While eligibility was restricted, counties with more adults aged 65+ were not behind ({{v:x_hr_H_age_E1}}). From April 2021,
+      when all adults became eligible, the ratio is {{v:x_hr_H_age_E2}}, and over the main study period {{v:hr_age}}.</li>
+    <li><b>Recent cases.</b> Counties with more reported cases in the previous 30 days had higher uptake in every period
+      ({{v:hr_case}} over the main period).</li>
+    <li><b>Income.</b> Associated with coverage reached by May 2021 (odds ratio {{v:or_inc}}); for later uptake the ratio is {{v:hr_inc}}, an interval
+      that includes no association, and it is the least stable of the three across alternative analyses.</li>
+    <li>These are associations between county characteristics and county outcomes. They do not describe individuals.</li>
+  </ul>
+  <h3 style="margin-top:22px">Look at the counties yourself</h3>
+  <p>Plot any two county measures against each other. Each dot is a county; the selected county is marked.</p>
+  <div class="controls"><label class="pick">Across <select id="scx"></select></label><label class="pick">Up <select id="scy"></select></label></div>
+  <figure class="card"><div class="chart" id="ch-sc"></div>
+    <figcaption id="sccap"></figcaption></figure>
+</section>
+
+<section id="early">
+  <h2>The first five months rest on an assumption</h2>
+  <p>Until mid-April 2021 a share of recipients had no county on record. On 15 April 2021 the state assigned about {{v:x_fix_assigned_round}}
+  of them to counties in one edition, very unevenly. The reconstruction carries each county's share back to earlier dates, scaled to the
+  number of unassigned recipients published at the time.</p>
+  <figure class="card"><div class="legend"><span class="it"><i class="key k1"></i>Recipients with no county, share of the state total</span>
+    <span class="it"><i class="key dot"></i>Editions used as boundaries</span></div>
+    <div class="chart" id="ch-un"></div>
+    <figcaption>Daily DSHS editions, 29 December 2020 to 25 May 2021.</figcaption></figure>
+  <ul>
+    <li>The assumption predicts how published county counts should have grown whenever the unassigned total rose or fell. Over six
+      two-week windows the predicted and estimated effects correlate at {{v:x_pt_cor_w}} with counties weighted by size and
+      {{v:x_pt_cor_u}} with counties weighted equally: well supported for large counties, less for small ones.</li>
+    <li>With no allocation at all the conclusions hold; individual counties' coverage moves by up to {{v:x_ae_max}} points.</li>
+    <li>{{v:x_n_unstable}} modelled counties whose early records kept changing are left out before 24 May 2021 (grey on the map at early dates).</li>
+    <li>Who was ahead changed when eligibility opened: relative uptake to 31 March 2021 correlates {{v:x_pc_point_2}} with relative uptake
+      after 24 May 2021, against {{v:x_pc_point_3}} for April-May 2021.</li>
+  </ul>
+</section>
+
+<section id="checks">
+  <h2>How well the models predict</h2>
+  <figure class="card"><div class="multi" id="ch-val"></div>
+    <figcaption>Mean continuous ranked probability score for uptake per 30 days, in percentage points; lower is better. Each model was refitted
+      with the tested county-intervals withheld. Models without a dot were not run in that experiment.</figcaption>
+    <details><summary>Show as table</summary><div class="tw"><table id="tb-val"></table></div></details></figure>
+  <ul>
+    <li>Spatial structure lowered the error for counties with no data by {{v:impr_A_M1}} (random counties withheld) and {{v:impr_B_M1}} (whole regions).</li>
+    <li>County-specific trajectories lowered the error for a county's next interval by {{v:impr_C1_final}} and made later intervals better
+      calibrated, but made predictions for counties with no data {{v:worse_A_M4}} worse.</li>
+    <li>No model forecast the statewide level of the next interval well.</li>
+    <li>Smoothing does not hide local differences: for {{v:n_distinct}} of {{v:n_local}} counties the county effect differs from its neighbours'
+      with 95% posterior probability, and a prediction from neighbours and predictors alone would miss a county's May 2023 coverage by
+      {{v:ho_mae}} points on average (map: "Neighbours-only prediction error").</li>
+  </ul>
+</section>
+
+<section id="method">
+  <h2>Method and cautions</h2>
+  <ul>
+    <li><b>Outcome.</b> Residents aged 16+ recorded with at least one dose, by county of residence, from archived Texas DSHS workbooks. The
+      records support 16+, not 18+, and the dates on which editions survive, not calendar months.</li>
+    <li><b>Denominator.</b> Census Bureau Vintage 2025 estimate of residents aged 16+ on 1 July 2021, held fixed.</li>
+    <li><b>Model.</b> Binomial model for first doses among adults not yet vaccinated, complementary log-log link with interval length as
+      offset, BYM2 county effect, shared time effect, county-specific mean-reverting trajectories, fitted with R-INLA.</li>
+    <li><b>Sixteen counties are not modelled</b> because their recorded count of vaccinated adults exceeds their adult population at some
+      point; most are along the Mexican border. They are grey on most maps.</li>
+    <li><b>Recorded coverage is a complete count.</b> Its uncertainty comes from the records and the population estimates, which the
+      credible intervals do not cover. Uptake rates in high-coverage counties are the least reliable numbers here.</li>
+    <li><b>Dates are reporting dates.</b> Early in the rollout reporting lagged vaccination by days to weeks.</li>
+  </ul>
+  <details><summary>What the terms mean</summary><dl class="gloss">
+    <dt>Coverage</dt><dd>Residents aged 16+ recorded with at least one dose, as a share of the county's adult population estimate.</dd>
+    <dt>Uptake per 30 days</dt><dd>The share of adults not yet vaccinated at the start of an interval who received a first dose, scaled to 30 days so that intervals of different length compare.</dd>
+    <dt>Relative uptake</dt><dd>A county's uptake rate divided by that of the average county in the same intervals. 2 means twice the average rate.</dd>
+    <dt>Hazard ratio</dt><dd>How many times higher the uptake rate is in counties one standard deviation higher on a characteristic. 1 means no association.</dd>
+    <dt>95% credible interval</dt><dd>The range that holds the modelled quantity with 95% probability, given the model and the records. It does not cover errors in the records or the population estimates.</dd>
+    <dt>Spatially smooth effect</dt><dd>The part of a county's uptake level that it shares with neighbouring counties and that the three predictors do not explain.</dd>
+    <dt>CRPS</dt><dd>Continuous ranked probability score: the distance between a prediction, with its uncertainty, and what was recorded. Lower is better.</dd>
+  </dl></details>
+  <p style="margin-top:10px">The written reports, code and every result table are in the project folder:
+    <span id="doclinks"><code>docs/00_summary.md</code>, <code>docs/01_source_inventory.md</code>, <code>docs/02_report.md</code>,
+    <code>docs/03_early_rollout.md</code></span>.
+    This page is built from the result tables by <code>R/16_build_site.R</code>.</p>
+</section>
+<footer>Sources: Texas DSHS "COVID-19 Vaccine Data by County" workbook (Internet Archive captures and verified daily copies); U.S. Census
+  Bureau Vintage 2025 population estimates and ACS 2019-2023; Texas DSHS reported cases. Built {{v:built}}.</footer>
+</main>
+<div id="tip" hidden></div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+'use strict';
+var D = window.TXDATA;
+if (!D) { document.getElementById('nodata').hidden = false; return; }
+var C = D.counties, NS = 'http://www.w3.org/2000/svg';
+function $(q) { return document.querySelector(q); }
+function h(tag, attrs, parent, text) { var e = document.createElement(tag); if (attrs) for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.appendChild(e); return e; }
+function s(tag, attrs, parent, text) { var e = document.createElementNS(NS, tag); if (attrs) for (var k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; if (parent) parent.appendChild(e); return e; }
+function f1(v) { return v == null ? 'n/a' : v.toFixed(1); }
+function f2(v) { return v == null ? 'n/a' : v.toFixed(2); }
+function n0(v) { return v == null ? 'n/a' : Math.round(v).toLocaleString('en-US'); }
+function pct(v) { return v == null ? 'n/a' : v.toFixed(1) + '%'; }
+function ord(n) { var k = n % 100, j = n % 10; return n + (k > 10 && k < 14 ? 'th' : j === 1 ? 'st' : j === 2 ? 'nd' : j === 3 ? 'rd' : 'th'); }
+function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+var ISO = D.dates.map(function (d) { return d.iso; });
+var T0 = Date.parse('2020-12-14'), T1 = Date.parse(ISO[ISO.length - 1]), TB = Date.parse('2021-05-24');
+var NE = D.n_early_dates, NEI = D.n_early_intervals, LAST = ISO.length - 1;
+
+/* ---------- tooltip ---------- */
+var tip = $('#tip');
+function moveTip(e) { var p = 14, r = tip.getBoundingClientRect(), x, y;
+  if (e.pointerType === 'touch') { x = Math.min(e.clientX - r.width / 2, innerWidth - r.width - 8); y = e.clientY - r.height - 24; if (y < 8) y = e.clientY + 28; }   /* above the finger, not under it */
+  else { x = e.clientX + p; y = e.clientY + p; if (x + r.width > innerWidth - 8) x = e.clientX - r.width - p; if (y + r.height > innerHeight - 8) y = e.clientY - r.height - p; }
+  tip.style.left = Math.max(8, x) + 'px'; tip.style.top = Math.max(8, y) + 'px'; }
+function showTip(e, build) { tip.textContent = ''; build(tip); tip.hidden = false; moveTip(e); }
+function hideTip() { tip.hidden = true; }
+/* A mouse shows a pop-up by hovering. A finger shows it by tapping, or by sliding sideways across a chart (up and down still
+   scrolls the page); it then stays until the next touch, mouse press or scroll. lastPT is the kind of pointer that last
+   went down; tipOff is set while a pop-up is pinned by a finger, and puts away what the chart drew with it. */
+var lastPT = 'mouse', tipOff = null;
+function dismiss() { var f = tipOff; tipOff = null; if (f) f(); hideTip(); }
+document.addEventListener('pointerdown', function (e) { lastPT = e.pointerType || 'mouse'; if (lastPT === 'touch' || tipOff) dismiss(); }, true);
+window.addEventListener('scroll', dismiss, { passive: true });
+function hover(el, onMove, onLeave) {
+  var byTouch = function (e) { if (tipOff && tipOff !== onLeave) { var f = tipOff; tipOff = null; f(); } tipOff = onLeave; onMove(e); };
+  /* let go of the finger, so that sliding across a chart reaches its other columns */
+  el.addEventListener('pointerdown', function (e) { if (e.pointerType === 'touch' && e.target.releasePointerCapture) { try { e.target.releasePointerCapture(e.pointerId); } catch (x) {} } });
+  el.addEventListener('pointermove', function (e) { if (e.pointerType === 'touch') byTouch(e); else onMove(e); });
+  el.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch') onLeave(e); });
+  el.addEventListener('click', function (e) { if (lastPT === 'touch') byTouch({ clientX: e.clientX, clientY: e.clientY, pointerType: 'touch' }); }); }
+function row(t, key, val, k) { var r = h('div', { 'class': 'tr' }, t); if (k) h('i', { 'class': 'key ' + k }, r); h('span', { 'class': 'v' }, r, val); h('span', { 'class': 'k' }, r, key); }
+function tableOf(el, head, rows) { el.textContent = ''; var tr = h('tr', null, h('thead', null, el)); head.forEach(function (x) { h('th', null, tr, x); });
+  var tb = h('tbody', null, el); rows.forEach(function (r) { var t = h('tr', null, tb); r.forEach(function (x) { h('td', null, t, x); }); }); }
+function legendItems(host, items) { items.forEach(function (q) { var it = h('span', { 'class': 'it' }, host); h('i', { 'class': 'key ' + q[0] }, it); it.appendChild(document.createTextNode(q[1])); }); }
+
+/* ---------- theme ---------- */
+function setTheme(v) { var r = document.documentElement; if (v === 'light' || v === 'dark') r.setAttribute('data-theme', v); else { v = 'auto'; r.removeAttribute('data-theme'); }
+  try { if (v === 'auto') localStorage.removeItem('txvax-theme'); else localStorage.setItem('txvax-theme', v); } catch (e) {}
+  document.querySelectorAll('[data-th]').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-th') === v ? 'true' : 'false'); }); }
+document.querySelectorAll('[data-th]').forEach(function (b) { b.addEventListener('click', function () { setTheme(b.getAttribute('data-th')); }); });
+setTheme(document.documentElement.getAttribute('data-theme') || 'auto');
+
+/* ---------- headline figures ---------- */
+var K = { state_base: pct(D.state[NE]), state_end: pct(D.state[LAST]), med_base: pct(D.gap238[0].med), med_end: pct(D.gap238[1].med),
+  gap_base: f1(D.gap238[0].gap), gap_end: f1(D.gap238[1].gap) };
+document.querySelectorAll('[data-bind]').forEach(function (e) { e.textContent = K[e.getAttribute('data-bind')]; });
+if (location.protocol === 'file:') { var dl = $('#doclinks'); dl.textContent = '';
+  [['../docs/00_summary.html', 'summary report'], ['../docs/01_source_inventory.html', 'source inventory'], ['../docs/02_report.html', 'main report'], ['../docs/03_early_rollout.html', 'early-rollout extension']]
+    .forEach(function (x, i) { if (i) dl.appendChild(document.createTextNode(', ')); h('a', { href: x[0] }, dl, x[1]); }); }
+
+/* ---------- measures ---------- */
+var RB = [0.6, 0.75, 0.9, 1.11, 1.33, 1.67];
+function ratio(v) { return v == null ? 'n/a' : v.toFixed(2) + ' times the average county'; }
+var M = {
+  cov: { name: 'Coverage over time', title: 'Residents aged 16+ with a first dose', type: 'seq', breaks: [10, 20, 30, 40, 50, 60, 70, 80], unit: '%', time: true,
+    get: function (c, t) { return c.x ? null : c.cov[t]; }, fmt: pct, na: 'Records exceed population, or early records unsettled',
+    note: 'Recorded from 24 May 2021. Earlier dates are reconstructed under the allocation assumption described below.' },
+  chg: { name: 'Change in coverage, May 2021 to May 2023', title: 'Percentage-point gain in recorded coverage, 24 May 2021 to 9 May 2023', type: 'seq', breaks: [15, 20, 25, 30, 35], unit: '',
+    get: function (c) { return c.x ? null : c.ch; }, fmt: function (v) { return v == null ? 'n/a' : (v >= 0 ? '+' : '') + v.toFixed(1) + ' points'; }, na: 'Records exceed population', note: 'Recorded.' },
+  rel: { name: 'Relative uptake after May 2021 (modelled)', title: 'Uptake rate relative to the average county, 25 May 2021 to 9 May 2023 (1 = average)', type: 'div', breaks: RB, log: true,
+    get: function (c) { return c.r; }, fmt: ratio, na: 'Not modelled', note: 'Modelled: the rate at which adults not yet vaccinated received a first dose, averaged over the 12 intervals.' },
+  e2: { name: 'Relative uptake, April-May 2021 (modelled)', title: 'Uptake rate relative to the average county, 1 April to 24 May 2021 (1 = average)', type: 'div', breaks: RB, log: true,
+    get: function (c) { return c.e2; }, fmt: ratio, na: 'Not modelled or not reconstructed', note: 'Modelled on the reconstructed series, after eligibility opened to all adults.' },
+  e1: { name: 'Relative uptake, December 2020-March 2021 (modelled)', title: 'Uptake rate relative to the average county, 14 December 2020 to 31 March 2021 (1 = average)', type: 'div', breaks: RB, log: true,
+    get: function (c) { return c.e1; }, fmt: ratio, na: 'Not modelled or not reconstructed', note: 'Modelled on the reconstructed series, while eligibility was restricted. Compare with the later periods: the pattern is different.' },
+  sm: { name: 'County effect shared with neighbours (modelled)', title: 'Spatially smooth county effect not explained by the three predictors (1 = average)', type: 'div', breaks: RB, log: true,
+    get: function (c) { return c.x ? null : c.sm; }, fmt: function (v) { return v == null ? 'n/a' : v.toFixed(2); }, na: 'Not modelled', note: 'Modelled (spatial model without county-specific trajectories).' },
+  ho: { name: 'Neighbours-only prediction error', title: 'Coverage on 9 May 2023 predicted from neighbours and predictors alone, minus recorded (points)', type: 'div', breaks: [-10, -5, -2, 2, 5, 10], rev: true,
+    labels: ['Under -10', '-10 to -5', '-5 to -2', '-2 to +2', '+2 to +5', '+5 to +10', 'Over +10'],
+    get: function (c) { return c.ho; }, fmt: function (v) { return v == null ? 'n/a' : (v > 0 ? '+' : '') + v.toFixed(1) + ' points'; }, na: 'Not modelled',
+    note: 'Blue: the county did better than its neighbours and predictors alone would suggest. Red: it did worse. This is what a purely smoothed map would get wrong.' },
+  od: { name: 'Records added by the April 2021 correction', title: 'Records received on 15 April 2021, as a share of the county\'s count the day before', type: 'seq', breaks: [1, 5, 10, 15, 20], unit: '%',
+    get: function (c) { return c.od; }, fmt: pct, na: 'n/a', note: 'Observed. This share is what the reconstruction carries back to earlier dates.' },
+  a: { name: 'Share of adults aged 65 and over', title: 'Residents aged 65+ as a share of residents aged 16+, 1 July 2021', type: 'seq', breaks: [15, 20, 25, 30, 35], unit: '%',
+    get: function (c) { return c.a; }, fmt: pct, na: 'n/a', note: 'County characteristic (Census Bureau population estimates).' },
+  inc: { name: 'Median household income', title: 'Median household income, 2019-2023 (2023 dollars)', type: 'seq', breaks: [45000, 55000, 65000, 75000, 90000], money: true,
+    get: function (c) { return c.inc; }, fmt: function (v) { return v == null ? 'n/a' : '$' + n0(v); }, na: 'n/a', note: 'County characteristic (American Community Survey 2019-2023).' }
+};
+var ORDER = ['cov', 'chg', 'rel', 'e2', 'e1', 'sm', 'ho', 'od', 'a', 'inc'];
+function classes(m) { var n = m.breaks.length + 1;
+  if (m.type === 'div') { var d = ['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7']; return m.rev ? d.reverse() : d; }
+  var pick = n === 9 ? [1, 2, 3, 4, 5, 6, 7, 8, 9] : n === 6 ? [1, 3, 4, 6, 7, 9] : [1, 3, 5, 7, 9];
+  return pick.map(function (i) { return 'q' + i; }); }
+function bfmt(m) { var u = m.unit || ''; return m.money ? function (v) { return '$' + (v / 1000) + 'k'; } : m.type === 'div' && !m.rev ? function (v) { return v.toFixed(2); } : function (v) { return v + u; }; }
+function labels(m) { if (m.labels) return m.labels; var b = m.breaks, f = bfmt(m), dv = m.type === 'div';
+  var out = ['Under ' + f(b[0])]; for (var i = 1; i < b.length; i++) out.push(f(b[i - 1]) + ' to ' + f(b[i])); out.push((dv ? 'Over ' : '') + f(b[b.length - 1]) + (dv ? '' : ' or more')); return out; }
+function bin(m, v) { var k = 0; for (var i = 0; i < m.breaks.length; i++) if (v >= m.breaks[i]) k++; return k; }
+
+/* ---------- state, shareable through the address ---------- */
+var st = { m: 'cov', t: LAST, sel: 0, cmp: null, variant: 'H', timer: null, labels: true, sx: 'a', sy: 'r' }, HOME = 0;
+for (var i0 = 0; i0 < C.length; i0++) if (C[i0].n === 'Harris') { st.sel = i0; HOME = i0; }
+function byFips(f) { for (var i = 0; i < C.length; i++) if (C[i].f === f) return i; return -1; }
+/* a link made with "Copy link" carries the view after the #; a plain section link (#gaps) carries none */
+function readHash() { var q = location.hash.slice(1); if (q.indexOf('=') < 0) return false; st.cmp = null; st.labels = true;
+  q.split('&').forEach(function (kv) { var p = kv.split('='), k = p[0], v = p[1], i;
+    if (k === 'm' && M[v]) st.m = v; if (k === 't' && +v >= 0 && +v <= LAST) st.t = Math.round(+v);
+    if (k === 'c') { i = byFips(v); if (i >= 0) st.sel = i; } if (k === 'k') { i = byFips(v); if (i >= 0) st.cmp = i; }
+    if (k === 'l' && v === '0') st.labels = false; }); if (st.cmp === st.sel) st.cmp = null; return true; }
+readHash();
+function link() { return location.href.split('#')[0] + '#m=' + st.m + '&t=' + st.t + '&c=' + C[st.sel].f + (st.cmp != null ? '&k=' + C[st.cmp].f : '') + (st.labels ? '' : '&l=0'); }
+function remember() { try { history.replaceState(null, '', link()); } catch (e) {} }
+
+/* ---------- map ---------- */
+var W = D.view[0], H = D.view[1], VB = { x: 0, y: 0, w: W, h: H };
+var svg = $('#txmap'), layer = s('g', null, svg), paths = C.map(function (c, i) { return s('path', { d: c.d, 'data-i': i, 'class': 'c na' }, layer); });
+var hov = s('path', { 'class': 'hov' }, svg), cmpp = s('path', { 'class': 'cmp' }, svg), selp = s('path', { 'class': 'sel' }, svg), cityL = s('g', { 'class': 'city' }, svg);
+var cityEls = D.cities.map(function (q, k) { var g = s('g', null, cityL); return { q: q, k: k, g: g, dot: s('circle', { cx: q.x, cy: q.y }, g), tx: s('text', { 'text-anchor': q.a === 'start' ? 'start' : 'end' }, g, q.n) }; });
+/* names and dots keep the same size on screen at every zoom level */
+function layoutLabels() { var px = (svg.clientWidth || 600) / VB.w, few = (svg.clientWidth || 600) < 430 && VB.w > W * 0.7; cityL.style.display = st.labels ? '' : 'none';
+  cityEls.forEach(function (e) { var a = e.q.a; e.g.style.display = few && e.k > 5 ? 'none' : ''; e.dot.setAttribute('r', 2.6 / px); e.dot.setAttribute('stroke-width', 1 / px);
+    e.tx.setAttribute('font-size', 12 / px); e.tx.setAttribute('stroke-width', 3 / px);
+    e.tx.setAttribute('x', e.q.x + (a === 'start' ? 6 : -6) / px); e.tx.setAttribute('y', e.q.y + 4 / px); }); }
+function applyVB() { svg.setAttribute('viewBox', VB.x + ' ' + VB.y + ' ' + VB.w + ' ' + VB.h); svg.classList.toggle('zoomed', VB.w < W - 1); layoutLabels(); }
+function zoomAt(f, cx, cy) { var nw = clamp(VB.w / f, W / 10, W), nh = nw * H / W; if (cx == null) { cx = VB.x + VB.w / 2; cy = VB.y + VB.h / 2; }
+  VB.x = clamp(cx - (cx - VB.x) * nw / VB.w, 0, W - nw); VB.y = clamp(cy - (cy - VB.y) * nh / VB.h, 0, H - nh); VB.w = nw; VB.h = nh; applyVB(); }
+function toMap(e) { var r = svg.getBoundingClientRect(); return [VB.x + (e.clientX - r.left) / r.width * VB.w, VB.y + (e.clientY - r.top) / r.height * VB.h]; }
+/* a county chosen from a list, the search box or a chart may lie outside a zoomed-in map: bring it into view */
+function ensureVisible(i) { var c = C[i].c; if (VB.w >= W - 1) return; if (c[0] < VB.x || c[0] > VB.x + VB.w || c[1] < VB.y || c[1] > VB.y + VB.h) {
+  VB.x = clamp(c[0] - VB.w / 2, 0, W - VB.w); VB.y = clamp(c[1] - VB.h / 2, 0, H - VB.h); applyVB(); } }
+$('#zin').addEventListener('click', function () { zoomAt(1.6); }); $('#zout').addEventListener('click', function () { zoomAt(1 / 1.6); });
+$('#zreset').addEventListener('click', function () { VB = { x: 0, y: 0, w: W, h: H }; applyVB(); });
+/* the wheel zooms only with Ctrl held (a trackpad pinch arrives that way), so that it never traps scrolling of the page */
+svg.addEventListener('wheel', function (e) { if (!e.ctrlKey) return; e.preventDefault(); var p = toMap(e); zoomAt(e.deltaY < 0 ? 1.25 : 0.8, p[0], p[1]); }, { passive: false });
+svg.addEventListener('dblclick', function (e) { var p = toMap(e); zoomAt(1.8, p[0], p[1]); });
+var drag = null, dragged = false;
+/* a mouse or pen drags the zoomed map through pointer events; fingers are handled just below */
+svg.addEventListener('pointerdown', function (e) { dragged = false; if (e.pointerType === 'touch' || VB.w >= W - 1) return; drag = { x: e.clientX, y: e.clientY, vx: VB.x, vy: VB.y }; });
+window.addEventListener('pointerup', function () { drag = null; }); window.addEventListener('pointercancel', function () { drag = null; });
+/* touch: two fingers pinch to zoom and move the map; one finger moves it once it is zoomed in, and scrolls the page while the
+   whole state is shown. Touch events are used for this because only their preventDefault keeps the page still mid-gesture. */
+var tg = null;
+function fingers(e) { return Array.prototype.filter.call(e.touches, function (t) { return svg.contains(t.target); }); }
+function span(t) { return Math.max(1, Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY)); }
+/* called whenever a finger goes down or lifts: start afresh from the fingers now on the map */
+function touchBegin(e) { var t = fingers(e), r = svg.getBoundingClientRect();
+  if (t.length >= 2) { var cx = (t[0].clientX + t[1].clientX) / 2, cy = (t[0].clientY + t[1].clientY) / 2;
+    tg = { n: 2, d: span(t), w: VB.w, mx: VB.x + (cx - r.left) / r.width * VB.w, my: VB.y + (cy - r.top) / r.height * VB.h }; hideTip(); }
+  else if (t.length === 1 && VB.w < W - 1) tg = { n: 1, x: t[0].clientX, y: t[0].clientY, vx: VB.x, vy: VB.y };
+  else tg = null; }
+svg.addEventListener('touchstart', touchBegin, { passive: true }); svg.addEventListener('touchend', touchBegin); svg.addEventListener('touchcancel', touchBegin);
+svg.addEventListener('touchmove', function (e) { if (!tg) return; if (!e.cancelable) { tg = null; return; }   /* the browser has already begun to scroll */
+  var t = fingers(e), r = svg.getBoundingClientRect();
+  if (tg.n === 2 && t.length >= 2) { e.preventDefault(); var cx = (t[0].clientX + t[1].clientX) / 2, cy = (t[0].clientY + t[1].clientY) / 2, nw = clamp(tg.w * tg.d / span(t), W / 10, W), nh = nw * H / W;
+    /* the point of the map that was between the fingers stays between them */
+    VB.x = clamp(tg.mx - (cx - r.left) / r.width * nw, 0, W - nw); VB.y = clamp(tg.my - (cy - r.top) / r.height * nh, 0, H - nh); VB.w = nw; VB.h = nh; dragged = true; applyVB(); }
+  else if (tg.n === 1 && t.length === 1) { var dx = t[0].clientX - tg.x, dy = t[0].clientY - tg.y; if (Math.abs(dx) + Math.abs(dy) > 4) dragged = true;
+    if (dragged) { e.preventDefault(); VB.x = clamp(tg.vx - dx * VB.w / r.width, 0, W - VB.w); VB.y = clamp(tg.vy - dy * VB.h / r.height, 0, H - VB.h); applyVB(); } } }, { passive: false });
+var msel = $('#measure'); ORDER.forEach(function (k) { h('option', { value: k }, msel, M[k].name); });
+var clist = $('#clist'); C.forEach(function (c) { h('option', { value: c.n }, clist); });
+function paint() { var m = M[st.m], cl = classes(m), lab = labels(m), lg = $('#legend'); lg.textContent = ''; msel.value = st.m; rng.value = st.t;
+  C.forEach(function (c, i) { var v = m.get(c, st.t); paths[i].setAttribute('class', 'c ' + (v == null ? 'na' : cl[bin(m, v)])); });
+  h('span', { 'class': 'ttl' }, lg, m.title + (m.time ? ', through ' + D.dates[st.t].through : ''));
+  cl.forEach(function (k, i) { var it = h('span', { 'class': 'it' }, lg); h('i', { 'class': 'sw ' + k }, it); it.appendChild(document.createTextNode(lab[i])); });
+  if (m.na !== 'n/a') { var it = h('span', { 'class': 'it' }, lg); h('i', { 'class': 'sw na' }, it); it.appendChild(document.createTextNode(m.na)); }
+  $('#mnote').textContent = (m.time ? 'Statewide: ' + pct(D.state[st.t]) + ' of residents aged 16+. ' : '') + m.note; $('#timebox').hidden = !m.time;
+  $('#datelab').textContent = D.dates[st.t].through; $('#datekind').textContent = D.dates[st.t].kind; dist(); panelMeasure(); }
+function countyTip(e, i) { var c = C[i], m = M[st.m], v = m.get(c, st.t);
+  showTip(e, function (t) { h('div', { 'class': 'th' }, t, c.n + ' County'); row(t, m.time ? 'through ' + D.dates[st.t].through : '', v == null ? 'No value shown' : m.fmt(v));
+    h('div', { 'class': 'tn' }, t, n0(c.p) + ' residents aged 16+');
+    if (c.x) h('div', { 'class': 'tn' }, t, 'Recorded first doses exceed the adult population; not modelled.');
+    else if (c.u && (st.m === 'e1' || st.m === 'e2' || (st.m === 'cov' && st.t < NE))) h('div', { 'class': 'tn' }, t, 'Early records unsettled; not reconstructed.'); }); }
+svg.addEventListener('pointermove', function (e) { if (e.pointerType === 'touch') return;   /* a moving finger is a gesture, not a hover */
+  if (drag) { var r = svg.getBoundingClientRect(), dx = e.clientX - drag.x, dy = e.clientY - drag.y; if (Math.abs(dx) + Math.abs(dy) > 4) dragged = true;
+    if (dragged) { VB.x = clamp(drag.vx - dx * VB.w / r.width, 0, W - VB.w); VB.y = clamp(drag.vy - dy * VB.h / r.height, 0, H - VB.h); applyVB(); hideTip(); return; } }
+  var i = e.target.getAttribute && e.target.getAttribute('data-i'); if (i == null) { hideTip(); hov.setAttribute('d', ''); return; }
+  hov.setAttribute('d', C[i].d); countyTip(e, +i); });
+svg.addEventListener('pointerleave', function () { hideTip(); hov.setAttribute('d', ''); });
+svg.addEventListener('click', function (e) { if (dragged) { dragged = false; return; } var i = e.target.getAttribute && e.target.getAttribute('data-i'); if (i == null) return;
+  if (e.shiftKey) compare(+i); else select(+i);
+  if (lastPT === 'touch') { countyTip({ clientX: e.clientX, clientY: e.clientY, pointerType: 'touch' }, +i); tipOff = hideTip; } });
+svg.addEventListener('keydown', function (e) { var k = e.key;
+  if ((k === 'ArrowLeft' || k === 'ArrowRight') && M[st.m].time) { e.preventDefault(); stop(); st.t = clamp(st.t + (k === 'ArrowRight' ? 1 : -1), 0, LAST); paint(); remember(); }
+  else if (k === '+' || k === '=') zoomAt(1.6); else if (k === '-') zoomAt(1 / 1.6); else if (k === 'Escape') { VB = { x: 0, y: 0, w: W, h: H }; applyVB(); } });
+msel.addEventListener('change', function () { st.m = msel.value; stop(); paint(); remember(); });
+var rng = $('#date'); rng.max = LAST;
+rng.addEventListener('input', function () { st.t = +rng.value; paint(); remember(); });
+function stop() { if (st.timer) { clearInterval(st.timer); st.timer = null; } var b = $('#play'); b.textContent = 'Play'; b.setAttribute('aria-pressed', 'false'); }
+$('#play').addEventListener('click', function () { if (st.timer) { stop(); return; }
+  if (st.t >= LAST) st.t = -1; this.textContent = 'Pause'; this.setAttribute('aria-pressed', 'true');
+  var step = function () { st.t++; paint(); if (st.t >= LAST) { stop(); remember(); } }; step(); st.timer = setInterval(step, 950); });
+function findCounty(name) { var q = name.trim().toLowerCase().replace(/ county$/, ''); for (var i = 0; i < C.length; i++) if (C[i].n.toLowerCase() === q) return i; return -1; }
+$('#find').addEventListener('change', function () { var i = findCounty(this.value); if (i >= 0) { select(i); this.value = ''; } });
+$('#labels').addEventListener('change', function () { st.labels = this.checked; layoutLabels(); remember(); });
+$('#copylink').addEventListener('click', function () { var b = this, u = link(), box = $('#linkbox'), done = function () { b.textContent = 'Link copied'; setTimeout(function () { b.textContent = 'Copy link to this view'; }, 1800); };
+  var fallback = function () { box.hidden = false; box.value = u; box.focus(); box.select(); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(u).then(done, fallback); else fallback(); });
+$('#resetview').addEventListener('click', function () { stop(); st.m = 'cov'; st.t = LAST; st.cmp = null; VB = { x: 0, y: 0, w: W, h: H }; applyVB(); st.sel = HOME; paint(); select(HOME); });
+var PRE = [['Coverage in May 2023', 'cov', LAST], ['Coverage at the end of February 2021', 'cov', 2], ['Who vaccinated faster after May 2021', 'rel', null],
+  ['Who was ahead before eligibility opened', 'e1', null], ['Where neighbours mislead', 'ho', null], ['The April 2021 correction', 'od', null]];
+PRE.forEach(function (q) { h('button', { type: 'button' }, $('#presets'), q[0]).addEventListener('click', function () { stop(); st.m = q[1]; if (q[2] != null) st.t = q[2]; paint(); remember(); }); });
+
+/* ---------- all counties on the mapped measure ---------- */
+function values() { var m = M[st.m], out = []; C.forEach(function (c, i) { var v = m.get(c, st.t); if (v != null) out.push([v, i]); }); out.sort(function (a, b) { return a[0] - b[0]; }); return out; }
+function rankOf(vals, i) { for (var k = 0; k < vals.length; k++) if (vals[k][1] === i) { var hi = 0; vals.forEach(function (q) { if (q[0] > vals[k][0]) hi++; }); return hi + 1; } return null; }
+function dist() { var host = $('#ch-dist'), m = M[st.m], vals = values(), tops = $('#tops'); host.textContent = ''; tops.textContent = ''; $('#ranktxt').textContent = '';
+  if (vals.length < 2) return; var w = Math.max(260, host.clientWidth || 500), hgt = 90, mg = { l: 12, r: 12, t: 32, b: 20 }, lo = vals[0][0], hi = vals[vals.length - 1][0];
+  var f = m.log ? Math.log : function (v) { return v; }; if (hi === lo) hi = lo + 1;
+  var x = function (v) { return mg.l + (f(v) - f(lo)) / (f(hi) - f(lo)) * (w - mg.l - mg.r); }, g = s('svg', { width: w, height: hgt, viewBox: '0 0 ' + w + ' ' + hgt, role: 'img' }, host), cl = classes(m), bf = bfmt(m);
+  m.breaks.forEach(function (b) { if (b > lo && b < hi) { s('line', { x1: x(b), x2: x(b), y1: mg.t, y2: hgt - mg.b + 4, 'class': 'grid' }, g); s('text', { x: x(b), y: hgt - 5, 'text-anchor': 'middle', 'class': 'tick' }, g, bf(b)); } });
+  vals.forEach(function (q) { s('rect', { x: x(q[0]) - 1, y: mg.t + 4, width: 2, height: hgt - mg.t - mg.b - 4, 'class': 'tk ' + cl[bin(m, q[0])] }, g); });
+  var mark = function (i, c2) { var v = m.get(C[i], st.t); if (v == null) return; var xx = x(v); s('rect', { x: xx - 1.5, y: mg.t - 3, width: 3, height: hgt - mg.t - mg.b + 7, 'class': 'mkr' + (c2 ? ' c2' : '') }, g);
+    s('text', { x: clamp(xx, 40, w - 40), y: c2 ? 25 : 11, 'text-anchor': 'middle', 'class': 'tick', style: 'fill:var(--ink);font-weight:600' }, g, C[i].n); };
+  if (st.cmp != null) mark(st.cmp, true); mark(st.sel, false);
+  var hit = s('rect', { x: 0, y: 0, width: w, height: hgt, 'class': 'hit', style: 'cursor:pointer' }, g), near = function (e) { var bx = g.getBoundingClientRect(), px = (e.clientX - bx.left) * (w / bx.width), b = 0, bd = 1e9;
+    vals.forEach(function (q, k) { var d = Math.abs(x(q[0]) - px); if (d < bd) { bd = d; b = k; } }); return vals[b]; };
+  hover(hit, function (e) { var q = near(e); showTip(e, function (t) { h('div', { 'class': 'th' }, t, C[q[1]].n + ' County'); row(t, ord(rankOf(vals, q[1])) + ' highest of ' + vals.length, m.fmt(q[0])); }); }, hideTip);
+  hit.addEventListener('click', function (e) { select(near(e)[1]); });
+  var v0 = m.get(C[st.sel], st.t); $('#ranktxt').textContent = v0 == null ? C[st.sel].n + ' County has no value on this measure.' :
+    C[st.sel].n + ' County: ' + m.fmt(v0) + ', ' + ord(rankOf(vals, st.sel)) + ' highest of the ' + vals.length + ' counties shown.';
+  var chip = function (labtxt, arr) { h('span', { 'class': 'lab' }, tops, labtxt); arr.forEach(function (q) { h('button', { type: 'button', title: m.fmt(q[0]) }, tops, C[q[1]].n).addEventListener('click', function () { select(q[1]); }); }); };
+  chip('Highest:', vals.slice(-5).reverse()); chip('Lowest:', vals.slice(0, 5)); }
+
+/* ---------- charts ---------- */
+function xT(ms, w, m) { return m.l + (ms - T0) / (T1 - T0) * (w - m.l - m.r); }
+function frame(host, hgt, m, ymax, ystep, yfmt) { host.textContent = ''; var w = Math.max(260, host.clientWidth || 600);
+  var g = s('svg', { width: w, height: hgt, viewBox: '0 0 ' + w + ' ' + hgt, role: 'img' }, host), ph = hgt - m.t - m.b;
+  var y = function (v) { return m.t + (1 - v / ymax) * ph; };
+  s('rect', { x: xT(T0, w, m), y: m.t, width: xT(TB, w, m) - xT(T0, w, m), height: ph, 'class': 'recon' }, g);
+  for (var v = 0; v <= ymax + 1e-9; v += ystep) { s('line', { x1: m.l, x2: w - m.r, y1: y(v), y2: y(v), 'class': v === 0 ? 'ax' : 'grid' }, g); s('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end', 'class': 'tick' }, g, yfmt(v)); }
+  var yrs = w < 480 ? [['2021-01-01', '2021'], ['2022-01-01', '2022'], ['2023-01-01', '2023']] : [['2021-01-01', 'Jan 2021'], ['2021-07-01', 'Jul 2021'], ['2022-01-01', 'Jan 2022'], ['2022-07-01', 'Jul 2022'], ['2023-01-01', 'Jan 2023']];
+  yrs.forEach(function (q) { var x = xT(Date.parse(q[0]), w, m); s('line', { x1: x, x2: x, y1: hgt - m.b, y2: hgt - m.b + 4, 'class': 'ax' }, g); s('text', { x: x, y: hgt - m.b + 17, 'text-anchor': 'middle', 'class': 'tick' }, g, q[1]); });
+  return { g: g, w: w, y: y, ph: ph }; }
+function covChart(host, ci, cj) { var big = ci == null, m = { l: 40, r: big ? 14 : 12, t: 10, b: 26 }, F = frame(host, big ? 300 : 200, m, 100, 20, function (v) { return v + '%'; });
+  var g = F.g, w = F.w, y = F.y, X = ISO.map(function (d) { return xT(Date.parse(d), w, m); });
+  var up = D.spread.map(function (r, i) { return X[i] + ',' + y(r.p90); }), dn = D.spread.map(function (r, i) { return X[i] + ',' + y(r.p10); }).reverse();
+  s('polygon', { points: up.concat(dn).join(' '), 'class': 'band' }, g);
+  s('polyline', { points: D.spread.map(function (r, i) { return X[i] + ',' + y(r.med); }).join(' '), 'class': 'ln med' }, g);
+  var line = function (c, cls) { var pts = []; c.cov.forEach(function (v, i) { if (v != null) pts.push([X[i], y(Math.min(v, 100))]); });
+    s('polyline', { points: pts.map(function (p) { return p.join(','); }).join(' '), 'class': 'ln ' + cls }, g); pts.forEach(function (p) { s('circle', { cx: p[0], cy: p[1], r: 3, 'class': 'pt ' + cls }, g); }); };
+  if (!big) { if (cj != null) line(C[cj], 'c2'); line(C[ci], C[ci].x ? 'flg' : 'cty'); }
+  var cross = s('line', { y1: m.t, y2: m.t + F.ph, 'class': 'cross' }, g); cross.style.display = 'none';
+  var hit = s('rect', { x: m.l, y: m.t, width: w - m.l - m.r, height: F.ph, 'class': 'hit' }, g);
+  hover(hit, function (e) { var bx = g.getBoundingClientRect(), px = (e.clientX - bx.left) * (w / bx.width), b = 0, bd = 1e9;
+    X.forEach(function (x, i) { var d = Math.abs(x - px); if (d < bd) { bd = d; b = i; } });
+    cross.setAttribute('x1', X[b]); cross.setAttribute('x2', X[b]); cross.style.display = '';
+    showTip(e, function (t) { h('div', { 'class': 'th' }, t, 'Through ' + D.dates[b].through + ' (' + D.dates[b].kind + ')');
+      if (!big) { row(t, C[ci].n + ' County', C[ci].cov[b] == null ? 'not available' : pct(C[ci].cov[b]), 'k1'); if (cj != null) row(t, C[cj].n + ' County', C[cj].cov[b] == null ? 'not available' : pct(C[cj].cov[b]), 'k4'); }
+      row(t, 'median county', pct(D.spread[b].med), 'k2'); row(t, '10th to 90th percentile', f1(D.spread[b].p10) + ' to ' + pct(D.spread[b].p90), 'k3'); }); }, function () { cross.style.display = 'none'; hideTip(); }); }
+function upChart(host, ci, cj) { var big = ci == null, m = { l: 40, r: 12, t: 10, b: 26 }, I = D.intervals, vals = [];
+  I.forEach(function (iv, k) { if (big) vals.push(D.uptake[k].p90, D.uptake[k].pooled); else { vals.push(C[ci].ur[k], C[ci].uh[k]); if (cj != null) vals.push(C[cj].ur[k], C[cj].um[k]); } });
+  var mx = Math.max.apply(null, vals.filter(function (v) { return v != null; }).concat([1])), step = mx > 40 ? 20 : mx > 16 ? 10 : mx > 6 ? 5 : mx > 2 ? 1 : 0.5, ymax = Math.ceil(mx / step) * step;
+  var F = frame(host, big ? 300 : 200, m, ymax, step, function (v) { return (step < 1 ? v.toFixed(1) : v) + '%'; }), g = F.g, w = F.w, y = F.y;
+  I.forEach(function (iv, k) { var x1 = xT(Date.parse(iv.from), w, m), x2 = xT(Date.parse(iv.to) + 864e5, w, m), u = D.uptake[k], c = big ? null : C[ci], c2 = cj != null ? C[cj] : null;
+    var lo = big ? u.p10 : c.ul[k], hi = big ? u.p90 : c.uh[k], md = big ? u.med : c.um[k];
+    if (lo != null && hi != null) s('rect', { x: x1, y: y(Math.min(hi, ymax)), width: Math.max(1, x2 - x1), height: Math.max(1.5, y(lo) - y(Math.min(hi, ymax))), 'class': 'band' }, g);
+    if (c2 && c2.um[k] != null) s('line', { x1: x1 + 1.5, x2: x2 - 1.5, y1: y(c2.um[k]), y2: y(c2.um[k]), 'class': 'seg c2' }, g);
+    if (md != null) s('line', { x1: x1 + 1.5, x2: x2 - 1.5, y1: y(md), y2: y(md), 'class': 'seg a' }, g);
+    if (big) s('line', { x1: x1 + 1.5, x2: x2 - 1.5, y1: y(u.pooled), y2: y(u.pooled), 'class': 'seg b' }, g);
+    else if (c.ur[k] != null) s('circle', { cx: (x1 + x2) / 2, cy: y(Math.min(c.ur[k], ymax)), r: 3.2, 'class': 'dot' }, g);
+    var hc = s('rect', { x: x1, y: m.t, width: Math.max(2, x2 - x1), height: F.ph, 'class': 'hit hitcol' }, g);
+    hover(hc, function (e) { showTip(e, function (t) { h('div', { 'class': 'th' }, t, iv.label + (iv.early ? ' (reconstructed)' : ''));
+      if (big) { row(t, 'all counties pooled', pct(u.pooled), 'k2'); row(t, 'median county (modelled)', pct(u.med), 'k1'); row(t, '10th to 90th percentile county', f1(u.p10) + ' to ' + pct(u.p90), 'k3'); }
+      else { row(t, k < NEI ? 'reconstructed' : 'recorded', c.ur[k] == null ? 'not used' : pct(c.ur[k]), 'dot'); row(t, c.n + ', modelled', md == null ? 'n/a' : pct(md), 'k1');
+        if (lo != null) row(t, '95% credible interval', f1(lo) + ' to ' + pct(hi), 'k3'); if (c2) row(t, c2.n + ', modelled', c2.um[k] == null ? 'n/a' : pct(c2.um[k]), 'k4'); }
+      h('div', { 'class': 'tn' }, t, iv.days + ' days; rate per 30 days'); }); }, hideTip); }); }
+var PL = { z_age: 'Share of adults aged 65+', z_income: 'Median household income', z_cases: 'Cases in previous 30 days' };
+var PER = ['E1', 'E2', 'P1', 'P2', 'P3'], PS = ['Dec 20 - Mar 21', 'Apr - May 21', 'May - Sep 21', 'Sep 21 - Feb 22', 'Feb 22 - May 23'];
+function assocRow(variant, pred, per) { var v = per[0] === 'E' ? variant : 'H';
+  for (var i = 0; i < D.assoc.length; i++) { var a = D.assoc[i]; if (a.variant === v && a.predictor === pred && a.period === per) return a; } return null; }
+function assocChart() { var host = $('#ch-assoc'); host.textContent = ''; var cls = st.variant === 'A' ? ' v2' : st.variant === 'N' ? ' v3' : '';
+  /* create every panel first, so that each is measured at its final width */
+  var boxes = Object.keys(PL).map(function (p) { var box = h('div', null, host); h('h4', null, box, PL[p]); return [p, h('div', { 'class': 'chart' }, box)]; });
+  boxes.forEach(function (bx) { var p = bx[0], ch = bx[1];
+    var w = Math.max(240, ch.clientWidth || 300), hgt = 230, m = { l: 34, r: 8, t: 8, b: 40 }, g = s('svg', { width: w, height: hgt, viewBox: '0 0 ' + w + ' ' + hgt, role: 'img' }, ch);
+    var lo = Math.log(0.75), hi = Math.log(1.35), y = function (v) { return m.t + (hi - Math.log(v)) / (hi - lo) * (hgt - m.t - m.b); }, bw = (w - m.l - m.r) / 5;
+    [0.8, 0.9, 1, 1.1, 1.2, 1.3].forEach(function (v) { s('line', { x1: m.l, x2: w - m.r, y1: y(v), y2: y(v), 'class': v === 1 ? 'one' : 'grid' }, g); s('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end', 'class': 'tick' }, g, v.toFixed(1)); });
+    PER.forEach(function (per, k) { var a = assocRow(st.variant, p, per), x = m.l + bw * (k + 0.5), early = per[0] === 'E'; if (!a) return;
+      var lab = PS[k].split(' - '); s('text', { x: x, y: hgt - m.b + 15, 'text-anchor': 'middle', 'class': 'tick' }, g, lab[0] + ' -'); s('text', { x: x, y: hgt - m.b + 29, 'text-anchor': 'middle', 'class': 'tick' }, g, lab[1]);
+      s('line', { x1: x, x2: x, y1: y(a.hi), y2: y(a.lo), 'class': 'ci' + (early ? cls : '') }, g); s('circle', { cx: x, cy: y(a.hr), r: 4.5, 'class': 'mk' + (early ? cls : '') }, g);
+      var hc = s('rect', { x: m.l + bw * k, y: m.t, width: bw, height: hgt - m.t - m.b, 'class': 'hit hitcol' }, g);
+      hover(hc, function (e) { showTip(e, function (t) { h('div', { 'class': 'th' }, t, a.period_label); row(t, 'hazard ratio per SD', f2(a.hr), 'k1'); row(t, '95% credible interval', f2(a.lo) + ' to ' + f2(a.hi), 'k3');
+        if (early) h('div', { 'class': 'tn' }, t, 'Reconstructed series'); }); }, hideTip); }); });
+  var rows = []; Object.keys(PL).forEach(function (p) { PER.forEach(function (per) { var a = assocRow(st.variant, p, per); if (a) rows.push([PL[p], a.period_label, f2(a.hr), f2(a.lo) + ' to ' + f2(a.hi)]); }); });
+  tableOf($('#tb-assoc'), ['Predictor', 'Period', 'Hazard ratio per SD', '95% credible interval'], rows); }
+function valChart() { var host = $('#ch-val'); host.textContent = ''; var ex = []; D.valid.forEach(function (v) { if (ex.indexOf(v.experiment) < 0) ex.push(v.experiment); });
+  var names = { M0: 'M0 non-spatial', M1: 'M1 spatial (BYM2)', M2: 'M2 + linear trends', M3: 'M3 + random walks', M4: 'M4 + mean-reverting' }, ms = Object.keys(names);
+  var vb = ex.map(function (x) { var box = h('div', null, host); h('h4', null, box, x); return [x, h('div', { 'class': 'chart' }, box)]; });
+  vb.forEach(function (bx) { var x = bx[0], ch = bx[1], rowsx = D.valid.filter(function (v) { return v.experiment === x; });
+    var w = Math.max(240, ch.clientWidth || 300), rh = 26, m = { l: 138, r: 44, t: 4, b: 8 }, hgt = m.t + m.b + rh * ms.length, g = s('svg', { width: w, height: hgt, viewBox: '0 0 ' + w + ' ' + hgt, role: 'img' }, ch);
+    var mx = Math.max.apply(null, rowsx.map(function (r) { return r.crps; })) * 1.05, X = function (v) { return m.l + v / mx * (w - m.l - m.r); };
+    ms.forEach(function (mm, k) { var yy = m.t + rh * (k + 0.5), r = null; rowsx.forEach(function (q) { if (q.model === mm) r = q; });
+      s('text', { x: 0, y: yy + 4, 'class': 'lbl' }, g, names[mm]); s('line', { x1: m.l, x2: r ? X(r.crps) : m.l, y1: yy, y2: yy, 'class': 'grid' }, g); if (!r) return;
+      s('circle', { cx: X(r.crps), cy: yy, r: 5, 'class': 'mk' }, g); s('text', { x: X(r.crps) + 9, y: yy + 4, 'class': 'tick' }, g, r.crps.toFixed(2));
+      var hc = s('rect', { x: 0, y: m.t + rh * k, width: w, height: rh, 'class': 'hit hitcol' }, g);
+      hover(hc, function (e) { showTip(e, function (t) { h('div', { 'class': 'th' }, t, names[mm]); row(t, 'mean CRPS, points', r.crps.toFixed(3), 'k1'); row(t, 'of recorded counts inside the 95% interval', r.cover + '%'); }); }, hideTip); }); });
+  tableOf($('#tb-val'), ['Experiment', 'Model', 'Mean CRPS (points)', 'Inside 95% interval'], D.valid.map(function (v) { return [v.experiment, v.model, v.crps.toFixed(3), v.cover + '%']; })); }
+function unChart() { var host = $('#ch-un'); host.textContent = ''; var U = D.unassigned, w = Math.max(260, host.clientWidth || 600), hgt = 240, m = { l: 40, r: 12, t: 10, b: 26 };
+  var g = s('svg', { width: w, height: hgt, viewBox: '0 0 ' + w + ' ' + hgt, role: 'img' }, host), a = Date.parse(U[0].d), b = Date.parse(U[U.length - 1].d);
+  var x = function (d) { return m.l + (Date.parse(d) - a) / (b - a) * (w - m.l - m.r); }, y = function (v) { return m.t + (1 - v / 12) * (hgt - m.t - m.b); };
+  [0, 2, 4, 6, 8, 10, 12].forEach(function (v) { s('line', { x1: m.l, x2: w - m.r, y1: y(v), y2: y(v), 'class': v ? 'grid' : 'ax' }, g); s('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end', 'class': 'tick' }, g, v + '%'); });
+  [['2021-01-01', 'Jan 2021'], ['2021-02-01', 'Feb'], ['2021-03-01', 'Mar'], ['2021-04-01', 'Apr'], ['2021-05-01', 'May']].forEach(function (q) { s('text', { x: x(q[0]), y: hgt - m.b + 17, 'text-anchor': 'middle', 'class': 'tick' }, g, q[1]); });
+  s('polyline', { points: U.map(function (r) { return x(r.d) + ',' + y(r.pct); }).join(' '), 'class': 'ln cty' }, g);
+  var eb = ISO.slice(0, NE).map(function (d) { return new Date(Date.parse(d) + 864e5).toISOString().slice(0, 10); });
+  U.forEach(function (r) { if (eb.indexOf(r.d) >= 0) s('circle', { cx: x(r.d), cy: y(r.pct), r: 4, 'class': 'dot' }, g); });
+  var cross = s('line', { y1: m.t, y2: hgt - m.b, 'class': 'cross' }, g); cross.style.display = 'none';
+  var hit = s('rect', { x: m.l, y: m.t, width: w - m.l - m.r, height: hgt - m.t - m.b, 'class': 'hit' }, g);
+  hover(hit, function (e) { var bx = g.getBoundingClientRect(), px = (e.clientX - bx.left) * (w / bx.width), k = 0, bd = 1e9;
+    U.forEach(function (r, i) { var d = Math.abs(x(r.d) - px); if (d < bd) { bd = d; k = i; } });
+    cross.setAttribute('x1', x(U[k].d)); cross.setAttribute('x2', x(U[k].d)); cross.style.display = '';
+    showTip(e, function (t) { h('div', { 'class': 'th' }, t, 'Edition of ' + new Date(U[k].d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })); row(t, 'of recipients had no county', pct(U[k].pct), 'k1'); }); }, function () { cross.style.display = 'none'; hideTip(); }); }
+
+/* ---------- two measures against each other ---------- */
+/* each variable: axis title, value of a county, log axis?, how a value is written */
+var P1 = function (v) { return v.toFixed(1) + '%'; }, R2 = function (v) { return v.toFixed(2); };
+var SV = { a: ['Share of adults aged 65+ (%)', function (c) { return c.a; }, false, P1],
+  inc: ['Median household income', function (c) { return c.inc; }, true, function (v) { return '$' + n0(v); }],
+  cb: ['Coverage on 24 May 2021 (%)', function (c) { return c.x ? null : c.cb; }, false, P1], ce: ['Coverage on 9 May 2023 (%)', function (c) { return c.x ? null : c.ce; }, false, P1],
+  ch: ['Change in coverage, May 2021 to May 2023 (points)', function (c) { return c.x ? null : c.ch; }, false, function (v) { return (v >= 0 ? '+' : '') + v.toFixed(1) + ' points'; }],
+  r: ['Relative uptake after May 2021 (1 = average county)', function (c) { return c.r; }, true, R2],
+  e2: ['Relative uptake, April-May 2021 (1 = average county)', function (c) { return c.e2; }, true, R2],
+  e1: ['Relative uptake, December 2020-March 2021 (1 = average county)', function (c) { return c.e1; }, true, R2],
+  od: ['Records added by the April 2021 correction (%)', function (c) { return c.od; }, false, P1] };
+var PMAX = Math.max.apply(null, C.map(function (c) { return c.p; }));
+function ticks(lo, hi, n) { var span = hi - lo, step = Math.pow(10, Math.floor(Math.log(span / n) / Math.LN10)), err = span / n / step; step *= err >= 7.5 ? 10 : err >= 3.5 ? 5 : err >= 1.5 ? 2 : 1;
+  var out = []; for (var v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) out.push(+v.toFixed(8)); return out; }
+function logTicks(lo, hi) { return [0.1, 0.2, 0.3, 0.5, 0.75, 1, 1.5, 2, 3, 5, 8, 30000, 40000, 50000, 60000, 80000, 100000, 130000].filter(function (v) { return v >= lo && v <= hi; }); }
+function ranks(a) { var idx = a.map(function (v, i) { return [v, i]; }).sort(function (p, q) { return p[0] - q[0]; }), r = [], i = 0;
+  while (i < idx.length) { var j = i; while (j + 1 < idx.length && idx[j + 1][0] === idx[i][0]) j++; for (var k = i; k <= j; k++) r[idx[k][1]] = (i + j) / 2 + 1; i = j + 1; } return r; }
+function corr(a, b) { var n = a.length, ma = 0, mb = 0, sa = 0, sb = 0, sab = 0, i; for (i = 0; i < n; i++) { ma += a[i]; mb += b[i]; } ma /= n; mb /= n;
+  for (i = 0; i < n; i++) { sa += (a[i] - ma) * (a[i] - ma); sb += (b[i] - mb) * (b[i] - mb); sab += (a[i] - ma) * (b[i] - mb); } return sab / Math.sqrt(sa * sb); }
+function scatter() { var host = $('#ch-sc'), X = SV[st.sx], Y = SV[st.sy], pts = []; host.textContent = '';
+  C.forEach(function (c, i) { var a = X[1](c), b = Y[1](c); if (a != null && b != null) pts.push({ i: i, a: a, b: b, p: c.p }); });
+  if (pts.length < 3) { $('#sccap').textContent = 'Too few counties have both values.'; return; }
+  pts.sort(function (p, q) { return q.p - p.p; });   /* largest first, so that small counties are drawn on top */
+  var w = Math.max(260, host.clientWidth || 600), hgt = Math.round(Math.min(460, Math.max(300, w * 0.6))), m = { l: 52, r: 18, t: 14, b: 26 }, rmax = w < 480 ? 7 : 12.5;
+  var rad = function (p) { return 3.5 + rmax * Math.sqrt(p / PMAX); }, bare = function (x) { return x.replace(/ \([^)]*\)$/, ''); };
+  h('div', { 'class': 'axt' }, host, '↑ ' + Y[0]);
+  var g = s('svg', { width: w, height: hgt, viewBox: '0 0 ' + w + ' ' + hgt, role: 'img' }, host);
+  h('div', { 'class': 'axt r' }, host, X[0] + ' →');
+  var ext = function (k) { var v = pts.map(function (p) { return p[k]; }); return [Math.min.apply(null, v), Math.max.apply(null, v)]; };
+  var mk = function (dom, lg, r0, r1) { var f = lg ? Math.log : function (v) { return v; }, pad = (f(dom[1]) - f(dom[0])) * 0.04 || 1, a = f(dom[0]) - pad, b = f(dom[1]) + pad;
+    var sc = function (v) { return r0 + (f(v) - a) / (b - a) * (r1 - r0); }; sc.lo = lg ? Math.exp(a) : a; sc.hi = lg ? Math.exp(b) : b; return sc; };
+  var x = mk(ext('a'), X[2], m.l, w - m.r), y = mk(ext('b'), Y[2], hgt - m.b, m.t);
+  var tf = function (v) { return v >= 10000 ? '$' + (v / 1000) + 'k' : String(+v.toFixed(2)); };
+  (X[2] ? logTicks(x.lo, x.hi) : ticks(x.lo, x.hi, w < 480 ? 4 : 7)).forEach(function (v) { s('line', { x1: x(v), x2: x(v), y1: m.t, y2: hgt - m.b, 'class': 'grid' }, g); s('text', { x: x(v), y: hgt - m.b + 16, 'text-anchor': 'middle', 'class': 'tick' }, g, tf(v)); });
+  (Y[2] ? logTicks(y.lo, y.hi) : ticks(y.lo, y.hi, 6)).forEach(function (v) { s('line', { x1: m.l, x2: w - m.r, y1: y(v), y2: y(v), 'class': 'grid' }, g); s('text', { x: m.l - 6, y: y(v) + 4, 'text-anchor': 'end', 'class': 'tick' }, g, tf(v)); });
+  pts.forEach(function (p) { p.x = x(p.a); p.y = y(p.b); p.r = rad(p.p); s('circle', { cx: p.x, cy: p.y, r: p.r, 'class': 'sc' }, g); });
+  /* the selected county is ringed and named above its dot, the comparison county below, so that neither hides the other */
+  var hl = function (i, cls, below) { pts.forEach(function (p) { if (p.i !== i) return; s('circle', { cx: p.x, cy: p.y, r: p.r + 2, 'class': cls }, g);
+    var up = p.y - p.r - 7, dn = p.y + p.r + 16, yy = below ? (dn > hgt - m.b - 2 ? up : dn) : (up < m.t + 8 ? dn : up);
+    s('text', { x: clamp(p.x, m.l + 30, w - m.r - 30), y: yy, 'text-anchor': 'middle', 'class': 'sclab' }, g, C[i].n); }); };
+  if (st.cmp != null) hl(st.cmp, 'sccmp', true); hl(st.sel, 'scsel', false);
+  var ring = s('circle', { r: 7, 'class': 'ring' }, g); ring.style.display = 'none';
+  var hit = s('rect', { x: m.l, y: m.t, width: w - m.l - m.r, height: hgt - m.t - m.b, 'class': 'hit', style: 'cursor:pointer' }, g), near = function (e) { var bx = g.getBoundingClientRect(), px = (e.clientX - bx.left) * (w / bx.width), py = (e.clientY - bx.top) * (hgt / bx.height), b = null, bd = 900;
+    pts.forEach(function (p) { var d = (p.x - px) * (p.x - px) + (p.y - py) * (p.y - py); if (d < bd) { bd = d; b = p; } }); return b; };
+  hover(hit, function (e) { var p = near(e); if (!p) { ring.style.display = 'none'; hideTip(); return; } ring.setAttribute('cx', p.x); ring.setAttribute('cy', p.y); ring.setAttribute('r', p.r + 3); ring.style.display = '';
+    showTip(e, function (t) { h('div', { 'class': 'th' }, t, C[p.i].n + ' County'); row(t, bare(X[0]), X[3](p.a)); row(t, bare(Y[0]), Y[3](p.b)); h('div', { 'class': 'tn' }, t, n0(p.p) + ' residents aged 16+'); }); }, function () { ring.style.display = 'none'; hideTip(); });
+  hit.addEventListener('click', function (e) { var p = near(e); if (p) select(p.i); });
+  var rk = corr(ranks(pts.map(function (p) { return p.a; })), ranks(pts.map(function (p) { return p.b; })));
+  $('#sccap').textContent = pts.length + ' counties with both values; rank correlation ' + rk.toFixed(2) + ', every county counting the same. Dot area grows with the adult population. A description of these counties, not an adjusted estimate.' +
+    (X[2] || Y[2] ? ' Ratio and income axes are on a log scale.' : ''); }
+['scx', 'scy'].forEach(function (id) { var e = $('#' + id), key = id === 'scx' ? 'sx' : 'sy'; Object.keys(SV).forEach(function (k) { h('option', { value: k }, e, SV[k][0]); }); e.value = st[key];
+  e.addEventListener('change', function () { st[key] = e.value; scatter(); }); });
+
+/* ---------- county panel ---------- */
+function select(i) { st.sel = i; if (st.cmp === i) st.cmp = null; selp.setAttribute('d', C[i].d); cmpp.setAttribute('d', st.cmp == null ? '' : C[st.cmp].d); ensureVisible(i); panel(); dist(); scatter(); remember(); }
+function compare(i) { st.cmp = (i == null || i === st.sel) ? null : i; cmpp.setAttribute('d', st.cmp == null ? '' : C[st.cmp].d); panel(); dist(); scatter(); remember(); }
+function panelMeasure() { var box = $('#pm'); if (!box) return; box.textContent = ''; var c = C[st.sel], m = M[st.m], nb = c.nb.map(function (j) { return [m.get(C[j], st.t), j]; });
+  nb.sort(function (a, b) { return (b[0] == null ? -1e99 : b[0]) - (a[0] == null ? -1e99 : a[0]); });
+  h('div', { 'class': 'ctitle' }, box, 'Neighbouring counties on the mapped measure');
+  var ch = h('div', { 'class': 'chips' }, box); nb.forEach(function (q) { h('button', { type: 'button' }, ch, C[q[1]].n + ': ' + (q[0] == null ? 'n/a' : m.fmt(q[0]).replace(' times the average county', ''))).addEventListener('click', function () { select(q[1]); }); }); }
+function panel() { var c = C[st.sel], k = st.cmp == null ? null : C[st.cmp], P = $('#panel'); P.textContent = ''; h('p', { 'class': 'kicker' }, P, 'Selected county'); h('h3', null, P, c.n + ' County');
+  if (c.x) h('p', { 'class': 'flagnote' }, P, 'Recorded first doses exceed this county\'s adult population at some point, so its records are not read as resident coverage and it is not modelled. The recorded figures are shown as they stand.');
+  else if (c.u) h('p', { 'class': 'flagnote' }, P, 'This county\'s records kept changing in spring 2021, so it is not reconstructed before 24 May 2021. It is modelled from that date on.');
+  var cr = h('div', { 'class': 'cmprow' }, P), lb = h('label', null, cr, 'Compare with'), inp = h('input', { type: 'search', list: 'clist', placeholder: k ? k.n : 'Another county', autocomplete: 'off', id: 'cmpfind' }, lb);
+  inp.addEventListener('change', function () { var i = findCounty(inp.value); if (i >= 0) compare(i); });
+  if (k) h('button', { type: 'button' }, cr, 'Stop comparing').addEventListener('click', function () { compare(null); });
+  var dl = h('dl', { 'class': 'facts' + (k ? ' two' : '') }, P), fact = function (lab, fn) { h('dt', null, dl, lab); h('dd', null, dl, fn(c)); if (k) h('dd', null, dl, fn(k)); };
+  if (k) { h('dt', null, dl, ''); [[c, 'k1'], [k, 'k4']].forEach(function (q) { var dd = h('dd', { 'class': 'hd' }, dl); h('i', { 'class': 'key ' + q[1] }, dd); dd.appendChild(document.createTextNode(' ' + q[0].n)); }); }
+  fact('Residents aged 16+', function (z) { return n0(z.p); }); fact('Recorded coverage, 24 May 2021', function (z) { return pct(z.cb); }); fact('Recorded coverage, 9 May 2023', function (z) { return pct(z.ce); });
+  fact('Change', function (z) { return '+' + f1(z.ch) + ' points'; });
+  if (k) { fact('Modelled uptake relative to the average county', function (z) { return z.r == null ? 'not modelled' : f2(z.r); });
+    fact('95% credible interval', function (z) { return z.r == null ? '' : f2(z.rl) + ' to ' + f2(z.rh); }); }
+  else fact('Modelled uptake relative to the average county', function (z) { return z.r == null ? 'not modelled' : f2(z.r) + ' (' + f2(z.rl) + ' to ' + f2(z.rh) + ')'; });
+  fact('Share of adults aged 65+', function (z) { return pct(z.a); }); fact('Median household income', function (z) { return '$' + n0(z.inc); }); fact('Added by the April 2021 correction', function (z) { return pct(z.od); });
+  h('div', { 'class': 'ctitle' }, P, 'Coverage of residents aged 16+');
+  legendItems(h('div', { 'class': 'legend' }, P), [['k1', c.n + ' County']].concat(k ? [['k4', k.n + ' County']] : []).concat([['k2', 'Median county'], ['k3', '10th to 90th percentile county']]));
+  covChart(h('div', { 'class': 'chart' }, P), st.sel, st.cmp);
+  h('div', { 'class': 'ctitle' }, P, 'Uptake per 30 days among adults not yet vaccinated');
+  legendItems(h('div', { 'class': 'legend' }, P), [['dot', 'Recorded or reconstructed'], ['k1', 'Modelled'], ['k3', '95% credible interval']].concat(k ? [['k4', k.n + ', modelled']] : []));
+  upChart(h('div', { 'class': 'chart' }, P), st.sel, st.cmp);
+  h('div', { id: 'pm' }, P); panelMeasure();
+  var det = h('details', null, P); h('summary', null, det, 'Show ' + (k ? 'these counties' : 'this county') + ' as a table'); var tb = h('table', null, h('div', { 'class': 'tw' }, det));
+  tableOf(tb, ['Records through', c.n].concat(k ? [k.n] : []).concat(['Median county']), D.dates.map(function (d, j) { return [d.through + (j < NE ? ' (reconstructed)' : ''), c.cov[j] == null ? 'n/a' : pct(c.cov[j])].concat(k ? [k.cov[j] == null ? 'n/a' : pct(k.cov[j])] : []).concat([pct(D.spread[j].med)]); })); }
+
+/* ---------- county table ---------- */
+var sortK = 0, sortDir = 1;
+function ctable() { var cols = [['County', function (c) { return c.n; }], ['Adults 16+', function (c) { return c.p; }], ['Coverage 24 May 2021', function (c) { return c.cb; }], ['Coverage 9 May 2023', function (c) { return c.ce; }],
+    ['Change (points)', function (c) { return c.ch; }], ['Relative uptake', function (c) { return c.r; }], ['Share 65+', function (c) { return c.a; }]];
+  var el = $('#ctable'); el.textContent = ''; var tr = h('tr', null, h('thead', null, el));
+  cols.forEach(function (q, k) { var th = h('th', { 'class': 'sort', tabindex: '0', title: 'Sort' }, tr, q[0] + (k === sortK ? (sortDir > 0 ? ' ▲' : ' ▼') : ''));
+    var go = function () { if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = k ? -1 : 1; } ctable(); }; th.addEventListener('click', go); th.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } }); });
+  var idx = C.map(function (c, i) { return i; }), f = cols[sortK][1];
+  idx.sort(function (a, b) { var x = f(C[a]), y = f(C[b]); if (x == null) return 1; if (y == null) return -1; return (x < y ? -1 : x > y ? 1 : 0) * sortDir; });
+  var tb = h('tbody', null, el); idx.forEach(function (i) { var c = C[i], r = h('tr', { 'class': 'pick' }, tb);
+    [c.n + (c.x ? ' *' : ''), n0(c.p), pct(c.cb), pct(c.ce), f1(c.ch), c.r == null ? 'n/a' : f2(c.r), pct(c.a)].forEach(function (v) { h('td', null, r, v); });
+    r.addEventListener('click', function () { select(i); $('#panel').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }); }); }
+$('#csv').addEventListener('click', function () { var m = M[st.m], nul = function (v) { return v == null ? '' : v; };
+  var rows = [['fips', 'county', 'adults_16plus', 'records_exceed_population', 'early_records_unsettled', 'coverage_2021_05_24', 'coverage_2023_05_09', 'change_points',
+    'relative_uptake', 'relative_uptake_lo', 'relative_uptake_hi', 'share_65plus', 'median_household_income', 'mapped_measure', 'mapped_through', 'mapped_value']];
+  C.forEach(function (c) { rows.push([c.f, c.n, c.p, c.x, c.u, nul(c.cb), nul(c.ce), nul(c.ch), nul(c.r), nul(c.rl), nul(c.rh), nul(c.a), nul(c.inc), '"' + m.name + '"', m.time ? D.dates[st.t].iso : '', nul(m.get(c, st.t))]); });
+  var a = h('a', { href: URL.createObjectURL(new Blob([rows.map(function (r) { return r.join(','); }).join('\n')], { type: 'text/csv' })), download: 'texas_counties_' + st.m + '.csv' }, document.body); a.click(); a.remove(); });
+
+/* ---------- section charts and start ---------- */
+function sections() { covChart($('#ch-gap'), null); upChart($('#ch-up'), null); assocChart(); valChart(); unChart(); scatter();
+  tableOf($('#tb-gap'), ['Records through', '10th percentile', 'Median', '90th percentile', 'Gap (points)'], D.dates.map(function (d, k) { var r = D.spread[k]; return [d.through + (k < NE ? ' (reconstructed)' : ''), pct(r.p10), pct(r.med), pct(r.p90), f1(r.p90 - r.p10)]; }));
+  tableOf($('#tb-up'), ['Interval', 'Days', 'Pooled', 'Median county', '10th percentile', '90th percentile'], D.intervals.map(function (iv, k) { var u = D.uptake[k]; return [iv.label + (iv.early ? ' (reconstructed)' : ''), String(iv.days), pct(u.pooled), pct(u.med), pct(u.p10), pct(u.p90)]; })); }
+document.querySelectorAll('[data-var]').forEach(function (b) { b.addEventListener('click', function () { st.variant = b.getAttribute('data-var');
+  document.querySelectorAll('[data-var]').forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); }); assocChart(); }); });
+function showState() { $('#labels').checked = st.labels; applyVB(); selp.setAttribute('d', C[st.sel].d); cmpp.setAttribute('d', st.cmp == null ? '' : C[st.cmp].d); panel(); paint(); }
+showState(); sections(); ctable();
+window.addEventListener('hashchange', function () { if (readHash()) { stop(); showState(); scatter(); } });
+var rt = null; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { sections(); panel(); dist(); layoutLabels(); }, 150); });
+})();
+</script>

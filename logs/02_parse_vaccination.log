@@ -1,0 +1,6 @@
+Warning message:
+22:38:07 | Parsing 46 DSHS workbooks 
+22:38:14 |   46 workbooks, 46 distinct as-of dates (2020-12-19 to 2023-05-10); county-by-age sheets in 41 
+22:38:14 | Parsing 275 GitHub 'By County' snapshots 
+22:38:17 |   GitHub snapshots span 2020-12-29 to 2021-10-06 
+22:38:19 | CDC: 152177 rows, 598 report dates, 2020-12-13 to 2023-05-10; first date with Texas counts: 2021-10-22 

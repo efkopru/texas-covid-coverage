@@ -1,0 +1,51 @@
+23:37:13 |   origin03 half A M3: 1070 test rows, 478 s 
+23:45:45 |   origin03 half B M3: 1071 test rows, 512 s 
+23:51:50 |   origin06 half A M3: 713 test rows, 364 s 
+23:57:43 |   origin06 half B M3: 714 test rows, 353 s 
+00:05:09 |   origin09 half A M3: 356 test rows, 445 s 
+00:10:31 |   origin09 half B M3: 357 test rows, 322 s 
+
+A. Held-out counties
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  2855      238         -6.152           -5.935           0        0.888  1.173  -0.319      0.930      0.582           7.464                    0.542                   0.292          237
+2:     M1  2855      238         -6.003           -5.815           0        0.768  1.034  -0.198      0.934      0.580           6.398                    0.471                   0.557          237
+3:     M2  2855      238         -5.972           -5.783           0        0.769  1.035  -0.183      0.936      0.580           6.317                    0.470                   0.558          237
+4:     M4  2855      238         -6.028           -5.898           0        0.829  1.101  -0.126      0.957      0.627           8.087                    0.478                   0.549          237
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               4.586                          3.682             0.966
+2:               3.650                          3.039             0.966
+3:               3.648                          2.958             0.970
+4:               4.017                          3.125             0.987
+
+C. Later intervals of half the counties
+Key: <model>
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard end_counties
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>        <num>
+1:     M0  4281      238         -5.793           -5.384           0        0.420  0.559  -0.147      0.874      0.511           2.807                    0.491                   0.687          711
+2:     M1  4281      238         -5.782           -5.376           0        0.419  0.565  -0.141      0.875      0.498           2.771                    0.485                   0.694          711
+3:     M2  4281      238         -5.655           -5.340           0        0.421  0.572  -0.148      0.896      0.508           2.599                    0.499                   0.665          711
+4:     M3  4281      238         -5.609           -5.365           0        0.423  0.577  -0.153      0.915      0.526           2.700                    0.501                   0.665          711
+5:     M4  4281      238         -5.647           -5.352           0        0.412  0.558  -0.142      0.906      0.531           2.837                    0.486                   0.692          711
+   end_coverage_mae_pp end_coverage_median_abs_err_pp end_coverage_in95
+                 <num>                          <num>             <num>
+1:               1.227                          0.823             0.796
+2:               1.220                          0.797             0.789
+3:               1.240                          0.831             0.844
+4:               1.281                          0.843             0.890
+5:               1.204                          0.805             0.880
+Key: <origin>
+   origin    M0    M1    M2    M3    M4
+    <num> <num> <num> <num> <num> <num>
+1:      3 1.864 1.872 1.880 1.961 1.838
+2:      6 1.134 1.106 1.175 1.204 1.104
+3:      9 0.683 0.680 0.664 0.676 0.671
+
+D. Next interval of every county
+    model  rows counties mean_log_score median_log_score lpd_missing mean_crps_pp mae_pp bias_pp coverage95 coverage50 mean_width95_pp rmse_relative_log_hazard cor_relative_log_hazard
+   <char> <num>    <num>          <num>            <num>       <num>        <num>  <num>   <num>      <num>      <num>           <num>                    <num>                   <num>
+1:     M4  2141      238         -6.129           -5.998           0        1.033  1.368    0.94       0.95      0.537          10.592                    0.421                   0.737
+00:10:32 | Done: later 
+exit=0
