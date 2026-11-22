@@ -1,3 +1,10 @@
 # Store every file byte for byte, with no line-ending conversion:
 # the checksums in data/raw/MANIFEST.csv depend on it.
 * -text
+
+# For GitHub's language bar. The pages that the scripts build are generated, and the raw source files
+# are other people's; neither is this project's code. Without these lines the project is listed as
+# mostly HTML instead of R.
+site/index.html linguist-generated
+docs/*.html linguist-generated
+data/raw/** linguist-vendored
