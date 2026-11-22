@@ -398,7 +398,7 @@ code { font: 12.5px ui-monospace, Consolas, monospace; background: var(--wash); 
   <p style="margin-top:10px">The written reports, code and every result table are in the project folder:
     <span id="doclinks"><code>docs/00_summary.md</code>, <code>docs/01_source_inventory.md</code>, <code>docs/02_report.md</code>,
     <code>docs/03_early_rollout.md</code></span>.
-    This page is built from the result tables by <code>R/16_build_site.R</code>.</p>
+    This page is built from the result tables by <code>R/16_build_site.R</code>.<span id="repolink"></span></p>
 </section>
 <footer>Sources: Texas DSHS "COVID-19 Vaccine Data by County" workbook (Internet Archive captures and verified daily copies); U.S. Census
   Bureau Vintage 2025 population estimates and ACS 2019-2023; Texas DSHS reported cases. Built {{v:built}}.</footer>
@@ -463,9 +463,18 @@ setTheme(document.documentElement.getAttribute('data-theme') || 'auto');
 var K = { state_base: pct(D.state[NE]), state_end: pct(D.state[LAST]), med_base: pct(D.gap238[0].med), med_end: pct(D.gap238[1].med),
   gap_base: f1(D.gap238[0].gap), gap_end: f1(D.gap238[1].gap) };
 document.querySelectorAll('[data-bind]').forEach(function (e) { e.textContent = K[e.getAttribute('data-bind')]; });
-if (location.protocol === 'file:') { var dl = $('#doclinks'); dl.textContent = '';
-  [['../docs/00_summary.html', 'summary report'], ['../docs/01_source_inventory.html', 'source inventory'], ['../docs/02_report.html', 'main report'], ['../docs/03_early_rollout.html', 'early-rollout extension']]
+/* The written reports sit beside this page, in the project folder and on its web copy. They are linked where they can be
+   reached: always when the page is opened from disk; on a web server only if the first of them answers. */
+function docLinks() { var dl = $('#doclinks'); dl.textContent = '';
+  [['../docs/00_summary.html', 'summary report'], ['../docs/00_summary.pdf', 'summary as PDF'], ['../docs/01_source_inventory.html', 'source inventory'],
+    ['../docs/02_report.html', 'main report'], ['../docs/03_early_rollout.html', 'early-rollout extension']]
     .forEach(function (x, i) { if (i) dl.appendChild(document.createTextNode(', ')); h('a', { href: x[0] }, dl, x[1]); }); }
+if (location.protocol === 'file:') docLinks();
+else if (window.fetch) fetch('../docs/00_summary.html', { method: 'HEAD' }).then(function (r) { if (r.ok) docLinks(); }, function () {});
+/* on a GitHub Pages address (owner.github.io/repository/...) the repository's own address follows from the page's */
+(function () { var m = /^([a-z0-9-]+)\.github\.io$/i.exec(location.hostname), repo = location.pathname.split('/')[1]; if (!m || !repo) return;
+  var sp = $('#repolink'), name = 'github.com/' + m[1] + '/' + repo; sp.appendChild(document.createTextNode(' Code and data: '));
+  h('a', { href: 'https://' + name }, sp, name); sp.appendChild(document.createTextNode('.')); })();
 
 /* ---------- measures ---------- */
 var RB = [0.6, 0.75, 0.9, 1.11, 1.33, 1.67];

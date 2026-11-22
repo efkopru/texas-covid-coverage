@@ -1,0 +1,52 @@
+# Publishes the interactive site and the HTML and PDF copies of the documents with GitHub Pages.
+# Nothing is built here. The files are taken as committed (R/16_build_site.R and R/11_render_report.R
+# make them) and only arranged for serving by .github/scripts/assemble_pages.py.
+name: Publish site and reports (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/index.html"
+      - "docs/*.html"
+      - "docs/*.pdf"
+      - ".github/workflows/pages.yml"
+      - ".github/scripts/assemble_pages.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# one publication at a time; a newer one waits for the one in progress
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # only the folders that are served, not the 200 MB of data
+      - name: Check out the site, the documents and this workflow's script
+        uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            site
+            docs
+            .github
+      - name: Arrange the files for serving
+        run: python3 .github/scripts/assemble_pages.py _site
+      - name: Set up Pages
+        uses: actions/configure-pages@v6
+      - name: Upload the files
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v5

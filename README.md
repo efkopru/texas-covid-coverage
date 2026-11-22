@@ -15,7 +15,8 @@ Start here:
 4. [docs/03_early_rollout.md](docs/03_early_rollout.md): an extension back to the first doses (14 December 2020 to
    24 May 2021). It rests on an explicit assumption about recipients who had no county on record, so it is kept
    apart from the main report.
-5. [site/index.html](site/index.html): an interactive version of the results. A standalone app in one file: open it
+5. [site/index.html](site/index.html): an interactive version of the results, also on the web at
+   <https://efkopru.github.io/texas-covid-coverage/>. A standalone app in one file: open it
    in a browser (double-click). It holds its own data and county map outlines and loads nothing from the network.
    Choose what to map, move through time from December 2020 to May 2023, and select a county to see its record.
    It also offers: a light, dark or automatic colour theme (top right; the choice is remembered in that browser);
@@ -36,6 +37,7 @@ Start here:
 | `outputs/models/` | Model summaries and posterior draws (`samples_*.rds`). |
 | `logs/` | Console output of each script run. |
 | `site/` | The interactive report: `index.html` (built, standalone) and `src/page.html` (its template: layout, styles and code). |
+| `.github/` | Publication on the web with GitHub Pages: a workflow and the script that arranges the files it serves. |
 | `r-lib/` | Project-local R package library created by `R/00_setup.R`. |
 
 ## What a copy from GitHub does not contain
@@ -51,6 +53,14 @@ files, is in it.
 
 Without the two Census files, step 4 cannot be rerun and `verify_manifest()` reports them as missing; nothing else
 depends on them, because their parsed content is in `data/derived/`.
+
+## The web copy
+
+<https://efkopru.github.io/texas-covid-coverage/> serves `site/index.html` and the HTML and PDF copies of the four
+documents, exactly as committed. Nothing is built on GitHub: after a push that changes one of those files, the
+workflow in `.github/workflows/pages.yml` arranges them with `.github/scripts/assemble_pages.py` and publishes them.
+In the served documents, links to files that are not served (code, tables, logs) lead to the same file in this
+repository. To update the web copy, rebuild locally (steps 11, 16 and 17 below), commit and push.
 
 ## Reproducing the analysis
 
