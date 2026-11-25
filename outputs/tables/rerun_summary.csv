@@ -2,7 +2,7 @@ name,value
 date,24 November 2026
 inla_version,26.08.07
 threads,6:1
-n_values,883
+n_values,510
 n_changed,21
 n_changed_main,15
 n_changed_early,6
@@ -20,3 +20,4 @@ fit_threads_coef,0.24
 fit_one_coef,0.24
 fit_same_draws,in neither case
 minutes,10
+n_validation,373

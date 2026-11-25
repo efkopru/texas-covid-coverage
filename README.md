@@ -90,7 +90,7 @@ Rscript --vanilla R/17_summary_report.R        # summary report: fills docs/00_s
 Rscript --vanilla R/11_render_report.R         # HTML copies of the four documents; PDF of the summary (needs Edge or Chrome)
 Rscript --vanilla R/12_audit_trace.R           # re-derives county numbers from raw cells; checks checksums
 Rscript --vanilla R/16_build_site.R            # interactive report: site/index.html (standalone, one file)
-Rscript --vanilla R/18_rerun_check.R           # optional: fits every model again in a temporary copy -> outputs/tables/rerun_*.csv
+Rscript --vanilla R/18_rerun_check.R           # optional: fits the models of steps 6, 9 and 14 again in a temporary copy -> outputs/tables/rerun_*.csv
 ```
 
 Steps 13-15 and 17 are numbered after the main pipeline because they were added to it; run them before steps 11
@@ -116,15 +116,16 @@ that build the report tables, documents and site from stored results (10, 11, 16
 apart from the build date. This was checked in a clean copy of the repository; step 4 was not rechecked because it
 needs a file that is not in the repository. The model fits do not repeat exactly. R-INLA does not return exactly
 the same fit twice on the same computer, with several threads or with one, and the 1,000 posterior draws then come
-out as a different sample although their seed is fixed. Step 18 measures this: it fits every model again in a
-temporary copy and compares the tables. In its run of 24 November 2026 (R-INLA 26.08.07), hazard ratios changed by
-at most 0.0006, county relative uptake by at most 1.1% (its interval bounds by at most 3.3%),
-and 21 of the 883 values that the scripts fill into the documents came out differently, each by
-at most 5 units in its last printed digit. The details are in `outputs/tables/rerun_differences.csv`,
-`rerun_changed_values.csv` and `rerun_repeat_fit.csv`. The published numbers are those of one run and are the
-reference. Anyone who fits the models again, here or from a GitHub copy, should expect differences of this size,
-and a different R-INLA version can be expected to differ at least as much. Package versions are recorded in
-`outputs/r_package_versions.csv`.
+out as a different sample although their seed is fixed. Step 18 measures this: it fits the models of steps 6, 9
+and 14 again in a temporary copy and compares the tables. In its run of 24 November 2026 (R-INLA 26.08.07), hazard
+ratios changed by at most 0.0006, county relative uptake by at most 1.1% (its interval bounds by at
+most 3.3%), and 21 of the 510 values compared came out differently, each by at most
+5 units in its last printed digit. The out-of-sample experiments of step 7 take one to two hours and
+are not run again by step 18, so the 373 values that the documents quote from them were not compared.
+The details are in `outputs/tables/rerun_differences.csv`, `rerun_changed_values.csv` and `rerun_repeat_fit.csv`.
+The published numbers are those of one run and are the reference. Anyone who fits the models again, here or from a
+GitHub copy, should expect differences of this size, and a different R-INLA version can be expected to differ at
+least as much. Package versions are recorded in `outputs/r_package_versions.csv`.
 
 ## Tracing a number back to its source
 

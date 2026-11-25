@@ -759,11 +759,13 @@ share, 1.00 to 1.10 for income and 1.03 to 1.08 for recent cases.
   higher uptake, not why.
 - **Refitting does not give identical numbers.** R-INLA does not return exactly the same fit twice on the same
   computer, and the 1,000 posterior draws then come out as a different sample even though their seed is fixed. When
-  every model was fitted again on 24 November 2026, hazard ratios changed by at most 0.0006, county relative
+  the models of sections 4 and 6 and of the extension were fitted again on 24 November 2026, hazard ratios changed by
+  at most 0.0006, county relative
   uptake by at most 1.1% (its interval bounds by at most 3.3%) and modelled uptake in a
-  county and interval by at most 0.26 points per 30 days. Of the 883 values that the scripts
-  fill into this report and the extension, 21 came out differently, each by at most
-  5 units in its last printed digit; they are listed in
+  county and interval by at most 0.26 points per 30 days. The out-of-sample experiments of section 4.2
+  were not run again, so the 373 values quoted from them are not part of this comparison. Of the
+  other 510 values that the scripts fill into this report and the extension, 21 came
+  out differently, each by at most 5 units in its last printed digit; they are listed in
   [rerun_changed_values.csv](../outputs/tables/rerun_changed_values.csv). The numbers printed here are those of one
   run, and the last digit of a modelled number should be read with that in mind. Recorded coverage and everything
   computed from it repeat exactly. The comparison is made by [R/18_rerun_check.R](../R/18_rerun_check.R).

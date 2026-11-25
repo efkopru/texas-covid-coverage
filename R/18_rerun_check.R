@@ -2,6 +2,7 @@
 #
 #   Rscript --vanilla R/18_rerun_check.R              about 15 minutes
 #   Rscript --vanilla R/18_rerun_check.R <folder>     compare with an existing second copy instead of making one
+#   Rscript --vanilla R/18_rerun_check.R summary      recount rerun_summary.csv from the stored tables; fits nothing
 #
 # R-INLA does not return exactly the same fit twice, and the posterior draws then come out as a
 # different sample even though their seed is fixed. This script measures how much that matters:
@@ -15,7 +16,8 @@
 #   rerun_changed_values.csv   values quoted in the documents that came out differently
 #   rerun_repeat_fit.csv       one model fitted four times
 #   rerun_summary.csv          the figures quoted in the README and the documents ({{v:rr_key}})
-# The out-of-sample validation (step 7, one to two hours) is not refitted.
+# The out-of-sample experiments (step 7, one to two hours) are not fitted again. The values that the documents
+# quote from them therefore cannot differ; they are counted apart and are not among the values compared.
 
 source("R/_common.R")
 source("R/_models.R")
@@ -26,6 +28,31 @@ t_start <- Sys.time()
 rscript <- file.path(R.home("bin"), "Rscript")
 # the copy has no package library of its own: its R processes use this session's
 Sys.setenv(R_LIBS = paste(.libPaths(), collapse = .Platform$path.sep))
+
+# the values that steps 10 and 15 fill into the documents
+quoted <- function(dir) rbind(fread(file.path(dir, DIR_TAB, "report_values.csv"), colClasses = "character")[, document := "main report"],
+                              fread(file.path(dir, DIR_TAB, "early_report_values.csv"), colClasses = "character")[, document := "early rollout"])
+# run times are not results
+is_run_time <- function(name) grepl("^secs_|^fit_seconds$", name)
+# scores, paired differences and held-out predictions of the out-of-sample experiments (R/10_report_tables.R takes
+# them from the tables of step 7)
+from_validation <- function(document, name) document == "main report" &
+  grepl("^(crps|cov|cov1|end|cor|width|worse|impr|endin|ls|d_crps|d_ls|d_end|bias|ho)_", name)
+
+if (length(args) && args[1] == "summary") {
+  f <- file.path(DIR_TAB, "rerun_summary.csv")
+  if (!file.exists(f)) stop("Nothing to recount: run this script without arguments first")
+  s0 <- fread(f, colClasses = "character")
+  S <- as.list(setNames(s0$value, s0$name))
+  q0 <- quoted(".")[!is_run_time(name)]
+  S$n_values <- q0[!from_validation(document, name), .N]
+  S$n_validation <- q0[from_validation(document, name), .N]
+  stopifnot(as.integer(S$n_changed) == nrow(fread(file.path(DIR_TAB, "rerun_changed_values.csv"))))
+  fwrite(data.table(name = names(S), value = vapply(S, as.character, "")), f)
+  msg("Recounted: %s values compared, %s from the out-of-sample experiments not compared, %s came out differently",
+      S$n_values, S$n_validation, S$n_changed)
+  quit(save = "no")
+}
 
 # ---------------------------------------------------------------------------
 # 1 and 2. A second copy with every model fitted again
@@ -114,11 +141,13 @@ dif[, (num_cols) := lapply(.SD, signif, 3), .SDcols = num_cols]
 fwrite(dif, file.path(DIR_TAB, "rerun_differences.csv"))
 print(dif[, .(quantity, values_compared, abs_diff_max, rel_diff_pct_max)])
 
-# values quoted in the documents; run times are left out because they are not results
-quoted <- function(dir) rbind(fread(file.path(dir, DIR_TAB, "report_values.csv"), colClasses = "character")[, document := "main report"],
-                              fread(file.path(dir, DIR_TAB, "early_report_values.csv"), colClasses = "character")[, document := "early rollout"])
+# values quoted in the documents: run times are left out, and so are the values taken from the out-of-sample
+# experiments, which were not fitted again and so cannot differ
 q <- merge(quoted("."), quoted(copy), by = c("document", "name"), suffixes = c("_published", "_rerun"), sort = FALSE)
-q <- q[!grepl("^secs_|^fit_seconds$", name)]
+q <- q[!is_run_time(name)]
+n_validation <- q[from_validation(document, name), .N]
+stopifnot(q[from_validation(document, name) & value_published != value_rerun, .N] == 0)
+q <- q[!from_validation(document, name)]
 changed <- q[value_published != value_rerun, .(document, value = name, published = value_published, rerun = value_rerun)]
 # how far apart, counted in units of the last printed digit: 4.29 against 4.33 is 4 units, 136 against 138 is 2
 nums <- function(s) regmatches(s, gregexpr("-?[0-9]+([.][0-9]+)?", s))[[1]]
@@ -130,7 +159,8 @@ units <- function(a, b) {
 }
 changed[, units_of_last_digit := if (.N) mapply(units, published, rerun) else numeric()]
 fwrite(changed, file.path(DIR_TAB, "rerun_changed_values.csv"))
-msg("Values quoted in the documents: %d; came out differently: %d", nrow(q), nrow(changed))
+msg("Values compared: %d; came out differently: %d; not compared because they come from the out-of-sample experiments: %d",
+    nrow(q), nrow(changed), n_validation)
 
 # how many stored tables the copy rewrote, and how many of those are byte-identical
 tabs <- c(list.files(DIR_TAB, pattern = "[.]csv$", full.names = TRUE), list.files(DIR_MOD, pattern = "[.]csv$", full.names = TRUE))
@@ -171,6 +201,7 @@ S <- list(
   inla_version   = as.character(utils::packageDescription("INLA")$Version),
   threads        = pipeline_threads,
   n_values       = nrow(q),
+  n_validation   = n_validation,
   n_changed      = nrow(changed),
   n_changed_main = changed[document == "main report", .N],
   n_changed_early = changed[document == "early rollout", .N],

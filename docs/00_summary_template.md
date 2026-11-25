@@ -139,10 +139,10 @@ the sources forced four changes.
   political preference and ethnic composition, none of which is in the model.
 - **Approximate inference.** R-INLA approximates the posterior. A second approximation gave the same estimates, but
   no simulation-based (MCMC) fit was run to confirm them.
-- **Refitting does not give identical numbers.** R-INLA does not return exactly the same fit twice. When every
-  model was fitted again, no hazard ratio moved by more than {{v:rr_hr_max}}, and {{v:rr_n_changed}} of the
-  {{v:rr_n_values}} values that the scripts fill into the reports came out differently, each by at most
-  {{v:rr_units_max}} units in its last printed digit.
+- **Refitting does not give identical numbers.** R-INLA does not return exactly the same fit twice. When the models
+  were fitted again, no hazard ratio moved by more than {{v:rr_hr_max}}, and {{v:rr_n_changed}} of the
+  {{v:rr_n_values}} values compared came out differently, each by at most {{v:rr_units_max}} units in its last
+  printed digit. The prediction checks were not run again, so their scores were not compared.
 
 ## Where to find everything
 

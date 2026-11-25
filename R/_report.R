@@ -32,7 +32,7 @@ pct1 <- function(x) sprintf("%.1f%%", x)
 
 # The figures of the rerun check (R/18_rerun_check.R) as {{v:rr_key}} values. Until that script has been
 # run there is nothing to quote, and each value reads as a reminder to run it.
-RERUN_KEYS <- c("date", "inla_version", "threads", "n_values", "n_changed", "n_changed_main", "n_changed_early", "units_max",
+RERUN_KEYS <- c("date", "inla_version", "threads", "n_values", "n_validation", "n_changed", "n_changed_main", "n_changed_early", "units_max",
                 "hr_max", "rel_max", "rel_ci_max", "upt_max", "var_max", "n_distinct_published", "n_distinct_rerun",
                 "tables_rewritten", "tables_identical", "fit_threads_coef", "fit_one_coef", "fit_same_draws", "minutes")
 rerun_values <- function() {

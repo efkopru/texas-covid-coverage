@@ -564,11 +564,13 @@ share, {{v:sens_inc}} for income and {{v:sens_case}} for recent cases.
   higher uptake, not why.
 - **Refitting does not give identical numbers.** R-INLA does not return exactly the same fit twice on the same
   computer, and the 1,000 posterior draws then come out as a different sample even though their seed is fixed. When
-  every model was fitted again on {{v:rr_date}}, hazard ratios changed by at most {{v:rr_hr_max}}, county relative
+  the models of sections 4 and 6 and of the extension were fitted again on {{v:rr_date}}, hazard ratios changed by
+  at most {{v:rr_hr_max}}, county relative
   uptake by at most {{v:rr_rel_max}}% (its interval bounds by at most {{v:rr_rel_ci_max}}%) and modelled uptake in a
-  county and interval by at most {{v:rr_upt_max}} points per 30 days. Of the {{v:rr_n_values}} values that the scripts
-  fill into this report and the extension, {{v:rr_n_changed}} came out differently, each by at most
-  {{v:rr_units_max}} units in its last printed digit; they are listed in
+  county and interval by at most {{v:rr_upt_max}} points per 30 days. The out-of-sample experiments of section 4.2
+  were not run again, so the {{v:rr_n_validation}} values quoted from them are not part of this comparison. Of the
+  other {{v:rr_n_values}} values that the scripts fill into this report and the extension, {{v:rr_n_changed}} came
+  out differently, each by at most {{v:rr_units_max}} units in its last printed digit; they are listed in
   [rerun_changed_values.csv](../outputs/tables/rerun_changed_values.csv). The numbers printed here are those of one
   run, and the last digit of a modelled number should be read with that in mind. Recorded coverage and everything
   computed from it repeat exactly. The comparison is made by [R/18_rerun_check.R](../R/18_rerun_check.R).
