@@ -320,6 +320,8 @@ with no allocation at all.
   the interval that follows is 41 days long.
 - **No separate validation exercise.** The out-of-sample experiments of the main report were not repeated for
   the early intervals.
+- **Refitting does not give identical numbers.** Modelled numbers repeat closely but not exactly when the models
+  are fitted again. [Section 7 of the main report](02_report.md) gives the sizes of the differences.
 
 ## 9. Files and reproduction
 

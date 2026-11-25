@@ -3,7 +3,7 @@
 **Summary report.** A county-level study of first-dose COVID-19 vaccination among Texas residents aged 16 and over,
 built from archived Texas Department of State Health Services (DSHS) records and analysed with a Bayesian
 spatiotemporal model. This is the short version; the documents listed at the end hold the detail. Every number
-below is filled in from the same result files as those documents. Built 21 November 2026.
+below is filled in from the same result files as those documents. Built 24 November 2026.
 
 Three words have a fixed meaning throughout. **Recorded** is a count from the DSHS registry divided by a Census
 population estimate. **Reconstructed** applies before 24 May 2021: the published county count plus the county's
@@ -147,10 +147,16 @@ the sources forced four changes.
   political preference and ethnic composition, none of which is in the model.
 - **Approximate inference.** R-INLA approximates the posterior. A second approximation gave the same estimates, but
   no simulation-based (MCMC) fit was run to confirm them.
+- **Refitting does not give identical numbers.** R-INLA does not return exactly the same fit twice. When every
+  model was fitted again, no hazard ratio moved by more than 0.0006, and 21 of the
+  883 values that the scripts fill into the reports came out differently, each by at most
+  5 units in its last printed digit.
 
 ## Where to find everything
 
-These are files in the project folder; the paths start there.
+These are files in the project folder; the paths start there. This summary is built by
+[R/17_summary_report.R](../R/17_summary_report.R) from [docs/00_summary_template.md](00_summary_template.md) and the
+tables in `outputs/tables/`.
 
 | | |
 |---|---|
@@ -160,6 +166,3 @@ These are files in the project folder; the paths start there.
 | [site/index.html](../site/index.html) | Interactive version: county map through time, county comparison, charts |
 | [README.md](../README.md) | Project layout, the commands that reproduce every step, and how to trace a number to its source file |
 | [outputs/tables/county_results.csv](../outputs/tables/county_results.csv) | One row per county: recorded coverage, change, modelled relative uptake with intervals |
-
-This summary is built by [R/17_summary_report.R](../R/17_summary_report.R) from
-[docs/00_summary_template.md](00_summary_template.md) and the tables in `outputs/tables/`.

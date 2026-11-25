@@ -8,7 +8,7 @@
 #                       loads nothing from the network; open it in a browser.
 # from the template site/src/page.html. Numbers quoted in the page text are
 # filled from outputs/tables/report_values.csv and early_report_values.csv
-# ({{v:key}} for the main report, {{v:x_key}} for the early-rollout extension),
+# ({{v:key}} for the main report, {{v:x_key}} for the early-rollout extension, {{v:rr_key}} for the rerun check),
 # so the site cannot drift from the reports.
 
 source("R/_common.R")
@@ -135,7 +135,7 @@ msg("Data block: %.0f KB", nchar(js) / 1024)
 tpl <- "site/src/page.html"
 if (file.exists(tpl)) {
   v1 <- rd("report_values.csv"); v2 <- rd("early_report_values.csv")
-  V <- c(as.list(setNames(v1$value, v1$name)), as.list(setNames(v2$value, paste0("x_", v2$name))))
+  V <- c(as.list(setNames(v1$value, v1$name)), as.list(setNames(v2$value, paste0("x_", v2$name))), rerun_values())
   V$built <- sub("^0", "", format(Sys.Date(), "%d %B %Y"))
   body <- fill_template(tpl, tempfile(fileext = ".html"), list(), V, quiet = TRUE)
   msg("Filled %s (%d lines, %d values)", tpl, length(body), length(V))

@@ -1,0 +1,22 @@
+name,value
+date,24 November 2026
+inla_version,26.08.07
+threads,6:1
+n_values,883
+n_changed,21
+n_changed_main,15
+n_changed_early,6
+units_max,5
+hr_max,0.0006
+rel_max,1.1
+rel_ci_max,3.3
+upt_max,0.26
+var_max,5.7
+n_distinct_published,136
+n_distinct_rerun,138
+tables_rewritten,45
+tables_identical,15
+fit_threads_coef,0.24
+fit_one_coef,0.24
+fit_same_draws,in neither case
+minutes,10

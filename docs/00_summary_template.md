@@ -139,10 +139,16 @@ the sources forced four changes.
   political preference and ethnic composition, none of which is in the model.
 - **Approximate inference.** R-INLA approximates the posterior. A second approximation gave the same estimates, but
   no simulation-based (MCMC) fit was run to confirm them.
+- **Refitting does not give identical numbers.** R-INLA does not return exactly the same fit twice. When every
+  model was fitted again, no hazard ratio moved by more than {{v:rr_hr_max}}, and {{v:rr_n_changed}} of the
+  {{v:rr_n_values}} values that the scripts fill into the reports came out differently, each by at most
+  {{v:rr_units_max}} units in its last printed digit.
 
 ## Where to find everything
 
-These are files in the project folder; the paths start there.
+These are files in the project folder; the paths start there. This summary is built by
+[R/17_summary_report.R](../R/17_summary_report.R) from [docs/00_summary_template.md](00_summary_template.md) and the
+tables in `outputs/tables/`.
 
 | | |
 |---|---|
@@ -152,6 +158,3 @@ These are files in the project folder; the paths start there.
 | [site/index.html](../site/index.html) | Interactive version: county map through time, county comparison, charts |
 | [README.md](../README.md) | Project layout, the commands that reproduce every step, and how to trace a number to its source file |
 | [outputs/tables/county_results.csv](../outputs/tables/county_results.csv) | One row per county: recorded coverage, change, modelled relative uptake with intervals |
-
-This summary is built by [R/17_summary_report.R](../R/17_summary_report.R) from
-[docs/00_summary_template.md](00_summary_template.md) and the tables in `outputs/tables/`.

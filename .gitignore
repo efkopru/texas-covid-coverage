@@ -1,7 +1,7 @@
 # Installed R packages: R/00_setup.R recreates them
 r-lib/
 
-# Posterior draws, 340 MB: steps 6 and 14 recreate them (fixed seed)
+# Posterior draws, 340 MB: steps 6 and 14 fit the models again (close to these draws, not identical: see the README)
 outputs/models/samples_*.rds
 
 # Two national Census ACS files that are larger than GitHub accepts or close to it (191 MB and 88 MB).

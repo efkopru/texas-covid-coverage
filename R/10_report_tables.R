@@ -364,4 +364,6 @@ fwrite(vals, file.path(DIR_TAB, "report_values.csv"))
 # ---------------------------------------------------------------------------
 # Fill the template
 # ---------------------------------------------------------------------------
-fill_template("docs/02_report_template.md", "docs/02_report.md", tables, V)
+# the figures of the rerun check are quoted in the limitations; they are kept out of report_values.csv,
+# which that check compares between runs
+fill_template("docs/02_report_template.md", "docs/02_report.md", tables, c(V, rerun_values()))

@@ -5,6 +5,7 @@
 # Fills docs/00_summary_template.md -> docs/00_summary.md. The values come from
 #   outputs/tables/report_values.csv         {{v:key}}     written by step 10
 #   outputs/tables/early_report_values.csv   {{v:x_key}}   written by step 15
+#   outputs/tables/rerun_summary.csv         {{v:rr_key}}  written by step 18
 # and a few descriptive figures computed here from the result tables ({{v:s_key}}),
 # so the summary cannot drift from the reports. Run step 11 afterwards for the
 # HTML copy.
@@ -13,7 +14,7 @@ source("R/_common.R")
 source("R/_report.R")
 
 v1 <- rd("report_values.csv"); v2 <- rd("early_report_values.csv")
-V <- c(as.list(setNames(v1$value, v1$name)), as.list(setNames(v2$value, paste0("x_", v2$name))))
+V <- c(as.list(setNames(v1$value, v1$name)), as.list(setNames(v2$value, paste0("x_", v2$name))), rerun_values())
 
 # ---------------------------------------------------------------------------
 # Recorded coverage at the baseline and at the end of the study

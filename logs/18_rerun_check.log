@@ -1,0 +1,45 @@
+18:29:46 | Copied code, derived data and stored tables to a temporary folder (72 MB) 
+18:29:46 | Fitting every model again in the copy: steps 6, 9 and 14 side by side 
+18:37:52 |   finished: 06_fit_models, 09_sensitivity, 14_early_models (8.1 minutes) 
+18:37:52 | Rebuilding what depends on the fits 
+18:38:20 |   finished: 08_outputs (0.5 minutes) 
+18:38:26 |   finished: 14_early_models_tables (0.1 minutes) 
+18:38:38 |   finished: 15_early_outputs (0.2 minutes) 
+18:38:41 |   finished: 10_report_tables (0.1 minutes) 
+                                                  quantity values_compared
+                                                    <char>           <int>
+ 1:      Fixed-effect coefficients, all models (log scale)              60
+ 2:                  Hazard ratios by period, all variants             252
+ 3:                    Hazard ratios, sensitivity variants             117
+ 4:        Variance and correlation parameters, all models              69
+ 5:                                 County relative uptake             238
+ 6:                County relative uptake, interval bounds             476
+ 7:                    Modelled change in coverage, points             238
+ 8: Modelled uptake per county and interval, % per 30 days            2856
+ 9:                       Modelled uptake, interval bounds            5712
+10:           County relative uptake by period (extension)             639
+    abs_diff_max rel_diff_pct_max
+           <num>            <num>
+ 1:     0.000304           0.2340
+ 2:     0.000571           0.0561
+ 3:     0.000381           0.0327
+ 4:     0.044100           5.6900
+ 5:     0.014900           1.1500
+ 6:     0.038800           3.3100
+ 7:     0.198000           1.2600
+ 8:     0.259000           4.7900
+ 9:     0.774000          10.7000
+10:     0.021500           1.6600
+18:38:41 | Values quoted in the documents: 883; came out differently: 21 
+18:38:41 | Tables rewritten in the copy: 45; byte-identical to this folder's: 15 
+18:38:41 | Fitting model M1 four times 
+                       comparison threads coefficients_max_rel_diff_pct
+                           <char>  <char>                         <num>
+1: pipeline threads, fitted twice     6:1                         0.236
+2:       one thread, fitted twice     1:1                         0.239
+   variance_parameters_max_rel_diff_pct same_posterior_draws
+                                  <num>               <lgcl>
+1:                                0.148                FALSE
+2:                                0.161                FALSE
+18:39:55 | Wrote rerun_differences.csv, rerun_changed_values.csv, rerun_repeat_fit.csv and rerun_summary.csv in outputs/tables 
+18:39:55 | Done in 10 minutes. 

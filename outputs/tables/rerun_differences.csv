@@ -1,0 +1,11 @@
+quantity,table,values_compared,abs_diff_median,abs_diff_p95,abs_diff_max,rel_diff_pct_median,rel_diff_pct_p95,rel_diff_pct_max
+"Fixed-effect coefficients, all models (log scale)",outputs/models/fixed_effects.csv,60,1.24e-05,0.000118,0.000304,0.00979,0.128,0.234
+"Hazard ratios by period, all variants",outputs/tables/early_period_associations.csv,252,5.47e-05,0.000434,0.000571,0.00553,0.0392,0.0561
+"Hazard ratios, sensitivity variants",outputs/tables/sensitivity.csv,117,3.62e-05,0.000157,0.000381,0.00381,0.0153,0.0327
+"Variance and correlation parameters, all models",outputs/models/hyperparameters.csv,69,0.000141,0.00477,0.0441,0.0363,0.815,5.69
+County relative uptake,outputs/tables/county_results.csv,238,0.000665,0.00503,0.0149,0.0667,0.488,1.15
+"County relative uptake, interval bounds",outputs/tables/county_results.csv,476,0.00166,0.0106,0.0388,0.179,1.11,3.31
+"Modelled change in coverage, points",outputs/tables/county_results.csv,238,0.0091,0.0541,0.198,0.0421,0.322,1.26
+"Modelled uptake per county and interval, % per 30 days",outputs/tables/modelled_uptake_county_interval.csv,2856,0.00429,0.0327,0.259,0.214,1.23,4.79
+"Modelled uptake, interval bounds",outputs/tables/modelled_uptake_county_interval.csv,5712,0.00895,0.0725,0.774,0.435,2.68,10.7
+County relative uptake by period (extension),outputs/tables/early_relative_uptake_by_period.csv,639,0.000703,0.00361,0.0215,0.0697,0.385,1.66

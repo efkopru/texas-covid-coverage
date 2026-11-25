@@ -7,8 +7,8 @@ Start here:
 
 1. [docs/00_summary.md](docs/00_summary.md): the summary report. Main findings, key numbers, what was analysed, how
    the study differs from the proposal, how far the results can be trusted, and limitations, in a few pages.
-   [docs/00_summary.pdf](docs/00_summary.pdf) is the copy to send to someone who does not have this folder: six
-   Letter pages with the figures, and no links or file paths from this computer in it.
+   [docs/00_summary.pdf](docs/00_summary.pdf) is the copy to send to someone who does not have this folder: a
+   short Letter-size document with the figures, and no links or file paths from this computer in it.
 2. [docs/01_source_inventory.md](docs/01_source_inventory.md): what each source contains, what was verified,
    and why the age group, time intervals and study period differ from the original proposal.
 3. [docs/02_report.md](docs/02_report.md): methods, results, validation and limitations.
@@ -49,7 +49,7 @@ files, is in it.
 |---|---|---|
 | `r-lib/`, the installed R packages | 152 MB | `Rscript --vanilla R/00_setup.R` |
 | `data/raw/census_acs/acsdt5y2023-b01001.dat` and `Geos20235YR.txt`, two national Census ACS files | 191 MB and 88 MB | `Rscript --vanilla R/01_download_sources.R` fetches them and skips the files already present; `data/raw/MANIFEST.csv` holds their checksums. GitHub refuses files over 100 MB. |
-| `outputs/models/samples_*.rds`, the posterior draws | 340 MB | Steps 6 and 14 below recreate them (fixed seed). The tables, figures and documents built from them are in the repository. |
+| `outputs/models/samples_*.rds`, the posterior draws | 340 MB | Steps 6 and 14 below fit the models again, which gives draws that are close to the original ones but not identical (see "How exactly results repeat"). The tables, figures and documents built from the original draws are in the repository. |
 
 Without the two Census files, step 4 cannot be rerun and `verify_manifest()` reports them as missing; nothing else
 depends on them, because their parsed content is in `data/derived/`.
@@ -90,6 +90,7 @@ Rscript --vanilla R/17_summary_report.R        # summary report: fills docs/00_s
 Rscript --vanilla R/11_render_report.R         # HTML copies of the four documents; PDF of the summary (needs Edge or Chrome)
 Rscript --vanilla R/12_audit_trace.R           # re-derives county numbers from raw cells; checks checksums
 Rscript --vanilla R/16_build_site.R            # interactive report: site/index.html (standalone, one file)
+Rscript --vanilla R/18_rerun_check.R           # optional: fits every model again in a temporary copy -> outputs/tables/rerun_*.csv
 ```
 
 Steps 13-15 and 17 are numbered after the main pipeline because they were added to it; run them before steps 11
@@ -99,7 +100,7 @@ it (`*_template.md`), so edit the template, not the filled document. The variant
 
 Timing on a 14-core desktop: steps 0-5 about 15 minutes (mostly downloads); step 6 about 20 minutes; step 7 one
 to two hours, dominated by model M3 (five to ten minutes per fit, which is why it is run only in experiments C
-and D); step 9 about 15 minutes; steps 13-15 about 10 minutes; steps 8 and 10-12 a few minutes together. Set the environment variable
+and D); step 9 about 15 minutes; steps 13-15 about 10 minutes; steps 8 and 10-12 a few minutes together; step 18 about 10 minutes. Set the environment variable
 `TXCOV_THREADS` (for example `4:1`) to control the threads each R-INLA fit uses. A model can be named after the
 experiment, for example `Rscript --vanilla R/07_validate.R later M3`, and finished results are not recomputed.
 The `summary` step also writes `outputs/tables/validation_paired_differences.csv`: differences in scores between
@@ -110,8 +111,20 @@ Step 1 depends on third-party hosts staying available: the Internet Archive for 
 the daily copies. If a file has changed or vanished, `verify_manifest()` in `R/_common.R` compares what is on disk
 with the recorded checksums. Step 2 onward needs no network.
 
-Results depend on the R-INLA version (26.08.07 here) to the third or fourth significant digit. Posterior draws use a
-fixed seed. Package versions are recorded in `outputs/r_package_versions.csv`.
+**How exactly results repeat.** The steps that parse the sources and build the datasets (2, 3, 5 and 13) and those
+that build the report tables, documents and site from stored results (10, 11, 16 and 17) repeat byte for byte,
+apart from the build date. This was checked in a clean copy of the repository; step 4 was not rechecked because it
+needs a file that is not in the repository. The model fits do not repeat exactly. R-INLA does not return exactly
+the same fit twice on the same computer, with several threads or with one, and the 1,000 posterior draws then come
+out as a different sample although their seed is fixed. Step 18 measures this: it fits every model again in a
+temporary copy and compares the tables. In its run of 24 November 2026 (R-INLA 26.08.07), hazard ratios changed by
+at most 0.0006, county relative uptake by at most 1.1% (its interval bounds by at most 3.3%),
+and 21 of the 883 values that the scripts fill into the documents came out differently, each by
+at most 5 units in its last printed digit. The details are in `outputs/tables/rerun_differences.csv`,
+`rerun_changed_values.csv` and `rerun_repeat_fit.csv`. The published numbers are those of one run and are the
+reference. Anyone who fits the models again, here or from a GitHub copy, should expect differences of this size,
+and a different R-INLA version can be expected to differ at least as much. Package versions are recorded in
+`outputs/r_package_versions.csv`.
 
 ## Tracing a number back to its source
 

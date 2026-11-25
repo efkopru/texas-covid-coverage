@@ -1,0 +1,3 @@
+comparison,threads,coefficients_max_rel_diff_pct,variance_parameters_max_rel_diff_pct,same_posterior_draws
+"pipeline threads, fitted twice",6:1,0.236,0.148,FALSE
+"one thread, fitted twice",1:1,0.239,0.161,FALSE

@@ -40,7 +40,7 @@ blockquote { margin: 1rem 0; padding: 0.2rem 1rem; border-left: 3px solid var(--
 <p><strong>Summary report.</strong> A county-level study of first-dose COVID-19 vaccination among Texas residents aged 16 and over,
 built from archived Texas Department of State Health Services (DSHS) records and analysed with a Bayesian
 spatiotemporal model. This is the short version; the documents listed at the end hold the detail. Every number
-below is filled in from the same result files as those documents. Built 21 November 2026.</p>
+below is filled in from the same result files as those documents. Built 24 November 2026.</p>
 <p>Three words have a fixed meaning throughout. <strong>Recorded</strong> is a count from the DSHS registry divided by a Census
 population estimate. <strong>Reconstructed</strong> applies before 24 May 2021: the published county count plus the county's
 allocated share of the recipients who had no county on record, which rests on a stated assumption. <strong>Modelled</strong> is
@@ -231,9 +231,15 @@ uptake, because residents' doses can be recorded elsewhere.</li>
 political preference and ethnic composition, none of which is in the model.</li>
 <li><strong>Approximate inference.</strong> R-INLA approximates the posterior. A second approximation gave the same estimates, but
 no simulation-based (MCMC) fit was run to confirm them.</li>
+<li><strong>Refitting does not give identical numbers.</strong> R-INLA does not return exactly the same fit twice. When every
+model was fitted again, no hazard ratio moved by more than 0.0006, and 21 of the
+883 values that the scripts fill into the reports came out differently, each by at most
+5 units in its last printed digit.</li>
 </ul>
 <h2>Where to find everything</h2>
-<p>These are files in the project folder; the paths start there.</p>
+<p>These are files in the project folder; the paths start there. This summary is built by
+<a href="../R/17_summary_report.R">R/17_summary_report.R</a> from <a href="00_summary_template.md">docs/00_summary_template.md</a> and the
+tables in <code>outputs/tables/</code>.</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -268,8 +274,6 @@ no simulation-based (MCMC) fit was run to confirm them.</li>
 </tr>
 </tbody>
 </table></div>
-<p>This summary is built by <a href="../R/17_summary_report.R">R/17_summary_report.R</a> from
-<a href="00_summary_template.md">docs/00_summary_template.md</a> and the tables in <code>outputs/tables/</code>.</p>
 
 </main></body></html>
 

@@ -562,6 +562,16 @@ share, {{v:sens_inc}} for income and {{v:sens_case}} for recent cases.
 - **Three predictors only.** Age composition and income are correlated with rurality, health-care access, political
   preference and ethnic composition, none of which is in the model. The coefficients describe which counties had
   higher uptake, not why.
+- **Refitting does not give identical numbers.** R-INLA does not return exactly the same fit twice on the same
+  computer, and the 1,000 posterior draws then come out as a different sample even though their seed is fixed. When
+  every model was fitted again on {{v:rr_date}}, hazard ratios changed by at most {{v:rr_hr_max}}, county relative
+  uptake by at most {{v:rr_rel_max}}% (its interval bounds by at most {{v:rr_rel_ci_max}}%) and modelled uptake in a
+  county and interval by at most {{v:rr_upt_max}} points per 30 days. Of the {{v:rr_n_values}} values that the scripts
+  fill into this report and the extension, {{v:rr_n_changed}} came out differently, each by at most
+  {{v:rr_units_max}} units in its last printed digit; they are listed in
+  [rerun_changed_values.csv](../outputs/tables/rerun_changed_values.csv). The numbers printed here are those of one
+  run, and the last digit of a modelled number should be read with that in mind. Recorded coverage and everything
+  computed from it repeat exactly. The comparison is made by [R/18_rerun_check.R](../R/18_rerun_check.R).
 - **Approximate inference.** R-INLA approximates the posterior. A second approximation strategy gave the same
   estimates (variant S12), but no simulation-based (MCMC) fit was run to confirm them.
 
