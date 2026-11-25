@@ -60,7 +60,9 @@ depends on them, because their parsed content is in `data/derived/`.
 documents, exactly as committed. Nothing is built on GitHub: after a push that changes one of those files, the
 workflow in `.github/workflows/pages.yml` arranges them with `.github/scripts/assemble_pages.py` and publishes them.
 In the served documents, links to files that are not served (code, tables, logs) lead to the same file in this
-repository. To update the web copy, rebuild locally (steps 11, 16 and 17 below), commit and push.
+repository. To update the web copy, rebuild locally (steps 11, 16 and 17 below), commit and push. If a publication
+fails, open it on the repository's Actions page and choose "Re-run failed jobs": only the publish job runs again,
+with the files already uploaded.
 
 ## Reproducing the analysis
 

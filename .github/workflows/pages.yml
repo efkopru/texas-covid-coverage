@@ -1,6 +1,10 @@
 # Publishes the interactive site and the HTML and PDF copies of the documents with GitHub Pages.
 # Nothing is built here. The files are taken as committed (R/16_build_site.R and R/11_render_report.R
 # make them) and only arranged for serving by .github/scripts/assemble_pages.py.
+#
+# Two jobs, as in GitHub's own template: "upload" arranges and uploads the files, "publish" publishes
+# them. If publishing fails, "Re-run failed jobs" repeats only the publish job, which publishes the files
+# already uploaded. (With a single job, a re-run uploads a second copy and publishing then fails on it.)
 name: Publish site and reports (GitHub Pages)
 
 on:
@@ -25,11 +29,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  upload:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       # only the folders that are served, not the 200 MB of data
       - name: Check out the site, the documents and this workflow's script
@@ -47,6 +48,14 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+
+  publish:
+    needs: upload
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Publish
         id: deployment
         uses: actions/deploy-pages@v5
