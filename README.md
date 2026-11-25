@@ -34,7 +34,7 @@ Start here:
 | `data/derived/` | Tidy tables produced by the scripts (county lookup, parsed vaccination and case counts, population, the analysis panel). |
 | `outputs/tables/` | Result tables (`verify_*` source checks, `validation_*` out-of-sample scores, county results, sensitivity analysis, `early_*` for the extension). |
 | `outputs/figures/` | Figures used in the report. |
-| `outputs/models/` | Model summaries and posterior draws (`samples_*.rds`). |
+| `outputs/models/` | Model summaries. The posterior draws (`samples_*.rds`) are attached to the release [posterior-draws-v1](https://github.com/efkopru/texas-covid-coverage/releases/tag/posterior-draws-v1). |
 | `logs/` | Console output of each script run. |
 | `site/` | The interactive report: `index.html` (built, standalone) and `src/page.html` (its template: layout, styles and code). |
 | `.github/` | Publication on the web with GitHub Pages: a workflow and the script that arranges the files it serves. |
@@ -49,7 +49,7 @@ files, is in it.
 |---|---|---|
 | `r-lib/`, the installed R packages | 152 MB | `Rscript --vanilla R/00_setup.R` |
 | `data/raw/census_acs/acsdt5y2023-b01001.dat` and `Geos20235YR.txt`, two national Census ACS files | 191 MB and 88 MB | `Rscript --vanilla R/01_download_sources.R` fetches them and skips the files already present; `data/raw/MANIFEST.csv` holds their checksums. GitHub refuses files over 100 MB. |
-| `outputs/models/samples_*.rds`, the posterior draws | 340 MB | Steps 6 and 14 below fit the models again, which gives draws that are close to the original ones but not identical (see "How exactly results repeat"). The tables, figures and documents built from the original draws are in the repository. |
+| `outputs/models/samples_*.rds`, the posterior draws | 340 MB | Download them from the release [posterior-draws-v1](https://github.com/efkopru/texas-covid-coverage/releases/tag/posterior-draws-v1) and put them in `outputs/models/`. With them, steps 8, 14 (`tables`), 15 and 10 regenerate the stored tables, figures and documents byte for byte. Steps 6 and 14 can also fit the models again, which gives draws that are close to these but not identical (see "How exactly results repeat"). |
 
 Without the two Census files, step 4 cannot be rerun and `verify_manifest()` reports them as missing; nothing else
 depends on them, because their parsed content is in `data/derived/`.
