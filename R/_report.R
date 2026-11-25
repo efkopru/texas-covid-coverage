@@ -32,9 +32,12 @@ pct1 <- function(x) sprintf("%.1f%%", x)
 
 # The figures of the rerun check (R/18_rerun_check.R) as {{v:rr_key}} values. Until that script has been
 # run there is nothing to quote, and each value reads as a reminder to run it.
-RERUN_KEYS <- c("date", "inla_version", "threads", "n_values", "n_validation", "n_changed", "n_changed_main", "n_changed_early", "units_max",
-                "hr_max", "rel_max", "rel_ci_max", "upt_max", "var_max", "n_distinct_published", "n_distinct_rerun",
-                "tables_rewritten", "tables_identical", "fit_threads_coef", "fit_one_coef", "fit_same_draws", "minutes")
+RERUN_KEYS <- c("date", "inla_version", "threads", "validation_refitted", "n_values", "n_changed", "n_changed_main", "n_changed_early",
+                "units_max", "n_validation", "n_changed_validation", "hr_max", "rel_max", "rel_ci_max", "upt_max", "var_max",
+                "crps_max", "crps_rel_max", "verdict_n_abc", "verdict_changed_abc", "verdict_n_d", "verdict_changed_d",
+                "d_D_M3_M4_rerun", "d_C1_M3_M4_rerun", "n_distinct_published", "n_distinct_rerun", "tables_rewritten",
+                "tables_identical", "fit_threads_coef", "fit_one_coef", "fit_same_draws", "minutes",
+                "note_report", "note_short", "note_validation")
 rerun_values <- function() {
   f <- file.path(DIR_TAB, "rerun_summary.csv")
   v <- if (file.exists(f)) { x <- fread(f, colClasses = "character"); setNames(x$value, x$name) } else character()

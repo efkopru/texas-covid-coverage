@@ -2,22 +2,35 @@ name,value
 date,24 November 2026
 inla_version,26.08.07
 threads,6:1
+validation_refitted,yes
 n_values,510
-n_changed,21
-n_changed_main,15
-n_changed_early,6
-units_max,5
-hr_max,0.0006
-rel_max,1.1
-rel_ci_max,3.3
-upt_max,0.26
-var_max,5.7
-n_distinct_published,136
-n_distinct_rerun,138
-tables_rewritten,45
-tables_identical,15
-fit_threads_coef,0.24
-fit_one_coef,0.24
-fit_same_draws,in neither case
-minutes,10
 n_validation,373
+n_changed,29
+n_changed_main,22
+n_changed_early,7
+n_changed_validation,192
+units_max,5
+hr_max,0.0013
+rel_max,1.2
+rel_ci_max,2.9
+upt_max,0.20
+var_max,4.3
+crps_max,0.027
+crps_rel_max,2.6
+n_distinct_published,136
+n_distinct_rerun,136
+tables_rewritten,87
+tables_identical,15
+fit_threads_coef,0.13
+fit_one_coef,0.07
+fit_same_draws,in neither case
+minutes,44
+note_report,"The out-of-sample experiments of section 4.2 were run again as well. Of the 373 values quoted from them, 192 came out differently: the mean scores (CRPS) changed by at most 0.027 points, or 2.6%, and section 4.2 says which comparisons between models held."
+note_short,"The prediction checks were run again as well: their mean scores changed by at most 2.6%, but which model forecast the next interval better did not repeat."
+verdict_n_abc,126
+verdict_changed_abc,2
+verdict_n_d,20
+verdict_changed_d,8
+d_D_M3_M4_rerun,-0.010 (-0.046 to 0.027)
+d_C1_M3_M4_rerun,-0.013 (-0.022 to -0.005)
+note_validation,"**How far these comparisons repeat.** All four experiments were run again on 24 November 2026 (section 7). The mean CRPS of a model in an experiment changed by at most 0.027 points, or 2.6%. In experiments A, B and C, 124 of the 126 differences between models in the table above gave the same verdict as before (interval below zero, above zero, or including it). In experiment D only 12 of 20 did, so no ranking of the models should be read from experiment D."

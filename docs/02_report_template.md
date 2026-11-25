@@ -293,8 +293,8 @@ structure makes no difference in this experiment (M1 minus M0: {{v:d_crps_C_M0_M
 county's own history is more informative than its neighbours.
 
 M3 and M4 are close. M4 has the lower CRPS (M4 minus M3: {{v:d_crps_C_M3_M4}}) and M3 the higher log score
-({{v:d_ls_C_M3_M4}}), which comes from intervals two or more steps ahead; for the next interval the two are
-indistinguishable.
+({{v:d_ls_C_M3_M4}}), which comes from intervals two or more steps ahead. For the next interval M4's CRPS is lower
+by an amount whose interval reaches zero ({{v:d_crps_C1_M3_M4}}), so the two are at most slightly apart there.
 
 **Next interval (D): no model forecasts the statewide level.** CRPS is {{v:crps_D_M0}}, {{v:crps_D_M1}},
 {{v:crps_D_M2}}, {{v:crps_D_M3}} and {{v:crps_D_M4}} for M0 to M4, well above the one-interval-ahead error in
@@ -307,10 +307,13 @@ The two intervals after the Delta-wave peak and the interval of the Omicron wave
 30 days too high. The models carry the last level forward, and nothing in them anticipates the end of a surge. The
 case-rate predictor does not help here: it describes differences between counties at the same time, and during the
 Omicron wave uptake halved while reported cases rose to their highest level. With only nine forecasts the
-differences between models are imprecise: M4's CRPS is lower than M1's by an amount whose interval includes zero
-({{v:d_crps_D_M1_M4}}) and lower than M3's ({{v:d_crps_D_M3_M4}}). The
+differences between models are imprecise, and they do not repeat when the experiment is run again (next
+paragraph). M4 has the lowest CRPS, but its margin over M1 has an interval that includes zero
+({{v:d_crps_D_M1_M4}}), and no ranking of the models should be read from this experiment. The
 models still place counties correctly relative to one another: the correlation between predicted and recorded
 county positions in the next interval is {{v:cor_D_M4}} for M4 and {{v:cor_D_M0}} for M0.
+
+{{v:rr_note_validation}}
 
 **Which model is used for what.** No model is best at everything.
 
@@ -567,11 +570,11 @@ share, {{v:sens_inc}} for income and {{v:sens_case}} for recent cases.
   the models of sections 4 and 6 and of the extension were fitted again on {{v:rr_date}}, hazard ratios changed by
   at most {{v:rr_hr_max}}, county relative
   uptake by at most {{v:rr_rel_max}}% (its interval bounds by at most {{v:rr_rel_ci_max}}%) and modelled uptake in a
-  county and interval by at most {{v:rr_upt_max}} points per 30 days. The out-of-sample experiments of section 4.2
-  were not run again, so the {{v:rr_n_validation}} values quoted from them are not part of this comparison. Of the
-  other {{v:rr_n_values}} values that the scripts fill into this report and the extension, {{v:rr_n_changed}} came
-  out differently, each by at most {{v:rr_units_max}} units in its last printed digit; they are listed in
-  [rerun_changed_values.csv](../outputs/tables/rerun_changed_values.csv). The numbers printed here are those of one
+  county and interval by at most {{v:rr_upt_max}} points per 30 days. Of the {{v:rr_n_values}} values that the scripts
+  fill into this report and the extension from the fitted models and the records, {{v:rr_n_changed}} came out
+  differently, each by at most {{v:rr_units_max}} units in its last printed digit; they are listed in
+  [rerun_changed_values.csv](../outputs/tables/rerun_changed_values.csv). {{v:rr_note_report}} The
+  numbers printed here are those of one
   run, and the last digit of a modelled number should be read with that in mind. Recorded coverage and everything
   computed from it repeat exactly. The comparison is made by [R/18_rerun_check.R](../R/18_rerun_check.R).
 - **Approximate inference.** R-INLA approximates the posterior. A second approximation strategy gave the same

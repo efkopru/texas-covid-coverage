@@ -1,22 +1,222 @@
-document,value,published,rerun,units_of_last_digit
-main report,med_k3,8.6,8.5,1
-main report,p90_k3,13.4,13.5,1
-main report,rel_max,4.72 (4.29 to 5.21),4.74 (4.32 to 5.22),3
-main report,phi_final,0.93 (0.78 to 0.99),0.94 (0.73 to 0.99),5
-main report,sd_time_final,0.79 (0.58 to 1.16),0.79 (0.57 to 1.15),1
-main report,ou_halflife,5.8 months (95% CrI 4.4 to 7.7),5.8 months (95% CrI 4.4 to 7.8),1
-main report,rob_p95_M1,4.1%,3.9%,2
-main report,rob_max_M1,11%,10%,1
-main report,rob_p95_M2,1.7%,1.6%,1
-main report,rob_p95_M3,2.0%,2.3%,3
-main report,lcpo_M1,-5.956,-5.957,1
-main report,n_distinct,136,138,2
-main report,n_distinct_low,68,69,1
-main report,n_distinct_high,68,69,1
-main report,sens_phi,0.78 to 0.96,0.77 to 0.96,1
-early rollout,p90_st_k5,23.6,23.5,1
-early rollout,hr_N_income_E1,0.97 (0.90 to 1.05),0.97 (0.90 to 1.04),1
-early rollout,pc_1,-0.03 (-0.05 to 0.00),-0.03 (-0.05 to -0.01),1
-early rollout,age3_2_later,0.95,0.96,1
-early rollout,age3_3_early,1.05,1.04,1
-early rollout,age3_3_spring,0.83,0.82,1
+document,value,published,rerun,from_out_of_sample_experiments,units_of_last_digit
+main report,med_k3,8.6,8.5,FALSE,1
+main report,p90_k3,13.4,13.5,FALSE,1
+main report,p90_k5,5.3,5.4,FALSE,1
+main report,p90_k6,5.7,5.8,FALSE,1
+main report,rel_min,0.30 (0.27 to 0.32),0.29 (0.27 to 0.32),FALSE,1
+main report,rel_max,4.72 (4.29 to 5.21),4.74 (4.31 to 5.19),FALSE,2
+main report,n_high,93,92,FALSE,1
+main report,n_mid,32,33,FALSE,1
+main report,phi_m1,0.70 (0.49 to 0.87),0.70 (0.48 to 0.87),FALSE,1
+main report,phi_final,0.93 (0.78 to 0.99),0.94 (0.74 to 0.99),FALSE,4
+main report,ou_halflife,5.8 months (95% CrI 4.4 to 7.7),5.8 months (95% CrI 4.4 to 7.8),FALSE,1
+main report,county_fold_m1,4.2,4.3,FALSE,1
+main report,cov1_A_M0,93.0%,93.2%,TRUE,2
+main report,cov_A_M1,93%,94%,TRUE,1
+main report,cov1_A_M1,93.4%,93.5%,TRUE,1
+main report,end_A_M1,3.6,3.7,TRUE,1
+main report,cov1_A_M2,93.6%,93.8%,TRUE,2
+main report,end_A_M2,3.6,3.7,TRUE,1
+main report,cov1_A_M4,95.7%,95.8%,TRUE,1
+main report,end_B_M0,4.8,4.9,TRUE,1
+main report,cor_B_M0,0.31,0.32,TRUE,1
+main report,cov1_B_M1,93.0%,92.6%,TRUE,4
+main report,cov1_B_M2,93.0%,93.1%,TRUE,1
+main report,crps_B_M4,0.85,0.84,TRUE,1
+main report,cov_B_M4,96%,95%,TRUE,1
+main report,cov1_B_M4,95.6%,95.4%,TRUE,2
+main report,cov_C_M0,87%,88%,TRUE,1
+main report,cov1_C_M0,87.4%,87.6%,TRUE,2
+main report,cov_C_M1,88%,87%,TRUE,1
+main report,cov1_C_M1,87.5%,87.3%,TRUE,2
+main report,cov1_C_M2,89.6%,89.7%,TRUE,1
+main report,cov1_C_M3,91.5%,91.4%,TRUE,1
+main report,cov1_C_M4,90.6%,90.7%,TRUE,1
+main report,crps_D_M0,1.12,1.10,TRUE,2
+main report,cov1_D_M0,93.7%,93.8%,TRUE,1
+main report,width_D_M0,10.7,10.5,TRUE,2
+main report,crps_D_M1,1.06,1.05,TRUE,1
+main report,cov1_D_M1,93.8%,94.4%,TRUE,6
+main report,width_D_M1,10.4,10.2,TRUE,2
+main report,crps_D_M2,1.05,1.06,TRUE,1
+main report,cov_D_M2,94%,95%,TRUE,1
+main report,cov1_D_M2,94.4%,95.1%,TRUE,7
+main report,width_D_M2,10.6,10.8,TRUE,2
+main report,crps_D_M3,1.06,1.04,TRUE,2
+main report,cov1_D_M3,93.9%,94.3%,TRUE,4
+main report,width_D_M3,10.6,10.5,TRUE,1
+main report,cov1_D_M4,95.0%,95.3%,TRUE,3
+main report,width_D_M4,10.6,10.5,TRUE,1
+main report,crps_B_final,0.85,0.84,TRUE,1
+main report,cov_B_final,96%,95%,TRUE,1
+main report,width_D_final,10.6,10.5,TRUE,1
+main report,worse_A_M2,0%,-0%,TRUE,0
+main report,impr_A_M1,14%,13%,TRUE,1
+main report,impr_A_final,7%,6%,TRUE,1
+main report,impr_C_M2,-1%,-0%,TRUE,1
+main report,endin_A_final,99%,98%,TRUE,1
+main report,endin_A_M0,97%,96%,TRUE,1
+main report,ls_A_M1,-6.00,-6.01,TRUE,1
+main report,endin_A_M2,97%,96%,TRUE,1
+main report,endin_A_M4,99%,98%,TRUE,1
+main report,ls_B_M0,-6.20,-6.19,TRUE,1
+main report,ls_B_M1,-6.07,-6.08,TRUE,1
+main report,endin_B_M2,97%,95%,TRUE,2
+main report,endin_C_M2,84%,85%,TRUE,1
+main report,ls_C_M4,-5.65,-5.64,TRUE,1
+main report,ls_D_M0,-6.17,-6.16,TRUE,1
+main report,ls_D_M2,-6.14,-6.15,TRUE,1
+main report,ls_D_M3,-6.17,-6.14,TRUE,3
+main report,ls_D_M4,-6.13,-6.12,TRUE,1
+main report,cov_C1_M3,94%,93%,TRUE,1
+main report,rob_p95_M1,4.1%,3.6%,FALSE,5
+main report,rob_p95_M2,1.7%,1.4%,FALSE,3
+main report,rob_max_M2,10%,8%,FALSE,2
+main report,rob_p95_M3,2.0%,2.2%,FALSE,2
+main report,waic_spread,35,32,FALSE,3
+main report,lcpo_M4,-5.787,-5.788,FALSE,1
+main report,d_crps_A_M0_M1,-0.121 (-0.177 to -0.071),-0.117 (-0.172 to -0.068),TRUE,5
+main report,d_ls_A_M0_M1,0.148 (0.094 to 0.203),0.143 (0.089 to 0.196),TRUE,7
+main report,d_end_A_M0_M1,-0.94 (-1.36 to -0.53),-0.88 (-1.30 to -0.46),TRUE,7
+main report,d_crps_A_M0_M2,-0.120 (-0.176 to -0.069),-0.118 (-0.172 to -0.068),TRUE,4
+main report,d_ls_A_M0_M2,0.180 (0.121 to 0.236),0.177 (0.120 to 0.232),TRUE,4
+main report,d_end_A_M0_M2,-0.94 (-1.37 to -0.52),-0.89 (-1.32 to -0.47),TRUE,5
+main report,d_crps_A_M0_M4,-0.059 (-0.130 to 0.004),-0.056 (-0.126 to 0.008),TRUE,4
+main report,d_ls_A_M0_M4,0.124 (0.066 to 0.185),0.121 (0.063 to 0.183),TRUE,3
+main report,d_end_A_M0_M4,-0.57 (-1.08 to -0.06),-0.53 (-1.04 to -0.01),TRUE,5
+main report,d_crps_A_M1_M2,0.001 (-0.002 to 0.005),0.000 (-0.003 to 0.003),TRUE,2
+main report,d_ls_A_M1_M2,0.031 (0.020 to 0.042),0.034 (0.023 to 0.046),TRUE,4
+main report,d_end_A_M1_M2,0.00 (-0.04 to 0.04),-0.02 (-0.06 to 0.02),TRUE,2
+main report,d_crps_A_M1_M4,0.062 (0.041 to 0.083),0.062 (0.040 to 0.084),TRUE,1
+main report,d_ls_A_M1_M4,-0.024 (-0.048 to 0.000),-0.023 (-0.046 to 0.002),TRUE,2
+main report,d_end_A_M1_M4,0.37 (0.19 to 0.53),0.35 (0.17 to 0.51),TRUE,2
+main report,d_crps_A_M2_M4,0.060 (0.040 to 0.081),0.062 (0.041 to 0.083),TRUE,2
+main report,d_crps_B_M0_M1,-0.117 (-0.170 to -0.070),-0.116 (-0.166 to -0.070),TRUE,4
+main report,d_ls_B_M0_M1,0.124 (0.069 to 0.179),0.117 (0.064 to 0.169),TRUE,10
+main report,d_end_B_M0_M1,-0.96 (-1.43 to -0.50),-0.97 (-1.43 to -0.52),TRUE,2
+main report,d_crps_B_M0_M2,-0.114 (-0.168 to -0.066),-0.112 (-0.165 to -0.065),TRUE,3
+main report,d_ls_B_M0_M2,0.147 (0.088 to 0.206),0.142 (0.084 to 0.201),TRUE,5
+main report,d_end_B_M0_M2,-0.94 (-1.42 to -0.47),-0.97 (-1.46 to -0.50),TRUE,4
+main report,d_crps_B_M0_M4,-0.076 (-0.135 to -0.023),-0.076 (-0.134 to -0.024),TRUE,1
+main report,d_ls_B_M0_M4,0.112 (0.054 to 0.174),0.104 (0.048 to 0.163),TRUE,11
+main report,d_end_B_M0_M4,-0.75 (-1.27 to -0.25),-0.74 (-1.26 to -0.24),TRUE,1
+main report,d_crps_B_M1_M2,0.003 (0.000 to 0.007),0.004 (0.000 to 0.007),TRUE,1
+main report,d_ls_B_M1_M2,0.024 (0.013 to 0.034),0.026 (0.015 to 0.037),TRUE,3
+main report,d_end_B_M1_M2,0.02 (-0.02 to 0.06),0.00 (-0.06 to 0.05),TRUE,4
+main report,d_crps_B_M1_M4,0.042 (0.027 to 0.056),0.040 (0.023 to 0.056),TRUE,4
+main report,d_ls_B_M1_M4,-0.011 (-0.034 to 0.013),-0.013 (-0.036 to 0.013),TRUE,2
+main report,d_end_B_M1_M4,0.21 (0.08 to 0.33),0.22 (0.08 to 0.36),TRUE,3
+main report,d_crps_B_M2_M4,0.038 (0.023 to 0.053),0.036 (0.021 to 0.052),TRUE,2
+main report,d_ls_B_M2_M4,-0.035 (-0.057 to -0.012),-0.038 (-0.060 to -0.017),TRUE,5
+main report,d_end_B_M2_M4,0.19 (0.07 to 0.31),0.23 (0.10 to 0.35),TRUE,4
+main report,d_ls_C_M0_M1,0.011 (-0.003 to 0.025),0.014 (-0.003 to 0.030),TRUE,5
+main report,d_end_C_M0_M1,-0.01 (-0.04 to 0.03),-0.01 (-0.04 to 0.02),TRUE,1
+main report,d_ls_C_M0_M2,0.137 (0.080 to 0.200),0.137 (0.078 to 0.202),TRUE,2
+main report,d_ls_C_M0_M3,0.183 (0.104 to 0.268),0.184 (0.106 to 0.271),TRUE,3
+main report,d_end_C_M0_M3,0.05 (-0.02 to 0.12),0.04 (-0.03 to 0.11),TRUE,1
+main report,d_crps_C_M0_M4,-0.008 (-0.019 to 0.002),-0.009 (-0.020 to 0.001),TRUE,1
+main report,d_ls_C_M0_M4,0.146 (0.090 to 0.208),0.152 (0.095 to 0.215),TRUE,7
+main report,d_end_C_M0_M4,-0.02 (-0.08 to 0.03),-0.03 (-0.09 to 0.02),TRUE,1
+main report,d_crps_C_M1_M2,0.002 (-0.003 to 0.007),0.001 (-0.003 to 0.006),TRUE,1
+main report,d_ls_C_M1_M2,0.126 (0.075 to 0.182),0.124 (0.074 to 0.177),TRUE,5
+main report,d_ls_C_M1_M3,0.172 (0.100 to 0.250),0.171 (0.100 to 0.246),TRUE,4
+main report,d_end_C_M1_M3,0.06 (0.01 to 0.11),0.05 (0.01 to 0.10),TRUE,1
+main report,d_crps_C_M1_M4,-0.007 (-0.014 to 0.000),-0.008 (-0.016 to -0.001),TRUE,2
+main report,d_ls_C_M1_M4,0.135 (0.085 to 0.190),0.138 (0.089 to 0.191),TRUE,4
+main report,d_end_C_M1_M4,-0.02 (-0.05 to 0.02),-0.02 (-0.06 to 0.01),TRUE,1
+main report,d_crps_C_M2_M3,0.002 (-0.003 to 0.008),0.003 (-0.003 to 0.008),TRUE,1
+main report,d_ls_C_M2_M3,0.046 (0.019 to 0.076),0.047 (0.020 to 0.076),TRUE,1
+main report,d_end_C_M2_M3,0.04 (0.01 to 0.07),0.03 (0.01 to 0.06),TRUE,1
+main report,d_crps_C_M2_M4,-0.009 (-0.016 to -0.002),-0.010 (-0.017 to -0.003),TRUE,1
+main report,d_ls_C_M2_M4,0.008 (-0.013 to 0.032),0.014 (-0.008 to 0.039),TRUE,7
+main report,d_end_C_M2_M4,-0.04 (-0.06 to -0.01),-0.04 (-0.07 to -0.02),TRUE,1
+main report,d_crps_C_M3_M4,-0.011 (-0.017 to -0.006),-0.012 (-0.018 to -0.007),TRUE,1
+main report,d_ls_C_M3_M4,-0.037 (-0.064 to -0.012),-0.032 (-0.059 to -0.008),TRUE,5
+main report,d_crps_C1_M0_M1,0.006 (-0.008 to 0.020),0.007 (-0.007 to 0.021),TRUE,1
+main report,d_ls_C1_M0_M1,0.005 (-0.006 to 0.016),0.003 (-0.008 to 0.014),TRUE,2
+main report,d_crps_C1_M0_M2,-0.004 (-0.021 to 0.011),-0.005 (-0.020 to 0.010),TRUE,1
+main report,d_ls_C1_M0_M2,0.030 (0.007 to 0.053),0.030 (0.005 to 0.055),TRUE,2
+main report,d_crps_C1_M0_M3,-0.042 (-0.066 to -0.020),-0.039 (-0.063 to -0.017),TRUE,3
+main report,d_ls_C1_M0_M3,0.072 (0.036 to 0.113),0.067 (0.027 to 0.112),TRUE,9
+main report,d_crps_C1_M0_M4,-0.050 (-0.075 to -0.027),-0.053 (-0.078 to -0.029),TRUE,3
+main report,d_ls_C1_M0_M4,0.081 (0.046 to 0.119),0.081 (0.046 to 0.121),TRUE,2
+main report,d_crps_C1_M1_M2,-0.010 (-0.017 to -0.004),-0.012 (-0.018 to -0.005),TRUE,2
+main report,d_ls_C1_M1_M2,0.025 (0.002 to 0.048),0.027 (0.006 to 0.049),TRUE,4
+main report,d_crps_C1_M1_M3,-0.048 (-0.066 to -0.030),-0.046 (-0.065 to -0.029),TRUE,2
+main report,d_ls_C1_M1_M3,0.067 (0.029 to 0.108),0.064 (0.024 to 0.107),TRUE,5
+main report,d_crps_C1_M1_M4,-0.056 (-0.077 to -0.035),-0.060 (-0.081 to -0.038),TRUE,4
+main report,d_ls_C1_M1_M4,0.076 (0.038 to 0.115),0.078 (0.042 to 0.115),TRUE,4
+main report,d_crps_C1_M2_M3,-0.038 (-0.055 to -0.021),-0.035 (-0.052 to -0.018),TRUE,3
+main report,d_ls_C1_M2_M3,0.042 (0.012 to 0.075),0.037 (0.004 to 0.072),TRUE,8
+main report,d_crps_C1_M2_M4,-0.046 (-0.068 to -0.025),-0.048 (-0.070 to -0.027),TRUE,2
+main report,d_ls_C1_M2_M4,0.051 (0.018 to 0.087),0.051 (0.017 to 0.089),TRUE,2
+main report,d_crps_C1_M3_M4,-0.008 (-0.017 to 0.000),-0.013 (-0.022 to -0.005),TRUE,5
+main report,d_ls_C1_M3_M4,0.008 (-0.003 to 0.019),0.014 (-0.001 to 0.028),TRUE,9
+main report,d_ls_C23_M0_M1,0.001 (-0.012 to 0.013),0.004 (-0.010 to 0.017),TRUE,4
+main report,d_crps_C23_M0_M2,0.001 (-0.009 to 0.011),0.001 (-0.010 to 0.010),TRUE,1
+main report,d_ls_C23_M0_M2,0.130 (0.078 to 0.188),0.136 (0.083 to 0.194),TRUE,6
+main report,d_crps_C23_M0_M3,0.007 (-0.009 to 0.022),0.006 (-0.010 to 0.021),TRUE,1
+main report,d_ls_C23_M0_M3,0.178 (0.110 to 0.246),0.187 (0.118 to 0.257),TRUE,11
+main report,d_crps_C23_M0_M4,0.001 (-0.014 to 0.014),0.000 (-0.015 to 0.013),TRUE,1
+main report,d_ls_C23_M0_M4,0.124 (0.077 to 0.172),0.134 (0.086 to 0.185),TRUE,13
+main report,d_crps_C23_M1_M2,-0.001 (-0.006 to 0.004),-0.002 (-0.007 to 0.003),TRUE,1
+main report,d_ls_C23_M1_M2,0.129 (0.080 to 0.183),0.132 (0.083 to 0.184),TRUE,3
+main report,d_crps_C23_M1_M3,0.005 (-0.006 to 0.015),0.004 (-0.007 to 0.014),TRUE,1
+main report,d_ls_C23_M1_M3,0.177 (0.111 to 0.244),0.183 (0.116 to 0.249),TRUE,6
+main report,d_crps_C23_M1_M4,-0.001 (-0.012 to 0.009),-0.003 (-0.014 to 0.007),TRUE,2
+main report,d_ls_C23_M1_M4,0.123 (0.079 to 0.168),0.130 (0.086 to 0.176),TRUE,8
+main report,d_crps_C23_M2_M3,0.006 (-0.001 to 0.013),0.006 (-0.001 to 0.012),TRUE,1
+main report,d_ls_C23_M2_M3,0.048 (0.021 to 0.075),0.051 (0.023 to 0.078),TRUE,3
+main report,d_crps_C23_M2_M4,0.000 (-0.008 to 0.008),-0.001 (-0.009 to 0.007),TRUE,1
+main report,d_ls_C23_M2_M4,-0.006 (-0.032 to 0.023),-0.002 (-0.028 to 0.026),TRUE,4
+main report,d_crps_C23_M3_M4,-0.006 (-0.012 to -0.001),-0.007 (-0.012 to -0.001),TRUE,1
+main report,d_ls_C23_M3_M4,-0.054 (-0.079 to -0.030),-0.053 (-0.078 to -0.028),TRUE,2
+main report,d_crps_C4_M0_M1,-0.006 (-0.011 to 0.000),-0.005 (-0.011 to 0.000),TRUE,1
+main report,d_ls_C4_M0_M1,0.020 (0.001 to 0.039),0.023 (0.001 to 0.046),TRUE,7
+main report,d_ls_C4_M0_M2,0.178 (0.100 to 0.262),0.174 (0.095 to 0.258),TRUE,5
+main report,d_ls_C4_M0_M3,0.224 (0.117 to 0.343),0.221 (0.112 to 0.340),TRUE,5
+main report,d_ls_C4_M0_M4,0.182 (0.106 to 0.269),0.187 (0.109 to 0.277),TRUE,8
+main report,d_crps_C4_M1_M2,0.008 (0.003 to 0.014),0.008 (0.002 to 0.013),TRUE,1
+main report,d_ls_C4_M1_M2,0.158 (0.091 to 0.231),0.151 (0.085 to 0.221),TRUE,10
+main report,d_crps_C4_M1_M3,0.021 (0.011 to 0.032),0.021 (0.010 to 0.031),TRUE,1
+main report,d_ls_C4_M1_M3,0.204 (0.104 to 0.314),0.198 (0.101 to 0.303),TRUE,11
+main report,d_crps_C4_M1_M4,0.006 (0.000 to 0.011),0.005 (0.000 to 0.010),TRUE,1
+main report,d_ls_C4_M1_M4,0.162 (0.095 to 0.239),0.164 (0.097 to 0.239),TRUE,2
+main report,d_ls_C4_M2_M3,0.045 (0.010 to 0.087),0.047 (0.012 to 0.088),TRUE,2
+main report,d_crps_C4_M2_M4,-0.003 (-0.007 to 0.002),-0.003 (-0.007 to 0.001),TRUE,1
+main report,d_ls_C4_M2_M4,0.004 (-0.024 to 0.034),0.013 (-0.015 to 0.044),TRUE,10
+main report,d_ls_C4_M3_M4,-0.042 (-0.078 to -0.007),-0.034 (-0.069 to -0.001),TRUE,9
+main report,d_crps_D_M0_M1,-0.063 (-0.144 to -0.006),-0.053 (-0.143 to 0.008),TRUE,14
+main report,d_ls_D_M0_M1,0.022 (0.006 to 0.039),0.009 (-0.014 to 0.032),TRUE,20
+main report,d_crps_D_M0_M2,-0.073 (-0.189 to 0.011),-0.041 (-0.136 to 0.025),TRUE,53
+main report,d_ls_D_M0_M2,0.036 (0.007 to 0.074),0.009 (-0.019 to 0.046),TRUE,28
+main report,d_crps_D_M0_M3,-0.058 (-0.176 to 0.031),-0.068 (-0.190 to 0.019),TRUE,14
+main report,d_ls_D_M0_M3,0.008 (-0.014 to 0.032),0.014 (-0.009 to 0.037),TRUE,6
+main report,d_crps_D_M0_M4,-0.088 (-0.218 to 0.003),-0.078 (-0.203 to 0.012),TRUE,15
+main report,d_ls_D_M0_M4,0.045 (0.016 to 0.083),0.035 (0.001 to 0.076),TRUE,15
+main report,d_crps_D_M1_M2,-0.010 (-0.070 to 0.033),0.013 (-0.012 to 0.034),TRUE,58
+main report,d_ls_D_M1_M2,0.014 (-0.011 to 0.045),0.000 (-0.033 to 0.045),TRUE,22
+main report,d_crps_D_M1_M3,0.005 (-0.041 to 0.045),-0.014 (-0.087 to 0.033),TRUE,46
+main report,d_ls_D_M1_M3,-0.014 (-0.029 to 0.001),0.005 (-0.024 to 0.041),TRUE,40
+main report,d_crps_D_M1_M4,-0.025 (-0.076 to 0.017),-0.025 (-0.074 to 0.017),TRUE,2
+main report,d_ls_D_M1_M4,0.023 (0.002 to 0.050),0.026 (-0.011 to 0.072),TRUE,22
+main report,d_crps_D_M2_M3,0.015 (-0.018 to 0.049),-0.027 (-0.076 to 0.004),TRUE,58
+main report,d_ls_D_M2_M3,-0.028 (-0.065 to 0.003),0.005 (-0.022 to 0.028),TRUE,43
+main report,d_crps_D_M2_M4,-0.016 (-0.057 to 0.017),-0.037 (-0.073 to -0.005),TRUE,22
+main report,d_ls_D_M2_M4,0.009 (-0.013 to 0.028),0.025 (0.011 to 0.039),TRUE,24
+main report,d_crps_D_M3_M4,-0.031 (-0.046 to -0.017),-0.010 (-0.046 to 0.027),TRUE,44
+main report,d_ls_D_M3_M4,0.036 (0.016 to 0.067),0.021 (-0.002 to 0.047),TRUE,20
+main report,moran,0.48,0.47,FALSE,1
+main report,ho_mae,3.6,3.7,TRUE,1
+main report,ho_median,3.0,3.1,TRUE,1
+main report,ho_over5,63,65,TRUE,2
+main report,sens_phi,0.78 to 0.96,0.77 to 0.97,FALSE,1
+main report,s_S3_inc,1.10 (1.02 to 1.18),1.10 (1.02 to 1.19),FALSE,1
+main report,s_S9_inc,1.08 (1.00 to 1.16),1.08 (1.01 to 1.16),FALSE,1
+early rollout,med_st_k4,15.6,15.5,FALSE,1
+early rollout,hr_N_income_E1,0.97 (0.90 to 1.05),0.97 (0.90 to 1.04),FALSE,1
+early rollout,pc_1,-0.03 (-0.05 to 0.00),-0.03 (-0.05 to -0.01),FALSE,1
+early rollout,rel_p90_early_restricted,1.59,1.60,FALSE,1
+early rollout,age3_2_later,0.95,0.96,FALSE,1
+early rollout,age3_3_early,1.05,1.04,FALSE,1
+early rollout,age3_3_spring,0.83,0.82,FALSE,1
