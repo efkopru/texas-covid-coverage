@@ -26,10 +26,13 @@ miss <- setdiff(need, have)
 cat("Already installed:", paste(intersect(need, have), collapse = ", "), "\n")
 cat("To install       :", paste(miss, collapse = ", "), "\n")
 
+# Prebuilt (binary) packages where R offers them, on Windows and macOS. Elsewhere, as on Linux, R only
+# installs from source, which needs compilers and, for sf and spdep, the GDAL, GEOS and PROJ libraries.
+pkg_type <- if (.Platform$pkgType == "source") "source" else "binary"
 if (length(miss)) {
   install.packages(miss, lib = lib, repos = repos,
                    dependencies = c("Depends", "Imports", "LinkingTo"),
-                   type = "binary")
+                   type = pkg_type)
 }
 
 have <- rownames(installed.packages())

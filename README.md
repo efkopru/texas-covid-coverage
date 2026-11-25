@@ -67,6 +67,9 @@ with the files already uploaded.
 ## Reproducing the analysis
 
 Requirements: R 4.6 (developed with 4.6.1 on Windows), internet access for steps 0 and 1. About 0.5 GB of downloads.
+On Windows and macOS step 0 installs prebuilt packages. On Linux R builds them from source, which needs a C and C++
+compiler and, for the map packages sf and spdep, the GDAL, GEOS and PROJ development libraries (on Debian or Ubuntu:
+`libgdal-dev`, `libgeos-dev`, `libproj-dev`, `libudunits2-dev`). The setup has been run on Windows only.
 Run every command from the project root. `--vanilla` keeps R from loading any workspace or profile file.
 
 ```
