@@ -51,7 +51,8 @@ blockquote { margin: 1rem 0; padding: 0.2rem 1rem; border-left: 3px solid var(--
 }
 "
 
-render <- function(md_file, html_file, title) {
+# title and description go into the head, where search engines and link previews look for them
+render <- function(md_file, html_file, title, description) {
   txt <- paste(readLines(md_file, encoding = "UTF-8", warn = FALSE), collapse = "\n")
   body <- commonmark::markdown_html(txt, extensions = c("table", "autolink", "strikethrough"))
   # embed local PNG figures
@@ -68,15 +69,24 @@ render <- function(md_file, html_file, title) {
   body <- gsub("</table>", "</table></div>", body, fixed = TRUE)
   html <- paste0('<!doctype html>\n<html lang="en"><head><meta charset="utf-8">',
                  '<meta name="viewport" content="width=device-width, initial-scale=1">',
-                 "<title>", title, "</title><style>", css, "</style></head><body><main>\n", body, "\n</main></body></html>\n")
+                 "<title>", title, "</title>", '<meta name="description" content="', description, '">',
+                 "<style>", css, "</style></head><body><main>\n", body, "\n</main></body></html>\n")
   con <- file(html_file, open = "wb"); writeLines(enc2utf8(html), con, useBytes = TRUE); close(con)
   msg("Wrote %s (%.1f MB)", html_file, file.size(html_file) / 1e6)
 }
-if (file.exists("docs/00_summary.md")) render("docs/00_summary.md", "docs/00_summary.html", "Texas vaccination study: summary report")
-render("docs/01_source_inventory.md", "docs/01_source_inventory.html", "Texas vaccination study: source inventory")
-if (file.exists("docs/02_report.md")) render("docs/02_report.md", "docs/02_report.html", "Texas vaccination study: report")
+if (file.exists("docs/00_summary.md")) render("docs/00_summary.md", "docs/00_summary.html", "Texas vaccination study: summary report",
+  paste("Summary of a Bayesian spatiotemporal analysis of first-dose COVID-19 vaccination coverage across Texas counties,",
+        "December 2020 to May 2023: main findings, key numbers and limitations."))
+render("docs/01_source_inventory.md", "docs/01_source_inventory.html", "Texas vaccination study: source inventory",
+  paste("Every source of the Texas county vaccination study, what was verified in it, and why the age group, time",
+        "intervals and study period differ from the proposal."))
+if (file.exists("docs/02_report.md")) render("docs/02_report.md", "docs/02_report.html", "Texas vaccination study: report",
+  paste("Full report of a Bayesian spatiotemporal analysis of COVID-19 vaccination coverage across Texas counties,",
+        "May 2021 to May 2023: methods, results, model checks and limitations."))
 if (file.exists("docs/03_early_rollout.md")) render("docs/03_early_rollout.md", "docs/03_early_rollout.html",
-                                                    "Texas vaccination study: early rollout extension")
+                                                    "Texas vaccination study: early rollout extension",
+  paste("Extension of the Texas county vaccination study back to the first doses, December 2020 to May 2021, under an",
+        "explicit assumption about recipients who had no county on record."))
 
 # ---------------------------------------------------------------------------
 # PDF copy of the summary, for readers who do not have this folder.

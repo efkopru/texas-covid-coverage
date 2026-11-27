@@ -36,7 +36,7 @@ Start here:
 | `outputs/figures/` | Figures used in the report. |
 | `outputs/models/` | Model summaries. The posterior draws (`samples_*.rds`) are attached to the release [posterior-draws-v1](https://github.com/efkopru/texas-covid-coverage/releases/tag/posterior-draws-v1). |
 | `logs/` | Console output of each script run. |
-| `site/` | The interactive report: `index.html` (built, standalone) and `src/page.html` (its template: layout, styles and code). |
+| `site/` | The interactive report: `index.html` (built, standalone), `preview.png` (the picture link previews show) and `src/page.html` (its template: layout, styles and code). |
 | `.github/` | Publication on the web with GitHub Pages: a workflow and the script that arranges the files it serves. |
 | `r-lib/` | Project-local R package library created by `R/00_setup.R`. |
 
@@ -60,7 +60,8 @@ depends on them, because their parsed content is in `data/derived/`.
 documents, exactly as committed. Nothing is built on GitHub: after a push that changes one of those files, the
 workflow in `.github/workflows/pages.yml` arranges them with `.github/scripts/assemble_pages.py` and publishes them.
 In the served documents, links to files that are not served (code, tables, logs) lead to the same file in this
-repository. To update the web copy, rebuild locally (steps 11, 16 and 17 below), commit and push. If a publication
+repository, and every page carries the tags that link previews read, with `site/preview.png` as its picture. To
+update the web copy, rebuild locally (steps 11, 16 and 17 below), commit and push. If a publication
 fails, open it on the repository's Actions page and choose "Re-run failed jobs": only the publish job runs again,
 with the files already uploaded.
 

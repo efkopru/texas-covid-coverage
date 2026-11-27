@@ -6,6 +6,8 @@
 #   site/index.html     a standalone app: one file holding the page, its code,
 #                       the county map outlines and every number it draws. It
 #                       loads nothing from the network; open it in a browser.
+#   site/preview.png    the picture that link previews show for the web copy
+#                       (1200 x 630 pixels: county coverage on 9 May 2023)
 # from the template site/src/page.html. Numbers quoted in the page text are
 # filled from outputs/tables/report_values.csv and early_report_values.csv
 # ({{v:key}} for the main report, {{v:x_key}} for the early-rollout extension, {{v:rr_key}} for the rerun check),
@@ -130,21 +132,59 @@ js <- gsub("</", "<\\/", js, fixed = TRUE)          # keeps the data from closin
 msg("Data block: %.0f KB", nchar(js) / 1024)
 
 # ---------------------------------------------------------------------------
-# 3. The page
+# 3. The picture for link previews: recorded coverage on 9 May 2023, in the colours of the site's map
+# ---------------------------------------------------------------------------
+suppressMessages({library(ggplot2); library(grid)})
+fams <- tryCatch(unique(systemfonts::system_fonts()$family), error = function(e) character())
+f_head <- if ("Bahnschrift" %in% fams) "Bahnschrift" else if ("Segoe UI" %in% fams) "Segoe UI" else "sans"
+f_text <- if ("Segoe UI" %in% fams) "Segoe UI" else "sans"
+ramp9 <- c("#cde2fb", "#b7d3f6", "#9ec5f4", "#6da7ec", "#3987e5", "#2a78d6", "#1c5cab", "#104281", "#0d366b")
+pm <- merge(g, as.data.frame(cty[, .(fips, excl_county, cov_end)]), by = "fips")
+stopifnot(nrow(pm) == 254)
+pm$fill <- ifelse(pm$excl_county, "#c3c2b7", ramp9[findInterval(pm$cov_end, seq(10, 80, 10)) + 1])
+pmap <- ggplot(pm) + geom_sf(aes(fill = fill), colour = "#f9f9f7", linewidth = 0.12) + scale_fill_identity() +
+  coord_sf(datum = NA, expand = FALSE) + theme_void()
+ragg::agg_png("site/preview.png", width = 1200, height = 630, units = "px", res = 96, background = "#f9f9f7")
+grid.newpage()
+pushViewport(viewport(x = unit(1, "npc") - unit(34, "pt"), y = 0.5, width = unit(450, "pt"), height = unit(440, "pt"), just = "right"))
+print(pmap, newpage = FALSE)
+popViewport()
+left <- unit(48, "pt")
+grid.text("BAYESIAN SPATIOTEMPORAL ANALYSIS", x = left, y = unit(1, "npc") - unit(70, "pt"), just = c("left", "top"),
+          gp = gpar(fontfamily = f_text, fontsize = 13, col = "#6f6d67"))
+grid.text("COVID-19 vaccination\ncoverage across\nTexas counties", x = left, y = unit(1, "npc") - unit(98, "pt"),
+          just = c("left", "top"), gp = gpar(fontfamily = f_head, fontface = "bold", fontsize = 40, lineheight = 1.02, col = "#0b0b0b"))
+grid.text("December 2020 to May 2023\n254 counties, from archived state records", x = left, y = unit(1, "npc") - unit(270, "pt"),
+          just = c("left", "top"), gp = gpar(fontfamily = f_text, fontsize = 19, lineheight = 1.25, col = "#52514e"))
+grid.text("Map: residents aged 16+ with a first dose, 9 May 2023", x = left, y = unit(40, "pt"), just = c("left", "bottom"),
+          gp = gpar(fontfamily = f_text, fontsize = 12, col = "#6f6d67"))
+invisible(dev.off())
+msg("Wrote site/preview.png (%.0f KB)", file.size("site/preview.png") / 1024)
+
+# ---------------------------------------------------------------------------
+# 4. The page
 # ---------------------------------------------------------------------------
 tpl <- "site/src/page.html"
+# shown by search engines and link previews; the publishing step adds the preview tags themselves
+description <- paste("Interactive county map of first-dose COVID-19 vaccination coverage across Texas, December 2020 to May 2023,",
+                     "rebuilt from archived state records and analysed with a Bayesian spatiotemporal model.")
 if (file.exists(tpl)) {
   v1 <- rd("report_values.csv"); v2 <- rd("early_report_values.csv")
   V <- c(as.list(setNames(v1$value, v1$name)), as.list(setNames(v2$value, paste0("x_", v2$name))), rerun_values())
   V$built <- sub("^0", "", format(Sys.Date(), "%d %B %Y"))
   body <- fill_template(tpl, tempfile(fileext = ".html"), list(), V, quiet = TRUE)
   msg("Filled %s (%d lines, %d values)", tpl, length(body), length(V))
+  # the template's title line moves into the head, where link previews look for it
+  ti <- grep("^<title>[^<]+</title>$", body)
+  stopifnot(length(ti) == 1)
+  title_line <- body[ti]; body <- body[-ti]
   i <- which(body == '<script src="data.js"></script>')
   stopifnot(length(i) == 1)
   body[i] <- paste0("<script>window.TXDATA = ", js, ";</script>")
   con <- file("site/index.html", open = "wb")
   writeLines(enc2utf8(c('<!doctype html>', '<html lang="en">', '<head>', '<meta charset="utf-8">',
-                        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">', '</head>', '<body>',
+                        '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">', title_line,
+                        sprintf('<meta name="description" content="%s">', description), '</head>', '<body>',
                         body, '</body>', '</html>')), con, useBytes = TRUE)
   close(con)
   msg("Wrote site/index.html (%.0f KB)", file.size("site/index.html") / 1024)
